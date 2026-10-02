@@ -68,9 +68,9 @@ class Tool {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'function': function.toJson(),
-  };
+        'type': type,
+        'function': function.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -131,11 +131,11 @@ class FunctionDefinition {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    if (description != null) 'description': description,
-    if (parameters != null) 'parameters': parameters,
-    if (strict) 'strict': strict,
-  };
+        'name': name,
+        if (description != null) 'description': description,
+        if (parameters != null) 'parameters': parameters,
+        if (strict) 'strict': strict,
+      };
 
   @override
   bool operator ==(Object other) =>

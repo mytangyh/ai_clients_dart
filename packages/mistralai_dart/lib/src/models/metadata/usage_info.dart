@@ -21,17 +21,17 @@ class UsageInfo {
 
   /// Creates a [UsageInfo] from JSON.
   factory UsageInfo.fromJson(Map<String, dynamic> json) => UsageInfo(
-    promptTokens: json['prompt_tokens'] as int? ?? 0,
-    completionTokens: json['completion_tokens'] as int? ?? 0,
-    totalTokens: json['total_tokens'] as int? ?? 0,
-  );
+        promptTokens: json['prompt_tokens'] as int? ?? 0,
+        completionTokens: json['completion_tokens'] as int? ?? 0,
+        totalTokens: json['total_tokens'] as int? ?? 0,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'prompt_tokens': promptTokens,
-    'completion_tokens': completionTokens,
-    'total_tokens': totalTokens,
-  };
+        'prompt_tokens': promptTokens,
+        'completion_tokens': completionTokens,
+        'total_tokens': totalTokens,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -46,8 +46,7 @@ class UsageInfo {
   int get hashCode => Object.hash(promptTokens, completionTokens, totalTokens);
 
   @override
-  String toString() =>
-      'UsageInfo(promptTokens: $promptTokens, '
+  String toString() => 'UsageInfo(promptTokens: $promptTokens, '
       'completionTokens: $completionTokens, '
       'totalTokens: $totalTokens)';
 }

@@ -62,13 +62,13 @@ class ChatkitThread {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    'title': title,
-    'status': status.toJson(),
-    'user': user,
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        'title': title,
+        'status': status.toJson(),
+        'user': user,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -135,12 +135,12 @@ class ChatkitThreadList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((t) => t.toJson()).toList(),
-    'first_id': firstId,
-    'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((t) => t.toJson()).toList(),
+        'first_id': firstId,
+        'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -187,10 +187,10 @@ class DeleteChatkitThreadResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -251,9 +251,9 @@ class ChatkitThreadStatus {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (reason != null) 'reason': reason,
-  };
+        'type': type,
+        if (reason != null) 'reason': reason,
+      };
 
   @override
   bool operator ==(Object other) =>

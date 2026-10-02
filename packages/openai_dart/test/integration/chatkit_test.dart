@@ -362,8 +362,7 @@ void main() {
     // Note: delete test is skipped by default to avoid deleting production data
     test(
       'deletes a thread',
-      skip:
-          'Skipped to avoid deleting production threads. '
+      skip: 'Skipped to avoid deleting production threads. '
           'Run manually with a test thread ID.',
       timeout: const Timeout(Duration(minutes: 1)),
       () async {
@@ -462,8 +461,7 @@ void main() {
           expect(item.json, isNotNull);
 
           // Test type helper methods
-          final typeMatches =
-              item.isUserMessage ||
+          final typeMatches = item.isUserMessage ||
               item.isAssistantMessage ||
               item.isWidgetMessage ||
               item.isClientToolCall ||

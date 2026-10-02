@@ -64,12 +64,12 @@ class BetaResource extends ResourceBase {
   /// );
   /// ```
   AssistantsResource get assistants => _assistants ??= AssistantsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Access to Threads API.
   ///
@@ -79,13 +79,13 @@ class BetaResource extends ResourceBase {
   /// final thread = await client.beta.threads.create();
   /// ```
   ThreadsResource get threads => _threads ??= ThreadsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-    streamClientFactory: streamClientFactory,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+        streamClientFactory: streamClientFactory,
+      );
 
   /// Access to Vector Stores API.
   ///

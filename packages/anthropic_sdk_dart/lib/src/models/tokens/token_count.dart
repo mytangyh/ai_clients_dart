@@ -81,9 +81,8 @@ class TokenCountRequest {
       messages: (json['messages'] as List)
           .map((e) => InputMessage.fromJson(e as Map<String, dynamic>))
           .toList(),
-      system: json['system'] != null
-          ? SystemPrompt.fromJson(json['system'])
-          : null,
+      system:
+          json['system'] != null ? SystemPrompt.fromJson(json['system']) : null,
       thinking: json['thinking'] != null
           ? ThinkingConfig.fromJson(json['thinking'] as Map<String, dynamic>)
           : null,
@@ -104,15 +103,15 @@ class TokenCountRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'messages': messages.map((e) => e.toJson()).toList(),
-    if (system != null) 'system': system!.toJson(),
-    if (thinking != null) 'thinking': thinking!.toJson(),
-    if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
-    if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
-    if (outputConfig != null) 'output_config': outputConfig!.toJson(),
-    if (speed != null) 'speed': speed!.toJson(),
-  };
+        'model': model,
+        'messages': messages.map((e) => e.toJson()).toList(),
+        if (system != null) 'system': system!.toJson(),
+        if (thinking != null) 'thinking': thinking!.toJson(),
+        if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
+        if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
+        if (outputConfig != null) 'output_config': outputConfig!.toJson(),
+        if (speed != null) 'speed': speed!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   TokenCountRequest copyWith({
@@ -128,9 +127,8 @@ class TokenCountRequest {
     return TokenCountRequest(
       model: model ?? this.model,
       messages: messages ?? this.messages,
-      system: system == unsetCopyWithValue
-          ? this.system
-          : system as SystemPrompt?,
+      system:
+          system == unsetCopyWithValue ? this.system : system as SystemPrompt?,
       thinking: thinking == unsetCopyWithValue
           ? this.thinking
           : thinking as ThinkingConfig?,
@@ -163,15 +161,15 @@ class TokenCountRequest {
 
   @override
   int get hashCode => Object.hash(
-    model,
-    listHash(messages),
-    system,
-    thinking,
-    toolChoice,
-    listHash(tools),
-    outputConfig,
-    speed,
-  );
+        model,
+        listHash(messages),
+        system,
+        thinking,
+        toolChoice,
+        listHash(tools),
+        outputConfig,
+        speed,
+      );
 
   @override
   String toString() =>

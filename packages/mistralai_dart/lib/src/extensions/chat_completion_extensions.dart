@@ -57,8 +57,9 @@ extension ChatCompletionResponseExtensions on ChatCompletionResponse {
 
   /// All tool calls from all choices.
   List<ToolCall> get allToolCalls => [
-    for (final choice in choices) ...choice.message.toolCalls ?? <ToolCall>[],
-  ];
+        for (final choice in choices)
+          ...choice.message.toolCalls ?? <ToolCall>[],
+      ];
 
   /// Whether the first choice has tool calls.
   bool get hasToolCalls => toolCalls.isNotEmpty;

@@ -33,11 +33,12 @@ sealed class CodeInterpreterContainer {
     List<String>? fileIds,
     int? memoryLimit,
     ContainerNetworkPolicy? networkPolicy,
-  }) => CodeInterpreterContainerAuto(
-    fileIds: fileIds,
-    memoryLimit: memoryLimit,
-    networkPolicy: networkPolicy,
-  );
+  }) =>
+      CodeInterpreterContainerAuto(
+        fileIds: fileIds,
+        memoryLimit: memoryLimit,
+        networkPolicy: networkPolicy,
+      );
 
   /// Converts to JSON.
   Object toJson();
@@ -103,11 +104,11 @@ class CodeInterpreterContainerAuto extends CodeInterpreterContainer {
 
   @override
   Object toJson() => {
-    'type': 'auto',
-    if (fileIds != null) 'file_ids': fileIds,
-    if (memoryLimit != null) 'memory_limit': memoryLimit,
-    if (networkPolicy != null) 'network_policy': networkPolicy!.toJson(),
-  };
+        'type': 'auto',
+        if (fileIds != null) 'file_ids': fileIds,
+        if (memoryLimit != null) 'memory_limit': memoryLimit,
+        if (networkPolicy != null) 'network_policy': networkPolicy!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -120,10 +121,10 @@ class CodeInterpreterContainerAuto extends CodeInterpreterContainer {
 
   @override
   int get hashCode => Object.hash(
-    fileIds != null ? Object.hashAll(fileIds!) : null,
-    memoryLimit,
-    networkPolicy,
-  );
+        fileIds != null ? Object.hashAll(fileIds!) : null,
+        memoryLimit,
+        networkPolicy,
+      );
 
   @override
   String toString() =>
@@ -145,8 +146,8 @@ sealed class ContainerNetworkPolicy {
         'disabled' => const ContainerNetworkPolicyDisabled(),
         'allowlist' => ContainerNetworkPolicyAllowlist.fromJson(json),
         _ => throw FormatException(
-          'Unknown ContainerNetworkPolicy type: $type',
-        ),
+            'Unknown ContainerNetworkPolicy type: $type',
+          ),
       };
     }
     throw FormatException(
@@ -203,9 +204,9 @@ class ContainerNetworkPolicyAllowlist extends ContainerNetworkPolicy {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'allowlist',
-    'allowed_hosts': allowedHosts,
-  };
+        'type': 'allowlist',
+        'allowed_hosts': allowedHosts,
+      };
 
   @override
   bool operator ==(Object other) =>

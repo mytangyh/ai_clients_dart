@@ -21,8 +21,7 @@ class ModerationResult {
   /// Creates a [ModerationResult] from JSON.
   factory ModerationResult.fromJson(Map<String, dynamic> json) =>
       ModerationResult(
-        categories:
-            (json['categories'] as Map<String, dynamic>?)?.map(
+        categories: (json['categories'] as Map<String, dynamic>?)?.map(
               (k, v) => MapEntry(k, v as bool),
             ) ??
             {},
@@ -33,9 +32,9 @@ class ModerationResult {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'categories': categories,
-    'category_scores': categoryScores.toJson(),
-  };
+        'categories': categories,
+        'category_scores': categoryScores.toJson(),
+      };
 
   /// Returns true if any category was flagged.
   bool get flagged => categories.values.any((v) => v);

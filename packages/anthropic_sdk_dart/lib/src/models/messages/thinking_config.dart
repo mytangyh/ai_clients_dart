@@ -51,9 +51,9 @@ class ThinkingEnabled extends ThinkingConfig {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'enabled',
-    'budget_tokens': budgetTokens,
-  };
+        'type': 'enabled',
+        'budget_tokens': budgetTokens,
+      };
 
   /// Creates a copy with replaced values.
   ThinkingEnabled copyWith({int? budgetTokens}) {

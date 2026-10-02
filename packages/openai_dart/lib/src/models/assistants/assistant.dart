@@ -71,7 +71,7 @@ class Assistant {
           : null,
       metadata:
           (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>() ??
-          {},
+              {},
       temperature: (json['temperature'] as num?)?.toDouble(),
       topP: (json['top_p'] as num?)?.toDouble(),
       responseFormat: _parseResponseFormat(json['response_format']),
@@ -132,20 +132,20 @@ class Assistant {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    'model': model,
-    if (name != null) 'name': name,
-    if (description != null) 'description': description,
-    if (instructions != null) 'instructions': instructions,
-    'tools': tools.map((t) => t.toJson()).toList(),
-    if (toolResources != null) 'tool_resources': toolResources!.toJson(),
-    'metadata': metadata,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        'model': model,
+        if (name != null) 'name': name,
+        if (description != null) 'description': description,
+        if (instructions != null) 'instructions': instructions,
+        'tools': tools.map((t) => t.toJson()).toList(),
+        if (toolResources != null) 'tool_resources': toolResources!.toJson(),
+        'metadata': metadata,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -201,12 +201,12 @@ class AssistantList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((a) => a.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((a) => a.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -254,8 +254,8 @@ class CreateAssistantRequest {
               json['tool_resources'] as Map<String, dynamic>,
             )
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
       temperature: (json['temperature'] as num?)?.toDouble(),
       topP: (json['top_p'] as num?)?.toDouble(),
       responseFormat: _parseResponseFormat(json['response_format']),
@@ -294,17 +294,17 @@ class CreateAssistantRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    if (name != null) 'name': name,
-    if (description != null) 'description': description,
-    if (instructions != null) 'instructions': instructions,
-    if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
-    if (toolResources != null) 'tool_resources': toolResources!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-  };
+        'model': model,
+        if (name != null) 'name': name,
+        if (description != null) 'description': description,
+        if (instructions != null) 'instructions': instructions,
+        if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
+        if (toolResources != null) 'tool_resources': toolResources!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -353,8 +353,8 @@ class ModifyAssistantRequest {
               json['tool_resources'] as Map<String, dynamic>,
             )
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
       temperature: (json['temperature'] as num?)?.toDouble(),
       topP: (json['top_p'] as num?)?.toDouble(),
       responseFormat: _parseResponseFormat(json['response_format']),
@@ -393,17 +393,17 @@ class ModifyAssistantRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (model != null) 'model': model,
-    if (name != null) 'name': name,
-    if (description != null) 'description': description,
-    if (instructions != null) 'instructions': instructions,
-    if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
-    if (toolResources != null) 'tool_resources': toolResources!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-  };
+        if (model != null) 'model': model,
+        if (name != null) 'name': name,
+        if (description != null) 'description': description,
+        if (instructions != null) 'instructions': instructions,
+        if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
+        if (toolResources != null) 'tool_resources': toolResources!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -447,10 +447,10 @@ class DeleteAssistantResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>

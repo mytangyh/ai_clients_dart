@@ -39,11 +39,11 @@ class ClassifierTargetOut {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'labels': labels,
-    'weight': weight,
-    'loss_function': lossFunction.value,
-  };
+        'name': name,
+        'labels': labels,
+        'weight': weight,
+        'loss_function': lossFunction.value,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -60,8 +60,7 @@ class ClassifierTargetOut {
       Object.hash(name, Object.hashAll(labels), weight, lossFunction);
 
   @override
-  String toString() =>
-      'ClassifierTargetOut('
+  String toString() => 'ClassifierTargetOut('
       'name: $name, labels: $labels, weight: $weight, '
       'lossFunction: $lossFunction)';
 }

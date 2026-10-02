@@ -132,8 +132,8 @@ sealed class ResponseStreamEvent {
       'response.mcp_call.in_progress' =>
         ResponseMcpCallInProgressEvent.fromJson(json),
       'response.mcp_call.completed' => ResponseMcpCallCompletedEvent.fromJson(
-        json,
-      ),
+          json,
+        ),
       'response.mcp_call.failed' => ResponseMcpCallFailedEvent.fromJson(json),
       'response.mcp_call_arguments.delta' =>
         ResponseMcpCallArgumentsDeltaEvent.fromJson(json),
@@ -154,7 +154,6 @@ sealed class ResponseStreamEvent {
 
       // Error events
       'error' => ErrorEvent.fromJson(json),
-
       _ => UnknownEvent.fromJson(json),
     };
   }
@@ -204,10 +203,10 @@ class ResponseCreatedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'response': response.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'response': response.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -249,10 +248,10 @@ class ResponseQueuedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'response': response.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'response': response.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -294,10 +293,10 @@ class ResponseInProgressEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'response': response.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'response': response.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -339,10 +338,10 @@ class ResponseCompletedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'response': response.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'response': response.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -384,10 +383,10 @@ class ResponseFailedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'response': response.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'response': response.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -429,10 +428,10 @@ class ResponseIncompleteEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'response': response.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'response': response.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -486,11 +485,11 @@ class OutputItemAddedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'output_index': outputIndex,
-    'item': item.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'output_index': outputIndex,
+        'item': item.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -541,11 +540,11 @@ class OutputItemDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'output_index': outputIndex,
-    'item': item.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'output_index': outputIndex,
+        'item': item.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -610,13 +609,13 @@ class ContentPartAddedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'part': part.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'part': part.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -681,13 +680,13 @@ class ContentPartDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'part': part.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'part': part.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -763,14 +762,15 @@ class OutputTextDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'delta': delta,
-    if (logprobs != null) 'logprobs': logprobs!.map((e) => e.toJson()).toList(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'delta': delta,
+        if (logprobs != null)
+          'logprobs': logprobs!.map((e) => e.toJson()).toList(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -841,14 +841,15 @@ class OutputTextDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'text': text,
-    if (logprobs != null) 'logprobs': logprobs!.map((e) => e.toJson()).toList(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'text': text,
+        if (logprobs != null)
+          'logprobs': logprobs!.map((e) => e.toJson()).toList(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -920,14 +921,14 @@ class OutputTextAnnotationAddedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'annotation_index': annotationIndex,
-    'annotation': annotation.toJson(),
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'annotation_index': annotationIndex,
+        'annotation': annotation.toJson(),
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -943,13 +944,13 @@ class OutputTextAnnotationAddedEvent extends ResponseStreamEvent {
 
   @override
   int get hashCode => Object.hash(
-    itemId,
-    outputIndex,
-    contentIndex,
-    annotationIndex,
-    annotation,
-    sequenceNumber,
-  );
+        itemId,
+        outputIndex,
+        contentIndex,
+        annotationIndex,
+        annotation,
+        sequenceNumber,
+      );
 
   @override
   String toString() =>
@@ -1003,13 +1004,13 @@ class RefusalDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'delta': delta,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'delta': delta,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1073,13 +1074,13 @@ class RefusalDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'refusal': refusal,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'refusal': refusal,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1142,12 +1143,12 @@ class FunctionCallArgumentsDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'delta': delta,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'delta': delta,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1210,13 +1211,13 @@ class FunctionCallArgumentsDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    if (name != null) 'name': name,
-    'arguments': arguments,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        if (name != null) 'name': name,
+        'arguments': arguments,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1287,13 +1288,13 @@ class ReasoningTextDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    if (contentIndex != null) 'content_index': contentIndex,
-    'delta': delta,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        if (contentIndex != null) 'content_index': contentIndex,
+        'delta': delta,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1359,13 +1360,13 @@ class ReasoningTextDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    if (contentIndex != null) 'content_index': contentIndex,
-    'text': text,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        if (contentIndex != null) 'content_index': contentIndex,
+        'text': text,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1442,13 +1443,13 @@ class ReasoningSummaryPartAddedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'summary_index': summaryIndex,
-    'part': part,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'summary_index': summaryIndex,
+        'part': part,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1512,13 +1513,13 @@ class ReasoningSummaryPartDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'summary_index': summaryIndex,
-    'part': part,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'summary_index': summaryIndex,
+        'part': part,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1582,13 +1583,13 @@ class ReasoningSummaryTextDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'summary_index': summaryIndex,
-    'delta': delta,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'summary_index': summaryIndex,
+        'delta': delta,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1653,13 +1654,13 @@ class ReasoningSummaryTextDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemId != null) 'item_id': itemId,
-    'output_index': outputIndex,
-    'summary_index': summaryIndex,
-    'text': text,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (itemId != null) 'item_id': itemId,
+        'output_index': outputIndex,
+        'summary_index': summaryIndex,
+        'text': text,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1710,10 +1711,10 @@ class ResponseAudioDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'delta': delta,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'delta': delta,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1751,9 +1752,9 @@ class ResponseAudioDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1799,10 +1800,10 @@ class ResponseAudioTranscriptDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'delta': delta,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'delta': delta,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1840,9 +1841,9 @@ class ResponseAudioTranscriptDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1897,11 +1898,11 @@ class ResponseWebSearchCallInProgressEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1954,11 +1955,11 @@ class ResponseWebSearchCallSearchingEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2011,11 +2012,11 @@ class ResponseWebSearchCallCompletedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2072,11 +2073,11 @@ class ResponseFileSearchCallInProgressEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2129,11 +2130,11 @@ class ResponseFileSearchCallSearchingEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2186,11 +2187,11 @@ class ResponseFileSearchCallCompletedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2247,11 +2248,11 @@ class ResponseCodeInterpreterCallInProgressEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2305,11 +2306,11 @@ class ResponseCodeInterpreterCallInterpretingEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2368,12 +2369,12 @@ class ResponseCodeInterpreterCallCodeDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'delta': delta,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'delta': delta,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2433,12 +2434,12 @@ class ResponseCodeInterpreterCallCodeDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'code': code,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'code': code,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2493,11 +2494,11 @@ class ResponseCodeInterpreterCallCompletedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2555,11 +2556,11 @@ class ResponseImageGenerationCallInProgressEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2613,11 +2614,11 @@ class ResponseImageGenerationCallGeneratingEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2681,13 +2682,13 @@ class ResponseImageGenerationCallPartialImageEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'partial_image_b64': partialImageB64,
-    'partial_image_index': partialImageIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'partial_image_b64': partialImageB64,
+        'partial_image_index': partialImageIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2743,11 +2744,11 @@ class ResponseImageGenerationCallCompletedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2803,11 +2804,11 @@ class ResponseMcpCallInProgressEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2858,11 +2859,11 @@ class ResponseMcpCallCompletedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2913,11 +2914,11 @@ class ResponseMcpCallFailedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2975,12 +2976,12 @@ class ResponseMcpCallArgumentsDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'delta': delta,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'delta': delta,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -3039,12 +3040,12 @@ class ResponseMcpCallArgumentsDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'arguments': arguments,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'arguments': arguments,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -3100,11 +3101,11 @@ class ResponseMcpListToolsInProgressEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -3157,11 +3158,11 @@ class ResponseMcpListToolsCompletedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -3212,11 +3213,11 @@ class ResponseMcpListToolsFailedEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -3278,12 +3279,12 @@ class ResponseCustomToolCallInputDeltaEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'delta': delta,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'delta': delta,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -3342,12 +3343,12 @@ class ResponseCustomToolCallInputDoneEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'input': input,
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'input': input,
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -3409,14 +3410,14 @@ class ErrorEvent extends ResponseStreamEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'error': {
-      'code': code,
-      'message': message,
-      if (param != null) 'param': param,
-    },
-    if (sequenceNumber != null) 'sequence_number': sequenceNumber,
-  };
+        'type': type,
+        'error': {
+          'code': code,
+          'message': message,
+          if (param != null) 'param': param,
+        },
+        if (sequenceNumber != null) 'sequence_number': sequenceNumber,
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -83,18 +83,18 @@ class Tool {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (type != null) 'type': type,
-    'name': name,
-    if (description != null) 'description': description,
-    'input_schema': inputSchema.toJson(),
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-    if (inputExamples != null) 'input_examples': inputExamples,
-    if (eagerInputStreaming != null)
-      'eager_input_streaming': eagerInputStreaming,
-  };
+        if (type != null) 'type': type,
+        'name': name,
+        if (description != null) 'description': description,
+        'input_schema': inputSchema.toJson(),
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+        if (inputExamples != null) 'input_examples': inputExamples,
+        if (eagerInputStreaming != null)
+          'eager_input_streaming': eagerInputStreaming,
+      };
 
   /// Creates a copy with replaced values.
   Tool copyWith({
@@ -153,17 +153,17 @@ class Tool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    name,
-    description,
-    inputSchema,
-    cacheControl,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-    listOfMapsHash(inputExamples),
-    eagerInputStreaming,
-  );
+        type,
+        name,
+        description,
+        inputSchema,
+        cacheControl,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+        listOfMapsHash(inputExamples),
+        eagerInputStreaming,
+      );
 
   @override
   String toString() =>

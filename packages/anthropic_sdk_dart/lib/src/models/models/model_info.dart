@@ -37,11 +37,11 @@ class ModelInfo {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'display_name': displayName,
-    'created_at': createdAt.toUtc().toIso8601String(),
-    'type': type,
-  };
+        'id': id,
+        'display_name': displayName,
+        'created_at': createdAt.toUtc().toIso8601String(),
+        'type': type,
+      };
 
   /// Creates a copy with replaced values.
   ModelInfo copyWith({
@@ -113,11 +113,11 @@ class ModelListResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data': data.map((e) => e.toJson()).toList(),
-    'has_more': hasMore,
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-  };
+        'data': data.map((e) => e.toJson()).toList(),
+        'has_more': hasMore,
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+      };
 
   @override
   bool operator ==(Object other) =>

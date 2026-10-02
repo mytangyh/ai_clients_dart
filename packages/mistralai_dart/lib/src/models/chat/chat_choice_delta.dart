@@ -35,11 +35,11 @@ class ChatChoiceDelta {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'index': index,
-    'delta': delta.toJson(),
-    if (finishReason != null)
-      'finish_reason': finishReasonToString(finishReason!),
-  };
+        'index': index,
+        'delta': delta.toJson(),
+        if (finishReason != null)
+          'finish_reason': finishReasonToString(finishReason!),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -54,8 +54,7 @@ class ChatChoiceDelta {
   int get hashCode => Object.hash(index, delta, finishReason);
 
   @override
-  String toString() =>
-      'ChatChoiceDelta(index: $index, delta: $delta, '
+  String toString() => 'ChatChoiceDelta(index: $index, delta: $delta, '
       'finishReason: $finishReason)';
 }
 
@@ -76,20 +75,20 @@ class DeltaContent {
 
   /// Creates a [DeltaContent] from JSON.
   factory DeltaContent.fromJson(Map<String, dynamic> json) => DeltaContent(
-    role: json['role'] as String?,
-    content: json['content'] as String?,
-    toolCalls: (json['tool_calls'] as List?)
-        ?.map((e) => ToolCall.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
+        role: json['role'] as String?,
+        content: json['content'] as String?,
+        toolCalls: (json['tool_calls'] as List?)
+            ?.map((e) => ToolCall.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (role != null) 'role': role,
-    if (content != null) 'content': content,
-    if (toolCalls != null)
-      'tool_calls': toolCalls!.map((e) => e.toJson()).toList(),
-  };
+        if (role != null) 'role': role,
+        if (content != null) 'content': content,
+        if (toolCalls != null)
+          'tool_calls': toolCalls!.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>

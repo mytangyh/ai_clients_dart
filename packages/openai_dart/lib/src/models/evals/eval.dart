@@ -63,14 +63,14 @@ class Eval {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'created_at': createdAt,
-    'name': name,
-    'object': object,
-    'data_source_config': dataSourceConfig.toJson(),
-    'testing_criteria': testingCriteria.map((g) => g.toJson()).toList(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        'id': id,
+        'created_at': createdAt,
+        'name': name,
+        'object': object,
+        'data_source_config': dataSourceConfig.toJson(),
+        'testing_criteria': testingCriteria.map((g) => g.toJson()).toList(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -126,12 +126,12 @@ class EvalList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-    'has_more': hasMore,
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+        'has_more': hasMore,
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -189,11 +189,11 @@ class CreateEvalRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data_source_config': dataSourceConfig.toJson(),
-    'testing_criteria': testingCriteria.map((g) => g.toJson()).toList(),
-    if (name != null) 'name': name,
-    if (metadata != null) 'metadata': metadata,
-  };
+        'data_source_config': dataSourceConfig.toJson(),
+        'testing_criteria': testingCriteria.map((g) => g.toJson()).toList(),
+        if (name != null) 'name': name,
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -230,9 +230,9 @@ class UpdateEvalRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (name != null) 'name': name,
-    if (metadata != null) 'metadata': metadata,
-  };
+        if (name != null) 'name': name,
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -276,10 +276,10 @@ class DeleteEvalResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'eval_id': evalId,
-    if (object != null) 'object': object,
-    'deleted': deleted,
-  };
+        'eval_id': evalId,
+        if (object != null) 'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>

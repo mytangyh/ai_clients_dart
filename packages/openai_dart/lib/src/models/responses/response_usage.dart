@@ -48,14 +48,14 @@ class ResponseUsage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'input_tokens': inputTokens,
-    'output_tokens': outputTokens,
-    'total_tokens': totalTokens,
-    if (inputTokensDetails != null)
-      'input_tokens_details': inputTokensDetails!.toJson(),
-    if (outputTokensDetails != null)
-      'output_tokens_details': outputTokensDetails!.toJson(),
-  };
+        'input_tokens': inputTokens,
+        'output_tokens': outputTokens,
+        'total_tokens': totalTokens,
+        if (inputTokensDetails != null)
+          'input_tokens_details': inputTokensDetails!.toJson(),
+        if (outputTokensDetails != null)
+          'output_tokens_details': outputTokensDetails!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -70,12 +70,12 @@ class ResponseUsage {
 
   @override
   int get hashCode => Object.hash(
-    inputTokens,
-    outputTokens,
-    totalTokens,
-    inputTokensDetails,
-    outputTokensDetails,
-  );
+        inputTokens,
+        outputTokens,
+        totalTokens,
+        inputTokensDetails,
+        outputTokensDetails,
+      );
 
   @override
   String toString() =>
@@ -98,8 +98,8 @@ class InputTokensDetails {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (cachedTokens != null) 'cached_tokens': cachedTokens,
-  };
+        if (cachedTokens != null) 'cached_tokens': cachedTokens,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -133,8 +133,8 @@ class OutputTokensDetails {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (reasoningTokens != null) 'reasoning_tokens': reasoningTokens,
-  };
+        if (reasoningTokens != null) 'reasoning_tokens': reasoningTokens,
+      };
 
   @override
   bool operator ==(Object other) =>

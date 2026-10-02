@@ -53,8 +53,8 @@ sealed class OutputItem {
       'image_generation_call' => ImageGenerationCallOutputItem.fromJson(json),
       'local_shell_call' => LocalShellCallOutputItem.fromJson(json),
       'local_shell_call_output' => LocalShellCallOutputResultItem.fromJson(
-        json,
-      ),
+          json,
+        ),
       'shell_call' => ShellCallOutputItem.fromJson(json),
       'shell_call_output' => ShellCallOutputResultItem.fromJson(json),
       'mcp_call' => McpCallOutputItem.fromJson(json),
@@ -115,13 +115,13 @@ class MessageOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'message',
-    'id': id,
-    'role': role.toJson(),
-    'content': content.map((e) => e.toJson()).toList(),
-    if (status != null) 'status': status!.toJson(),
-    if (phase != null) 'phase': phase!.toJson(),
-  };
+        'type': 'message',
+        'id': id,
+        'role': role.toJson(),
+        'content': content.map((e) => e.toJson()).toList(),
+        if (status != null) 'status': status!.toJson(),
+        if (phase != null) 'phase': phase!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -204,24 +204,24 @@ class FunctionCallOutputItemResponse extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'function_call',
-    'id': id,
-    'call_id': callId,
-    'name': name,
-    'arguments': arguments,
-    if (status != null) 'status': status!.toJson(),
-    if (namespace != null) 'namespace': namespace,
-  };
+        'type': 'function_call',
+        'id': id,
+        'call_id': callId,
+        'name': name,
+        'arguments': arguments,
+        if (status != null) 'status': status!.toJson(),
+        if (namespace != null) 'namespace': namespace,
+      };
 
   /// Converts to a [FunctionCallItem] for use as input.
   FunctionCallItem toFunctionCallItem() => FunctionCallItem(
-    id: id,
-    callId: callId,
-    name: name,
-    arguments: arguments,
-    status: status,
-    namespace: namespace,
-  );
+        id: id,
+        callId: callId,
+        name: name,
+        arguments: arguments,
+        status: status,
+        namespace: namespace,
+      );
 
   @override
   bool operator ==(Object other) =>
@@ -287,12 +287,12 @@ class ReasoningItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'reasoning',
-    'id': id,
-    if (content != null) 'content': content,
-    'summary': summary.map((e) => e.toJson()).toList(),
-    if (encryptedContent != null) 'encrypted_content': encryptedContent,
-  };
+        'type': 'reasoning',
+        'id': id,
+        if (content != null) 'content': content,
+        'summary': summary.map((e) => e.toJson()).toList(),
+        if (encryptedContent != null) 'encrypted_content': encryptedContent,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -368,10 +368,10 @@ class CompactionOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'compaction',
-    'id': id,
-    'encrypted_content': encryptedContent,
-  };
+        'type': 'compaction',
+        'id': id,
+        'encrypted_content': encryptedContent,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -419,10 +419,10 @@ class WebSearchCallOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'web_search_call',
-    'id': id,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'web_search_call',
+        'id': id,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -480,12 +480,12 @@ class FileSearchCallOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'file_search_call',
-    'id': id,
-    if (queries != null) 'queries': queries,
-    if (results != null) 'results': results,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'file_search_call',
+        'id': id,
+        if (queries != null) 'queries': queries,
+        if (results != null) 'results': results,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -499,11 +499,11 @@ class FileSearchCallOutputItem extends OutputItem {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    queries != null ? Object.hashAll(queries!) : null,
-    results != null ? Object.hashAll(results!) : null,
-    status,
-  );
+        id,
+        queries != null ? Object.hashAll(queries!) : null,
+        results != null ? Object.hashAll(results!) : null,
+        status,
+      );
 
   @override
   String toString() =>
@@ -646,14 +646,15 @@ class CodeInterpreterCallOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'code_interpreter_call',
-    'id': id,
-    if (containerId != null) 'container_id': containerId,
-    if (code != null) 'code': code,
-    if (language != null) 'language': language,
-    if (outputs != null) 'outputs': outputs!.map((e) => e.toJson()).toList(),
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'code_interpreter_call',
+        'id': id,
+        if (containerId != null) 'container_id': containerId,
+        if (code != null) 'code': code,
+        if (language != null) 'language': language,
+        if (outputs != null)
+          'outputs': outputs!.map((e) => e.toJson()).toList(),
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -669,13 +670,13 @@ class CodeInterpreterCallOutputItem extends OutputItem {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    containerId,
-    code,
-    language,
-    outputs != null ? Object.hashAll(outputs!) : null,
-    status,
-  );
+        id,
+        containerId,
+        code,
+        language,
+        outputs != null ? Object.hashAll(outputs!) : null,
+        status,
+      );
 
   @override
   String toString() =>
@@ -726,13 +727,13 @@ class ImageGenerationCallOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'image_generation_call',
-    'id': id,
-    if (prompt != null) 'prompt': prompt,
-    if (revisedPrompt != null) 'revised_prompt': revisedPrompt,
-    if (result != null) 'result': result,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'image_generation_call',
+        'id': id,
+        if (prompt != null) 'prompt': prompt,
+        if (revisedPrompt != null) 'revised_prompt': revisedPrompt,
+        if (result != null) 'result': result,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -790,12 +791,12 @@ class LocalShellCallOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'local_shell_call',
-    'id': id,
-    'call_id': callId,
-    'action': action.toJson(),
-    'status': status.toJson(),
-  };
+        'type': 'local_shell_call',
+        'id': id,
+        'call_id': callId,
+        'action': action.toJson(),
+        'status': status.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -858,13 +859,13 @@ class LocalShellExecAction {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': 'exec',
-    'command': command,
-    'env': env,
-    if (timeoutMs != null) 'timeout_ms': timeoutMs,
-    if (workingDirectory != null) 'working_directory': workingDirectory,
-    if (user != null) 'user': user,
-  };
+        'type': 'exec',
+        'command': command,
+        'env': env,
+        if (timeoutMs != null) 'timeout_ms': timeoutMs,
+        if (workingDirectory != null) 'working_directory': workingDirectory,
+        if (user != null) 'user': user,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -879,12 +880,12 @@ class LocalShellExecAction {
 
   @override
   int get hashCode => Object.hash(
-    Object.hashAll(command),
-    mapHash(env),
-    timeoutMs,
-    workingDirectory,
-    user,
-  );
+        Object.hashAll(command),
+        mapHash(env),
+        timeoutMs,
+        workingDirectory,
+        user,
+      );
 
   @override
   String toString() =>
@@ -938,13 +939,13 @@ class ShellCallOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'shell_call',
-    'id': id,
-    'call_id': callId,
-    'action': action.toJson(),
-    'status': status.toJson(),
-    if (environment != null) 'environment': environment!.toJson(),
-  };
+        'type': 'shell_call',
+        'id': id,
+        'call_id': callId,
+        'action': action.toJson(),
+        'status': status.toJson(),
+        if (environment != null) 'environment': environment!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -995,10 +996,10 @@ class ShellCallAction {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'commands': commands,
-    if (timeoutMs != null) 'timeout_ms': timeoutMs,
-    if (maxOutputLength != null) 'max_output_length': maxOutputLength,
-  };
+        'commands': commands,
+        if (timeoutMs != null) 'timeout_ms': timeoutMs,
+        if (maxOutputLength != null) 'max_output_length': maxOutputLength,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1031,8 +1032,8 @@ sealed class ShellEnvironment {
       'local' => const LocalShellEnvironment(),
       'container_reference' => ContainerReferenceEnvironment.fromJson(json),
       final type => throw FormatException(
-        'Unknown ShellEnvironment type: $type',
-      ),
+          'Unknown ShellEnvironment type: $type',
+        ),
     };
   }
 
@@ -1083,9 +1084,9 @@ class ContainerReferenceEnvironment extends ShellEnvironment {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'container_reference',
-    'container_id': containerId,
-  };
+        'type': 'container_reference',
+        'container_id': containerId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1148,13 +1149,13 @@ class ShellCallOutputResultItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'shell_call_output',
-    'id': id,
-    'call_id': callId,
-    if (status != null) 'status': status!.toJson(),
-    'output': output.map((e) => e.toJson()).toList(),
-    if (maxOutputLength != null) 'max_output_length': maxOutputLength,
-  };
+        'type': 'shell_call_output',
+        'id': id,
+        'call_id': callId,
+        if (status != null) 'status': status!.toJson(),
+        'output': output.map((e) => e.toJson()).toList(),
+        if (maxOutputLength != null) 'max_output_length': maxOutputLength,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1208,10 +1209,10 @@ class ShellCallOutputContent {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'stdout': stdout,
-    'stderr': stderr,
-    'outcome': outcome.toJson(),
-  };
+        'stdout': stdout,
+        'stderr': stderr,
+        'outcome': outcome.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1345,12 +1346,12 @@ class LocalShellCallOutputResultItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'local_shell_call_output',
-    'id': id,
-    if (callId != null) 'call_id': callId,
-    'output': output,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'local_shell_call_output',
+        'id': id,
+        if (callId != null) 'call_id': callId,
+        'output': output,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1429,16 +1430,16 @@ class McpCallOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'mcp_call',
-    'id': id,
-    'call_id': callId,
-    if (serverLabel != null) 'server_label': serverLabel,
-    if (name != null) 'name': name,
-    if (arguments != null) 'arguments': arguments,
-    if (output != null) 'output': output,
-    if (error != null) 'error': error,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'mcp_call',
+        'id': id,
+        'call_id': callId,
+        if (serverLabel != null) 'server_label': serverLabel,
+        if (name != null) 'name': name,
+        if (arguments != null) 'arguments': arguments,
+        if (output != null) 'output': output,
+        if (error != null) 'error': error,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1456,15 +1457,15 @@ class McpCallOutputItem extends OutputItem {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    callId,
-    serverLabel,
-    name,
-    arguments,
-    output,
-    error,
-    status,
-  );
+        id,
+        callId,
+        serverLabel,
+        name,
+        arguments,
+        output,
+        error,
+        status,
+      );
 
   @override
   String toString() =>
@@ -1518,14 +1519,14 @@ class ToolSearchCallOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_search_call',
-    'id': id,
-    if (callId != null) 'call_id': callId,
-    'execution': execution.toJson(),
-    if (arguments != null) 'arguments': arguments,
-    if (status != null) 'status': status!.toJson(),
-    if (createdBy != null) 'created_by': createdBy,
-  };
+        'type': 'tool_search_call',
+        'id': id,
+        if (callId != null) 'call_id': callId,
+        'execution': execution.toJson(),
+        if (arguments != null) 'arguments': arguments,
+        if (status != null) 'status': status!.toJson(),
+        if (createdBy != null) 'created_by': createdBy,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1541,13 +1542,13 @@ class ToolSearchCallOutputItem extends OutputItem {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    callId,
-    execution,
-    mapDeepHashCode(arguments),
-    status,
-    createdBy,
-  );
+        id,
+        callId,
+        execution,
+        mapDeepHashCode(arguments),
+        status,
+        createdBy,
+      );
 
   @override
   String toString() =>
@@ -1603,14 +1604,14 @@ class ToolSearchOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_search_output',
-    'id': id,
-    if (callId != null) 'call_id': callId,
-    'execution': execution.toJson(),
-    'tools': tools.map((e) => e.toJson()).toList(),
-    if (status != null) 'status': status!.toJson(),
-    if (createdBy != null) 'created_by': createdBy,
-  };
+        'type': 'tool_search_output',
+        'id': id,
+        if (callId != null) 'call_id': callId,
+        'execution': execution.toJson(),
+        'tools': tools.map((e) => e.toJson()).toList(),
+        if (status != null) 'status': status!.toJson(),
+        if (createdBy != null) 'created_by': createdBy,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1626,13 +1627,13 @@ class ToolSearchOutputItem extends OutputItem {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    callId,
-    execution,
-    Object.hashAll(tools),
-    status,
-    createdBy,
-  );
+        id,
+        callId,
+        execution,
+        Object.hashAll(tools),
+        status,
+        createdBy,
+      );
 
   @override
   String toString() =>
@@ -1669,9 +1670,9 @@ class ComputerCallOutputItem extends OutputItem {
     this.pendingSafetyChecks,
     this.status,
   }) : assert(
-         action == null || actions == null,
-         'Only one of action or actions may be set, not both.',
-       );
+          action == null || actions == null,
+          'Only one of action or actions may be set, not both.',
+        );
 
   /// Creates a [ComputerCallOutputItem] from JSON.
   factory ComputerCallOutputItem.fromJson(Map<String, dynamic> json) {
@@ -1684,8 +1685,8 @@ class ComputerCallOutputItem extends OutputItem {
           : null,
       actions: hasActions
           ? (json['actions'] as List)
-                .map((e) => ComputerAction.fromJson(e as Map<String, dynamic>))
-                .toList()
+              .map((e) => ComputerAction.fromJson(e as Map<String, dynamic>))
+              .toList()
           : null,
       pendingSafetyChecks: (json['pending_safety_checks'] as List?)
           ?.map((e) => e as Map<String, dynamic>)
@@ -1698,15 +1699,16 @@ class ComputerCallOutputItem extends OutputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'computer_call',
-    'id': id,
-    'call_id': callId,
-    if (action != null) 'action': action!.toJson(),
-    if (actions != null) 'actions': actions!.map((e) => e.toJson()).toList(),
-    if (pendingSafetyChecks != null)
-      'pending_safety_checks': pendingSafetyChecks,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'computer_call',
+        'id': id,
+        'call_id': callId,
+        if (action != null) 'action': action!.toJson(),
+        if (actions != null)
+          'actions': actions!.map((e) => e.toJson()).toList(),
+        if (pendingSafetyChecks != null)
+          'pending_safety_checks': pendingSafetyChecks,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1722,13 +1724,13 @@ class ComputerCallOutputItem extends OutputItem {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    callId,
-    action,
-    actions != null ? Object.hashAll(actions!) : null,
-    listOfMapsHashCode(pendingSafetyChecks),
-    status,
-  );
+        id,
+        callId,
+        action,
+        actions != null ? Object.hashAll(actions!) : null,
+        listOfMapsHashCode(pendingSafetyChecks),
+        status,
+      );
 
   @override
   String toString() =>

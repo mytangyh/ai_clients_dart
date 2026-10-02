@@ -95,9 +95,8 @@ class OllamaConfig {
   factory OllamaConfig.fromEnvironment() {
     final host = getEnvironmentVariable('OLLAMA_HOST');
     return OllamaConfig(
-      baseUrl: (host != null && host.isNotEmpty)
-          ? host
-          : 'http://localhost:11434',
+      baseUrl:
+          (host != null && host.isNotEmpty) ? host : 'http://localhost:11434',
     );
   }
 

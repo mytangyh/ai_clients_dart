@@ -231,7 +231,7 @@ class RealtimeConnection {
   void updateSession(SessionUpdateConfig config, {String? eventId}) {
     send({
       'type': 'session.update',
-      'event_id': ?eventId,
+      if (eventId case final value?) 'event_id': value,
       'session': config.toJson(),
     });
   }
@@ -253,7 +253,7 @@ class RealtimeConnection {
   void appendAudio(String audioBase64, {String? eventId}) {
     send({
       'type': 'input_audio_buffer.append',
-      'event_id': ?eventId,
+      if (eventId case final value?) 'event_id': value,
       'audio': audioBase64,
     });
   }
@@ -264,7 +264,10 @@ class RealtimeConnection {
   ///
   /// - [eventId] - Optional event ID.
   void commitAudio({String? eventId}) {
-    send({'type': 'input_audio_buffer.commit', 'event_id': ?eventId});
+    send({
+      'type': 'input_audio_buffer.commit',
+      if (eventId case final value?) 'event_id': value
+    });
   }
 
   /// Clears the audio buffer.
@@ -273,7 +276,10 @@ class RealtimeConnection {
   ///
   /// - [eventId] - Optional event ID.
   void clearAudio({String? eventId}) {
-    send({'type': 'input_audio_buffer.clear', 'event_id': ?eventId});
+    send({
+      'type': 'input_audio_buffer.clear',
+      if (eventId case final value?) 'event_id': value
+    });
   }
 
   /// Creates a new conversation item.
@@ -302,8 +308,8 @@ class RealtimeConnection {
   }) {
     send({
       'type': 'conversation.item.create',
-      'event_id': ?eventId,
-      'previous_item_id': ?previousItemId,
+      if (eventId case final value?) 'event_id': value,
+      if (previousItemId case final value?) 'previous_item_id': value,
       'item': item,
     });
   }
@@ -324,7 +330,7 @@ class RealtimeConnection {
   }) {
     send({
       'type': 'conversation.item.truncate',
-      'event_id': ?eventId,
+      if (eventId case final value?) 'event_id': value,
       'item_id': itemId,
       'content_index': contentIndex,
       'audio_end_ms': audioEndMs,
@@ -340,7 +346,7 @@ class RealtimeConnection {
   void deleteItem(String itemId, {String? eventId}) {
     send({
       'type': 'conversation.item.delete',
-      'event_id': ?eventId,
+      if (eventId case final value?) 'event_id': value,
       'item_id': itemId,
     });
   }
@@ -379,19 +385,19 @@ class RealtimeConnection {
     String? eventId,
   }) {
     final response = <String, dynamic>{
-      'modalities': ?modalities,
-      'instructions': ?instructions,
-      'voice': ?voice,
-      'output_audio_format': ?outputAudioFormat,
+      if (modalities case final value?) 'modalities': value,
+      if (instructions case final value?) 'instructions': value,
+      if (voice case final value?) 'voice': value,
+      if (outputAudioFormat case final value?) 'output_audio_format': value,
       if (tools != null) 'tools': tools.map((t) => t.toJson()).toList(),
-      'tool_choice': ?toolChoice,
-      'temperature': ?temperature,
-      'max_output_tokens': ?maxOutputTokens,
+      if (toolChoice case final value?) 'tool_choice': value,
+      if (temperature case final value?) 'temperature': value,
+      if (maxOutputTokens case final value?) 'max_output_tokens': value,
     };
 
     send({
       'type': 'response.create',
-      'event_id': ?eventId,
+      if (eventId case final value?) 'event_id': value,
       if (response.isNotEmpty) 'response': response,
     });
   }
@@ -402,7 +408,10 @@ class RealtimeConnection {
   ///
   /// - [eventId] - Optional event ID.
   void cancelResponse({String? eventId}) {
-    send({'type': 'response.cancel', 'event_id': ?eventId});
+    send({
+      'type': 'response.cancel',
+      if (eventId case final value?) 'event_id': value
+    });
   }
 
   /// Sends a function call output.

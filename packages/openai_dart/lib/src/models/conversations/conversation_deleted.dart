@@ -39,10 +39,10 @@ class ConversationDeletedResource {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'deleted': deleted,
-    'object': object,
-  };
+        'id': id,
+        'deleted': deleted,
+        'object': object,
+      };
 
   @override
   bool operator ==(Object other) =>

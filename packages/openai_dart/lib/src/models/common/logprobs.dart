@@ -31,9 +31,11 @@ class Logprobs {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (content != null) 'content': content!.map((e) => e.toJson()).toList(),
-    if (refusal != null) 'refusal': refusal!.map((e) => e.toJson()).toList(),
-  };
+        if (content != null)
+          'content': content!.map((e) => e.toJson()).toList(),
+        if (refusal != null)
+          'refusal': refusal!.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -45,9 +47,9 @@ class Logprobs {
 
   @override
   int get hashCode => Object.hash(
-    content != null ? Object.hashAll(content!) : null,
-    refusal != null ? Object.hashAll(refusal!) : null,
-  );
+        content != null ? Object.hashAll(content!) : null,
+        refusal != null ? Object.hashAll(refusal!) : null,
+      );
 
   @override
   String toString() => 'Logprobs(content: $content, refusal: $refusal)';
@@ -109,12 +111,12 @@ class TokenLogprob {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'token': token,
-    'logprob': logprob,
-    if (bytes != null) 'bytes': bytes,
-    if (topLogprobs != null)
-      'top_logprobs': topLogprobs!.map((e) => e.toJson()).toList(),
-  };
+        'token': token,
+        'logprob': logprob,
+        if (bytes != null) 'bytes': bytes,
+        if (topLogprobs != null)
+          'top_logprobs': topLogprobs!.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -160,10 +162,10 @@ class TopLogprob {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'token': token,
-    'logprob': logprob,
-    if (bytes != null) 'bytes': bytes,
-  };
+        'token': token,
+        'logprob': logprob,
+        if (bytes != null) 'bytes': bytes,
+      };
 
   @override
   bool operator ==(Object other) =>

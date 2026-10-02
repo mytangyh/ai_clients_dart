@@ -104,12 +104,12 @@ class ResponsesResource extends ResourceBase with StreamingResource {
   /// print('Input tokens: ${tokenCount.inputTokens}');
   /// ```
   InputTokensResource get inputTokens => _inputTokens ??= InputTokensResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Creates a response.
   ///
@@ -547,12 +547,12 @@ class InputItemList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data': data.map((e) => e.toJson()).toList(),
-    'object': object,
-    'has_more': hasMore,
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-  };
+        'data': data.map((e) => e.toJson()).toList(),
+        'object': object,
+        'has_more': hasMore,
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+      };
 
   @override
   String toString() =>

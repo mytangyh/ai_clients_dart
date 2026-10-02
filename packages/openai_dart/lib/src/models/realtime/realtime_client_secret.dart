@@ -28,9 +28,9 @@ class ExpiresAfter {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (anchor != null) 'anchor': anchor,
-    'seconds': seconds,
-  };
+        if (anchor != null) 'anchor': anchor,
+        'seconds': seconds,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -100,9 +100,9 @@ class RealtimeClientSecretCreateRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
-    'session': session.toJson(),
-  };
+        if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
+        'session': session.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -155,10 +155,10 @@ class RealtimeClientSecretCreateResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'value': value,
-    'expires_at': expiresAt,
-    'session': session.toJson(),
-  };
+        'value': value,
+        'expires_at': expiresAt,
+        'session': session.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

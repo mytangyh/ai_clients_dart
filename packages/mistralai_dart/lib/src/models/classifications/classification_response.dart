@@ -26,8 +26,7 @@ class ClassificationResponse {
       ClassificationResponse(
         id: json['id'] as String? ?? '',
         model: json['model'] as String? ?? '',
-        results:
-            (json['results'] as List?)
+        results: (json['results'] as List?)
                 ?.map(
                   (e) =>
                       ClassificationResult.fromJson(e as Map<String, dynamic>),
@@ -38,10 +37,10 @@ class ClassificationResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'model': model,
-    'results': results.map((e) => e.toJson()).toList(),
-  };
+        'id': id,
+        'model': model,
+        'results': results.map((e) => e.toJson()).toList(),
+      };
 
   /// Returns the first result, if any.
   ClassificationResult? get firstResult =>
@@ -62,7 +61,6 @@ class ClassificationResponse {
   int get hashCode => Object.hash(id, model, results);
 
   @override
-  String toString() =>
-      'ClassificationResponse(id: $id, model: $model, '
+  String toString() => 'ClassificationResponse(id: $id, model: $model, '
       'results: ${results.length})';
 }

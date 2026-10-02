@@ -83,16 +83,16 @@ class FileObject {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'bytes': bytes,
-    'created_at': createdAt,
-    'filename': filename,
-    'purpose': purpose.toJson(),
-    if (status != null) 'status': status!.toJson(),
-    if (statusDetails != null) 'status_details': statusDetails,
-    if (expiresAt != null) 'expires_at': expiresAt,
-  };
+        'id': id,
+        'object': object,
+        'bytes': bytes,
+        'created_at': createdAt,
+        'filename': filename,
+        'purpose': purpose.toJson(),
+        if (status != null) 'status': status!.toJson(),
+        if (statusDetails != null) 'status_details': statusDetails,
+        if (expiresAt != null) 'expires_at': expiresAt,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -139,9 +139,9 @@ class FileList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((f) => f.toJson()).toList(),
-  };
+        'object': object,
+        'data': data.map((f) => f.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -188,10 +188,10 @@ class DeleteFileResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>

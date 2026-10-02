@@ -34,9 +34,10 @@ class ToolResources {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (codeInterpreter != null) 'code_interpreter': codeInterpreter!.toJson(),
-    if (fileSearch != null) 'file_search': fileSearch!.toJson(),
-  };
+        if (codeInterpreter != null)
+          'code_interpreter': codeInterpreter!.toJson(),
+        if (fileSearch != null) 'file_search': fileSearch!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -96,8 +97,8 @@ class FileSearchResources {
   /// Creates a [FileSearchResources] from JSON.
   factory FileSearchResources.fromJson(Map<String, dynamic> json) {
     return FileSearchResources(
-      vectorStoreIds: (json['vector_store_ids'] as List<dynamic>?)
-          ?.cast<String>(),
+      vectorStoreIds:
+          (json['vector_store_ids'] as List<dynamic>?)?.cast<String>(),
       vectorStores: (json['vector_stores'] as List<dynamic>?)
           ?.map((e) => VectorStoreConfig.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -116,10 +117,10 @@ class FileSearchResources {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (vectorStoreIds != null) 'vector_store_ids': vectorStoreIds,
-    if (vectorStores != null)
-      'vector_stores': vectorStores!.map((v) => v.toJson()).toList(),
-  };
+        if (vectorStoreIds != null) 'vector_store_ids': vectorStoreIds,
+        if (vectorStores != null)
+          'vector_stores': vectorStores!.map((v) => v.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -149,8 +150,8 @@ class VectorStoreConfig {
               json['chunking_strategy'] as Map<String, dynamic>,
             )
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -165,11 +166,11 @@ class VectorStoreConfig {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (fileIds != null) 'file_ids': fileIds,
-    if (chunkingStrategy != null)
-      'chunking_strategy': chunkingStrategy!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        if (fileIds != null) 'file_ids': fileIds,
+        if (chunkingStrategy != null)
+          'chunking_strategy': chunkingStrategy!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -202,10 +203,11 @@ sealed class ChunkingStrategy {
   static ChunkingStrategy static$({
     required int maxChunkSizeTokens,
     required int chunkOverlapTokens,
-  }) => StaticChunkingStrategy(
-    maxChunkSizeTokens: maxChunkSizeTokens,
-    chunkOverlapTokens: chunkOverlapTokens,
-  );
+  }) =>
+      StaticChunkingStrategy(
+        maxChunkSizeTokens: maxChunkSizeTokens,
+        chunkOverlapTokens: chunkOverlapTokens,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson();
@@ -262,12 +264,12 @@ class StaticChunkingStrategy implements ChunkingStrategy {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'static',
-    'static': {
-      'max_chunk_size_tokens': maxChunkSizeTokens,
-      'chunk_overlap_tokens': chunkOverlapTokens,
-    },
-  };
+        'type': 'static',
+        'static': {
+          'max_chunk_size_tokens': maxChunkSizeTokens,
+          'chunk_overlap_tokens': chunkOverlapTokens,
+        },
+      };
 
   @override
   bool operator ==(Object other) =>

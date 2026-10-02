@@ -350,7 +350,7 @@ void main() {
     skip: runExpensiveTests
         ? null
         : 'Video generation is expensive - '
-              'set OPENAI_RUN_VIDEO_TESTS=true to enable',
+            'set OPENAI_RUN_VIDEO_TESTS=true to enable',
     () {
       // Store completed video ID for dependent tests
       String? completedVideoId;

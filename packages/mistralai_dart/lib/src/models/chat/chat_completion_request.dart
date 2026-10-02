@@ -122,8 +122,7 @@ class ChatCompletionRequest {
   factory ChatCompletionRequest.fromJson(Map<String, dynamic> json) =>
       ChatCompletionRequest(
         model: json['model'] as String? ?? '',
-        messages:
-            (json['messages'] as List?)
+        messages: (json['messages'] as List?)
                 ?.map((e) => ChatMessage.fromJson(e as Map<String, dynamic>))
                 .toList() ??
             [],
@@ -162,26 +161,26 @@ class ChatCompletionRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'messages': messages.map((e) => e.toJson()).toList(),
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (maxTokens != null) 'max_tokens': maxTokens,
-    if (stream != null) 'stream': stream,
-    if (stop != null) 'stop': stop!.toJson(),
-    if (randomSeed != null) 'random_seed': randomSeed,
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-    if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
-    if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
-    if (presencePenalty != null) 'presence_penalty': presencePenalty,
-    if (frequencyPenalty != null) 'frequency_penalty': frequencyPenalty,
-    if (n != null) 'n': n,
-    if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
-    if (safePrompt != null) 'safe_prompt': safePrompt,
-    if (metadata != null) 'metadata': metadata,
-    if (prediction != null) 'prediction': prediction!.toJson(),
-    if (promptMode != null) 'prompt_mode': promptMode!.value,
-  };
+        'model': model,
+        'messages': messages.map((e) => e.toJson()).toList(),
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (maxTokens != null) 'max_tokens': maxTokens,
+        if (stream != null) 'stream': stream,
+        if (stop != null) 'stop': stop!.toJson(),
+        if (randomSeed != null) 'random_seed': randomSeed,
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+        if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
+        if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
+        if (presencePenalty != null) 'presence_penalty': presencePenalty,
+        if (frequencyPenalty != null) 'frequency_penalty': frequencyPenalty,
+        if (n != null) 'n': n,
+        if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
+        if (safePrompt != null) 'safe_prompt': safePrompt,
+        if (metadata != null) 'metadata': metadata,
+        if (prediction != null) 'prediction': prediction!.toJson(),
+        if (promptMode != null) 'prompt_mode': promptMode!.value,
+      };
 
   /// Creates a copy with replaced values.
   ChatCompletionRequest copyWith({
@@ -212,9 +211,8 @@ class ChatCompletionRequest {
           ? this.temperature
           : temperature as double?,
       topP: topP == unsetCopyWithValue ? this.topP : topP as double?,
-      maxTokens: maxTokens == unsetCopyWithValue
-          ? this.maxTokens
-          : maxTokens as int?,
+      maxTokens:
+          maxTokens == unsetCopyWithValue ? this.maxTokens : maxTokens as int?,
       stream: stream == unsetCopyWithValue ? this.stream : stream as bool?,
       stop: stop == unsetCopyWithValue ? this.stop : stop as StopSequence?,
       randomSeed: randomSeed == unsetCopyWithValue
@@ -283,26 +281,26 @@ class ChatCompletionRequest {
 
   @override
   int get hashCode => Object.hash(
-    model,
-    Object.hashAll(messages),
-    temperature,
-    topP,
-    maxTokens,
-    stream,
-    stop,
-    randomSeed,
-    responseFormat,
-    Object.hashAll(tools ?? []),
-    toolChoice,
-    presencePenalty,
-    frequencyPenalty,
-    n,
-    parallelToolCalls,
-    safePrompt,
-    mapHash(metadata),
-    prediction,
-    promptMode,
-  );
+        model,
+        Object.hashAll(messages),
+        temperature,
+        topP,
+        maxTokens,
+        stream,
+        stop,
+        randomSeed,
+        responseFormat,
+        Object.hashAll(tools ?? []),
+        toolChoice,
+        presencePenalty,
+        frequencyPenalty,
+        n,
+        parallelToolCalls,
+        safePrompt,
+        mapHash(metadata),
+        prediction,
+        promptMode,
+      );
 
   @override
   String toString() =>

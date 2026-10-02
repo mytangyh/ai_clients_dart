@@ -180,13 +180,13 @@ class LabelModelGrader extends EvalGrader {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': name,
-    'model': model,
-    'labels': labels,
-    'passing_labels': passingLabels,
-    'input': input.map((i) => i.toJson()).toList(),
-  };
+        'type': type,
+        'name': name,
+        'model': model,
+        'labels': labels,
+        'passing_labels': passingLabels,
+        'input': input.map((i) => i.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -218,15 +218,15 @@ class LabelModelInput {
 
   /// Creates a system message.
   const LabelModelInput.system(String content)
-    : this(role: 'system', content: content);
+      : this(role: 'system', content: content);
 
   /// Creates a user message.
   const LabelModelInput.user(String content)
-    : this(role: 'user', content: content);
+      : this(role: 'user', content: content);
 
   /// Creates an assistant message.
   const LabelModelInput.assistant(String content)
-    : this(role: 'assistant', content: content);
+      : this(role: 'assistant', content: content);
 
   /// The role of this message.
   final String role;
@@ -300,12 +300,12 @@ class StringCheckGrader extends EvalGrader {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': name,
-    'input': input,
-    'operation': operation.toJson(),
-    'reference': reference,
-  };
+        'type': type,
+        'name': name,
+        'input': input,
+        'operation': operation.toJson(),
+        'reference': reference,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -424,14 +424,14 @@ class TextSimilarityGrader extends EvalGrader {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': name,
-    'input': input,
-    'reference': reference,
-    if (evaluationMetric != null)
-      'evaluation_metric': evaluationMetric!.toJson(),
-    if (passThreshold != null) 'pass_threshold': passThreshold,
-  };
+        'type': type,
+        'name': name,
+        'input': input,
+        'reference': reference,
+        if (evaluationMetric != null)
+          'evaluation_metric': evaluationMetric!.toJson(),
+        if (passThreshold != null) 'pass_threshold': passThreshold,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -528,11 +528,11 @@ class PythonGrader extends EvalGrader {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': name,
-    'source': source,
-    if (passThreshold != null) 'pass_threshold': passThreshold,
-  };
+        'type': type,
+        'name': name,
+        'source': source,
+        if (passThreshold != null) 'pass_threshold': passThreshold,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -610,13 +610,13 @@ class ScoreModelGrader extends EvalGrader {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': name,
-    'model': model,
-    'input': input.map((i) => i.toJson()).toList(),
-    if (passThreshold != null) 'pass_threshold': passThreshold,
-    if (samplingParams != null) 'sampling_params': samplingParams,
-  };
+        'type': type,
+        'name': name,
+        'model': model,
+        'input': input.map((i) => i.toJson()).toList(),
+        if (passThreshold != null) 'pass_threshold': passThreshold,
+        if (samplingParams != null) 'sampling_params': samplingParams,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -649,15 +649,15 @@ class ScoreModelInput {
 
   /// Creates a system message.
   const ScoreModelInput.system(String content)
-    : this(role: 'system', content: content);
+      : this(role: 'system', content: content);
 
   /// Creates a user message.
   const ScoreModelInput.user(String content)
-    : this(role: 'user', content: content);
+      : this(role: 'user', content: content);
 
   /// Creates an assistant message.
   const ScoreModelInput.assistant(String content)
-    : this(role: 'assistant', content: content);
+      : this(role: 'assistant', content: content);
 
   /// The role of this message.
   final String role;

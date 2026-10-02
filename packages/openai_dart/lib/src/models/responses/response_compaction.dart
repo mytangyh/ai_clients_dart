@@ -56,12 +56,12 @@ class ResponseCompaction {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'output': output.map((e) => e.toJson()).toList(),
-    'created_at': createdAt,
-    'usage': usage.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'output': output.map((e) => e.toJson()).toList(),
+        'created_at': createdAt,
+        'usage': usage.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

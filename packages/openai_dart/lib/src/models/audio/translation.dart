@@ -151,12 +151,13 @@ class TranslationVerboseResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'task': task,
-    'language': language,
-    'duration': duration,
-    'text': text,
-    if (segments != null) 'segments': segments!.map((s) => s.toJson()).toList(),
-  };
+        'task': task,
+        'language': language,
+        'duration': duration,
+        'text': text,
+        if (segments != null)
+          'segments': segments!.map((s) => s.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -14,15 +14,15 @@ class CopyRequest {
 
   /// Creates a [CopyRequest] from JSON.
   factory CopyRequest.fromJson(Map<String, dynamic> json) => CopyRequest(
-    source: json['source'] as String,
-    destination: json['destination'] as String,
-  );
+        source: json['source'] as String,
+        destination: json['destination'] as String,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'source': source,
-    'destination': destination,
-  };
+        'source': source,
+        'destination': destination,
+      };
 
   /// Creates a copy with replaced values.
   CopyRequest copyWith({String? source, String? destination}) {

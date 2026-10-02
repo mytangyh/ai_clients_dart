@@ -156,22 +156,22 @@ class CompletionFTModelOut implements FTModelOut {
 
   @override
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created': created,
-    'owned_by': ownedBy,
-    'workspace_id': workspaceId,
-    'root': root,
-    'root_version': rootVersion,
-    'archived': archived,
-    if (name != null) 'name': name,
-    if (description != null) 'description': description,
-    'capabilities': capabilities.toJson(),
-    'max_context_length': maxContextLength,
-    'aliases': aliases,
-    'job': job,
-    'model_type': modelType,
-  };
+        'id': id,
+        'object': object,
+        'created': created,
+        'owned_by': ownedBy,
+        'workspace_id': workspaceId,
+        'root': root,
+        'root_version': rootVersion,
+        'archived': archived,
+        if (name != null) 'name': name,
+        if (description != null) 'description': description,
+        'capabilities': capabilities.toJson(),
+        'max_context_length': maxContextLength,
+        'aliases': aliases,
+        'job': job,
+        'model_type': modelType,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -186,8 +186,7 @@ class CompletionFTModelOut implements FTModelOut {
   int get hashCode => Object.hash(id, created, archived);
 
   @override
-  String toString() =>
-      'CompletionFTModelOut(id: $id, name: $name, '
+  String toString() => 'CompletionFTModelOut(id: $id, name: $name, '
       'archived: $archived)';
 }
 
@@ -287,23 +286,23 @@ class ClassifierFTModelOut implements FTModelOut {
 
   @override
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created': created,
-    'owned_by': ownedBy,
-    'workspace_id': workspaceId,
-    'root': root,
-    'root_version': rootVersion,
-    'archived': archived,
-    if (name != null) 'name': name,
-    if (description != null) 'description': description,
-    'capabilities': capabilities.toJson(),
-    'max_context_length': maxContextLength,
-    'aliases': aliases,
-    'job': job,
-    'classifier_targets': classifierTargets.map((e) => e.toJson()).toList(),
-    'model_type': modelType,
-  };
+        'id': id,
+        'object': object,
+        'created': created,
+        'owned_by': ownedBy,
+        'workspace_id': workspaceId,
+        'root': root,
+        'root_version': rootVersion,
+        'archived': archived,
+        if (name != null) 'name': name,
+        if (description != null) 'description': description,
+        'capabilities': capabilities.toJson(),
+        'max_context_length': maxContextLength,
+        'aliases': aliases,
+        'job': job,
+        'classifier_targets': classifierTargets.map((e) => e.toJson()).toList(),
+        'model_type': modelType,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -318,7 +317,6 @@ class ClassifierFTModelOut implements FTModelOut {
   int get hashCode => Object.hash(id, created, archived);
 
   @override
-  String toString() =>
-      'ClassifierFTModelOut(id: $id, name: $name, '
+  String toString() => 'ClassifierFTModelOut(id: $id, name: $name, '
       'archived: $archived, classifierTargets: ${classifierTargets.length})';
 }

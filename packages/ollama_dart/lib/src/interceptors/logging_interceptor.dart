@@ -20,7 +20,7 @@ class LoggingInterceptor implements Interceptor {
 
   /// Creates a [LoggingInterceptor].
   LoggingInterceptor({required this.logLevel, required this.redactionList})
-    : _logger = Logger('ollama_dart');
+      : _logger = Logger('ollama_dart');
 
   @override
   Future<http.Response> intercept(

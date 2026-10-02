@@ -165,7 +165,10 @@ class BatchJobPoller {
         throw ApiException(
           statusCode: 400,
           message: 'Batch job failed with status: ${job.status}',
-          details: [for (final error in job.errors) ?error.message],
+          details: [
+            for (final error in job.errors)
+              if (error.message case final message?) message,
+          ],
         );
       }
 

@@ -67,15 +67,15 @@ class SkillVersion {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'skill_id': skillId,
-    'version': version,
-    'name': name,
-    'description': description,
-    'directory': directory,
-    'created_at': createdAt.toUtc().toIso8601String(),
-    'type': type,
-  };
+        'id': id,
+        'skill_id': skillId,
+        'version': version,
+        'name': name,
+        'description': description,
+        'directory': directory,
+        'created_at': createdAt.toUtc().toIso8601String(),
+        'type': type,
+      };
 
   /// Creates a copy with replaced values.
   SkillVersion copyWith({
@@ -116,19 +116,18 @@ class SkillVersion {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    skillId,
-    version,
-    name,
-    description,
-    directory,
-    createdAt,
-    type,
-  );
+        id,
+        skillId,
+        version,
+        name,
+        description,
+        directory,
+        createdAt,
+        type,
+      );
 
   @override
-  String toString() =>
-      'SkillVersion('
+  String toString() => 'SkillVersion('
       'id: $id, '
       'skillId: $skillId, '
       'version: $version, '

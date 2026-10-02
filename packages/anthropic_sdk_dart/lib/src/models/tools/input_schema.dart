@@ -32,10 +32,10 @@ class InputSchema {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (properties != null) 'properties': properties,
-    if (required != null) 'required': required,
-  };
+        'type': type,
+        if (properties != null) 'properties': properties,
+        if (required != null) 'required': required,
+      };
 
   /// Creates a copy with replaced values.
   InputSchema copyWith({

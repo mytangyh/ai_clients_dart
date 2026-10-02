@@ -98,8 +98,8 @@ class InterceptorChain {
               // Convert http package's abort exception to our AbortedException
               final correlationId =
                   context.metadata['correlationId'] as String? ??
-                  context.request.headers['X-Request-ID'] ??
-                  generateRequestId();
+                      context.request.headers['X-Request-ID'] ??
+                      generateRequestId();
               throw AbortedException(
                 message: 'Request aborted by user',
                 correlationId: correlationId,
@@ -118,8 +118,7 @@ class InterceptorChain {
         // Execute with or without retry wrapper
         if (retryWrapper != null && originalRequest is http.Request) {
           // Extract correlation ID for retry wrapper tracing
-          final correlationId =
-              context.metadata['correlationId'] as String? ??
+          final correlationId = context.metadata['correlationId'] as String? ??
               context.request.headers['X-Request-ID'] ??
               generateRequestId();
 
@@ -159,7 +158,7 @@ class _AbortableRequestWrapper extends http.BaseRequest
   final Future<void>? abortTrigger;
 
   _AbortableRequestWrapper(this._inner, this.abortTrigger)
-    : super(_inner.method, _inner.url) {
+      : super(_inner.method, _inner.url) {
     headers.addAll(_inner.headers);
     followRedirects = _inner.followRedirects;
     maxRedirects = _inner.maxRedirects;

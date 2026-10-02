@@ -94,8 +94,7 @@ class StartConversationRequest {
     return StartConversationRequest(
       model: json['model'] as String?,
       agentId: json['agent_id'] as String?,
-      inputs:
-          (json['inputs'] as List<dynamic>?)
+      inputs: (json['inputs'] as List<dynamic>?)
               ?.map(
                 (e) => ConversationEntry.fromJson(e as Map<String, dynamic>),
               )
@@ -255,8 +254,7 @@ class AppendConversationRequest {
   /// Creates an [AppendConversationRequest] from JSON.
   factory AppendConversationRequest.fromJson(Map<String, dynamic> json) {
     return AppendConversationRequest(
-      inputs:
-          (json['inputs'] as List<dynamic>?)
+      inputs: (json['inputs'] as List<dynamic>?)
               ?.map(
                 (e) => ConversationEntry.fromJson(e as Map<String, dynamic>),
               )
@@ -343,17 +341,17 @@ class AppendConversationRequest {
 
   @override
   int get hashCode => Object.hash(
-    Object.hashAll(inputs),
-    store,
-    maxTokens,
-    Object.hashAll(stop ?? []),
-    temperature,
-    topP,
-    Object.hashAll(tools ?? []),
-    toolChoice,
-    responseFormat,
-    randomSeed,
-  );
+        Object.hashAll(inputs),
+        store,
+        maxTokens,
+        Object.hashAll(stop ?? []),
+        temperature,
+        topP,
+        Object.hashAll(tools ?? []),
+        toolChoice,
+        responseFormat,
+        randomSeed,
+      );
 
   @override
   String toString() => 'AppendConversationRequest(inputs: ${inputs.length})';

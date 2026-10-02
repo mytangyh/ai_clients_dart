@@ -154,10 +154,10 @@ class SessionCreatedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'session': session.toJson(),
-  };
+        'type': type,
+        'event_id': eventId,
+        'session': session.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -200,10 +200,10 @@ class SessionUpdatedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'session': session.toJson(),
-  };
+        'type': type,
+        'event_id': eventId,
+        'session': session.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -247,10 +247,10 @@ class ConversationCreatedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'conversation': conversation,
-  };
+        'type': type,
+        'event_id': eventId,
+        'conversation': conversation,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -299,11 +299,11 @@ class ConversationItemCreatedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    if (previousItemId != null) 'previous_item_id': previousItemId,
-    'item': item,
-  };
+        'type': type,
+        'event_id': eventId,
+        if (previousItemId != null) 'previous_item_id': previousItemId,
+        'item': item,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -347,10 +347,10 @@ class ConversationItemDeletedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'item_id': itemId,
-  };
+        'type': type,
+        'event_id': eventId,
+        'item_id': itemId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -404,12 +404,12 @@ class ConversationItemTruncatedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'item_id': itemId,
-    'content_index': contentIndex,
-    'audio_end_ms': audioEndMs,
-  };
+        'type': type,
+        'event_id': eventId,
+        'item_id': itemId,
+        'content_index': contentIndex,
+        'audio_end_ms': audioEndMs,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -472,13 +472,13 @@ class InputAudioTranscriptionDeltaEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'item_id': itemId,
-    'content_index': contentIndex,
-    'delta': delta,
-    if (obfuscation != null) 'obfuscation': obfuscation,
-  };
+        'type': type,
+        'event_id': eventId,
+        'item_id': itemId,
+        'content_index': contentIndex,
+        'delta': delta,
+        if (obfuscation != null) 'obfuscation': obfuscation,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -541,13 +541,13 @@ class InputAudioTranscriptionCompletedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'item_id': itemId,
-    'content_index': contentIndex,
-    'transcript': transcript,
-    if (usage != null) 'usage': usage,
-  };
+        'type': type,
+        'event_id': eventId,
+        'item_id': itemId,
+        'content_index': contentIndex,
+        'transcript': transcript,
+        if (usage != null) 'usage': usage,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -606,12 +606,12 @@ class InputAudioTranscriptionFailedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'item_id': itemId,
-    'content_index': contentIndex,
-    'error': error.toJson(),
-  };
+        'type': type,
+        'event_id': eventId,
+        'item_id': itemId,
+        'content_index': contentIndex,
+        'error': error.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -690,16 +690,16 @@ class InputAudioTranscriptionSegmentEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'item_id': itemId,
-    'content_index': contentIndex,
-    'text': text,
-    'id': id,
-    if (speaker != null) 'speaker': speaker,
-    'start': start,
-    'end': end,
-  };
+        'type': type,
+        'event_id': eventId,
+        'item_id': itemId,
+        'content_index': contentIndex,
+        'text': text,
+        'id': id,
+        if (speaker != null) 'speaker': speaker,
+        'start': start,
+        'end': end,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -748,11 +748,11 @@ class InputAudioBufferCommittedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    if (previousItemId != null) 'previous_item_id': previousItemId,
-    'item_id': itemId,
-  };
+        'type': type,
+        'event_id': eventId,
+        if (previousItemId != null) 'previous_item_id': previousItemId,
+        'item_id': itemId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -837,11 +837,11 @@ class InputAudioBufferSpeechStartedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'audio_start_ms': audioStartMs,
-    'item_id': itemId,
-  };
+        'type': type,
+        'event_id': eventId,
+        'audio_start_ms': audioStartMs,
+        'item_id': itemId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -893,11 +893,11 @@ class InputAudioBufferSpeechStoppedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'audio_end_ms': audioEndMs,
-    'item_id': itemId,
-  };
+        'type': type,
+        'event_id': eventId,
+        'audio_end_ms': audioEndMs,
+        'item_id': itemId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -939,10 +939,10 @@ class ResponseCreatedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response': response,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response': response,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -983,10 +983,10 @@ class ResponseDoneEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response': response,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response': response,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1040,12 +1040,12 @@ class ResponseOutputItemAddedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'output_index': outputIndex,
-    'item': item,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'output_index': outputIndex,
+        'item': item,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1100,12 +1100,12 @@ class ResponseOutputItemDoneEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'output_index': outputIndex,
-    'item': item,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'output_index': outputIndex,
+        'item': item,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1169,14 +1169,14 @@ class ResponseContentPartAddedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'part': part,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'part': part,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1241,14 +1241,14 @@ class ResponseContentPartDoneEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'part': part,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'part': part,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1313,14 +1313,14 @@ class ResponseTextDeltaEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'delta': delta,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'delta': delta,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1384,14 +1384,14 @@ class ResponseTextDoneEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'text': text,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'text': text,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1457,14 +1457,14 @@ class ResponseAudioTranscriptDeltaEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'delta': delta,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'delta': delta,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1528,14 +1528,14 @@ class ResponseAudioTranscriptDoneEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'transcript': transcript,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'transcript': transcript,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1600,14 +1600,14 @@ class ResponseAudioDeltaEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-    'delta': delta,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+        'delta': delta,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1666,13 +1666,13 @@ class ResponseAudioDoneEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'content_index': contentIndex,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'content_index': contentIndex,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1738,14 +1738,14 @@ class ResponseFunctionCallArgumentsDeltaEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'call_id': callId,
-    'delta': delta,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'call_id': callId,
+        'delta': delta,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1811,14 +1811,14 @@ class ResponseFunctionCallArgumentsDoneEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'response_id': responseId,
-    'item_id': itemId,
-    'output_index': outputIndex,
-    'call_id': callId,
-    'arguments': arguments,
-  };
+        'type': type,
+        'event_id': eventId,
+        'response_id': responseId,
+        'item_id': itemId,
+        'output_index': outputIndex,
+        'call_id': callId,
+        'arguments': arguments,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1865,10 +1865,10 @@ class RateLimitsUpdatedEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'rate_limits': rateLimits.map((r) => r.toJson()).toList(),
-  };
+        'type': type,
+        'event_id': eventId,
+        'rate_limits': rateLimits.map((r) => r.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1919,11 +1919,11 @@ class RateLimit {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'limit': limit,
-    'remaining': remaining,
-    'reset_seconds': resetSeconds,
-  };
+        'name': name,
+        'limit': limit,
+        'remaining': remaining,
+        'reset_seconds': resetSeconds,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1964,10 +1964,10 @@ class ErrorEvent implements RealtimeEvent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'event_id': eventId,
-    'error': error.toJson(),
-  };
+        'type': type,
+        'event_id': eventId,
+        'error': error.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -2023,12 +2023,12 @@ class RealtimeError {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (code != null) 'code': code,
-    'message': message,
-    if (param != null) 'param': param,
-    if (eventId != null) 'event_id': eventId,
-  };
+        'type': type,
+        if (code != null) 'code': code,
+        'message': message,
+        if (param != null) 'param': param,
+        if (eventId != null) 'event_id': eventId,
+      };
 
   @override
   bool operator ==(Object other) =>

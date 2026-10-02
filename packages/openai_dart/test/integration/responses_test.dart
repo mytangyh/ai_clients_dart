@@ -209,8 +209,8 @@ void main() {
 
         final buffer = StringBuffer();
         events.whereType<OutputTextDeltaEvent>().forEach(
-          (e) => buffer.write(e.delta),
-        );
+              (e) => buffer.write(e.delta),
+            );
         final text = buffer.toString();
         expect(text, contains('1'));
         expect(text, contains('5'));

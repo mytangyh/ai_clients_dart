@@ -53,13 +53,13 @@ class TranscriptionStreamEvent {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (id != null) 'id': id,
-    if (text != null) 'text': text,
-    if (segment != null) 'segment': segment!.toJson(),
-    if (word != null) 'word': word!.toJson(),
-    if (isFinal != null) 'is_final': isFinal,
-  };
+        'type': type,
+        if (id != null) 'id': id,
+        if (text != null) 'text': text,
+        if (segment != null) 'segment': segment!.toJson(),
+        if (word != null) 'word': word!.toJson(),
+        if (isFinal != null) 'is_final': isFinal,
+      };
 
   @override
   bool operator ==(Object other) =>

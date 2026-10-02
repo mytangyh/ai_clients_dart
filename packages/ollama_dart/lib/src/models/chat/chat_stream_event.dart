@@ -94,21 +94,23 @@ class ChatStreamEvent {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (model != null) 'model': model,
-    if (remoteModel != null) 'remote_model': remoteModel,
-    if (remoteHost != null) 'remote_host': remoteHost,
-    if (createdAt != null) 'created_at': createdAt,
-    if (message != null) 'message': message!.toJson(),
-    if (done != null) 'done': done,
-    if (doneReason != null) 'done_reason': doneReasonToString(doneReason!),
-    if (totalDuration != null) 'total_duration': totalDuration,
-    if (loadDuration != null) 'load_duration': loadDuration,
-    if (promptEvalCount != null) 'prompt_eval_count': promptEvalCount,
-    if (promptEvalDuration != null) 'prompt_eval_duration': promptEvalDuration,
-    if (evalCount != null) 'eval_count': evalCount,
-    if (evalDuration != null) 'eval_duration': evalDuration,
-    if (logprobs != null) 'logprobs': logprobs!.map((e) => e.toJson()).toList(),
-  };
+        if (model != null) 'model': model,
+        if (remoteModel != null) 'remote_model': remoteModel,
+        if (remoteHost != null) 'remote_host': remoteHost,
+        if (createdAt != null) 'created_at': createdAt,
+        if (message != null) 'message': message!.toJson(),
+        if (done != null) 'done': done,
+        if (doneReason != null) 'done_reason': doneReasonToString(doneReason!),
+        if (totalDuration != null) 'total_duration': totalDuration,
+        if (loadDuration != null) 'load_duration': loadDuration,
+        if (promptEvalCount != null) 'prompt_eval_count': promptEvalCount,
+        if (promptEvalDuration != null)
+          'prompt_eval_duration': promptEvalDuration,
+        if (evalCount != null) 'eval_count': evalCount,
+        if (evalDuration != null) 'eval_duration': evalDuration,
+        if (logprobs != null)
+          'logprobs': logprobs!.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -123,8 +125,7 @@ class ChatStreamEvent {
   int get hashCode => Object.hash(model, createdAt, done);
 
   @override
-  String toString() =>
-      'ChatStreamEvent('
+  String toString() => 'ChatStreamEvent('
       'model: $model, '
       'message: $message, '
       'done: $done, '

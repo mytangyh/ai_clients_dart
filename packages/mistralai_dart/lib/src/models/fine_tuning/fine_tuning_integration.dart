@@ -57,12 +57,12 @@ class FineTuningIntegration {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (project != null) 'project': project,
-    if (name != null) 'name': name,
-    if (apiKey != null) 'api_key': apiKey,
-    if (runName != null) 'run_name': runName,
-  };
+        'type': type,
+        if (project != null) 'project': project,
+        if (name != null) 'name': name,
+        if (apiKey != null) 'api_key': apiKey,
+        if (runName != null) 'run_name': runName,
+      };
 
   @override
   bool operator ==(Object other) =>

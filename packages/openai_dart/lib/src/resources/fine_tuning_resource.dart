@@ -55,12 +55,12 @@ class FineTuningResource extends ResourceBase {
   /// );
   /// ```
   FineTuningJobsResource get jobs => _jobs ??= FineTuningJobsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 }
 
 /// Resource for fine-tuning job operations.

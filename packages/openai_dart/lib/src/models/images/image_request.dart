@@ -97,15 +97,15 @@ class ImageGenerationRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'prompt': prompt,
-    if (model != null) 'model': model,
-    if (n != null) 'n': n,
-    if (quality != null) 'quality': quality!.toJson(),
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-    if (size != null) 'size': size!.toJson(),
-    if (style != null) 'style': style!.toJson(),
-    if (user != null) 'user': user,
-  };
+        'prompt': prompt,
+        if (model != null) 'model': model,
+        if (n != null) 'n': n,
+        if (quality != null) 'quality': quality!.toJson(),
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+        if (size != null) 'size': size!.toJson(),
+        if (style != null) 'style': style!.toJson(),
+        if (user != null) 'user': user,
+      };
 
   /// Creates a copy with the given fields replaced.
   ///

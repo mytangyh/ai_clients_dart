@@ -17,17 +17,17 @@ class BatchError {
 
   /// Creates a [BatchError] from JSON.
   factory BatchError.fromJson(Map<String, dynamic> json) => BatchError(
-    code: json['code'] as String?,
-    message: json['message'] as String?,
-    count: json['count'] as int?,
-  );
+        code: json['code'] as String?,
+        message: json['message'] as String?,
+        count: json['count'] as int?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (code != null) 'code': code,
-    if (message != null) 'message': message,
-    if (count != null) 'count': count,
-  };
+        if (code != null) 'code': code,
+        if (message != null) 'message': message,
+        if (count != null) 'count': count,
+      };
 
   @override
   bool operator ==(Object other) =>

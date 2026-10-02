@@ -51,9 +51,9 @@ class ImageResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'created': created,
-    'data': data.map((i) => i.toJson()).toList(),
-  };
+        'created': created,
+        'data': data.map((i) => i.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -113,10 +113,10 @@ class GeneratedImage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (url != null) 'url': url,
-    if (b64Json != null) 'b64_json': b64Json,
-    if (revisedPrompt != null) 'revised_prompt': revisedPrompt,
-  };
+        if (url != null) 'url': url,
+        if (b64Json != null) 'b64_json': b64Json,
+        if (revisedPrompt != null) 'revised_prompt': revisedPrompt,
+      };
 
   @override
   bool operator ==(Object other) =>

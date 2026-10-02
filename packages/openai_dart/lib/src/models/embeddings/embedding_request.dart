@@ -71,12 +71,12 @@ class EmbeddingRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'input': input.toJson(),
-    if (encodingFormat != null) 'encoding_format': encodingFormat!.toJson(),
-    if (dimensions != null) 'dimensions': dimensions,
-    if (user != null) 'user': user,
-  };
+        'model': model,
+        'input': input.toJson(),
+        if (encodingFormat != null) 'encoding_format': encodingFormat!.toJson(),
+        if (dimensions != null) 'dimensions': dimensions,
+        if (user != null) 'user': user,
+      };
 
   /// Creates a copy with the given fields replaced.
   ///

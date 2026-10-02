@@ -82,12 +82,13 @@ class OutputTextContent extends OutputContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'output_text',
-    'text': text,
-    if (annotations != null)
-      'annotations': annotations!.map((e) => e.toJson()).toList(),
-    if (logprobs != null) 'logprobs': logprobs!.map((e) => e.toJson()).toList(),
-  };
+        'type': 'output_text',
+        'text': text,
+        if (annotations != null)
+          'annotations': annotations!.map((e) => e.toJson()).toList(),
+        if (logprobs != null)
+          'logprobs': logprobs!.map((e) => e.toJson()).toList(),
+      };
 
   /// Creates a copy with replaced values.
   OutputTextContent copyWith({
@@ -117,10 +118,10 @@ class OutputTextContent extends OutputContent {
 
   @override
   int get hashCode => Object.hash(
-    text,
-    annotations != null ? Object.hashAll(annotations!) : null,
-    logprobs != null ? Object.hashAll(logprobs!) : null,
-  );
+        text,
+        annotations != null ? Object.hashAll(annotations!) : null,
+        logprobs != null ? Object.hashAll(logprobs!) : null,
+      );
 
   @override
   String toString() =>

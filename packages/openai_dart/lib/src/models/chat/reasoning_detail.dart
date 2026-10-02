@@ -62,10 +62,10 @@ class ReasoningDetail {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (text != null) 'text': text,
-    if (data != null) 'data': data,
-  };
+        'type': type,
+        if (text != null) 'text': text,
+        if (data != null) 'data': data,
+      };
 
   @override
   bool operator ==(Object other) =>

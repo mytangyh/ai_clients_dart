@@ -23,9 +23,9 @@ class WebSearchRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'query': query,
-    if (maxResults != null) 'max_results': maxResults,
-  };
+        'query': query,
+        if (maxResults != null) 'max_results': maxResults,
+      };
 
   /// Creates a copy with replaced values.
   WebSearchRequest copyWith({

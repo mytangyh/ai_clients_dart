@@ -52,10 +52,10 @@ class Base64PdfSource extends DocumentSource {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'data': data,
-    'media_type': mediaType,
-  };
+        'type': type,
+        'data': data,
+        'media_type': mediaType,
+      };
 
   /// Creates a copy with replaced values.
   Base64PdfSource copyWith({String? data}) {
@@ -98,10 +98,10 @@ class PlainTextSource extends DocumentSource {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'data': data,
-    'media_type': mediaType,
-  };
+        'type': type,
+        'data': data,
+        'media_type': mediaType,
+      };
 
   /// Creates a copy with replaced values.
   PlainTextSource copyWith({String? data}) {

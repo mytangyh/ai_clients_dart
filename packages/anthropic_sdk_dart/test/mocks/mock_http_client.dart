@@ -112,9 +112,8 @@ class MockResponse {
   /// Converts this to an [http.StreamedResponse].
   http.StreamedResponse toStreamedResponse() {
     final bytes = utf8.encode(body);
-    final stream = isStreaming
-        ? _createChunkedStream(bytes)
-        : Stream.value(bytes);
+    final stream =
+        isStreaming ? _createChunkedStream(bytes) : Stream.value(bytes);
 
     return http.StreamedResponse(stream, statusCode, headers: headers);
   }
@@ -204,8 +203,7 @@ class MockResponses {
   static Map<String, dynamic> modelList({List<Map<String, dynamic>>? models}) {
     return {
       'object': 'list',
-      'data':
-          models ??
+      'data': models ??
           [
             {
               'id': 'claude-sonnet-4-20250514',

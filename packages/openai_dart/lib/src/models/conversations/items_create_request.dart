@@ -39,8 +39,8 @@ class ItemsCreateRequest {
 
   /// Converts this request to JSON.
   Map<String, dynamic> toJson() => {
-    'items': items.map((e) => e.toJson()).toList(),
-  };
+        'items': items.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>

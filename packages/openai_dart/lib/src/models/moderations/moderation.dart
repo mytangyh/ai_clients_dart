@@ -48,9 +48,9 @@ class ModerationRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'input': input.toJson(),
-    if (model != null) 'model': model,
-  };
+        'input': input.toJson(),
+        if (model != null) 'model': model,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -203,8 +203,8 @@ sealed class ModerationInputItem {
     return switch (type) {
       'text' => ModerationInputItemText(json['text'] as String),
       'image_url' => ModerationInputItemImageUrl(
-        url: (json['image_url'] as Map<String, dynamic>)['url'] as String,
-      ),
+          url: (json['image_url'] as Map<String, dynamic>)['url'] as String,
+        ),
       _ => throw FormatException('Unknown moderation input item type: $type'),
     };
   }
@@ -259,9 +259,9 @@ class ModerationInputItemImageUrl implements ModerationInputItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'image_url',
-    'image_url': {'url': url},
-  };
+        'type': 'image_url',
+        'image_url': {'url': url},
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -317,10 +317,10 @@ class ModerationResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'model': model,
-    'results': results.map((r) => r.toJson()).toList(),
-  };
+        'id': id,
+        'model': model,
+        'results': results.map((r) => r.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -382,12 +382,12 @@ class ModerationResult {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'flagged': flagged,
-    'categories': categories.toJson(),
-    'category_scores': categoryScores.toJson(),
-    if (categoryAppliedInputTypes != null)
-      'category_applied_input_types': categoryAppliedInputTypes!.toJson(),
-  };
+        'flagged': flagged,
+        'categories': categories.toJson(),
+        'category_scores': categoryScores.toJson(),
+        if (categoryAppliedInputTypes != null)
+          'category_applied_input_types': categoryAppliedInputTypes!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -401,11 +401,11 @@ class ModerationResult {
 
   @override
   int get hashCode => Object.hash(
-    flagged,
-    categories,
-    categoryScores,
-    categoryAppliedInputTypes,
-  );
+        flagged,
+        categories,
+        categoryScores,
+        categoryAppliedInputTypes,
+      );
 
   @override
   String toString() => 'ModerationResult(flagged: $flagged)';
@@ -495,20 +495,20 @@ class ModerationCategories {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'hate': hate,
-    'hate/threatening': hateThreatening,
-    'harassment': harassment,
-    'harassment/threatening': harassmentThreatening,
-    if (illicit != null) 'illicit': illicit,
-    if (illicitViolent != null) 'illicit/violent': illicitViolent,
-    'self-harm': selfHarm,
-    'self-harm/intent': selfHarmIntent,
-    'self-harm/instructions': selfHarmInstructions,
-    'sexual': sexual,
-    'sexual/minors': sexualMinors,
-    'violence': violence,
-    'violence/graphic': violenceGraphic,
-  };
+        'hate': hate,
+        'hate/threatening': hateThreatening,
+        'harassment': harassment,
+        'harassment/threatening': harassmentThreatening,
+        if (illicit != null) 'illicit': illicit,
+        if (illicitViolent != null) 'illicit/violent': illicitViolent,
+        'self-harm': selfHarm,
+        'self-harm/intent': selfHarmIntent,
+        'self-harm/instructions': selfHarmInstructions,
+        'sexual': sexual,
+        'sexual/minors': sexualMinors,
+        'violence': violence,
+        'violence/graphic': violenceGraphic,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -531,20 +531,20 @@ class ModerationCategories {
 
   @override
   int get hashCode => Object.hash(
-    hate,
-    hateThreatening,
-    harassment,
-    harassmentThreatening,
-    illicit,
-    illicitViolent,
-    selfHarm,
-    selfHarmIntent,
-    selfHarmInstructions,
-    sexual,
-    sexualMinors,
-    violence,
-    violenceGraphic,
-  );
+        hate,
+        hateThreatening,
+        harassment,
+        harassmentThreatening,
+        illicit,
+        illicitViolent,
+        selfHarm,
+        selfHarmIntent,
+        selfHarmInstructions,
+        sexual,
+        sexualMinors,
+        violence,
+        violenceGraphic,
+      );
 
   @override
   String toString() => 'ModerationCategories(...)';
@@ -634,20 +634,20 @@ class ModerationCategoryScores {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'hate': hate,
-    'hate/threatening': hateThreatening,
-    'harassment': harassment,
-    'harassment/threatening': harassmentThreatening,
-    if (illicit != null) 'illicit': illicit,
-    if (illicitViolent != null) 'illicit/violent': illicitViolent,
-    'self-harm': selfHarm,
-    'self-harm/intent': selfHarmIntent,
-    'self-harm/instructions': selfHarmInstructions,
-    'sexual': sexual,
-    'sexual/minors': sexualMinors,
-    'violence': violence,
-    'violence/graphic': violenceGraphic,
-  };
+        'hate': hate,
+        'hate/threatening': hateThreatening,
+        'harassment': harassment,
+        'harassment/threatening': harassmentThreatening,
+        if (illicit != null) 'illicit': illicit,
+        if (illicitViolent != null) 'illicit/violent': illicitViolent,
+        'self-harm': selfHarm,
+        'self-harm/intent': selfHarmIntent,
+        'self-harm/instructions': selfHarmInstructions,
+        'sexual': sexual,
+        'sexual/minors': sexualMinors,
+        'violence': violence,
+        'violence/graphic': violenceGraphic,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -670,20 +670,20 @@ class ModerationCategoryScores {
 
   @override
   int get hashCode => Object.hash(
-    hate,
-    hateThreatening,
-    harassment,
-    harassmentThreatening,
-    illicit,
-    illicitViolent,
-    selfHarm,
-    selfHarmIntent,
-    selfHarmInstructions,
-    sexual,
-    sexualMinors,
-    violence,
-    violenceGraphic,
-  );
+        hate,
+        hateThreatening,
+        harassment,
+        harassmentThreatening,
+        illicit,
+        illicitViolent,
+        selfHarm,
+        selfHarmIntent,
+        selfHarmInstructions,
+        sexual,
+        sexualMinors,
+        violence,
+        violenceGraphic,
+      );
 
   @override
   String toString() => 'ModerationCategoryScores(...)';
@@ -718,23 +718,23 @@ class ModerationCategoryAppliedInputTypes {
   ) {
     return ModerationCategoryAppliedInputTypes(
       hate: (json['hate'] as List<dynamic>).cast<String>(),
-      hateThreatening: (json['hate/threatening'] as List<dynamic>)
-          .cast<String>(),
+      hateThreatening:
+          (json['hate/threatening'] as List<dynamic>).cast<String>(),
       harassment: (json['harassment'] as List<dynamic>).cast<String>(),
-      harassmentThreatening: (json['harassment/threatening'] as List<dynamic>)
-          .cast<String>(),
+      harassmentThreatening:
+          (json['harassment/threatening'] as List<dynamic>).cast<String>(),
       illicit: (json['illicit'] as List<dynamic>).cast<String>(),
       illicitViolent: (json['illicit/violent'] as List<dynamic>).cast<String>(),
       selfHarm: (json['self-harm'] as List<dynamic>).cast<String>(),
-      selfHarmIntent: (json['self-harm/intent'] as List<dynamic>)
-          .cast<String>(),
-      selfHarmInstructions: (json['self-harm/instructions'] as List<dynamic>)
-          .cast<String>(),
+      selfHarmIntent:
+          (json['self-harm/intent'] as List<dynamic>).cast<String>(),
+      selfHarmInstructions:
+          (json['self-harm/instructions'] as List<dynamic>).cast<String>(),
       sexual: (json['sexual'] as List<dynamic>).cast<String>(),
       sexualMinors: (json['sexual/minors'] as List<dynamic>).cast<String>(),
       violence: (json['violence'] as List<dynamic>).cast<String>(),
-      violenceGraphic: (json['violence/graphic'] as List<dynamic>)
-          .cast<String>(),
+      violenceGraphic:
+          (json['violence/graphic'] as List<dynamic>).cast<String>(),
     );
   }
 
@@ -779,20 +779,20 @@ class ModerationCategoryAppliedInputTypes {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'hate': hate,
-    'hate/threatening': hateThreatening,
-    'harassment': harassment,
-    'harassment/threatening': harassmentThreatening,
-    'illicit': illicit,
-    'illicit/violent': illicitViolent,
-    'self-harm': selfHarm,
-    'self-harm/intent': selfHarmIntent,
-    'self-harm/instructions': selfHarmInstructions,
-    'sexual': sexual,
-    'sexual/minors': sexualMinors,
-    'violence': violence,
-    'violence/graphic': violenceGraphic,
-  };
+        'hate': hate,
+        'hate/threatening': hateThreatening,
+        'harassment': harassment,
+        'harassment/threatening': harassmentThreatening,
+        'illicit': illicit,
+        'illicit/violent': illicitViolent,
+        'self-harm': selfHarm,
+        'self-harm/intent': selfHarmIntent,
+        'self-harm/instructions': selfHarmInstructions,
+        'sexual': sexual,
+        'sexual/minors': sexualMinors,
+        'violence': violence,
+        'violence/graphic': violenceGraphic,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -815,20 +815,20 @@ class ModerationCategoryAppliedInputTypes {
 
   @override
   int get hashCode => Object.hash(
-    Object.hashAll(hate),
-    Object.hashAll(hateThreatening),
-    Object.hashAll(harassment),
-    Object.hashAll(harassmentThreatening),
-    Object.hashAll(illicit),
-    Object.hashAll(illicitViolent),
-    Object.hashAll(selfHarm),
-    Object.hashAll(selfHarmIntent),
-    Object.hashAll(selfHarmInstructions),
-    Object.hashAll(sexual),
-    Object.hashAll(sexualMinors),
-    Object.hashAll(violence),
-    Object.hashAll(violenceGraphic),
-  );
+        Object.hashAll(hate),
+        Object.hashAll(hateThreatening),
+        Object.hashAll(harassment),
+        Object.hashAll(harassmentThreatening),
+        Object.hashAll(illicit),
+        Object.hashAll(illicitViolent),
+        Object.hashAll(selfHarm),
+        Object.hashAll(selfHarmIntent),
+        Object.hashAll(selfHarmInstructions),
+        Object.hashAll(sexual),
+        Object.hashAll(sexualMinors),
+        Object.hashAll(violence),
+        Object.hashAll(violenceGraphic),
+      );
 
   @override
   String toString() => 'ModerationCategoryAppliedInputTypes(...)';

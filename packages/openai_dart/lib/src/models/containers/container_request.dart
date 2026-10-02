@@ -34,10 +34,10 @@ class CreateContainerRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (name != null) 'name': name,
-    if (fileIds != null) 'file_ids': fileIds,
-    if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
-  };
+        if (name != null) 'name': name,
+        if (fileIds != null) 'file_ids': fileIds,
+        if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

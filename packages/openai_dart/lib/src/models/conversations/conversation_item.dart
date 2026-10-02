@@ -24,32 +24,32 @@ sealed class ConversationItem {
       'message' => ConversationMessageItem.fromJson(json),
       'function_call' => ConversationFunctionCallItem.fromJson(json),
       'function_call_output' => ConversationFunctionCallOutputItem.fromJson(
-        json,
-      ),
+          json,
+        ),
       'reasoning' => ConversationReasoningItem.fromJson(json),
       'image_generation_call' => ConversationImageGenerationCallItem.fromJson(
-        json,
-      ),
+          json,
+        ),
       'local_shell_call' => ConversationLocalShellCallItem.fromJson(json),
       'local_shell_call_output' =>
         ConversationLocalShellCallOutputItem.fromJson(json),
       'mcp_list_tools' => ConversationMcpListToolsItem.fromJson(json),
       'mcp_approval_request' => ConversationMcpApprovalRequestItem.fromJson(
-        json,
-      ),
+          json,
+        ),
       'mcp_approval_response' => ConversationMcpApprovalResponseItem.fromJson(
-        json,
-      ),
+          json,
+        ),
       'mcp_call' => ConversationMcpCallItem.fromJson(json),
       'web_search_call' => ConversationWebSearchCallItem.fromJson(json),
       'file_search_call' => ConversationFileSearchCallItem.fromJson(json),
       'computer_call' => ConversationComputerCallItem.fromJson(json),
       'computer_call_output' => ConversationComputerCallOutputItem.fromJson(
-        json,
-      ),
+          json,
+        ),
       'code_interpreter_call' => ConversationCodeInterpreterCallItem.fromJson(
-        json,
-      ),
+          json,
+        ),
       'tool_search_call' => ConversationToolSearchCallItem.fromJson(json),
       'tool_search_output' => ConversationToolSearchOutputItem.fromJson(json),
       _ => ConversationUnknownItem(type: type, data: json),
@@ -99,12 +99,12 @@ class ConversationMessageItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'message',
-    'id': id,
-    'role': role.toJson(),
-    'content': content.map((e) => e.toJson()).toList(),
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'message',
+        'id': id,
+        'role': role.toJson(),
+        'content': content.map((e) => e.toJson()).toList(),
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -166,13 +166,13 @@ class ConversationFunctionCallItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'function_call',
-    'id': id,
-    'call_id': callId,
-    'name': name,
-    'arguments': arguments,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'function_call',
+        'id': id,
+        'call_id': callId,
+        'name': name,
+        'arguments': arguments,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -232,12 +232,12 @@ class ConversationFunctionCallOutputItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'function_call_output',
-    'id': id,
-    'call_id': callId,
-    'output': output,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'function_call_output',
+        'id': id,
+        'call_id': callId,
+        'output': output,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -306,13 +306,13 @@ class ConversationReasoningItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'reasoning',
-    'id': id,
-    if (content != null) 'content': content,
-    'summary': summary.map((e) => e.toJson()).toList(),
-    if (encryptedContent != null) 'encrypted_content': encryptedContent,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'reasoning',
+        'id': id,
+        if (content != null) 'content': content,
+        'summary': summary.map((e) => e.toJson()).toList(),
+        if (encryptedContent != null) 'encrypted_content': encryptedContent,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -376,13 +376,13 @@ class ConversationImageGenerationCallItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'image_generation_call',
-    'id': id,
-    if (prompt != null) 'prompt': prompt,
-    if (revisedPrompt != null) 'revised_prompt': revisedPrompt,
-    if (result != null) 'result': result,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'image_generation_call',
+        'id': id,
+        if (prompt != null) 'prompt': prompt,
+        if (revisedPrompt != null) 'revised_prompt': revisedPrompt,
+        if (result != null) 'result': result,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -440,12 +440,12 @@ class ConversationLocalShellCallItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'local_shell_call',
-    'id': id,
-    'call_id': callId,
-    if (action != null) 'action': action,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'local_shell_call',
+        'id': id,
+        'call_id': callId,
+        if (action != null) 'action': action,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -496,11 +496,11 @@ class ConversationLocalShellCallOutputItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'local_shell_call_output',
-    'id': id,
-    'call_id': callId,
-    'output': output,
-  };
+        'type': 'local_shell_call_output',
+        'id': id,
+        'call_id': callId,
+        'output': output,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -557,12 +557,12 @@ class ConversationMcpListToolsItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'mcp_list_tools',
-    'id': id,
-    if (serverLabel != null) 'server_label': serverLabel,
-    if (tools != null) 'tools': tools,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'mcp_list_tools',
+        'id': id,
+        if (serverLabel != null) 'server_label': serverLabel,
+        if (tools != null) 'tools': tools,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -620,12 +620,12 @@ class ConversationMcpApprovalRequestItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'mcp_approval_request',
-    'id': id,
-    if (serverLabel != null) 'server_label': serverLabel,
-    if (mcpCall != null) 'mcp_call': mcpCall,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'mcp_approval_request',
+        'id': id,
+        if (serverLabel != null) 'server_label': serverLabel,
+        if (mcpCall != null) 'mcp_call': mcpCall,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -676,11 +676,11 @@ class ConversationMcpApprovalResponseItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'mcp_approval_response',
-    'id': id,
-    if (approvalRequestId != null) 'approval_request_id': approvalRequestId,
-    if (approved != null) 'approved': approved,
-  };
+        'type': 'mcp_approval_response',
+        'id': id,
+        if (approvalRequestId != null) 'approval_request_id': approvalRequestId,
+        if (approved != null) 'approved': approved,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -756,16 +756,16 @@ class ConversationMcpCallItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'mcp_call',
-    'id': id,
-    'call_id': callId,
-    if (serverLabel != null) 'server_label': serverLabel,
-    if (name != null) 'name': name,
-    if (arguments != null) 'arguments': arguments,
-    if (output != null) 'output': output,
-    if (error != null) 'error': error,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'mcp_call',
+        'id': id,
+        'call_id': callId,
+        if (serverLabel != null) 'server_label': serverLabel,
+        if (name != null) 'name': name,
+        if (arguments != null) 'arguments': arguments,
+        if (output != null) 'output': output,
+        if (error != null) 'error': error,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -779,15 +779,15 @@ class ConversationMcpCallItem extends ConversationItem {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    callId,
-    serverLabel,
-    name,
-    arguments,
-    output,
-    error,
-    status,
-  );
+        id,
+        callId,
+        serverLabel,
+        name,
+        arguments,
+        output,
+        error,
+        status,
+      );
 
   @override
   String toString() =>
@@ -818,10 +818,10 @@ class ConversationWebSearchCallItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'web_search_call',
-    'id': id,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'web_search_call',
+        'id': id,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -878,12 +878,12 @@ class ConversationFileSearchCallItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'file_search_call',
-    'id': id,
-    if (queries != null) 'queries': queries,
-    if (results != null) 'results': results,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'file_search_call',
+        'id': id,
+        if (queries != null) 'queries': queries,
+        if (results != null) 'results': results,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -945,14 +945,14 @@ class ConversationComputerCallItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'computer_call',
-    'id': id,
-    'call_id': callId,
-    if (action != null) 'action': action,
-    if (pendingSafetyChecks != null)
-      'pending_safety_checks': pendingSafetyChecks,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'computer_call',
+        'id': id,
+        'call_id': callId,
+        if (action != null) 'action': action,
+        if (pendingSafetyChecks != null)
+          'pending_safety_checks': pendingSafetyChecks,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1004,11 +1004,11 @@ class ConversationComputerCallOutputItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'computer_call_output',
-    'id': id,
-    'call_id': callId,
-    'output': output,
-  };
+        'type': 'computer_call_output',
+        'id': id,
+        'call_id': callId,
+        'output': output,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1072,13 +1072,13 @@ class ConversationCodeInterpreterCallItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'code_interpreter_call',
-    'id': id,
-    if (code != null) 'code': code,
-    if (language != null) 'language': language,
-    if (outputs != null) 'outputs': outputs,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'code_interpreter_call',
+        'id': id,
+        if (code != null) 'code': code,
+        if (language != null) 'language': language,
+        if (outputs != null) 'outputs': outputs,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1141,13 +1141,13 @@ class ConversationToolSearchCallItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_search_call',
-    'id': id,
-    if (callId != null) 'call_id': callId,
-    if (execution != null) 'execution': execution!.toJson(),
-    if (arguments != null) 'arguments': arguments,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'tool_search_call',
+        'id': id,
+        if (callId != null) 'call_id': callId,
+        if (execution != null) 'execution': execution!.toJson(),
+        if (arguments != null) 'arguments': arguments,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1215,13 +1215,13 @@ class ConversationToolSearchOutputItem extends ConversationItem {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_search_output',
-    'id': id,
-    if (callId != null) 'call_id': callId,
-    if (execution != null) 'execution': execution!.toJson(),
-    if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'tool_search_output',
+        'id': id,
+        if (callId != null) 'call_id': callId,
+        if (execution != null) 'execution': execution!.toJson(),
+        if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1236,12 +1236,12 @@ class ConversationToolSearchOutputItem extends ConversationItem {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    callId,
-    execution,
-    tools != null ? Object.hashAll(tools!) : null,
-    status,
-  );
+        id,
+        callId,
+        execution,
+        tools != null ? Object.hashAll(tools!) : null,
+        status,
+      );
 
   @override
   String toString() =>

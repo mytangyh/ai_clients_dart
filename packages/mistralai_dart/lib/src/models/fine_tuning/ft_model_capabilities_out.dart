@@ -39,12 +39,12 @@ class FTModelCapabilitiesOut {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'completion_chat': completionChat,
-    'completion_fim': completionFim,
-    'function_calling': functionCalling,
-    'fine_tuning': fineTuning,
-    'classification': classification,
-  };
+        'completion_chat': completionChat,
+        'completion_fim': completionFim,
+        'function_calling': functionCalling,
+        'fine_tuning': fineTuning,
+        'classification': classification,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -59,16 +59,15 @@ class FTModelCapabilitiesOut {
 
   @override
   int get hashCode => Object.hash(
-    completionChat,
-    completionFim,
-    functionCalling,
-    fineTuning,
-    classification,
-  );
+        completionChat,
+        completionFim,
+        functionCalling,
+        fineTuning,
+        classification,
+      );
 
   @override
-  String toString() =>
-      'FTModelCapabilitiesOut('
+  String toString() => 'FTModelCapabilitiesOut('
       'completionChat: $completionChat, completionFim: $completionFim, '
       'functionCalling: $functionCalling, fineTuning: $fineTuning, '
       'classification: $classification)';

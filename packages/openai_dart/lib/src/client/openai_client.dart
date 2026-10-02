@@ -119,10 +119,10 @@ class OpenAIClient {
     OpenAIConfig? config,
     http.Client? httpClient,
     http.Client Function()? streamClientFactory,
-  }) : _config = config ?? const OpenAIConfig(),
-       _httpClient = httpClient ?? http.Client(),
-       _streamClientFactory = streamClientFactory ?? http.Client.new,
-       _ownsHttpClient = httpClient == null {
+  })  : _config = config ?? const OpenAIConfig(),
+        _httpClient = httpClient ?? http.Client(),
+        _streamClientFactory = streamClientFactory ?? http.Client.new,
+        _ownsHttpClient = httpClient == null {
     // Initialize logging first so LoggingInterceptor uses the configured level
     _initializeLogging();
     _initializeInterceptorChain();
@@ -268,13 +268,13 @@ class OpenAIClient {
   /// print(response.text);
   /// ```
   ChatResource get chat => _chat ??= ChatResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-    streamClientFactory: _streamClientFactory,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+        streamClientFactory: _streamClientFactory,
+      );
 
   CompletionsResource? _completions;
 
@@ -294,13 +294,13 @@ class OpenAIClient {
   /// print(completion.text);
   /// ```
   CompletionsResource get completions => _completions ??= CompletionsResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-    streamClientFactory: _streamClientFactory,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+        streamClientFactory: _streamClientFactory,
+      );
 
   EmbeddingsResource? _embeddings;
 
@@ -321,12 +321,12 @@ class OpenAIClient {
   /// print('Dimensions: ${response.data.first.embedding.length}');
   /// ```
   EmbeddingsResource get embeddings => _embeddings ??= EmbeddingsResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   AudioResource? _audio;
 
@@ -356,12 +356,12 @@ class OpenAIClient {
   /// );
   /// ```
   AudioResource get audio => _audio ??= AudioResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   ImagesResource? _images;
 
@@ -382,12 +382,12 @@ class OpenAIClient {
   /// print('Image URL: ${response.data.first.url}');
   /// ```
   ImagesResource get images => _images ??= ImagesResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   FilesResource? _files;
 
@@ -405,12 +405,12 @@ class OpenAIClient {
   /// );
   /// ```
   FilesResource get files => _files ??= FilesResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   UploadsResource? _uploads;
 
@@ -431,12 +431,12 @@ class OpenAIClient {
   /// );
   /// ```
   UploadsResource get uploads => _uploads ??= UploadsResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   BatchesResource? _batches;
 
@@ -456,12 +456,12 @@ class OpenAIClient {
   /// );
   /// ```
   BatchesResource get batches => _batches ??= BatchesResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   ModelsResource? _models;
 
@@ -478,12 +478,12 @@ class OpenAIClient {
   /// }
   /// ```
   ModelsResource get models => _models ??= ModelsResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   ModerationsResource? _moderations;
 
@@ -502,12 +502,12 @@ class OpenAIClient {
   /// print('Flagged: ${result.results.first.flagged}');
   /// ```
   ModerationsResource get moderations => _moderations ??= ModerationsResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   FineTuningResource? _fineTuning;
 
@@ -526,12 +526,12 @@ class OpenAIClient {
   /// );
   /// ```
   FineTuningResource get fineTuning => _fineTuning ??= FineTuningResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   EvalsResource? _evals;
 
@@ -575,12 +575,12 @@ class OpenAIClient {
   /// );
   /// ```
   EvalsResource get evals => _evals ??= EvalsResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   BetaResource? _beta;
 
@@ -611,13 +611,13 @@ class OpenAIClient {
   /// );
   /// ```
   BetaResource get beta => _beta ??= BetaResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-    streamClientFactory: _streamClientFactory,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+        streamClientFactory: _streamClientFactory,
+      );
 
   RealtimeResource? _realtime;
 
@@ -641,12 +641,12 @@ class OpenAIClient {
   /// session.createResponse();
   /// ```
   RealtimeResource get realtime => _realtime ??= RealtimeResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   RealtimeSessionsResource? _realtimeSessions;
 
@@ -712,13 +712,13 @@ class OpenAIClient {
   /// }
   /// ```
   ResponsesResource get responses => _responses ??= ResponsesResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-    streamClientFactory: _streamClientFactory,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+        streamClientFactory: _streamClientFactory,
+      );
 
   SkillsResource? _skills;
 
@@ -726,12 +726,12 @@ class OpenAIClient {
   ///
   /// Use this to create, list, retrieve, version, and delete skill bundles.
   SkillsResource get skills => _skills ??= SkillsResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   ConversationsResource? _conversations;
 
@@ -809,12 +809,12 @@ class OpenAIClient {
   /// }
   /// ```
   VideosResource get videos => _videos ??= VideosResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   ContainersResource? _containers;
 
@@ -841,12 +841,12 @@ class OpenAIClient {
   /// await client.containers.delete(container.id);
   /// ```
   ContainersResource get containers => _containers ??= ContainersResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   ChatkitResource? _chatkit;
 
@@ -873,12 +873,12 @@ class OpenAIClient {
   /// final threads = await client.chatkit.threads.list();
   /// ```
   ChatkitResource get chatkit => _chatkit ??= ChatkitResource(
-    config: config,
-    httpClient: _httpClient,
-    interceptorChain: _interceptorChain,
-    requestBuilder: _requestBuilder,
-    ensureNotClosed: _ensureNotClosed,
-  );
+        config: config,
+        httpClient: _httpClient,
+        interceptorChain: _interceptorChain,
+        requestBuilder: _requestBuilder,
+        ensureNotClosed: _ensureNotClosed,
+      );
 
   void _ensureNotClosed() {
     if (_closed) {

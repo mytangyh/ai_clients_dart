@@ -23,17 +23,17 @@ class ToolFunction {
 
   /// Creates a [ToolFunction] from JSON.
   factory ToolFunction.fromJson(Map<String, dynamic> json) => ToolFunction(
-    name: json['name'] as String,
-    description: json['description'] as String?,
-    parameters: json['parameters'] as Map<String, dynamic>? ?? {},
-  );
+        name: json['name'] as String,
+        description: json['description'] as String?,
+        parameters: json['parameters'] as Map<String, dynamic>? ?? {},
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    if (description != null) 'description': description,
-    'parameters': parameters,
-  };
+        'name': name,
+        if (description != null) 'description': description,
+        'parameters': parameters,
+      };
 
   /// Creates a copy with replaced values.
   ToolFunction copyWith({
@@ -62,8 +62,7 @@ class ToolFunction {
   int get hashCode => Object.hash(name, description);
 
   @override
-  String toString() =>
-      'ToolFunction('
+  String toString() => 'ToolFunction('
       'name: $name, '
       'description: $description, '
       'parameters: $parameters)';
@@ -104,15 +103,16 @@ class ToolDefinition {
 
   /// Creates a [ToolDefinition] from JSON.
   factory ToolDefinition.fromJson(Map<String, dynamic> json) => ToolDefinition(
-    type: toolTypeFromString(json['type'] as String?),
-    function: ToolFunction.fromJson(json['function'] as Map<String, dynamic>),
-  );
+        type: toolTypeFromString(json['type'] as String?),
+        function:
+            ToolFunction.fromJson(json['function'] as Map<String, dynamic>),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': toolTypeToString(type),
-    'function': function.toJson(),
-  };
+        'type': toolTypeToString(type),
+        'function': function.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ToolDefinition copyWith({ToolType? type, ToolFunction? function}) {

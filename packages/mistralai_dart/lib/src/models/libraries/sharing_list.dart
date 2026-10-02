@@ -14,15 +14,15 @@ class SharingList {
 
   /// Creates from JSON.
   factory SharingList.fromJson(Map<String, dynamic> json) => SharingList(
-    data: (json['data'] as List)
-        .map((e) => SharingResponse.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
+        data: (json['data'] as List)
+            .map((e) => SharingResponse.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data': data.map((e) => e.toJson()).toList(),
-  };
+        'data': data.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>

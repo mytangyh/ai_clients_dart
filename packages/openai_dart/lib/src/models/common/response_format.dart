@@ -71,12 +71,13 @@ sealed class ResponseFormat {
     required Map<String, dynamic> schema,
     String? description,
     bool strict = true,
-  }) => JsonSchemaResponseFormat(
-    name: name,
-    schema: schema,
-    description: description,
-    strict: strict,
-  );
+  }) =>
+      JsonSchemaResponseFormat(
+        name: name,
+        schema: schema,
+        description: description,
+        strict: strict,
+      );
 
   /// The type identifier for this format.
   String get type;
@@ -175,14 +176,14 @@ class JsonSchemaResponseFormat extends ResponseFormat {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'json_schema': {
-      'name': name,
-      'schema': schema,
-      if (description != null) 'description': description,
-      'strict': strict,
-    },
-  };
+        'type': type,
+        'json_schema': {
+          'name': name,
+          'schema': schema,
+          if (description != null) 'description': description,
+          'strict': strict,
+        },
+      };
 
   @override
   bool operator ==(Object other) =>

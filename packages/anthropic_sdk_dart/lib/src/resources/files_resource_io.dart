@@ -146,9 +146,9 @@ class FilesResource extends ResourceBase {
   }) async {
     ensureNotClosed?.call();
     final queryParams = <String, dynamic>{
-      'limit': ?limit?.toString(),
-      'before_id': ?beforeId,
-      'after_id': ?afterId,
+      if (limit?.toString() case final value?) 'limit': value,
+      if (beforeId case final value?) 'before_id': value,
+      if (afterId case final value?) 'after_id': value,
     };
 
     final url = requestBuilder.buildUrl(

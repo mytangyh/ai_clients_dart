@@ -44,7 +44,7 @@ class VectorStore {
       lastActiveAt: json['last_active_at'] as int?,
       metadata:
           (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>() ??
-          {},
+              {},
     );
   }
 
@@ -86,18 +86,18 @@ class VectorStore {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    if (name != null) 'name': name,
-    'usage_bytes': usageBytes,
-    'file_counts': fileCounts.toJson(),
-    'status': status.toJson(),
-    if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
-    if (expiresAt != null) 'expires_at': expiresAt,
-    if (lastActiveAt != null) 'last_active_at': lastActiveAt,
-    'metadata': metadata,
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        if (name != null) 'name': name,
+        'usage_bytes': usageBytes,
+        'file_counts': fileCounts.toJson(),
+        'status': status.toJson(),
+        if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
+        if (expiresAt != null) 'expires_at': expiresAt,
+        if (lastActiveAt != null) 'last_active_at': lastActiveAt,
+        'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -155,12 +155,12 @@ class VectorStoreList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((v) => v.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((v) => v.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -203,8 +203,8 @@ class CreateVectorStoreRequest {
               json['chunking_strategy'] as Map<String, dynamic>,
             )
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -225,13 +225,13 @@ class CreateVectorStoreRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (fileIds != null) 'file_ids': fileIds,
-    if (name != null) 'name': name,
-    if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
-    if (chunkingStrategy != null)
-      'chunking_strategy': chunkingStrategy!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        if (fileIds != null) 'file_ids': fileIds,
+        if (name != null) 'name': name,
+        if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
+        if (chunkingStrategy != null)
+          'chunking_strategy': chunkingStrategy!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -260,8 +260,8 @@ class ModifyVectorStoreRequest {
               json['expires_after'] as Map<String, dynamic>,
             )
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -276,10 +276,10 @@ class ModifyVectorStoreRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (name != null) 'name': name,
-    if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        if (name != null) 'name': name,
+        if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -323,10 +323,10 @@ class DeleteVectorStoreResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -382,12 +382,12 @@ class VectorStoreFileCounts {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'in_progress': inProgress,
-    'completed': completed,
-    'failed': failed,
-    'cancelled': cancelled,
-    'total': total,
-  };
+        'in_progress': inProgress,
+        'completed': completed,
+        'failed': failed,
+        'cancelled': cancelled,
+        'total': total,
+      };
 
   @override
   bool operator ==(Object other) =>

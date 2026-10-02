@@ -206,8 +206,8 @@ void main() {
     test('returns null retryAfter for past HTTP date', () async {
       // Use a past date
       final pastDate = DateTime.now().toUtc().subtract(
-        const Duration(hours: 1),
-      );
+            const Duration(hours: 1),
+          );
       final imfDate = _formatImfFixdate(pastDate);
 
       final mockClient = MockClient((request) async {

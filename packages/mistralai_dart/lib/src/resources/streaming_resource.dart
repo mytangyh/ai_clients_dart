@@ -138,8 +138,7 @@ mixin StreamingResource on ResourceBase {
       final errorDetails = jsonDecode(response.body);
       if (errorDetails is Map<String, dynamic>) {
         // Mistral error format: {"message": "...", "request_id": "..."}
-        message =
-            errorDetails['message']?.toString() ??
+        message = errorDetails['message']?.toString() ??
             errorDetails['detail']?.toString() ??
             message;
       }

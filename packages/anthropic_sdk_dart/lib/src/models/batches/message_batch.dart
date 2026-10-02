@@ -45,12 +45,12 @@ class RequestCounts {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'processing': processing,
-    'succeeded': succeeded,
-    'errored': errored,
-    'canceled': canceled,
-    'expired': expired,
-  };
+        'processing': processing,
+        'succeeded': succeeded,
+        'errored': errored,
+        'canceled': canceled,
+        'expired': expired,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -148,19 +148,19 @@ class MessageBatch {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type,
-    'processing_status': processingStatus.toJson(),
-    'request_counts': requestCounts.toJson(),
-    if (endedAt != null) 'ended_at': endedAt!.toUtc().toIso8601String(),
-    'created_at': createdAt.toUtc().toIso8601String(),
-    'expires_at': expiresAt.toUtc().toIso8601String(),
-    if (archivedAt != null)
-      'archived_at': archivedAt!.toUtc().toIso8601String(),
-    if (cancelInitiatedAt != null)
-      'cancel_initiated_at': cancelInitiatedAt!.toUtc().toIso8601String(),
-    if (resultsUrl != null) 'results_url': resultsUrl,
-  };
+        'id': id,
+        'type': type,
+        'processing_status': processingStatus.toJson(),
+        'request_counts': requestCounts.toJson(),
+        if (endedAt != null) 'ended_at': endedAt!.toUtc().toIso8601String(),
+        'created_at': createdAt.toUtc().toIso8601String(),
+        'expires_at': expiresAt.toUtc().toIso8601String(),
+        if (archivedAt != null)
+          'archived_at': archivedAt!.toUtc().toIso8601String(),
+        if (cancelInitiatedAt != null)
+          'cancel_initiated_at': cancelInitiatedAt!.toUtc().toIso8601String(),
+        if (resultsUrl != null) 'results_url': resultsUrl,
+      };
 
   /// Creates a copy with replaced values.
   MessageBatch copyWith({
@@ -180,9 +180,8 @@ class MessageBatch {
       type: type ?? this.type,
       processingStatus: processingStatus ?? this.processingStatus,
       requestCounts: requestCounts ?? this.requestCounts,
-      endedAt: endedAt == unsetCopyWithValue
-          ? this.endedAt
-          : endedAt as DateTime?,
+      endedAt:
+          endedAt == unsetCopyWithValue ? this.endedAt : endedAt as DateTime?,
       createdAt: createdAt ?? this.createdAt,
       expiresAt: expiresAt ?? this.expiresAt,
       archivedAt: archivedAt == unsetCopyWithValue
@@ -215,17 +214,17 @@ class MessageBatch {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    type,
-    processingStatus,
-    requestCounts,
-    endedAt,
-    createdAt,
-    expiresAt,
-    archivedAt,
-    cancelInitiatedAt,
-    resultsUrl,
-  );
+        id,
+        type,
+        processingStatus,
+        requestCounts,
+        endedAt,
+        createdAt,
+        expiresAt,
+        archivedAt,
+        cancelInitiatedAt,
+        resultsUrl,
+      );
 
   @override
   String toString() =>
@@ -272,11 +271,11 @@ class MessageBatchListResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data': data.map((e) => e.toJson()).toList(),
-    'has_more': hasMore,
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-  };
+        'data': data.map((e) => e.toJson()).toList(),
+        'has_more': hasMore,
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -376,9 +375,9 @@ class BatchResultSucceeded extends BatchResult {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'succeeded',
-    'message': message.toJson(),
-  };
+        'type': 'succeeded',
+        'message': message.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -539,9 +538,9 @@ class BatchIndividualResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'custom_id': customId,
-    'result': result.toJson(),
-  };
+        'custom_id': customId,
+        'result': result.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

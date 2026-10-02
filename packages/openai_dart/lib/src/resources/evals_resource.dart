@@ -66,12 +66,12 @@ class EvalsResource extends ResourceBase {
 
   /// Access to evaluation run operations.
   EvalRunsResource get runs => _runs ??= EvalRunsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Creates a new evaluation.
   Future<Eval> create(CreateEvalRequest request) async {

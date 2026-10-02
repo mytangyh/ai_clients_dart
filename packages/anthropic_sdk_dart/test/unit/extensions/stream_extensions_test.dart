@@ -24,56 +24,56 @@ const Map<String, Object> _messageStartJson = {
 };
 
 Map<String, dynamic> _cbStart(int index, Map<String, dynamic> block) => {
-  'type': 'content_block_start',
-  'index': index,
-  'content_block': block,
-};
+      'type': 'content_block_start',
+      'index': index,
+      'content_block': block,
+    };
 
 Map<String, dynamic> _cbDelta(int index, Map<String, dynamic> delta) => {
-  'type': 'content_block_delta',
-  'index': index,
-  'delta': delta,
-};
+      'type': 'content_block_delta',
+      'index': index,
+      'delta': delta,
+    };
 
 Map<String, dynamic> _cbStop(int index) => {
-  'type': 'content_block_stop',
-  'index': index,
-};
+      'type': 'content_block_stop',
+      'index': index,
+    };
 
 Map<String, dynamic> _msgDelta({String? stopReason, int outputTokens = 5}) => {
-  'type': 'message_delta',
-  'delta': {'stop_reason': ?stopReason},
-  'usage': {'output_tokens': outputTokens},
-};
+      'type': 'message_delta',
+      'delta': {if (stopReason case final value?) 'stop_reason': value},
+      'usage': {'output_tokens': outputTokens},
+    };
 
 const _msgStop = {'type': 'message_stop'};
 const _ping = {'type': 'ping'};
 
 Map<String, dynamic> _textBlock() => {'type': 'text', 'text': ''};
 Map<String, dynamic> _thinkingBlock() => {
-  'type': 'thinking',
-  'thinking': '',
-  'signature': '',
-};
+      'type': 'thinking',
+      'thinking': '',
+      'signature': '',
+    };
 Map<String, dynamic> _toolUseBlock() => {
-  'type': 'tool_use',
-  'id': 'toolu_1',
-  'name': 'tool',
-  'input': <String, dynamic>{},
-};
+      'type': 'tool_use',
+      'id': 'toolu_1',
+      'name': 'tool',
+      'input': <String, dynamic>{},
+    };
 
 Map<String, dynamic> _textDelta(String text) => {
-  'type': 'text_delta',
-  'text': text,
-};
+      'type': 'text_delta',
+      'text': text,
+    };
 Map<String, dynamic> _thinkingDelta(String t) => {
-  'type': 'thinking_delta',
-  'thinking': t,
-};
+      'type': 'thinking_delta',
+      'thinking': t,
+    };
 Map<String, dynamic> _inputJsonDelta(String j) => {
-  'type': 'input_json_delta',
-  'partial_json': j,
-};
+      'type': 'input_json_delta',
+      'partial_json': j,
+    };
 
 // ---------------------------------------------------------------------------
 // Tests

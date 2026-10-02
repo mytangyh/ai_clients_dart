@@ -77,14 +77,14 @@ class Container {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'name': name,
-    'created_at': createdAt,
-    'status': status,
-    if (lastActiveAt != null) 'last_active_at': lastActiveAt,
-    if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'name': name,
+        'created_at': createdAt,
+        'status': status,
+        if (lastActiveAt != null) 'last_active_at': lastActiveAt,
+        if (expiresAfter != null) 'expires_after': expiresAfter!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -149,12 +149,12 @@ class ContainerList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((c) => c.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((c) => c.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -201,10 +201,10 @@ class DeleteContainerResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>

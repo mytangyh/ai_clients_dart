@@ -37,23 +37,23 @@ class EmbedResponse {
 
   /// Creates an [EmbedResponse] from JSON.
   factory EmbedResponse.fromJson(Map<String, dynamic> json) => EmbedResponse(
-    model: json['model'] as String?,
-    embeddings: (json['embeddings'] as List?)
-        ?.map((e) => (e as List).map((v) => (v as num).toDouble()).toList())
-        .toList(),
-    totalDuration: json['total_duration'] as int?,
-    loadDuration: json['load_duration'] as int?,
-    promptEvalCount: json['prompt_eval_count'] as int?,
-  );
+        model: json['model'] as String?,
+        embeddings: (json['embeddings'] as List?)
+            ?.map((e) => (e as List).map((v) => (v as num).toDouble()).toList())
+            .toList(),
+        totalDuration: json['total_duration'] as int?,
+        loadDuration: json['load_duration'] as int?,
+        promptEvalCount: json['prompt_eval_count'] as int?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (model != null) 'model': model,
-    if (embeddings != null) 'embeddings': embeddings,
-    if (totalDuration != null) 'total_duration': totalDuration,
-    if (loadDuration != null) 'load_duration': loadDuration,
-    if (promptEvalCount != null) 'prompt_eval_count': promptEvalCount,
-  };
+        if (model != null) 'model': model,
+        if (embeddings != null) 'embeddings': embeddings,
+        if (totalDuration != null) 'total_duration': totalDuration,
+        if (loadDuration != null) 'load_duration': loadDuration,
+        if (promptEvalCount != null) 'prompt_eval_count': promptEvalCount,
+      };
 
   /// Creates a copy with replaced values.
   EmbedResponse copyWith({
@@ -91,7 +91,6 @@ class EmbedResponse {
   int get hashCode => model.hashCode;
 
   @override
-  String toString() =>
-      'EmbedResponse(model: $model, '
+  String toString() => 'EmbedResponse(model: $model, '
       'embeddings: ${embeddings?.length ?? 0} vectors)';
 }

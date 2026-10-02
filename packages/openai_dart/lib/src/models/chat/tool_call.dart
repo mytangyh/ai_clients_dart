@@ -38,7 +38,8 @@ class ToolCall {
   factory ToolCall.functionCall({
     required String id,
     required FunctionCall call,
-  }) => ToolCall(id: id, type: 'function', function: call);
+  }) =>
+      ToolCall(id: id, type: 'function', function: call);
 
   /// Creates a [ToolCall] from JSON.
   factory ToolCall.fromJson(Map<String, dynamic> json) {
@@ -60,10 +61,10 @@ class ToolCall {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type,
-    'function': function.toJson(),
-  };
+        'id': id,
+        'type': type,
+        'function': function.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -91,7 +92,8 @@ class FunctionCall {
   factory FunctionCall.fromMap({
     required String name,
     required Map<String, dynamic> arguments,
-  }) => FunctionCall(name: name, arguments: jsonEncode(arguments));
+  }) =>
+      FunctionCall(name: name, arguments: jsonEncode(arguments));
 
   /// Creates a [FunctionCall] from JSON.
   factory FunctionCall.fromJson(Map<String, dynamic> json) {

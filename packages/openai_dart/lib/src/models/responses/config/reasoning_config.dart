@@ -29,9 +29,9 @@ class ReasoningConfig {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (effort != null) 'effort': effort!.toJson(),
-    if (summary != null) 'summary': summary!.toJson(),
-  };
+        if (effort != null) 'effort': effort!.toJson(),
+        if (summary != null) 'summary': summary!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

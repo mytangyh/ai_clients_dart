@@ -114,9 +114,9 @@ class OllamaClient {
   ///
   /// Optionally accepts a custom [httpClient] for testing or advanced use cases.
   OllamaClient({OllamaConfig? config, http.Client? httpClient})
-    : config = config ?? const OllamaConfig(),
-      _httpClient = httpClient ?? http.Client(),
-      _ownsHttpClient = httpClient == null {
+      : config = config ?? const OllamaConfig(),
+        _httpClient = httpClient ?? http.Client(),
+        _ownsHttpClient = httpClient == null {
     _requestBuilder = RequestBuilder(config: this.config);
 
     // Build interceptor list based on configuration

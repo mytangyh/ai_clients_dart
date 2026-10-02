@@ -93,9 +93,9 @@ class MessageItem extends Item {
 
   /// Creates a developer message with simple text.
   factory MessageItem.developerText(String text) => MessageItem(
-    role: MessageRole.developer,
-    content: [InputContent.text(text)],
-  );
+        role: MessageRole.developer,
+        content: [InputContent.text(text)],
+      );
 
   /// Creates an assistant message.
   factory MessageItem.assistant(List<InputContent> content) =>
@@ -106,9 +106,9 @@ class MessageItem extends Item {
   /// Uses [AssistantTextContent] which serializes as `output_text`,
   /// as required by the API for assistant messages in multi-turn conversations.
   factory MessageItem.assistantText(String text) => MessageItem(
-    role: MessageRole.assistant,
-    content: [InputContent.assistantText(text)],
-  );
+        role: MessageRole.assistant,
+        content: [InputContent.assistantText(text)],
+      );
 
   /// Creates a [MessageItem] from JSON.
   factory MessageItem.fromJson(Map<String, dynamic> json) {
@@ -129,13 +129,13 @@ class MessageItem extends Item {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'message',
-    if (id != null) 'id': id,
-    'role': role.toJson(),
-    'content': content.map((e) => e.toJson()).toList(),
-    if (status != null) 'status': status!.toJson(),
-    if (phase != null) 'phase': phase!.toJson(),
-  };
+        'type': 'message',
+        if (id != null) 'id': id,
+        'role': role.toJson(),
+        'content': content.map((e) => e.toJson()).toList(),
+        if (status != null) 'status': status!.toJson(),
+        if (phase != null) 'phase': phase!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -218,14 +218,14 @@ class FunctionCallItem extends Item {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'function_call',
-    if (id != null) 'id': id,
-    'call_id': callId,
-    'name': name,
-    'arguments': arguments,
-    if (status != null) 'status': status!.toJson(),
-    if (namespace != null) 'namespace': namespace,
-  };
+        'type': 'function_call',
+        if (id != null) 'id': id,
+        'call_id': callId,
+        'name': name,
+        'arguments': arguments,
+        if (status != null) 'status': status!.toJson(),
+        if (namespace != null) 'namespace': namespace,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -378,12 +378,12 @@ class FunctionCallOutputItem extends Item {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'function_call_output',
-    if (id != null) 'id': id,
-    'call_id': callId,
-    'output': output.toJson(),
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'function_call_output',
+        if (id != null) 'id': id,
+        'call_id': callId,
+        'output': output.toJson(),
+        if (status != null) 'status': status!.toJson(),
+      };
 
   /// Creates a copy with updated fields.
   ///
@@ -497,13 +497,13 @@ class ToolSearchCallItemParam extends Item {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_search_call',
-    if (id != null) 'id': id,
-    if (callId != null) 'call_id': callId,
-    if (execution != null) 'execution': execution!.toJson(),
-    if (arguments != null) 'arguments': arguments,
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'tool_search_call',
+        if (id != null) 'id': id,
+        if (callId != null) 'call_id': callId,
+        if (execution != null) 'execution': execution!.toJson(),
+        if (arguments != null) 'arguments': arguments,
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -571,13 +571,13 @@ class ToolSearchOutputItemParam extends Item {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_search_output',
-    if (id != null) 'id': id,
-    if (callId != null) 'call_id': callId,
-    if (execution != null) 'execution': execution!.toJson(),
-    'tools': tools.map((e) => e.toJson()).toList(),
-    if (status != null) 'status': status!.toJson(),
-  };
+        'type': 'tool_search_output',
+        if (id != null) 'id': id,
+        if (callId != null) 'call_id': callId,
+        if (execution != null) 'execution': execution!.toJson(),
+        'tools': tools.map((e) => e.toJson()).toList(),
+        if (status != null) 'status': status!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

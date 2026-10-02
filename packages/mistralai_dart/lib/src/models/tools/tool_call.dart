@@ -23,19 +23,19 @@ class ToolCall {
 
   /// Creates a [ToolCall] from JSON.
   factory ToolCall.fromJson(Map<String, dynamic> json) => ToolCall(
-    id: json['id'] as String? ?? '',
-    type: json['type'] as String? ?? 'function',
-    function: FunctionCall.fromJson(
-      json['function'] as Map<String, dynamic>? ?? {},
-    ),
-  );
+        id: json['id'] as String? ?? '',
+        type: json['type'] as String? ?? 'function',
+        function: FunctionCall.fromJson(
+          json['function'] as Map<String, dynamic>? ?? {},
+        ),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type,
-    'function': function.toJson(),
-  };
+        'id': id,
+        'type': type,
+        'function': function.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

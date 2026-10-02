@@ -27,8 +27,7 @@ class ConversationResponse {
   factory ConversationResponse.fromJson(Map<String, dynamic> json) {
     return ConversationResponse(
       conversationId: json['conversation_id'] as String? ?? '',
-      outputs:
-          (json['outputs'] as List<dynamic>?)
+      outputs: (json['outputs'] as List<dynamic>?)
               ?.map(
                 (e) => ConversationEntry.fromJson(e as Map<String, dynamic>),
               )
@@ -115,8 +114,7 @@ class ConversationEntriesResponse {
   factory ConversationEntriesResponse.fromJson(Map<String, dynamic> json) {
     return ConversationEntriesResponse(
       object: json['object'] as String? ?? 'list',
-      data:
-          (json['data'] as List<dynamic>?)
+      data: (json['data'] as List<dynamic>?)
               ?.map(
                 (e) => ConversationEntry.fromJson(e as Map<String, dynamic>),
               )

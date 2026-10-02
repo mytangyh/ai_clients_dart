@@ -41,7 +41,8 @@ sealed class ConversationEntry {
     String content, {
     String? id,
     List<ToolCall>? toolCalls,
-  }) => MessageOutputEntry(content: content, id: id, toolCalls: toolCalls);
+  }) =>
+      MessageOutputEntry(content: content, id: id, toolCalls: toolCalls);
 }
 
 /// An input message entry (typically from the user).

@@ -52,14 +52,14 @@ class FileMetadata {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'filename': filename,
-    'mime_type': mimeType,
-    'size_bytes': sizeBytes,
-    'created_at': createdAt.toUtc().toIso8601String(),
-    'type': type,
-    'downloadable': downloadable,
-  };
+        'id': id,
+        'filename': filename,
+        'mime_type': mimeType,
+        'size_bytes': sizeBytes,
+        'created_at': createdAt.toUtc().toIso8601String(),
+        'type': type,
+        'downloadable': downloadable,
+      };
 
   /// Creates a copy with replaced values.
   FileMetadata copyWith({
@@ -97,18 +97,17 @@ class FileMetadata {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    filename,
-    mimeType,
-    sizeBytes,
-    createdAt,
-    type,
-    downloadable,
-  );
+        id,
+        filename,
+        mimeType,
+        sizeBytes,
+        createdAt,
+        type,
+        downloadable,
+      );
 
   @override
-  String toString() =>
-      'FileMetadata('
+  String toString() => 'FileMetadata('
       'id: $id, '
       'filename: $filename, '
       'mimeType: $mimeType, '

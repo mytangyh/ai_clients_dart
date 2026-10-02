@@ -34,11 +34,11 @@ class Hyperparameters {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (trainingSteps != null) 'training_steps': trainingSteps,
-    if (learningRate != null) 'learning_rate': learningRate,
-    if (warmupFraction != null) 'warmup_fraction': warmupFraction,
-    if (weightDecay != null) 'weight_decay': weightDecay,
-  };
+        if (trainingSteps != null) 'training_steps': trainingSteps,
+        if (learningRate != null) 'learning_rate': learningRate,
+        if (warmupFraction != null) 'warmup_fraction': warmupFraction,
+        if (weightDecay != null) 'weight_decay': weightDecay,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -55,7 +55,6 @@ class Hyperparameters {
       Object.hash(trainingSteps, learningRate, warmupFraction, weightDecay);
 
   @override
-  String toString() =>
-      'Hyperparameters(trainingSteps: $trainingSteps, '
+  String toString() => 'Hyperparameters(trainingSteps: $trainingSteps, '
       'learningRate: $learningRate)';
 }

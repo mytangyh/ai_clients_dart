@@ -26,9 +26,9 @@ class ProcessingStatusOut {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'document_id': documentId,
-    'processing_status': processingStatus,
-  };
+        'document_id': documentId,
+        'processing_status': processingStatus,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -42,7 +42,6 @@ class ProcessingStatusOut {
   int get hashCode => Object.hash(documentId, processingStatus);
 
   @override
-  String toString() =>
-      'ProcessingStatusOut('
+  String toString() => 'ProcessingStatusOut('
       'documentId: $documentId, processingStatus: $processingStatus)';
 }

@@ -90,14 +90,14 @@ class CodeExecutionTool {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'code_execution',
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (container != null) 'container': container!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-  };
+        'type': type,
+        'name': 'code_execution',
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (container != null) 'container': container!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+      };
 
   /// Creates a copy with replaced values.
   CodeExecutionTool copyWith({
@@ -140,13 +140,13 @@ class CodeExecutionTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    cacheControl,
-    container,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-  );
+        type,
+        cacheControl,
+        container,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+      );
 
   @override
   String toString() =>

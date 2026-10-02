@@ -37,8 +37,7 @@ class ErrorInterceptor implements Interceptor {
       method: context.request.method,
       url: context.request.url,
       headers: _redactHeaders(context.request.headers),
-      correlationId:
-          context.metadata['correlationId'] as String? ??
+      correlationId: context.metadata['correlationId'] as String? ??
           context.request.headers['X-Request-ID'] ??
           'unknown',
       timestamp: DateTime.now(),

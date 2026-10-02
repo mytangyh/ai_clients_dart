@@ -70,9 +70,8 @@ class ErrorInterceptor implements Interceptor {
       }
     } catch (_) {
       // Fallback to raw body if JSON parsing fails
-      message = response.body.isNotEmpty
-          ? response.body
-          : 'HTTP $statusCode error';
+      message =
+          response.body.isNotEmpty ? response.body : 'HTTP $statusCode error';
     }
 
     return createApiException(

@@ -82,38 +82,41 @@ class ChatMessage {
 
   /// Creates a user message.
   const ChatMessage.user(String content, {List<String>? images})
-    : this(role: MessageRole.user, content: content, images: images);
+      : this(role: MessageRole.user, content: content, images: images);
 
   /// Creates a system message.
   const ChatMessage.system(String content)
-    : this(role: MessageRole.system, content: content);
+      : this(role: MessageRole.system, content: content);
 
   /// Creates an assistant message.
   const ChatMessage.assistant(String content, {List<ToolCall>? toolCalls})
-    : this(role: MessageRole.assistant, content: content, toolCalls: toolCalls);
+      : this(
+            role: MessageRole.assistant,
+            content: content,
+            toolCalls: toolCalls);
 
   /// Creates a tool result message.
   const ChatMessage.tool(String content)
-    : this(role: MessageRole.tool, content: content);
+      : this(role: MessageRole.tool, content: content);
 
   /// Creates a [ChatMessage] from JSON.
   factory ChatMessage.fromJson(Map<String, dynamic> json) => ChatMessage(
-    role: messageRoleFromString(json['role'] as String?),
-    content: json['content'] as String? ?? '',
-    images: (json['images'] as List?)?.cast<String>(),
-    toolCalls: (json['tool_calls'] as List?)
-        ?.map((e) => ToolCall.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
+        role: messageRoleFromString(json['role'] as String?),
+        content: json['content'] as String? ?? '',
+        images: (json['images'] as List?)?.cast<String>(),
+        toolCalls: (json['tool_calls'] as List?)
+            ?.map((e) => ToolCall.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'role': messageRoleToString(role),
-    'content': content,
-    if (images != null) 'images': images,
-    if (toolCalls != null)
-      'tool_calls': toolCalls!.map((e) => e.toJson()).toList(),
-  };
+        'role': messageRoleToString(role),
+        'content': content,
+        if (images != null) 'images': images,
+        if (toolCalls != null)
+          'tool_calls': toolCalls!.map((e) => e.toJson()).toList(),
+      };
 
   /// Creates a copy with replaced values.
   ChatMessage copyWith({
@@ -125,9 +128,8 @@ class ChatMessage {
     return ChatMessage(
       role: role ?? this.role,
       content: content ?? this.content,
-      images: images == unsetCopyWithValue
-          ? this.images
-          : images as List<String>?,
+      images:
+          images == unsetCopyWithValue ? this.images : images as List<String>?,
       toolCalls: toolCalls == unsetCopyWithValue
           ? this.toolCalls
           : toolCalls as List<ToolCall>?,
@@ -149,8 +151,7 @@ class ChatMessage {
       Object.hash(role, content, listHash(images), listHash(toolCalls));
 
   @override
-  String toString() =>
-      'ChatMessage('
+  String toString() => 'ChatMessage('
       'role: $role, '
       'content: $content, '
       'images: $images, '

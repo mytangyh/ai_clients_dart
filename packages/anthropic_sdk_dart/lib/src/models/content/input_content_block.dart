@@ -119,8 +119,8 @@ sealed class InputContentBlock {
       'text_editor_code_execution_tool_result' =>
         TextEditorCodeExecutionToolResultInputBlock.fromJson(json),
       'tool_search_tool_result' => ToolSearchToolResultInputBlock.fromJson(
-        json,
-      ),
+          json,
+        ),
       'container_upload' => ContainerUploadInputBlock.fromJson(json),
       'compaction' => CompactionInputBlock.fromJson(json),
       'tool_reference' => ToolReferenceInputBlock.fromJson(json),
@@ -158,10 +158,10 @@ class TextInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'text',
-    'text': text,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'text',
+        'text': text,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   TextInputBlock copyWith({
@@ -218,10 +218,10 @@ class ImageInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'image',
-    'source': source.toJson(),
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'image',
+        'source': source.toJson(),
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ImageInputBlock copyWith({
@@ -282,11 +282,11 @@ class DocumentInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'document',
-    'source': source.toJson(),
-    if (title != null) 'title': title,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'document',
+        'source': source.toJson(),
+        if (title != null) 'title': title,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   DocumentInputBlock copyWith({
@@ -316,8 +316,7 @@ class DocumentInputBlock extends InputContentBlock {
   int get hashCode => Object.hash(source, title, cacheControl);
 
   @override
-  String toString() =>
-      'DocumentInputBlock(source: $source, title: $title, '
+  String toString() => 'DocumentInputBlock(source: $source, title: $title, '
       'cacheControl: $cacheControl)';
 }
 
@@ -367,13 +366,13 @@ class ToolUseInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_use',
-    'id': id,
-    'name': name,
-    'input': input,
-    if (caller != null) 'caller': caller!.toJson(),
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'tool_use',
+        'id': id,
+        'name': name,
+        'input': input,
+        if (caller != null) 'caller': caller!.toJson(),
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ToolUseInputBlock copyWith({
@@ -387,9 +386,8 @@ class ToolUseInputBlock extends InputContentBlock {
       id: id ?? this.id,
       name: name ?? this.name,
       input: input ?? this.input,
-      caller: caller == unsetCopyWithValue
-          ? this.caller
-          : caller as ToolCaller?,
+      caller:
+          caller == unsetCopyWithValue ? this.caller : caller as ToolCaller?,
       cacheControl: cacheControl == unsetCopyWithValue
           ? this.cacheControl
           : cacheControl as CacheControlEphemeral?,
@@ -412,8 +410,7 @@ class ToolUseInputBlock extends InputContentBlock {
       Object.hash(id, name, mapHash(input), caller, cacheControl);
 
   @override
-  String toString() =>
-      'ToolUseInputBlock(id: $id, name: $name, input: $input, '
+  String toString() => 'ToolUseInputBlock(id: $id, name: $name, input: $input, '
       'caller: $caller, cacheControl: $cacheControl)';
 }
 
@@ -561,12 +558,13 @@ class ToolResultInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_result',
-    'tool_use_id': toolUseId,
-    if (content != null) 'content': content!.map((e) => e.toJson()).toList(),
-    if (isError != null) 'is_error': isError,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'tool_result',
+        'tool_use_id': toolUseId,
+        if (content != null)
+          'content': content!.map((e) => e.toJson()).toList(),
+        if (isError != null) 'is_error': isError,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ToolResultInputBlock copyWith({
@@ -653,13 +651,13 @@ class ServerToolUseInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'server_tool_use',
-    'id': id,
-    'name': name,
-    'input': input,
-    if (caller != null) 'caller': caller!.toJson(),
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'server_tool_use',
+        'id': id,
+        'name': name,
+        'input': input,
+        if (caller != null) 'caller': caller!.toJson(),
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ServerToolUseInputBlock copyWith({
@@ -673,9 +671,8 @@ class ServerToolUseInputBlock extends InputContentBlock {
       id: id ?? this.id,
       name: name ?? this.name,
       input: input ?? this.input,
-      caller: caller == unsetCopyWithValue
-          ? this.caller
-          : caller as ToolCaller?,
+      caller:
+          caller == unsetCopyWithValue ? this.caller : caller as ToolCaller?,
       cacheControl: cacheControl == unsetCopyWithValue
           ? this.cacheControl
           : cacheControl as CacheControlEphemeral?,
@@ -744,12 +741,12 @@ class WebSearchToolResultInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'web_search_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content.toJson(),
-    if (caller != null) 'caller': caller!.toJson(),
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'web_search_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content.toJson(),
+        if (caller != null) 'caller': caller!.toJson(),
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   WebSearchToolResultInputBlock copyWith({
@@ -761,9 +758,8 @@ class WebSearchToolResultInputBlock extends InputContentBlock {
     return WebSearchToolResultInputBlock(
       toolUseId: toolUseId ?? this.toolUseId,
       content: content ?? this.content,
-      caller: caller == unsetCopyWithValue
-          ? this.caller
-          : caller as ToolCaller?,
+      caller:
+          caller == unsetCopyWithValue ? this.caller : caller as ToolCaller?,
       cacheControl: cacheControl == unsetCopyWithValue
           ? this.cacheControl
           : cacheControl as CacheControlEphemeral?,
@@ -784,8 +780,7 @@ class WebSearchToolResultInputBlock extends InputContentBlock {
   int get hashCode => Object.hash(toolUseId, content, caller, cacheControl);
 
   @override
-  String toString() =>
-      'WebSearchToolResultInputBlock(toolUseId: $toolUseId, '
+  String toString() => 'WebSearchToolResultInputBlock(toolUseId: $toolUseId, '
       'content: $content, caller: $caller, cacheControl: $cacheControl)';
 }
 
@@ -830,12 +825,12 @@ class WebFetchToolResultInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'web_fetch_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-    if (caller != null) 'caller': caller!.toJson(),
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'web_fetch_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+        if (caller != null) 'caller': caller!.toJson(),
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   WebFetchToolResultInputBlock copyWith({
@@ -847,9 +842,8 @@ class WebFetchToolResultInputBlock extends InputContentBlock {
     return WebFetchToolResultInputBlock(
       toolUseId: toolUseId ?? this.toolUseId,
       content: content ?? this.content,
-      caller: caller == unsetCopyWithValue
-          ? this.caller
-          : caller as ToolCaller?,
+      caller:
+          caller == unsetCopyWithValue ? this.caller : caller as ToolCaller?,
       cacheControl: cacheControl == unsetCopyWithValue
           ? this.cacheControl
           : cacheControl as CacheControlEphemeral?,
@@ -871,8 +865,7 @@ class WebFetchToolResultInputBlock extends InputContentBlock {
       Object.hash(toolUseId, mapHash(content), caller, cacheControl);
 
   @override
-  String toString() =>
-      'WebFetchToolResultInputBlock(toolUseId: $toolUseId, '
+  String toString() => 'WebFetchToolResultInputBlock(toolUseId: $toolUseId, '
       'content: $content, caller: $caller, cacheControl: $cacheControl)';
 }
 
@@ -912,11 +905,11 @@ class CodeExecutionToolResultInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'code_execution_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'code_execution_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   CodeExecutionToolResultInputBlock copyWith({
@@ -987,11 +980,11 @@ class BashCodeExecutionToolResultInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'bash_code_execution_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'bash_code_execution_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   BashCodeExecutionToolResultInputBlock copyWith({
@@ -1062,11 +1055,11 @@ class TextEditorCodeExecutionToolResultInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'text_editor_code_execution_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'text_editor_code_execution_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   TextEditorCodeExecutionToolResultInputBlock copyWith({
@@ -1135,11 +1128,11 @@ class ToolSearchToolResultInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_search_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'tool_search_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ToolSearchToolResultInputBlock copyWith({
@@ -1169,8 +1162,7 @@ class ToolSearchToolResultInputBlock extends InputContentBlock {
   int get hashCode => Object.hash(toolUseId, mapHash(content), cacheControl);
 
   @override
-  String toString() =>
-      'ToolSearchToolResultInputBlock(toolUseId: $toolUseId, '
+  String toString() => 'ToolSearchToolResultInputBlock(toolUseId: $toolUseId, '
       'content: $content, cacheControl: $cacheControl)';
 }
 
@@ -1200,10 +1192,10 @@ class ContainerUploadInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'container_upload',
-    'file_id': fileId,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'container_upload',
+        'file_id': fileId,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ContainerUploadInputBlock copyWith({
@@ -1230,8 +1222,7 @@ class ContainerUploadInputBlock extends InputContentBlock {
   int get hashCode => Object.hash(fileId, cacheControl);
 
   @override
-  String toString() =>
-      'ContainerUploadInputBlock(fileId: $fileId, '
+  String toString() => 'ContainerUploadInputBlock(fileId: $fileId, '
       'cacheControl: $cacheControl)';
 }
 
@@ -1266,10 +1257,10 @@ class CompactionInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'compaction',
-    'content': content,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'compaction',
+        'content': content,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   CompactionInputBlock copyWith({
@@ -1277,9 +1268,8 @@ class CompactionInputBlock extends InputContentBlock {
     Object? cacheControl = unsetCopyWithValue,
   }) {
     return CompactionInputBlock(
-      content: content == unsetCopyWithValue
-          ? this.content
-          : content as String?,
+      content:
+          content == unsetCopyWithValue ? this.content : content as String?,
       cacheControl: cacheControl == unsetCopyWithValue
           ? this.cacheControl
           : cacheControl as CacheControlEphemeral?,
@@ -1328,10 +1318,10 @@ class ToolReferenceInputBlock extends InputContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_reference',
-    'tool_name': toolName,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'tool_reference',
+        'tool_name': toolName,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ToolReferenceInputBlock copyWith({
@@ -1358,7 +1348,6 @@ class ToolReferenceInputBlock extends InputContentBlock {
   int get hashCode => Object.hash(toolName, cacheControl);
 
   @override
-  String toString() =>
-      'ToolReferenceInputBlock(toolName: $toolName, '
+  String toString() => 'ToolReferenceInputBlock(toolName: $toolName, '
       'cacheControl: $cacheControl)';
 }

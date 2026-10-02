@@ -49,8 +49,7 @@ class Message {
           .toList(),
       assistantId: json['assistant_id'] as String?,
       runId: json['run_id'] as String?,
-      attachments:
-          (json['attachments'] as List<dynamic>?)
+      attachments: (json['attachments'] as List<dynamic>?)
               ?.map(
                 (e) => MessageAttachment.fromJson(e as Map<String, dynamic>),
               )
@@ -58,7 +57,7 @@ class Message {
           [],
       metadata:
           (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>() ??
-          {},
+              {},
     );
   }
 
@@ -119,22 +118,22 @@ class Message {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    'thread_id': threadId,
-    if (status != null) 'status': status!.toJson(),
-    if (incompleteDetails != null)
-      'incomplete_details': incompleteDetails!.toJson(),
-    if (completedAt != null) 'completed_at': completedAt,
-    if (incompleteAt != null) 'incomplete_at': incompleteAt,
-    'role': role,
-    'content': content.map((c) => c.toJson()).toList(),
-    if (assistantId != null) 'assistant_id': assistantId,
-    if (runId != null) 'run_id': runId,
-    'attachments': attachments.map((a) => a.toJson()).toList(),
-    'metadata': metadata,
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        'thread_id': threadId,
+        if (status != null) 'status': status!.toJson(),
+        if (incompleteDetails != null)
+          'incomplete_details': incompleteDetails!.toJson(),
+        if (completedAt != null) 'completed_at': completedAt,
+        if (incompleteAt != null) 'incomplete_at': incompleteAt,
+        'role': role,
+        'content': content.map((c) => c.toJson()).toList(),
+        if (assistantId != null) 'assistant_id': assistantId,
+        if (runId != null) 'run_id': runId,
+        'attachments': attachments.map((a) => a.toJson()).toList(),
+        'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -190,12 +189,12 @@ class MessageList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((m) => m.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((m) => m.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -230,8 +229,8 @@ class CreateMessageRequest {
       attachments: (json['attachments'] as List<dynamic>?)
           ?.map((e) => MessageAttachment.fromJson(e as Map<String, dynamic>))
           .toList(),
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -263,12 +262,12 @@ class CreateMessageRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'role': role,
-    'content': content,
-    if (attachments != null)
-      'attachments': attachments!.map((a) => a.toJson()).toList(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        'role': role,
+        'content': content,
+        if (attachments != null)
+          'attachments': attachments!.map((a) => a.toJson()).toList(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -291,8 +290,8 @@ class ModifyMessageRequest {
   /// Creates a [ModifyMessageRequest] from JSON.
   factory ModifyMessageRequest.fromJson(Map<String, dynamic> json) {
     return ModifyMessageRequest(
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -344,10 +343,10 @@ class DeleteMessageResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -499,9 +498,9 @@ class TextContent {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'value': value,
-    'annotations': annotations.map((a) => a.toJson()).toList(),
-  };
+        'value': value,
+        'annotations': annotations.map((a) => a.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -570,12 +569,12 @@ class FileCitationAnnotation implements TextAnnotation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'file_citation',
-    'text': text,
-    'file_citation': fileCitation.toJson(),
-    'start_index': startIndex,
-    'end_index': endIndex,
-  };
+        'type': 'file_citation',
+        'text': text,
+        'file_citation': fileCitation.toJson(),
+        'start_index': startIndex,
+        'end_index': endIndex,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -613,9 +612,9 @@ class FileCitation {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'file_id': fileId,
-    if (quote != null) 'quote': quote,
-  };
+        'file_id': fileId,
+        if (quote != null) 'quote': quote,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -666,12 +665,12 @@ class FilePathAnnotation implements TextAnnotation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'file_path',
-    'text': text,
-    'file_path': filePath.toJson(),
-    'start_index': startIndex,
-    'end_index': endIndex,
-  };
+        'type': 'file_path',
+        'text': text,
+        'file_path': filePath.toJson(),
+        'start_index': startIndex,
+        'end_index': endIndex,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -736,9 +735,9 @@ class ImageUrlMessageContent implements MessageContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'image_url',
-    'image_url': imageUrl.toJson(),
-  };
+        'type': 'image_url',
+        'image_url': imageUrl.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -776,9 +775,9 @@ class ImageUrl {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'url': url,
-    if (detail != null) 'detail': detail,
-  };
+        'url': url,
+        if (detail != null) 'detail': detail,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -810,9 +809,9 @@ class ImageFileMessageContent implements MessageContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'image_file',
-    'image_file': imageFile.toJson(),
-  };
+        'type': 'image_file',
+        'image_file': imageFile.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -850,9 +849,9 @@ class ImageFile {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'file_id': fileId,
-    if (detail != null) 'detail': detail,
-  };
+        'file_id': fileId,
+        if (detail != null) 'detail': detail,
+      };
 
   @override
   bool operator ==(Object other) =>

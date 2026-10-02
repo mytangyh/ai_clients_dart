@@ -39,25 +39,25 @@ class RunningModel {
 
   /// Creates a [RunningModel] from JSON.
   factory RunningModel.fromJson(Map<String, dynamic> json) => RunningModel(
-    model: json['model'] as String?,
-    size: json['size'] as int?,
-    digest: json['digest'] as String?,
-    details: json['details'] as Map<String, dynamic>?,
-    expiresAt: json['expires_at'] as String?,
-    sizeVram: json['size_vram'] as int?,
-    contextLength: json['context_length'] as int?,
-  );
+        model: json['model'] as String?,
+        size: json['size'] as int?,
+        digest: json['digest'] as String?,
+        details: json['details'] as Map<String, dynamic>?,
+        expiresAt: json['expires_at'] as String?,
+        sizeVram: json['size_vram'] as int?,
+        contextLength: json['context_length'] as int?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (model != null) 'model': model,
-    if (size != null) 'size': size,
-    if (digest != null) 'digest': digest,
-    if (details != null) 'details': details,
-    if (expiresAt != null) 'expires_at': expiresAt,
-    if (sizeVram != null) 'size_vram': sizeVram,
-    if (contextLength != null) 'context_length': contextLength,
-  };
+        if (model != null) 'model': model,
+        if (size != null) 'size': size,
+        if (digest != null) 'digest': digest,
+        if (details != null) 'details': details,
+        if (expiresAt != null) 'expires_at': expiresAt,
+        if (sizeVram != null) 'size_vram': sizeVram,
+        if (contextLength != null) 'context_length': contextLength,
+      };
 
   /// Creates a copy with replaced values.
   RunningModel copyWith({
@@ -79,9 +79,8 @@ class RunningModel {
       expiresAt: expiresAt == unsetCopyWithValue
           ? this.expiresAt
           : expiresAt as String?,
-      sizeVram: sizeVram == unsetCopyWithValue
-          ? this.sizeVram
-          : sizeVram as int?,
+      sizeVram:
+          sizeVram == unsetCopyWithValue ? this.sizeVram : sizeVram as int?,
       contextLength: contextLength == unsetCopyWithValue
           ? this.contextLength
           : contextLength as int?,

@@ -55,37 +55,37 @@ class Agent {
 
   /// Creates an [Agent] from JSON.
   factory Agent.fromJson(Map<String, dynamic> json) => Agent(
-    id: json['id'] as String? ?? '',
-    object: json['object'] as String? ?? 'agent',
-    name: json['name'] as String? ?? '',
-    description: json['description'] as String?,
-    model: json['model'] as String? ?? '',
-    instructions: json['instructions'] as String?,
-    tools: (json['tools'] as List?)
-        ?.map((e) => Tool.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    metadata: json['metadata'] as Map<String, dynamic>?,
-    version: json['version'] as int? ?? 1,
-    createdAt: _parseDateTime(json['created_at']),
-    updatedAt: _parseDateTime(json['updated_at']),
-  );
+        id: json['id'] as String? ?? '',
+        object: json['object'] as String? ?? 'agent',
+        name: json['name'] as String? ?? '',
+        description: json['description'] as String?,
+        model: json['model'] as String? ?? '',
+        instructions: json['instructions'] as String?,
+        tools: (json['tools'] as List?)
+            ?.map((e) => Tool.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        metadata: json['metadata'] as Map<String, dynamic>?,
+        version: json['version'] as int? ?? 1,
+        createdAt: _parseDateTime(json['created_at']),
+        updatedAt: _parseDateTime(json['updated_at']),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'name': name,
-    if (description != null) 'description': description,
-    'model': model,
-    if (instructions != null) 'instructions': instructions,
-    if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
-    if (metadata != null) 'metadata': metadata,
-    'version': version,
-    if (createdAt != null)
-      'created_at': createdAt!.millisecondsSinceEpoch ~/ 1000,
-    if (updatedAt != null)
-      'updated_at': updatedAt!.millisecondsSinceEpoch ~/ 1000,
-  };
+        'id': id,
+        'object': object,
+        'name': name,
+        if (description != null) 'description': description,
+        'model': model,
+        if (instructions != null) 'instructions': instructions,
+        if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
+        if (metadata != null) 'metadata': metadata,
+        'version': version,
+        if (createdAt != null)
+          'created_at': createdAt!.millisecondsSinceEpoch ~/ 1000,
+        if (updatedAt != null)
+          'updated_at': updatedAt!.millisecondsSinceEpoch ~/ 1000,
+      };
 
   @override
   bool operator ==(Object other) =>

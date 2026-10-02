@@ -22,10 +22,11 @@ sealed class AssistantTool {
   static AssistantTool fileSearch({
     int? maxNumResults,
     FileSearchRankingOptions? rankingOptions,
-  }) => FileSearchTool(
-    maxNumResults: maxNumResults,
-    rankingOptions: rankingOptions,
-  );
+  }) =>
+      FileSearchTool(
+        maxNumResults: maxNumResults,
+        rankingOptions: rankingOptions,
+      );
 
   /// Creates a function tool.
   static AssistantTool function({
@@ -33,12 +34,13 @@ sealed class AssistantTool {
     String? description,
     Map<String, dynamic>? parameters,
     bool? strict,
-  }) => FunctionTool(
-    name: name,
-    description: description,
-    parameters: parameters,
-    strict: strict,
-  );
+  }) =>
+      FunctionTool(
+        name: name,
+        description: description,
+        parameters: parameters,
+        strict: strict,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson();
@@ -100,13 +102,14 @@ class FileSearchTool implements AssistantTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'file_search',
-    if (maxNumResults != null || rankingOptions != null)
-      'file_search': {
-        if (maxNumResults != null) 'max_num_results': maxNumResults,
-        if (rankingOptions != null) 'ranking_options': rankingOptions!.toJson(),
-      },
-  };
+        'type': 'file_search',
+        if (maxNumResults != null || rankingOptions != null)
+          'file_search': {
+            if (maxNumResults != null) 'max_num_results': maxNumResults,
+            if (rankingOptions != null)
+              'ranking_options': rankingOptions!.toJson(),
+          },
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -148,9 +151,9 @@ class FileSearchRankingOptions {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'ranker': ranker,
-    if (scoreThreshold != null) 'score_threshold': scoreThreshold,
-  };
+        'ranker': ranker,
+        if (scoreThreshold != null) 'score_threshold': scoreThreshold,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -205,14 +208,14 @@ class FunctionTool implements AssistantTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'function',
-    'function': {
-      'name': name,
-      if (description != null) 'description': description,
-      if (parameters != null) 'parameters': parameters,
-      if (strict != null) 'strict': strict,
-    },
-  };
+        'type': 'function',
+        'function': {
+          'name': name,
+          if (description != null) 'description': description,
+          if (parameters != null) 'parameters': parameters,
+          if (strict != null) 'strict': strict,
+        },
+      };
 
   @override
   bool operator ==(Object other) =>

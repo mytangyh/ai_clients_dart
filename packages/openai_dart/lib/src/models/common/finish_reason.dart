@@ -28,13 +28,13 @@ enum FinishReason {
 
   /// Creates a [FinishReason] from a JSON string.
   static FinishReason fromJson(String value) => switch (value) {
-    'stop' => FinishReason.stop,
-    'length' => FinishReason.length,
-    'tool_calls' => FinishReason.toolCalls,
-    'content_filter' => FinishReason.contentFilter,
-    'function_call' => FinishReason.functionCall,
-    _ => throw FormatException('Unknown FinishReason: $value'),
-  };
+        'stop' => FinishReason.stop,
+        'length' => FinishReason.length,
+        'tool_calls' => FinishReason.toolCalls,
+        'content_filter' => FinishReason.contentFilter,
+        'function_call' => FinishReason.functionCall,
+        _ => throw FormatException('Unknown FinishReason: $value'),
+      };
 
   /// Converts to JSON string.
   String toJson() => value;

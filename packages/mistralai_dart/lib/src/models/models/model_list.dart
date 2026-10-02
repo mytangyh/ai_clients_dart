@@ -17,19 +17,18 @@ class ModelList {
 
   /// Creates a [ModelList] from JSON.
   factory ModelList.fromJson(Map<String, dynamic> json) => ModelList(
-    object: json['object'] as String? ?? 'list',
-    data:
-        (json['data'] as List?)
-            ?.map((e) => Model.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-  );
+        object: json['object'] as String? ?? 'list',
+        data: (json['data'] as List?)
+                ?.map((e) => Model.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>

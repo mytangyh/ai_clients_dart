@@ -103,23 +103,25 @@ class GenerateResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (model != null) 'model': model,
-    if (remoteModel != null) 'remote_model': remoteModel,
-    if (remoteHost != null) 'remote_host': remoteHost,
-    if (createdAt != null) 'created_at': createdAt,
-    if (response != null) 'response': response,
-    if (thinking != null) 'thinking': thinking,
-    if (done != null) 'done': done,
-    if (doneReason != null) 'done_reason': doneReasonToString(doneReason!),
-    if (context != null) 'context': context,
-    if (totalDuration != null) 'total_duration': totalDuration,
-    if (loadDuration != null) 'load_duration': loadDuration,
-    if (promptEvalCount != null) 'prompt_eval_count': promptEvalCount,
-    if (promptEvalDuration != null) 'prompt_eval_duration': promptEvalDuration,
-    if (evalCount != null) 'eval_count': evalCount,
-    if (evalDuration != null) 'eval_duration': evalDuration,
-    if (logprobs != null) 'logprobs': logprobs!.map((e) => e.toJson()).toList(),
-  };
+        if (model != null) 'model': model,
+        if (remoteModel != null) 'remote_model': remoteModel,
+        if (remoteHost != null) 'remote_host': remoteHost,
+        if (createdAt != null) 'created_at': createdAt,
+        if (response != null) 'response': response,
+        if (thinking != null) 'thinking': thinking,
+        if (done != null) 'done': done,
+        if (doneReason != null) 'done_reason': doneReasonToString(doneReason!),
+        if (context != null) 'context': context,
+        if (totalDuration != null) 'total_duration': totalDuration,
+        if (loadDuration != null) 'load_duration': loadDuration,
+        if (promptEvalCount != null) 'prompt_eval_count': promptEvalCount,
+        if (promptEvalDuration != null)
+          'prompt_eval_duration': promptEvalDuration,
+        if (evalCount != null) 'eval_count': evalCount,
+        if (evalDuration != null) 'eval_duration': evalDuration,
+        if (logprobs != null)
+          'logprobs': logprobs!.map((e) => e.toJson()).toList(),
+      };
 
   /// Creates a copy with replaced values.
   GenerateResponse copyWith({
@@ -151,19 +153,16 @@ class GenerateResponse {
       createdAt: createdAt == unsetCopyWithValue
           ? this.createdAt
           : createdAt as String?,
-      response: response == unsetCopyWithValue
-          ? this.response
-          : response as String?,
-      thinking: thinking == unsetCopyWithValue
-          ? this.thinking
-          : thinking as String?,
+      response:
+          response == unsetCopyWithValue ? this.response : response as String?,
+      thinking:
+          thinking == unsetCopyWithValue ? this.thinking : thinking as String?,
       done: done == unsetCopyWithValue ? this.done : done as bool?,
       doneReason: doneReason == unsetCopyWithValue
           ? this.doneReason
           : doneReason as DoneReason?,
-      context: context == unsetCopyWithValue
-          ? this.context
-          : context as List<int>?,
+      context:
+          context == unsetCopyWithValue ? this.context : context as List<int>?,
       totalDuration: totalDuration == unsetCopyWithValue
           ? this.totalDuration
           : totalDuration as int?,
@@ -176,9 +175,8 @@ class GenerateResponse {
       promptEvalDuration: promptEvalDuration == unsetCopyWithValue
           ? this.promptEvalDuration
           : promptEvalDuration as int?,
-      evalCount: evalCount == unsetCopyWithValue
-          ? this.evalCount
-          : evalCount as int?,
+      evalCount:
+          evalCount == unsetCopyWithValue ? this.evalCount : evalCount as int?,
       evalDuration: evalDuration == unsetCopyWithValue
           ? this.evalDuration
           : evalDuration as int?,
@@ -201,8 +199,7 @@ class GenerateResponse {
   int get hashCode => Object.hash(model, response, done);
 
   @override
-  String toString() =>
-      'GenerateResponse('
+  String toString() => 'GenerateResponse('
       'model: $model, '
       'response: $response, '
       'done: $done)';

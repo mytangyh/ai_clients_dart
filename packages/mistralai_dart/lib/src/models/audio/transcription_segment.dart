@@ -73,18 +73,18 @@ class TranscriptionSegment {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    if (seek != null) 'seek': seek,
-    'start': start,
-    'end': end,
-    'text': text,
-    if (tokens != null) 'tokens': tokens,
-    if (temperature != null) 'temperature': temperature,
-    if (avgLogprob != null) 'avg_logprob': avgLogprob,
-    if (compressionRatio != null) 'compression_ratio': compressionRatio,
-    if (noSpeechProb != null) 'no_speech_prob': noSpeechProb,
-    if (words != null) 'words': words!.map((e) => e.toJson()).toList(),
-  };
+        'id': id,
+        if (seek != null) 'seek': seek,
+        'start': start,
+        'end': end,
+        'text': text,
+        if (tokens != null) 'tokens': tokens,
+        if (temperature != null) 'temperature': temperature,
+        if (avgLogprob != null) 'avg_logprob': avgLogprob,
+        if (compressionRatio != null) 'compression_ratio': compressionRatio,
+        if (noSpeechProb != null) 'no_speech_prob': noSpeechProb,
+        if (words != null) 'words': words!.map((e) => e.toJson()).toList(),
+      };
 
   /// Duration of the segment in seconds.
   double get duration => end - start;

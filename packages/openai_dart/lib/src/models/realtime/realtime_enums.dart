@@ -250,9 +250,9 @@ class RealtimeToolChoiceFunction extends RealtimeToolChoice {
 
   @override
   Object toJson() => {
-    'type': 'function',
-    'function': {'name': name},
-  };
+        'type': 'function',
+        'function': {'name': name},
+      };
 
   @override
   bool operator ==(Object other) =>

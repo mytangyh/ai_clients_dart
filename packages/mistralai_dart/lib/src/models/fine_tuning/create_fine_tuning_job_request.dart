@@ -72,8 +72,7 @@ class CreateFineTuningJobRequest {
   factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) =>
       CreateFineTuningJobRequest(
         model: json['model'] as String? ?? '',
-        trainingFiles:
-            (json['training_files'] as List?)
+        trainingFiles: (json['training_files'] as List?)
                 ?.map((e) => TrainingFile.fromJson(e as Map<String, dynamic>))
                 .toList() ??
             [],
@@ -97,17 +96,18 @@ class CreateFineTuningJobRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'training_files': trainingFiles.map((e) => e.toJson()).toList(),
-    if (validationFiles != null)
-      'validation_files': validationFiles!.map((e) => e.toJson()).toList(),
-    if (hyperparameters != null) 'hyperparameters': hyperparameters!.toJson(),
-    if (suffix != null) 'suffix': suffix,
-    if (integrations != null)
-      'integrations': integrations!.map((e) => e.toJson()).toList(),
-    if (autoStart != null) 'auto_start': autoStart,
-    if (metadata != null) 'metadata': metadata,
-  };
+        'model': model,
+        'training_files': trainingFiles.map((e) => e.toJson()).toList(),
+        if (validationFiles != null)
+          'validation_files': validationFiles!.map((e) => e.toJson()).toList(),
+        if (hyperparameters != null)
+          'hyperparameters': hyperparameters!.toJson(),
+        if (suffix != null) 'suffix': suffix,
+        if (integrations != null)
+          'integrations': integrations!.map((e) => e.toJson()).toList(),
+        if (autoStart != null) 'auto_start': autoStart,
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -121,7 +121,6 @@ class CreateFineTuningJobRequest {
   int get hashCode => Object.hash(model, trainingFiles, suffix);
 
   @override
-  String toString() =>
-      'CreateFineTuningJobRequest(model: $model, '
+  String toString() => 'CreateFineTuningJobRequest(model: $model, '
       'trainingFiles: ${trainingFiles.length})';
 }

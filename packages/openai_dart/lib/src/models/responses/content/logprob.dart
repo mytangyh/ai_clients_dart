@@ -39,12 +39,12 @@ class LogProb {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'token': token,
-    'logprob': logprob,
-    if (bytes != null) 'bytes': bytes,
-    if (topLogprobs != null)
-      'top_logprobs': topLogprobs!.map((e) => e.toJson()).toList(),
-  };
+        'token': token,
+        'logprob': logprob,
+        if (bytes != null) 'bytes': bytes,
+        if (topLogprobs != null)
+          'top_logprobs': topLogprobs!.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -58,11 +58,11 @@ class LogProb {
 
   @override
   int get hashCode => Object.hash(
-    token,
-    logprob,
-    bytes != null ? Object.hashAll(bytes!) : null,
-    topLogprobs != null ? Object.hashAll(topLogprobs!) : null,
-  );
+        token,
+        logprob,
+        bytes != null ? Object.hashAll(bytes!) : null,
+        topLogprobs != null ? Object.hashAll(topLogprobs!) : null,
+      );
 
   @override
   String toString() =>
@@ -95,10 +95,10 @@ class TopLogProb {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'token': token,
-    'logprob': logprob,
-    if (bytes != null) 'bytes': bytes,
-  };
+        'token': token,
+        'logprob': logprob,
+        if (bytes != null) 'bytes': bytes,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -111,10 +111,10 @@ class TopLogProb {
 
   @override
   int get hashCode => Object.hash(
-    token,
-    logprob,
-    bytes != null ? Object.hashAll(bytes!) : null,
-  );
+        token,
+        logprob,
+        bytes != null ? Object.hashAll(bytes!) : null,
+      );
 
   @override
   String toString() =>

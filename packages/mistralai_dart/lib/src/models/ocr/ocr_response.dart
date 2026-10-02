@@ -44,35 +44,34 @@ class OcrResponse {
 
   /// Creates an [OcrResponse] from JSON.
   factory OcrResponse.fromJson(Map<String, dynamic> json) => OcrResponse(
-    id: json['id'] as String? ?? '',
-    object: json['object'] as String? ?? 'ocr.response',
-    model: json['model'] as String? ?? '',
-    pages:
-        (json['pages'] as List?)
-            ?.map((e) => OcrPage.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-    usage: json['usage'] != null
-        ? UsageInfo.fromJson(json['usage'] as Map<String, dynamic>)
-        : null,
-    totalPages: json['total_pages'] as int?,
-    processedPages: json['processed_pages'] as int?,
-    createdAt: json['created_at'] != null
-        ? DateTime.tryParse(json['created_at'].toString())
-        : null,
-  );
+        id: json['id'] as String? ?? '',
+        object: json['object'] as String? ?? 'ocr.response',
+        model: json['model'] as String? ?? '',
+        pages: (json['pages'] as List?)
+                ?.map((e) => OcrPage.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+        usage: json['usage'] != null
+            ? UsageInfo.fromJson(json['usage'] as Map<String, dynamic>)
+            : null,
+        totalPages: json['total_pages'] as int?,
+        processedPages: json['processed_pages'] as int?,
+        createdAt: json['created_at'] != null
+            ? DateTime.tryParse(json['created_at'].toString())
+            : null,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'model': model,
-    'pages': pages.map((e) => e.toJson()).toList(),
-    if (usage != null) 'usage': usage!.toJson(),
-    if (totalPages != null) 'total_pages': totalPages,
-    if (processedPages != null) 'processed_pages': processedPages,
-    if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
-  };
+        'id': id,
+        'object': object,
+        'model': model,
+        'pages': pages.map((e) => e.toJson()).toList(),
+        if (usage != null) 'usage': usage!.toJson(),
+        if (totalPages != null) 'total_pages': totalPages,
+        if (processedPages != null) 'processed_pages': processedPages,
+        if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
+      };
 
   /// Gets all extracted text as a single string.
   String get text => pages.map((p) => p.markdown).join('\n\n');

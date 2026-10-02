@@ -19,17 +19,17 @@ class PushRequest {
 
   /// Creates a [PushRequest] from JSON.
   factory PushRequest.fromJson(Map<String, dynamic> json) => PushRequest(
-    model: json['model'] as String,
-    insecure: json['insecure'] as bool?,
-    stream: json['stream'] as bool?,
-  );
+        model: json['model'] as String,
+        insecure: json['insecure'] as bool?,
+        stream: json['stream'] as bool?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    if (insecure != null) 'insecure': insecure,
-    if (stream != null) 'stream': stream,
-  };
+        'model': model,
+        if (insecure != null) 'insecure': insecure,
+        if (stream != null) 'stream': stream,
+      };
 
   /// Creates a copy with replaced values.
   PushRequest copyWith({
@@ -39,9 +39,8 @@ class PushRequest {
   }) {
     return PushRequest(
       model: model ?? this.model,
-      insecure: insecure == unsetCopyWithValue
-          ? this.insecure
-          : insecure as bool?,
+      insecure:
+          insecure == unsetCopyWithValue ? this.insecure : insecure as bool?,
       stream: stream == unsetCopyWithValue ? this.stream : stream as bool?,
     );
   }

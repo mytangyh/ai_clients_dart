@@ -75,14 +75,14 @@ class RealtimeTranscriptionSessionCreateRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (inputAudioFormat != null)
-      'input_audio_format': inputAudioFormat!.toJson(),
-    if (inputAudioTranscription != null)
-      'input_audio_transcription': inputAudioTranscription!.toJson(),
-    if (turnDetection != null) 'turn_detection': turnDetection!.toJson(),
-    if (inputAudioNoiseReduction != null)
-      'input_audio_noise_reduction': inputAudioNoiseReduction!.toJson(),
-  };
+        if (inputAudioFormat != null)
+          'input_audio_format': inputAudioFormat!.toJson(),
+        if (inputAudioTranscription != null)
+          'input_audio_transcription': inputAudioTranscription!.toJson(),
+        if (turnDetection != null) 'turn_detection': turnDetection!.toJson(),
+        if (inputAudioNoiseReduction != null)
+          'input_audio_noise_reduction': inputAudioNoiseReduction!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -167,16 +167,16 @@ class RealtimeTranscriptionSessionCreateResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'client_secret': clientSecret.toJson(),
-    if (modalities != null) 'modalities': modalities,
-    if (inputAudioFormat != null)
-      'input_audio_format': inputAudioFormat!.toJson(),
-    if (inputAudioTranscription != null)
-      'input_audio_transcription': inputAudioTranscription!.toJson(),
-    if (turnDetection != null) 'turn_detection': turnDetection!.toJson(),
-    if (inputAudioNoiseReduction != null)
-      'input_audio_noise_reduction': inputAudioNoiseReduction!.toJson(),
-  };
+        'client_secret': clientSecret.toJson(),
+        if (modalities != null) 'modalities': modalities,
+        if (inputAudioFormat != null)
+          'input_audio_format': inputAudioFormat!.toJson(),
+        if (inputAudioTranscription != null)
+          'input_audio_transcription': inputAudioTranscription!.toJson(),
+        if (turnDetection != null) 'turn_detection': turnDetection!.toJson(),
+        if (inputAudioNoiseReduction != null)
+          'input_audio_noise_reduction': inputAudioNoiseReduction!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -49,12 +49,12 @@ class AudioResource extends ResourceBase {
 
   /// Access to text-to-speech operations.
   SpeechResource get speech => _speech ??= SpeechResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Access to speech-to-text (transcription) operations.
   TranscriptionsResource get transcriptions =>
@@ -267,9 +267,8 @@ class TranscriptionsResource extends ResourceBase {
       // Using indexed field names (timestamp_granularities[0], etc.) is a
       // common pattern that servers typically understand for repeated fields.
       for (var i = 0; i < request.timestampGranularities!.length; i++) {
-        httpRequest.fields['timestamp_granularities[$i]'] = request
-            .timestampGranularities![i]
-            .toJson();
+        httpRequest.fields['timestamp_granularities[$i]'] =
+            request.timestampGranularities![i].toJson();
       }
     }
 

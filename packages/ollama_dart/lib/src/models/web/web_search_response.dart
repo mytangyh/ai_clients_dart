@@ -23,8 +23,9 @@ class WebSearchResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (results != null) 'results': results!.map((e) => e.toJson()).toList(),
-  };
+        if (results != null)
+          'results': results!.map((e) => e.toJson()).toList(),
+      };
 
   /// Creates a copy with replaced values.
   WebSearchResponse copyWith({Object? results = unsetCopyWithValue}) {

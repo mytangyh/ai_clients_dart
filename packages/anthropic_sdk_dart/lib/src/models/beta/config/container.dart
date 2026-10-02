@@ -24,9 +24,9 @@ class ContainerParams {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (memoryMb != null) 'memory_mb': memoryMb,
-    if (timeoutSeconds != null) 'timeout_seconds': timeoutSeconds,
-  };
+        if (memoryMb != null) 'memory_mb': memoryMb,
+        if (timeoutSeconds != null) 'timeout_seconds': timeoutSeconds,
+      };
 
   /// Creates a copy with replaced values.
   ContainerParams copyWith({
@@ -34,9 +34,8 @@ class ContainerParams {
     Object? timeoutSeconds = unsetCopyWithValue,
   }) {
     return ContainerParams(
-      memoryMb: memoryMb == unsetCopyWithValue
-          ? this.memoryMb
-          : memoryMb as int?,
+      memoryMb:
+          memoryMb == unsetCopyWithValue ? this.memoryMb : memoryMb as int?,
       timeoutSeconds: timeoutSeconds == unsetCopyWithValue
           ? this.timeoutSeconds
           : timeoutSeconds as int?,
@@ -81,9 +80,9 @@ class Container {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'expires_at': expiresAt.toUtc().toIso8601String(),
-  };
+        'id': id,
+        'expires_at': expiresAt.toUtc().toIso8601String(),
+      };
 
   @override
   bool operator ==(Object other) =>

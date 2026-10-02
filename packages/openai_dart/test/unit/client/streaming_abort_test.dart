@@ -88,8 +88,7 @@ void main() {
       // Responses mock (different format)
       final responsesMockClient = MockClient.streaming((request, _) async {
         // ignore: missing_whitespace_between_adjacent_strings
-        const responseData =
-            'data: {"type":"response.completed","response": '
+        const responseData = 'data: {"type":"response.completed","response": '
             '{"id":"resp_123","object":"response","created_at":1234567890,'
             '"model":"gpt-4","status":"completed","output":[],'
             '"parallel_tool_calls":true,"tool_choice":"auto"}}\n\n';
@@ -672,19 +671,19 @@ void main() {
         // Subscribe to trigger the request
         client.chat.completions
             .createStream(
-              ChatCompletionCreateRequest(
-                model: 'gpt-4',
-                messages: [ChatMessage.user('Hello')],
-              ),
-              abortTrigger: abortCompleter.future,
-            )
+          ChatCompletionCreateRequest(
+            model: 'gpt-4',
+            messages: [ChatMessage.user('Hello')],
+          ),
+          abortTrigger: abortCompleter.future,
+        )
             .listen(
-              (_) {},
-              onError: (_) {},
-              onDone: () {
-                if (!doneCompleter.isCompleted) doneCompleter.complete();
-              },
-            );
+          (_) {},
+          onError: (_) {},
+          onDone: () {
+            if (!doneCompleter.isCompleted) doneCompleter.complete();
+          },
+        );
 
         // Wait for request to be sent
         await Future<void>.delayed(const Duration(milliseconds: 50));
@@ -754,19 +753,19 @@ void main() {
             // Subscribe
             client.chat.completions
                 .createStream(
-                  ChatCompletionCreateRequest(
-                    model: 'gpt-4',
-                    messages: [ChatMessage.user('Hello')],
-                  ),
-                  abortTrigger: abortCompleter.future,
-                )
+              ChatCompletionCreateRequest(
+                model: 'gpt-4',
+                messages: [ChatMessage.user('Hello')],
+              ),
+              abortTrigger: abortCompleter.future,
+            )
                 .listen(
-                  (_) {},
-                  onError: (_) {},
-                  onDone: () {
-                    if (!doneCompleter.isCompleted) doneCompleter.complete();
-                  },
-                );
+              (_) {},
+              onError: (_) {},
+              onDone: () {
+                if (!doneCompleter.isCompleted) doneCompleter.complete();
+              },
+            );
             await Future<void>.delayed(const Duration(milliseconds: 50));
 
             // Complete abort with error

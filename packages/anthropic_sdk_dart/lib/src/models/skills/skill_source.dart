@@ -15,10 +15,10 @@ enum SkillSource {
 
   /// Converts a string to [SkillSource].
   static SkillSource fromJson(String value) => switch (value) {
-    'custom' => SkillSource.custom,
-    'anthropic' => SkillSource.anthropic,
-    _ => throw FormatException('Unknown SkillSource: $value'),
-  };
+        'custom' => SkillSource.custom,
+        'anthropic' => SkillSource.anthropic,
+        _ => throw FormatException('Unknown SkillSource: $value'),
+      };
 
   /// Converts to JSON string.
   String toJson() => value;

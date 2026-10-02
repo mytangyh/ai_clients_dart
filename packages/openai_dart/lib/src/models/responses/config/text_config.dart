@@ -29,9 +29,9 @@ class TextConfig {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (format != null) 'format': format!.toJson(),
-    if (verbosity != null) 'verbosity': verbosity!.toJson(),
-  };
+        if (format != null) 'format': format!.toJson(),
+        if (verbosity != null) 'verbosity': verbosity!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -145,12 +145,12 @@ class JsonSchemaFormat extends TextFormat {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'json_schema',
-    'name': name,
-    if (description != null) 'description': description,
-    'schema': schema,
-    if (strict != null) 'strict': strict,
-  };
+        'type': 'json_schema',
+        'name': name,
+        if (description != null) 'description': description,
+        'schema': schema,
+        if (strict != null) 'strict': strict,
+      };
 
   @override
   bool operator ==(Object other) =>

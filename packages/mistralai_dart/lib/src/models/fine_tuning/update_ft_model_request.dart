@@ -21,9 +21,9 @@ class UpdateFTModelRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (name != null) 'name': name,
-    if (description != null) 'description': description,
-  };
+        if (name != null) 'name': name,
+        if (description != null) 'description': description,
+      };
 
   @override
   bool operator ==(Object other) =>

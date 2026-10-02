@@ -35,23 +35,23 @@ class ModelDetails {
 
   /// Creates a [ModelDetails] from JSON.
   factory ModelDetails.fromJson(Map<String, dynamic> json) => ModelDetails(
-    format: json['format'] as String?,
-    family: json['family'] as String?,
-    families: (json['families'] as List?)?.cast<String>(),
-    parameterSize: json['parameter_size'] as String?,
-    quantizationLevel: json['quantization_level'] as String?,
-    parentModel: json['parent_model'] as String?,
-  );
+        format: json['format'] as String?,
+        family: json['family'] as String?,
+        families: (json['families'] as List?)?.cast<String>(),
+        parameterSize: json['parameter_size'] as String?,
+        quantizationLevel: json['quantization_level'] as String?,
+        parentModel: json['parent_model'] as String?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (format != null) 'format': format,
-    if (family != null) 'family': family,
-    if (families != null) 'families': families,
-    if (parameterSize != null) 'parameter_size': parameterSize,
-    if (quantizationLevel != null) 'quantization_level': quantizationLevel,
-    if (parentModel != null) 'parent_model': parentModel,
-  };
+        if (format != null) 'format': format,
+        if (family != null) 'family': family,
+        if (families != null) 'families': families,
+        if (parameterSize != null) 'parameter_size': parameterSize,
+        if (quantizationLevel != null) 'quantization_level': quantizationLevel,
+        if (parentModel != null) 'parent_model': parentModel,
+      };
 
   /// Creates a copy with replaced values.
   ModelDetails copyWith({

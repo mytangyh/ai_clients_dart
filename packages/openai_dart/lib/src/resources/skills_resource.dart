@@ -23,12 +23,12 @@ class SkillsResource extends ResourceBase {
 
   /// Access to skill versions operations.
   SkillVersionsResource get versions => _versions ??= SkillVersionsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Lists skills.
   Future<SkillList> list({

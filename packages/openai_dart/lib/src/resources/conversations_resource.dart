@@ -60,12 +60,12 @@ class ConversationsResource extends ResourceBase {
 
   /// Access to conversation items operations.
   ConversationItemsResource get items => _items ??= ConversationItemsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Creates a new conversation.
   Future<Conversation> create(

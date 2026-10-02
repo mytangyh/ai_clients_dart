@@ -114,9 +114,9 @@ class InputMessage {
 
   /// Creates an assistant message with text content.
   factory InputMessage.assistant(String text) => InputMessage(
-    role: MessageRole.assistant,
-    content: MessageContent.text(text),
-  );
+        role: MessageRole.assistant,
+        content: MessageContent.text(text),
+      );
 
   /// Creates an assistant message with block content.
   factory InputMessage.assistantBlocks(List<InputContentBlock> blocks) =>
@@ -130,9 +130,9 @@ class InputMessage {
   /// For [TextMessageContent], wraps the text in a single [TextInputBlock].
   /// For [BlocksMessageContent], returns the blocks directly.
   List<InputContentBlock> get blocks => switch (content) {
-    TextMessageContent(:final text) => [TextInputBlock(text)],
-    BlocksMessageContent(:final blocks) => blocks,
-  };
+        TextMessageContent(:final text) => [TextInputBlock(text)],
+        BlocksMessageContent(:final blocks) => blocks,
+      };
 
   /// Creates an [InputMessage] from JSON.
   factory InputMessage.fromJson(Map<String, dynamic> json) {
@@ -144,9 +144,9 @@ class InputMessage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'role': role.toJson(),
-    'content': content.toJson(),
-  };
+        'role': role.toJson(),
+        'content': content.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   InputMessage copyWith({MessageRole? role, MessageContent? content}) {

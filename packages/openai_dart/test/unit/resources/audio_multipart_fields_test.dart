@@ -7,7 +7,8 @@ import 'package:test/test.dart';
 
 void main() {
   group('Audio Multipart Fields', () {
-    test('timestamp_granularities are sent as form fields not file parts', () async {
+    test('timestamp_granularities are sent as form fields not file parts',
+        () async {
       String? requestBody;
 
       final mockClient = MockClient((request) async {

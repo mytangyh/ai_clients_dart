@@ -90,17 +90,17 @@ class EvalOutputItem {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'eval_id': evalId,
-    'run_id': runId,
-    'created_at': createdAt,
-    'object': object,
-    'status': status,
-    'datasource_item': datasourceItem,
-    'datasource_item_id': datasourceItemId,
-    'sample': sample.toJson(),
-    'results': results.map((r) => r.toJson()).toList(),
-  };
+        'id': id,
+        'eval_id': evalId,
+        'run_id': runId,
+        'created_at': createdAt,
+        'object': object,
+        'status': status,
+        'datasource_item': datasourceItem,
+        'datasource_item_id': datasourceItemId,
+        'sample': sample.toJson(),
+        'results': results.map((r) => r.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -158,12 +158,12 @@ class EvalOutputItemList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((i) => i.toJson()).toList(),
-    'has_more': hasMore,
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-  };
+        'object': object,
+        'data': data.map((i) => i.toJson()).toList(),
+        'has_more': hasMore,
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -219,12 +219,12 @@ class EvalOutputItemResult {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'passed': passed,
-    if (score != null) 'score': score,
-    if (sample != null) 'sample': sample,
-    if (type != null) 'type': type,
-  };
+        'name': name,
+        'passed': passed,
+        if (score != null) 'score': score,
+        if (sample != null) 'sample': sample,
+        if (type != null) 'type': type,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -318,18 +318,18 @@ class EvalOutputItemSample {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (input != null) 'input': input!.map((m) => m.toJson()).toList(),
-    if (output != null) 'output': output!.map((m) => m.toJson()).toList(),
-    if (model != null) 'model': model,
-    if (error != null) 'error': error,
-    if (finishReason != null) 'finish_reason': finishReason,
-    if (usage != null) 'usage': usage!.toJson(),
-    if (maxCompletionTokens != null)
-      'max_completion_tokens': maxCompletionTokens,
-    if (seed != null) 'seed': seed,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-  };
+        if (input != null) 'input': input!.map((m) => m.toJson()).toList(),
+        if (output != null) 'output': output!.map((m) => m.toJson()).toList(),
+        if (model != null) 'model': model,
+        if (error != null) 'error': error,
+        if (finishReason != null) 'finish_reason': finishReason,
+        if (usage != null) 'usage': usage!.toJson(),
+        if (maxCompletionTokens != null)
+          'max_completion_tokens': maxCompletionTokens,
+        if (seed != null) 'seed': seed,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -417,11 +417,11 @@ class EvalSampleUsage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'prompt_tokens': promptTokens,
-    'completion_tokens': completionTokens,
-    'total_tokens': totalTokens,
-    if (cachedTokens != null) 'cached_tokens': cachedTokens,
-  };
+        'prompt_tokens': promptTokens,
+        'completion_tokens': completionTokens,
+        'total_tokens': totalTokens,
+        if (cachedTokens != null) 'cached_tokens': cachedTokens,
+      };
 
   @override
   bool operator ==(Object other) =>

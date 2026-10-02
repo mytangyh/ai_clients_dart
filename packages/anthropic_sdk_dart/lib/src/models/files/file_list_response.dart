@@ -41,11 +41,11 @@ class FileListResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data': data.map((e) => e.toJson()).toList(),
-    'has_more': hasMore,
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-  };
+        'data': data.map((e) => e.toJson()).toList(),
+        'has_more': hasMore,
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+      };
 
   /// Creates a copy with replaced values.
   FileListResponse copyWith({
@@ -76,8 +76,7 @@ class FileListResponse {
   int get hashCode => Object.hash(listHash(data), hasMore, firstId, lastId);
 
   @override
-  String toString() =>
-      'FileListResponse('
+  String toString() => 'FileListResponse('
       'data: $data, '
       'hasMore: $hasMore, '
       'firstId: $firstId, '

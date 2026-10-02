@@ -76,8 +76,8 @@ class Batch {
               json['request_counts'] as Map<String, dynamic>,
             )
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -161,27 +161,27 @@ class Batch {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'endpoint': endpoint,
-    'input_file_id': inputFileId,
-    'completion_window': completionWindow,
-    'status': status.toJson(),
-    'created_at': createdAt,
-    if (errors != null) 'errors': errors!.toJson(),
-    if (outputFileId != null) 'output_file_id': outputFileId,
-    if (errorFileId != null) 'error_file_id': errorFileId,
-    if (inProgressAt != null) 'in_progress_at': inProgressAt,
-    if (expiresAt != null) 'expires_at': expiresAt,
-    if (finalizingAt != null) 'finalizing_at': finalizingAt,
-    if (completedAt != null) 'completed_at': completedAt,
-    if (failedAt != null) 'failed_at': failedAt,
-    if (expiredAt != null) 'expired_at': expiredAt,
-    if (cancellingAt != null) 'cancelling_at': cancellingAt,
-    if (cancelledAt != null) 'cancelled_at': cancelledAt,
-    if (requestCounts != null) 'request_counts': requestCounts!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        'id': id,
+        'object': object,
+        'endpoint': endpoint,
+        'input_file_id': inputFileId,
+        'completion_window': completionWindow,
+        'status': status.toJson(),
+        'created_at': createdAt,
+        if (errors != null) 'errors': errors!.toJson(),
+        if (outputFileId != null) 'output_file_id': outputFileId,
+        if (errorFileId != null) 'error_file_id': errorFileId,
+        if (inProgressAt != null) 'in_progress_at': inProgressAt,
+        if (expiresAt != null) 'expires_at': expiresAt,
+        if (finalizingAt != null) 'finalizing_at': finalizingAt,
+        if (completedAt != null) 'completed_at': completedAt,
+        if (failedAt != null) 'failed_at': failedAt,
+        if (expiredAt != null) 'expired_at': expiredAt,
+        if (cancellingAt != null) 'cancelling_at': cancellingAt,
+        if (cancelledAt != null) 'cancelled_at': cancelledAt,
+        if (requestCounts != null) 'request_counts': requestCounts!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -237,12 +237,12 @@ class BatchList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((b) => b.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((b) => b.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -277,8 +277,8 @@ class CreateBatchRequest {
       completionWindow: CompletionWindow.fromJson(
         json['completion_window'] as String,
       ),
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -298,11 +298,11 @@ class CreateBatchRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'input_file_id': inputFileId,
-    'endpoint': endpoint.toJson(),
-    'completion_window': completionWindow.toJson(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        'input_file_id': inputFileId,
+        'endpoint': endpoint.toJson(),
+        'completion_window': completionWindow.toJson(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -343,9 +343,9 @@ class BatchErrors {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -391,11 +391,11 @@ class BatchError {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (code != null) 'code': code,
-    if (message != null) 'message': message,
-    if (param != null) 'param': param,
-    if (line != null) 'line': line,
-  };
+        if (code != null) 'code': code,
+        if (message != null) 'message': message,
+        if (param != null) 'param': param,
+        if (line != null) 'line': line,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -449,10 +449,10 @@ class BatchRequestCounts {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'total': total,
-    'completed': completed,
-    'failed': failed,
-  };
+        'total': total,
+        'completed': completed,
+        'failed': failed,
+      };
 
   @override
   bool operator ==(Object other) =>

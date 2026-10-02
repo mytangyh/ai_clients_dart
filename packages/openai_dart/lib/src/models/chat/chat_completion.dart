@@ -112,16 +112,16 @@ class ChatCompletion {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (id != null) 'id': id,
-    'object': object,
-    if (created != null) 'created': created,
-    'model': model,
-    'choices': choices.map((c) => c.toJson()).toList(),
-    if (usage != null) 'usage': usage!.toJson(),
-    if (systemFingerprint != null) 'system_fingerprint': systemFingerprint,
-    if (serviceTier != null) 'service_tier': serviceTier,
-    if (provider != null) 'provider': provider,
-  };
+        if (id != null) 'id': id,
+        'object': object,
+        if (created != null) 'created': created,
+        'model': model,
+        'choices': choices.map((c) => c.toJson()).toList(),
+        if (usage != null) 'usage': usage!.toJson(),
+        if (systemFingerprint != null) 'system_fingerprint': systemFingerprint,
+        if (serviceTier != null) 'service_tier': serviceTier,
+        if (provider != null) 'provider': provider,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -190,11 +190,11 @@ class ChatChoice {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (index != null) 'index': index,
-    'message': message.toJson(),
-    if (finishReason != null) 'finish_reason': finishReason!.toJson(),
-    if (logprobs != null) 'logprobs': logprobs!.toJson(),
-  };
+        if (index != null) 'index': index,
+        'message': message.toJson(),
+        if (finishReason != null) 'finish_reason': finishReason!.toJson(),
+        if (logprobs != null) 'logprobs': logprobs!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

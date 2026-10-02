@@ -14,15 +14,15 @@ class PsResponse {
 
   /// Creates a [PsResponse] from JSON.
   factory PsResponse.fromJson(Map<String, dynamic> json) => PsResponse(
-    models: (json['models'] as List?)
-        ?.map((e) => RunningModel.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
+        models: (json['models'] as List?)
+            ?.map((e) => RunningModel.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (models != null) 'models': models!.map((e) => e.toJson()).toList(),
-  };
+        if (models != null) 'models': models!.map((e) => e.toJson()).toList(),
+      };
 
   /// Creates a copy with replaced values.
   PsResponse copyWith({Object? models = unsetCopyWithValue}) {

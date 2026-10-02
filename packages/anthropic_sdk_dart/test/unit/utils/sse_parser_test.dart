@@ -133,8 +133,7 @@ data: [DONE]
         'delta': {'text': largeText},
       });
 
-      final sseData =
-          '''
+      final sseData = '''
 event: content_block_delta
 data: $largeJson
 

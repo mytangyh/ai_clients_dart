@@ -16,8 +16,8 @@ sealed class ResponseFormat {
       'json_object' => const ResponseFormatJsonObject(),
       'json_schema' => ResponseFormatJsonSchema.fromJson(json),
       _ => throw FormatException(
-        'Unknown response format type: ${json['type']}',
-      ),
+          'Unknown response format type: ${json['type']}',
+        ),
     };
   }
 
@@ -36,12 +36,13 @@ sealed class ResponseFormat {
     required Map<String, dynamic> schema,
     String? description,
     bool? strict,
-  }) => ResponseFormatJsonSchema(
-    name: name,
-    schema: schema,
-    description: description,
-    strict: strict,
-  );
+  }) =>
+      ResponseFormatJsonSchema(
+        name: name,
+        schema: schema,
+        description: description,
+        strict: strict,
+      );
 }
 
 /// Plain text response format.
@@ -135,14 +136,14 @@ class ResponseFormatJsonSchema extends ResponseFormat {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'json_schema': {
-      'name': name,
-      if (description != null) 'description': description,
-      'schema': schema,
-      if (strict != null) 'strict': strict,
-    },
-  };
+        'type': type,
+        'json_schema': {
+          'name': name,
+          if (description != null) 'description': description,
+          'schema': schema,
+          if (strict != null) 'strict': strict,
+        },
+      };
 
   @override
   bool operator ==(Object other) =>

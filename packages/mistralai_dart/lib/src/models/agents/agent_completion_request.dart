@@ -60,8 +60,7 @@ class AgentCompletionRequest {
   factory AgentCompletionRequest.fromJson(Map<String, dynamic> json) =>
       AgentCompletionRequest(
         agentId: json['agent_id'] as String? ?? '',
-        messages:
-            (json['messages'] as List?)
+        messages: (json['messages'] as List?)
                 ?.map((e) => ChatMessage.fromJson(e as Map<String, dynamic>))
                 .toList() ??
             [],
@@ -86,18 +85,18 @@ class AgentCompletionRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'agent_id': agentId,
-    'messages': messages.map((e) => e.toJson()).toList(),
-    if (maxTokens != null) 'max_tokens': maxTokens,
-    if (stream != null) 'stream': stream,
-    if (stop != null) 'stop': stop,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
-    if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-    if (randomSeed != null) 'random_seed': randomSeed,
-  };
+        'agent_id': agentId,
+        'messages': messages.map((e) => e.toJson()).toList(),
+        if (maxTokens != null) 'max_tokens': maxTokens,
+        if (stream != null) 'stream': stream,
+        if (stop != null) 'stop': stop,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
+        if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+        if (randomSeed != null) 'random_seed': randomSeed,
+      };
 
   /// Creates a copy with the specified fields replaced.
   AgentCompletionRequest copyWith({
@@ -112,19 +111,20 @@ class AgentCompletionRequest {
     ToolChoice? toolChoice,
     ResponseFormat? responseFormat,
     int? randomSeed,
-  }) => AgentCompletionRequest(
-    agentId: agentId ?? this.agentId,
-    messages: messages ?? this.messages,
-    maxTokens: maxTokens ?? this.maxTokens,
-    stream: stream ?? this.stream,
-    stop: stop ?? this.stop,
-    temperature: temperature ?? this.temperature,
-    topP: topP ?? this.topP,
-    tools: tools ?? this.tools,
-    toolChoice: toolChoice ?? this.toolChoice,
-    responseFormat: responseFormat ?? this.responseFormat,
-    randomSeed: randomSeed ?? this.randomSeed,
-  );
+  }) =>
+      AgentCompletionRequest(
+        agentId: agentId ?? this.agentId,
+        messages: messages ?? this.messages,
+        maxTokens: maxTokens ?? this.maxTokens,
+        stream: stream ?? this.stream,
+        stop: stop ?? this.stop,
+        temperature: temperature ?? this.temperature,
+        topP: topP ?? this.topP,
+        tools: tools ?? this.tools,
+        toolChoice: toolChoice ?? this.toolChoice,
+        responseFormat: responseFormat ?? this.responseFormat,
+        randomSeed: randomSeed ?? this.randomSeed,
+      );
 
   @override
   bool operator ==(Object other) =>

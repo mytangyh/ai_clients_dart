@@ -13,10 +13,10 @@ enum ServiceTierRequest {
 
   /// Converts a string to [ServiceTierRequest].
   static ServiceTierRequest fromJson(String value) => switch (value) {
-    'auto' => ServiceTierRequest.auto_,
-    'standard_only' => ServiceTierRequest.standardOnly,
-    _ => throw FormatException('Unknown ServiceTierRequest: $value'),
-  };
+        'auto' => ServiceTierRequest.auto_,
+        'standard_only' => ServiceTierRequest.standardOnly,
+        _ => throw FormatException('Unknown ServiceTierRequest: $value'),
+      };
 
   /// Converts to JSON string.
   String toJson() => value;
@@ -40,11 +40,11 @@ enum ServiceTierResponse {
 
   /// Converts a string to [ServiceTierResponse].
   static ServiceTierResponse fromJson(String value) => switch (value) {
-    'standard' => ServiceTierResponse.standard,
-    'priority' => ServiceTierResponse.priority,
-    'batch' => ServiceTierResponse.batch,
-    _ => throw FormatException('Unknown ServiceTierResponse: $value'),
-  };
+        'standard' => ServiceTierResponse.standard,
+        'priority' => ServiceTierResponse.priority,
+        'batch' => ServiceTierResponse.batch,
+        _ => throw FormatException('Unknown ServiceTierResponse: $value'),
+      };
 
   /// Converts to JSON string.
   String toJson() => value;

@@ -272,24 +272,24 @@ class MessageStreamAccumulator {
     final initial = acc.initialBlock;
     return switch (initial) {
       TextBlock() => TextBlock(
-        text: acc.textBuffer.toString(),
-        citations: acc.citations.isEmpty ? null : List.of(acc.citations),
-      ),
+          text: acc.textBuffer.toString(),
+          citations: acc.citations.isEmpty ? null : List.of(acc.citations),
+        ),
       ThinkingBlock() => ThinkingBlock(
-        thinking: acc.thinkingBuffer.toString(),
-        signature: acc.signature ?? '',
-      ),
+          thinking: acc.thinkingBuffer.toString(),
+          signature: acc.signature ?? '',
+        ),
       ToolUseBlock() => ToolUseBlock(
-        id: initial.id,
-        name: initial.name,
-        input: _parseJson(acc.inputJsonBuffer),
-        caller: initial.caller,
-      ),
+          id: initial.id,
+          name: initial.name,
+          input: _parseJson(acc.inputJsonBuffer),
+          caller: initial.caller,
+        ),
       CompactionBlock() => CompactionBlock(
-        content: acc.compactionBuffer.isEmpty
-            ? initial.content
-            : acc.compactionBuffer.toString(),
-      ),
+          content: acc.compactionBuffer.isEmpty
+              ? initial.content
+              : acc.compactionBuffer.toString(),
+        ),
       _ => initial,
     };
   }

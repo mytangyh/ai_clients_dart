@@ -194,9 +194,9 @@ class ChatAudioConfig {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'voice': voice.toJson(),
-    'format': format.toJson(),
-  };
+        'voice': voice.toJson(),
+        'format': format.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ChatAudioConfig copyWith({ChatAudioVoice? voice, ChatAudioFormat? format}) {

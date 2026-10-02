@@ -43,10 +43,10 @@ class SkillListResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data': data.map((e) => e.toJson()).toList(),
-    'has_more': hasMore,
-    'next_page': nextPage,
-  };
+        'data': data.map((e) => e.toJson()).toList(),
+        'has_more': hasMore,
+        'next_page': nextPage,
+      };
 
   /// Creates a copy with replaced values.
   SkillListResponse copyWith({
@@ -74,8 +74,7 @@ class SkillListResponse {
   int get hashCode => Object.hash(listHash(data), hasMore, nextPage);
 
   @override
-  String toString() =>
-      'SkillListResponse('
+  String toString() => 'SkillListResponse('
       'data: $data, '
       'hasMore: $hasMore, '
       'nextPage: $nextPage)';
@@ -113,10 +112,10 @@ class SkillVersionListResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data': data.map((e) => e.toJson()).toList(),
-    'has_more': hasMore,
-    'next_page': nextPage,
-  };
+        'data': data.map((e) => e.toJson()).toList(),
+        'has_more': hasMore,
+        'next_page': nextPage,
+      };
 
   /// Creates a copy with replaced values.
   SkillVersionListResponse copyWith({
@@ -144,8 +143,7 @@ class SkillVersionListResponse {
   int get hashCode => Object.hash(listHash(data), hasMore, nextPage);
 
   @override
-  String toString() =>
-      'SkillVersionListResponse('
+  String toString() => 'SkillVersionListResponse('
       'data: $data, '
       'hasMore: $hasMore, '
       'nextPage: $nextPage)';

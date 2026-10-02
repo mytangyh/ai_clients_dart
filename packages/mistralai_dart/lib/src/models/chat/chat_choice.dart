@@ -24,20 +24,20 @@ class ChatChoice {
 
   /// Creates a [ChatChoice] from JSON.
   factory ChatChoice.fromJson(Map<String, dynamic> json) => ChatChoice(
-    index: json['index'] as int? ?? 0,
-    message: AssistantMessage.fromJson(
-      json['message'] as Map<String, dynamic>? ?? {},
-    ),
-    finishReason: finishReasonFromString(json['finish_reason'] as String?),
-  );
+        index: json['index'] as int? ?? 0,
+        message: AssistantMessage.fromJson(
+          json['message'] as Map<String, dynamic>? ?? {},
+        ),
+        finishReason: finishReasonFromString(json['finish_reason'] as String?),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'index': index,
-    'message': message.toJson(),
-    if (finishReason != null)
-      'finish_reason': finishReasonToString(finishReason!),
-  };
+        'index': index,
+        'message': message.toJson(),
+        if (finishReason != null)
+          'finish_reason': finishReasonToString(finishReason!),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -52,7 +52,6 @@ class ChatChoice {
   int get hashCode => Object.hash(index, message, finishReason);
 
   @override
-  String toString() =>
-      'ChatChoice(index: $index, message: $message, '
+  String toString() => 'ChatChoice(index: $index, message: $message, '
       'finishReason: $finishReason)';
 }

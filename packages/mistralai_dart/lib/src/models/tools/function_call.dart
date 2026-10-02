@@ -14,9 +14,9 @@ class FunctionCall {
 
   /// Creates a [FunctionCall] from JSON.
   factory FunctionCall.fromJson(Map<String, dynamic> json) => FunctionCall(
-    name: json['name'] as String? ?? '',
-    arguments: json['arguments'] as String? ?? '{}',
-  );
+        name: json['name'] as String? ?? '',
+        arguments: json['arguments'] as String? ?? '{}',
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {'name': name, 'arguments': arguments};

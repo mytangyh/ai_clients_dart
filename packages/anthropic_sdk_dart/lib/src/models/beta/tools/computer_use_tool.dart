@@ -79,13 +79,13 @@ class ComputerUseTool extends BuiltInTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'computer',
-    'display_width_px': displayWidthPx,
-    'display_height_px': displayHeightPx,
-    if (displayNumber != null) 'display_number': displayNumber,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': type,
+        'name': 'computer',
+        'display_width_px': displayWidthPx,
+        'display_height_px': displayHeightPx,
+        if (displayNumber != null) 'display_number': displayNumber,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ComputerUseTool copyWith({
@@ -121,12 +121,12 @@ class ComputerUseTool extends BuiltInTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    displayWidthPx,
-    displayHeightPx,
-    displayNumber,
-    cacheControl,
-  );
+        type,
+        displayWidthPx,
+        displayHeightPx,
+        displayNumber,
+        cacheControl,
+      );
 
   @override
   String toString() =>

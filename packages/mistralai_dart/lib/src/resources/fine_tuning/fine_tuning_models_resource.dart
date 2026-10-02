@@ -55,7 +55,10 @@ class FineTuningModelsResource extends ResourceBase {
       additionalHeaders: {'Content-Type': 'application/json'},
     );
 
-    final body = <String, dynamic>{'name': ?name, 'description': ?description};
+    final body = <String, dynamic>{
+      if (name case final value?) 'name': value,
+      if (description case final value?) 'description': value
+    };
 
     final httpRequest = http.Request('PATCH', url)
       ..headers.addAll(headers)

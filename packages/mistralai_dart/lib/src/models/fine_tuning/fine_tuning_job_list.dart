@@ -25,8 +25,7 @@ class FineTuningJobList {
   factory FineTuningJobList.fromJson(Map<String, dynamic> json) =>
       FineTuningJobList(
         object: json['object'] as String? ?? 'list',
-        data:
-            (json['data'] as List?)
+        data: (json['data'] as List?)
                 ?.map((e) => FineTuningJob.fromJson(e as Map<String, dynamic>))
                 .toList() ??
             [],
@@ -35,10 +34,10 @@ class FineTuningJobList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-    if (total != null) 'total': total,
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+        if (total != null) 'total': total,
+      };
 
   @override
   bool operator ==(Object other) =>

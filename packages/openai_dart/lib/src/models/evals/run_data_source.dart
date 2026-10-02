@@ -253,12 +253,12 @@ class CompletionsRunDataSource extends EvalRunDataSource {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'source': source.toJson(),
-    if (model != null) 'model': model,
-    if (inputMessages != null) 'input_messages': inputMessages!.toJson(),
-    if (samplingParams != null) 'sampling_params': samplingParams!.toJson(),
-  };
+        'type': type,
+        'source': source.toJson(),
+        if (model != null) 'model': model,
+        if (inputMessages != null) 'input_messages': inputMessages!.toJson(),
+        if (samplingParams != null) 'sampling_params': samplingParams!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -386,9 +386,9 @@ class StoredCompletionsSource extends CompletionsSource {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (metadata != null) 'metadata': metadata,
-  };
+        'type': type,
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -454,12 +454,12 @@ class ResponsesRunDataSource extends EvalRunDataSource {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'source': source.toJson(),
-    if (model != null) 'model': model,
-    if (inputMessages != null) 'input_messages': inputMessages!.toJson(),
-    if (samplingParams != null) 'sampling_params': samplingParams!.toJson(),
-  };
+        'type': type,
+        'source': source.toJson(),
+        if (model != null) 'model': model,
+        if (inputMessages != null) 'input_messages': inputMessages!.toJson(),
+        if (samplingParams != null) 'sampling_params': samplingParams!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -587,9 +587,9 @@ class StoredResponsesSource extends ResponsesSource {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (metadata != null) 'metadata': metadata,
-  };
+        'type': type,
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -619,15 +619,15 @@ class InputMessage {
 
   /// Creates a system message.
   const InputMessage.system(String content)
-    : this(role: 'system', content: content);
+      : this(role: 'system', content: content);
 
   /// Creates a user message.
   const InputMessage.user(String content)
-    : this(role: 'user', content: content);
+      : this(role: 'user', content: content);
 
   /// Creates an assistant message.
   const InputMessage.assistant(String content)
-    : this(role: 'assistant', content: content);
+      : this(role: 'assistant', content: content);
 
   /// The role of this message.
   final String role;
@@ -712,9 +712,9 @@ class InputMessagesTemplate extends InputMessages {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'template': template.map((m) => m.toJson()).toList(),
-  };
+        'type': type,
+        'template': template.map((m) => m.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -752,9 +752,9 @@ class InputMessagesItemReference extends InputMessages {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'item_reference': itemReference,
-  };
+        'type': type,
+        'item_reference': itemReference,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -823,15 +823,15 @@ class EvalSamplingParams {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (maxCompletionsTokens != null)
-      'max_completions_tokens': maxCompletionsTokens,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (seed != null) 'seed': seed,
-    if (reasoningEffort != null) 'reasoning_effort': reasoningEffort,
-    if (tools != null) 'tools': tools,
-    if (responseFormat != null) 'response_format': responseFormat,
-  };
+        if (maxCompletionsTokens != null)
+          'max_completions_tokens': maxCompletionsTokens,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (seed != null) 'seed': seed,
+        if (reasoningEffort != null) 'reasoning_effort': reasoningEffort,
+        if (tools != null) 'tools': tools,
+        if (responseFormat != null) 'response_format': responseFormat,
+      };
 
   @override
   bool operator ==(Object other) =>

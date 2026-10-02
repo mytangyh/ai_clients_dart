@@ -86,11 +86,11 @@ class Model {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    if (created != null) 'created': created,
-    if (ownedBy != null) 'owned_by': ownedBy,
-  };
+        'id': id,
+        'object': object,
+        if (created != null) 'created': created,
+        if (ownedBy != null) 'owned_by': ownedBy,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -147,9 +147,9 @@ class ModelList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((m) => m.toJson()).toList(),
-  };
+        'object': object,
+        'data': data.map((m) => m.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -196,10 +196,10 @@ class DeleteModelResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>

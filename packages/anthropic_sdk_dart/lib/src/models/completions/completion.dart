@@ -72,16 +72,16 @@ class CompletionRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'prompt': prompt,
-    'max_tokens_to_sample': maxTokensToSample,
-    if (stopSequences != null) 'stop_sequences': stopSequences,
-    if (stream != null) 'stream': stream,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (topK != null) 'top_k': topK,
-    if (metadata != null) 'metadata': metadata!.toJson(),
-  };
+        'model': model,
+        'prompt': prompt,
+        'max_tokens_to_sample': maxTokensToSample,
+        if (stopSequences != null) 'stop_sequences': stopSequences,
+        if (stream != null) 'stream': stream,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (topK != null) 'top_k': topK,
+        if (metadata != null) 'metadata': metadata!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   CompletionRequest copyWith({
@@ -131,16 +131,16 @@ class CompletionRequest {
 
   @override
   int get hashCode => Object.hash(
-    model,
-    prompt,
-    maxTokensToSample,
-    stopSequences != null ? Object.hashAll(stopSequences!) : null,
-    stream,
-    temperature,
-    topP,
-    topK,
-    metadata,
-  );
+        model,
+        prompt,
+        maxTokensToSample,
+        stopSequences != null ? Object.hashAll(stopSequences!) : null,
+        stream,
+        temperature,
+        topP,
+        topK,
+        metadata,
+      );
 
   @override
   String toString() =>
@@ -197,12 +197,12 @@ class CompletionResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type,
-    'completion': completion,
-    if (stopReason != null) 'stop_reason': stopReason!.toJson(),
-    'model': model,
-  };
+        'id': id,
+        'type': type,
+        'completion': completion,
+        if (stopReason != null) 'stop_reason': stopReason!.toJson(),
+        'model': model,
+      };
 
   /// Creates a copy with replaced values.
   CompletionResponse copyWith({
@@ -238,8 +238,7 @@ class CompletionResponse {
   int get hashCode => Object.hash(id, type, completion, stopReason, model);
 
   @override
-  String toString() =>
-      'CompletionResponse(id: $id, type: $type, '
+  String toString() => 'CompletionResponse(id: $id, type: $type, '
       'completion: [${completion.length} chars], '
       'stopReason: $stopReason, model: $model)';
 }

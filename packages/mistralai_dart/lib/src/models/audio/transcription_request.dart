@@ -63,15 +63,15 @@ class TranscriptionRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'file': file,
-    'model': model,
-    if (language != null) 'language': language,
-    if (responseFormat != null) 'response_format': responseFormat,
-    if (prompt != null) 'prompt': prompt,
-    if (temperature != null) 'temperature': temperature,
-    if (timestampGranularities != null)
-      'timestamp_granularities': timestampGranularities,
-  };
+        'file': file,
+        'model': model,
+        if (language != null) 'language': language,
+        if (responseFormat != null) 'response_format': responseFormat,
+        if (prompt != null) 'prompt': prompt,
+        if (temperature != null) 'temperature': temperature,
+        if (timestampGranularities != null)
+          'timestamp_granularities': timestampGranularities,
+      };
 
   /// Creates a copy with the specified fields replaced.
   TranscriptionRequest copyWith({
@@ -82,16 +82,17 @@ class TranscriptionRequest {
     String? prompt,
     double? temperature,
     bool? timestampGranularities,
-  }) => TranscriptionRequest(
-    file: file ?? this.file,
-    model: model ?? this.model,
-    language: language ?? this.language,
-    responseFormat: responseFormat ?? this.responseFormat,
-    prompt: prompt ?? this.prompt,
-    temperature: temperature ?? this.temperature,
-    timestampGranularities:
-        timestampGranularities ?? this.timestampGranularities,
-  );
+  }) =>
+      TranscriptionRequest(
+        file: file ?? this.file,
+        model: model ?? this.model,
+        language: language ?? this.language,
+        responseFormat: responseFormat ?? this.responseFormat,
+        prompt: prompt ?? this.prompt,
+        temperature: temperature ?? this.temperature,
+        timestampGranularities:
+            timestampGranularities ?? this.timestampGranularities,
+      );
 
   @override
   bool operator ==(Object other) =>

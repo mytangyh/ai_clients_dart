@@ -16,11 +16,11 @@ enum ProcessingStatus {
 
   /// Converts a string to [ProcessingStatus].
   static ProcessingStatus fromJson(String value) => switch (value) {
-    'in_progress' => ProcessingStatus.inProgress,
-    'canceling' => ProcessingStatus.canceling,
-    'ended' => ProcessingStatus.ended,
-    _ => throw FormatException('Unknown ProcessingStatus: $value'),
-  };
+        'in_progress' => ProcessingStatus.inProgress,
+        'canceling' => ProcessingStatus.canceling,
+        'ended' => ProcessingStatus.ended,
+        _ => throw FormatException('Unknown ProcessingStatus: $value'),
+      };
 
   /// Converts to JSON string.
   String toJson() => value;

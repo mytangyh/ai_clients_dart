@@ -50,11 +50,11 @@ class CreateVideoRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'prompt': prompt,
-    if (model != null) 'model': model,
-    if (seconds != null) 'seconds': seconds!.toJson(),
-    if (size != null) 'size': size!.toJson(),
-  };
+        'prompt': prompt,
+        if (model != null) 'model': model,
+        if (seconds != null) 'seconds': seconds!.toJson(),
+        if (size != null) 'size': size!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

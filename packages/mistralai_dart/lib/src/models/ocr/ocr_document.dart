@@ -65,9 +65,9 @@ class UrlDocument extends OcrDocument {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'document_url',
-    'document_url': url,
-  };
+        'type': 'document_url',
+        'document_url': url,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -97,10 +97,10 @@ class Base64Document extends OcrDocument {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'base64',
-    'data': data,
-    'mime_type': mimeType,
-  };
+        'type': 'base64',
+        'data': data,
+        'mime_type': mimeType,
+      };
 
   @override
   bool operator ==(Object other) =>

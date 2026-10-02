@@ -73,16 +73,16 @@ class VectorStoreFile {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'usage_bytes': usageBytes,
-    'created_at': createdAt,
-    'vector_store_id': vectorStoreId,
-    'status': status.toJson(),
-    if (lastError != null) 'last_error': lastError!.toJson(),
-    if (chunkingStrategy != null)
-      'chunking_strategy': chunkingStrategy!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'usage_bytes': usageBytes,
+        'created_at': createdAt,
+        'vector_store_id': vectorStoreId,
+        'status': status.toJson(),
+        if (lastError != null) 'last_error': lastError!.toJson(),
+        if (chunkingStrategy != null)
+          'chunking_strategy': chunkingStrategy!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -140,12 +140,12 @@ class VectorStoreFileList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((f) => f.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((f) => f.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -190,10 +190,10 @@ class CreateVectorStoreFileRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'file_id': fileId,
-    if (chunkingStrategy != null)
-      'chunking_strategy': chunkingStrategy!.toJson(),
-  };
+        'file_id': fileId,
+        if (chunkingStrategy != null)
+          'chunking_strategy': chunkingStrategy!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -239,10 +239,10 @@ class DeleteVectorStoreFileResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -27,23 +27,22 @@ class OcrPage {
 
   /// Creates an [OcrPage] from JSON.
   factory OcrPage.fromJson(Map<String, dynamic> json) => OcrPage(
-    index: json['index'] as int? ?? 0,
-    markdown: json['markdown'] as String? ?? '',
-    images:
-        (json['images'] as List?)
-            ?.map((e) => OcrImage.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-    dimensions: (json['dimensions'] as List?)?.cast<double>(),
-  );
+        index: json['index'] as int? ?? 0,
+        markdown: json['markdown'] as String? ?? '',
+        images: (json['images'] as List?)
+                ?.map((e) => OcrImage.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+        dimensions: (json['dimensions'] as List?)?.cast<double>(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'index': index,
-    'markdown': markdown,
-    if (images.isNotEmpty) 'images': images.map((e) => e.toJson()).toList(),
-    if (dimensions != null) 'dimensions': dimensions,
-  };
+        'index': index,
+        'markdown': markdown,
+        if (images.isNotEmpty) 'images': images.map((e) => e.toJson()).toList(),
+        if (dimensions != null) 'dimensions': dimensions,
+      };
 
   @override
   bool operator ==(Object other) =>

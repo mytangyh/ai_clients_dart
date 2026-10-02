@@ -27,9 +27,9 @@ class InputTokenCountResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'input_tokens': inputTokens,
-    'object': object,
-  };
+        'input_tokens': inputTokens,
+        'object': object,
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -37,10 +37,10 @@ class MessageDelta {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (container != null) 'container': container!.toJson(),
-    if (stopReason != null) 'stop_reason': stopReason!.toJson(),
-    if (stopSequence != null) 'stop_sequence': stopSequence,
-  };
+        if (container != null) 'container': container!.toJson(),
+        if (stopReason != null) 'stop_reason': stopReason!.toJson(),
+        if (stopSequence != null) 'stop_sequence': stopSequence,
+      };
 
   /// Creates a copy with replaced values.
   MessageDelta copyWith({
@@ -128,8 +128,8 @@ class MessageDeltaUsage {
           : null,
       iterations: json['iterations'] != null
           ? (json['iterations'] as List)
-                .map((e) => IterationUsage.fromJson(e as Map<String, dynamic>))
-                .toList()
+              .map((e) => IterationUsage.fromJson(e as Map<String, dynamic>))
+              .toList()
           : null,
       speed: json['speed'] != null
           ? Speed.fromJson(json['speed'] as String)
@@ -139,17 +139,17 @@ class MessageDeltaUsage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'output_tokens': outputTokens,
-    if (inputTokens != null) 'input_tokens': inputTokens,
-    if (cacheCreationInputTokens != null)
-      'cache_creation_input_tokens': cacheCreationInputTokens,
-    if (cacheReadInputTokens != null)
-      'cache_read_input_tokens': cacheReadInputTokens,
-    if (serverToolUse != null) 'server_tool_use': serverToolUse!.toJson(),
-    if (iterations != null)
-      'iterations': iterations!.map((e) => e.toJson()).toList(),
-    if (speed != null) 'speed': speed!.toJson(),
-  };
+        'output_tokens': outputTokens,
+        if (inputTokens != null) 'input_tokens': inputTokens,
+        if (cacheCreationInputTokens != null)
+          'cache_creation_input_tokens': cacheCreationInputTokens,
+        if (cacheReadInputTokens != null)
+          'cache_read_input_tokens': cacheReadInputTokens,
+        if (serverToolUse != null) 'server_tool_use': serverToolUse!.toJson(),
+        if (iterations != null)
+          'iterations': iterations!.map((e) => e.toJson()).toList(),
+        if (speed != null) 'speed': speed!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   MessageDeltaUsage copyWith({
@@ -197,14 +197,14 @@ class MessageDeltaUsage {
 
   @override
   int get hashCode => Object.hash(
-    outputTokens,
-    inputTokens,
-    cacheCreationInputTokens,
-    cacheReadInputTokens,
-    serverToolUse,
-    listHash(iterations),
-    speed,
-  );
+        outputTokens,
+        inputTokens,
+        cacheCreationInputTokens,
+        cacheReadInputTokens,
+        serverToolUse,
+        listHash(iterations),
+        speed,
+      );
 
   @override
   String toString() =>

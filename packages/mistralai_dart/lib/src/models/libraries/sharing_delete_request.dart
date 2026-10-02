@@ -33,10 +33,10 @@ class SharingDeleteRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (orgId != null) 'org_id': orgId,
-    'share_with_uuid': shareWithUuid,
-    'share_with_type': shareWithType.value,
-  };
+        if (orgId != null) 'org_id': orgId,
+        'share_with_uuid': shareWithUuid,
+        'share_with_type': shareWithType.value,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -51,8 +51,7 @@ class SharingDeleteRequest {
   int get hashCode => Object.hash(orgId, shareWithUuid, shareWithType);
 
   @override
-  String toString() =>
-      'SharingDeleteRequest('
+  String toString() => 'SharingDeleteRequest('
       'orgId: $orgId, shareWithUuid: $shareWithUuid, '
       'shareWithType: $shareWithType)';
 }

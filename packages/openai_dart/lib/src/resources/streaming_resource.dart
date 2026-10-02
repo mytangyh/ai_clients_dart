@@ -217,8 +217,7 @@ mixin StreamingResource on ResourceBase {
     );
 
     // Extract request ID from response headers for error reporting
-    final requestId =
-        response.headers['x-request-id'] ??
+    final requestId = response.headers['x-request-id'] ??
         response.request?.headers['X-Request-ID'] ??
         'unknown';
 

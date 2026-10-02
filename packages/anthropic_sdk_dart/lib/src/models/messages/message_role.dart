@@ -13,10 +13,10 @@ enum MessageRole {
 
   /// Converts a string to [MessageRole].
   static MessageRole fromJson(String value) => switch (value) {
-    'user' => MessageRole.user,
-    'assistant' => MessageRole.assistant,
-    _ => throw FormatException('Unknown MessageRole: $value'),
-  };
+        'user' => MessageRole.user,
+        'assistant' => MessageRole.assistant,
+        _ => throw FormatException('Unknown MessageRole: $value'),
+      };
 
   /// Converts to JSON string.
   String toJson() => value;

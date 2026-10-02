@@ -66,15 +66,16 @@ class TranscriptionResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (id != null) 'id': id,
-    'object': object,
-    'text': text,
-    if (language != null) 'language': language,
-    if (duration != null) 'duration': duration,
-    if (segments != null) 'segments': segments!.map((e) => e.toJson()).toList(),
-    if (words != null) 'words': words!.map((e) => e.toJson()).toList(),
-    if (usage != null) 'usage': usage!.toJson(),
-  };
+        if (id != null) 'id': id,
+        'object': object,
+        'text': text,
+        if (language != null) 'language': language,
+        if (duration != null) 'duration': duration,
+        if (segments != null)
+          'segments': segments!.map((e) => e.toJson()).toList(),
+        if (words != null) 'words': words!.map((e) => e.toJson()).toList(),
+        if (usage != null) 'usage': usage!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

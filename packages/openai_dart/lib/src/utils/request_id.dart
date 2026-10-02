@@ -20,10 +20,8 @@ final _random = Random();
 /// ```
 String generateRequestId() {
   final timestamp = DateTime.now().millisecondsSinceEpoch;
-  final randomPart = _random
-      .nextInt(0xFFFFFFFF)
-      .toRadixString(16)
-      .padLeft(8, '0');
+  final randomPart =
+      _random.nextInt(0xFFFFFFFF).toRadixString(16).padLeft(8, '0');
   return 'req_${timestamp}_$randomPart';
 }
 
@@ -35,9 +33,7 @@ String generateRequestId() {
 /// Format: `cor_{timestamp}_{random}`
 String generateCorrelationId() {
   final timestamp = DateTime.now().millisecondsSinceEpoch;
-  final randomPart = _random
-      .nextInt(0xFFFFFFFF)
-      .toRadixString(16)
-      .padLeft(8, '0');
+  final randomPart =
+      _random.nextInt(0xFFFFFFFF).toRadixString(16).padLeft(8, '0');
   return 'cor_${timestamp}_$randomPart';
 }

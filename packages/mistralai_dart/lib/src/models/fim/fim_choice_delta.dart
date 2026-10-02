@@ -19,18 +19,18 @@ class FimChoiceDelta {
 
   /// Creates a [FimChoiceDelta] from JSON.
   factory FimChoiceDelta.fromJson(Map<String, dynamic> json) => FimChoiceDelta(
-    index: json['index'] as int? ?? 0,
-    delta: json['delta'] as String?,
-    finishReason: finishReasonFromString(json['finish_reason'] as String?),
-  );
+        index: json['index'] as int? ?? 0,
+        delta: json['delta'] as String?,
+        finishReason: finishReasonFromString(json['finish_reason'] as String?),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'index': index,
-    if (delta != null) 'delta': delta,
-    if (finishReason != null)
-      'finish_reason': finishReasonToString(finishReason!),
-  };
+        'index': index,
+        if (delta != null) 'delta': delta,
+        if (finishReason != null)
+          'finish_reason': finishReasonToString(finishReason!),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -45,7 +45,6 @@ class FimChoiceDelta {
   int get hashCode => Object.hash(index, delta, finishReason);
 
   @override
-  String toString() =>
-      'FimChoiceDelta(index: $index, delta: $delta, '
+  String toString() => 'FimChoiceDelta(index: $index, delta: $delta, '
       'finishReason: $finishReason)';
 }

@@ -24,12 +24,12 @@ enum EffortLevel {
 
   /// Parses [EffortLevel] from JSON.
   static EffortLevel fromJson(String value) => switch (value) {
-    'low' => EffortLevel.low,
-    'medium' => EffortLevel.medium,
-    'high' => EffortLevel.high,
-    'max' => EffortLevel.max,
-    _ => throw FormatException('Unknown EffortLevel: $value'),
-  };
+        'low' => EffortLevel.low,
+        'medium' => EffortLevel.medium,
+        'high' => EffortLevel.high,
+        'max' => EffortLevel.max,
+        _ => throw FormatException('Unknown EffortLevel: $value'),
+      };
 
   /// Converts to JSON.
   String toJson() => value;
@@ -61,9 +61,9 @@ class OutputConfig {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (effort != null) 'effort': effort!.toJson(),
-    if (format != null) 'format': format!.toJson(),
-  };
+        if (effort != null) 'effort': effort!.toJson(),
+        if (format != null) 'format': format!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   OutputConfig copyWith({
@@ -71,9 +71,8 @@ class OutputConfig {
     Object? format = unsetCopyWithValue,
   }) {
     return OutputConfig(
-      effort: effort == unsetCopyWithValue
-          ? this.effort
-          : effort as EffortLevel?,
+      effort:
+          effort == unsetCopyWithValue ? this.effort : effort as EffortLevel?,
       format: format == unsetCopyWithValue
           ? this.format
           : format as JsonOutputFormat?,

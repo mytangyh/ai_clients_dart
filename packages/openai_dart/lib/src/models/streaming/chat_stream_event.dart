@@ -114,16 +114,17 @@ class ChatStreamEvent {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (id != null) 'id': id,
-    if (object != null) 'object': object,
-    if (created != null) 'created': created,
-    if (model != null) 'model': model,
-    if (choices != null) 'choices': choices!.map((c) => c.toJson()).toList(),
-    if (usage != null) 'usage': usage!.toJson(),
-    if (systemFingerprint != null) 'system_fingerprint': systemFingerprint,
-    if (serviceTier != null) 'service_tier': serviceTier,
-    if (provider != null) 'provider': provider,
-  };
+        if (id != null) 'id': id,
+        if (object != null) 'object': object,
+        if (created != null) 'created': created,
+        if (model != null) 'model': model,
+        if (choices != null)
+          'choices': choices!.map((c) => c.toJson()).toList(),
+        if (usage != null) 'usage': usage!.toJson(),
+        if (systemFingerprint != null) 'system_fingerprint': systemFingerprint,
+        if (serviceTier != null) 'service_tier': serviceTier,
+        if (provider != null) 'provider': provider,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -184,11 +185,11 @@ class ChatStreamChoice {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (index != null) 'index': index,
-    'delta': delta.toJson(),
-    if (finishReason != null) 'finish_reason': finishReason!.toJson(),
-    if (logprobs != null) 'logprobs': logprobs!.toJson(),
-  };
+        if (index != null) 'index': index,
+        'delta': delta.toJson(),
+        if (finishReason != null) 'finish_reason': finishReason!.toJson(),
+        if (logprobs != null) 'logprobs': logprobs!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -227,7 +228,8 @@ class ChatDelta {
       role: json['role'] as String?,
       content: json['content'] as String?,
       refusal: json['refusal'] as String?,
-      toolCalls: (json['tool_calls'] as List<dynamic>?)?.indexed
+      toolCalls: (json['tool_calls'] as List<dynamic>?)
+          ?.indexed
           .map(
             (e) => ToolCallDelta.fromJson(
               e.$2 as Map<String, dynamic>,
@@ -284,16 +286,17 @@ class ChatDelta {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (role != null) 'role': role,
-    if (content != null) 'content': content,
-    if (refusal != null) 'refusal': refusal,
-    if (toolCalls != null)
-      'tool_calls': toolCalls!.map((tc) => tc.toJson()).toList(),
-    if (reasoningContent != null) 'reasoning_content': reasoningContent,
-    if (reasoning != null) 'reasoning': reasoning,
-    if (reasoningDetails != null)
-      'reasoning_details': reasoningDetails!.map((rd) => rd.toJson()).toList(),
-  };
+        if (role != null) 'role': role,
+        if (content != null) 'content': content,
+        if (refusal != null) 'refusal': refusal,
+        if (toolCalls != null)
+          'tool_calls': toolCalls!.map((tc) => tc.toJson()).toList(),
+        if (reasoningContent != null) 'reasoning_content': reasoningContent,
+        if (reasoning != null) 'reasoning': reasoning,
+        if (reasoningDetails != null)
+          'reasoning_details':
+              reasoningDetails!.map((rd) => rd.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -359,11 +362,11 @@ class ToolCallDelta {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'index': index,
-    if (id != null) 'id': id,
-    if (type != null) 'type': type,
-    if (function != null) 'function': function!.toJson(),
-  };
+        'index': index,
+        if (id != null) 'id': id,
+        if (type != null) 'type': type,
+        if (function != null) 'function': function!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -402,9 +405,9 @@ class FunctionCallDelta {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (name != null) 'name': name,
-    if (arguments != null) 'arguments': arguments,
-  };
+        if (name != null) 'name': name,
+        if (arguments != null) 'arguments': arguments,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -626,12 +629,10 @@ class ChatStreamAccumulator {
       return null;
     }
     return Logprobs(
-      content: choice.logprobsContent.isNotEmpty
-          ? choice.logprobsContent
-          : null,
-      refusal: choice.logprobsRefusal.isNotEmpty
-          ? choice.logprobsRefusal
-          : null,
+      content:
+          choice.logprobsContent.isNotEmpty ? choice.logprobsContent : null,
+      refusal:
+          choice.logprobsRefusal.isNotEmpty ? choice.logprobsRefusal : null,
     );
   }
 
@@ -714,20 +715,20 @@ class ChatStreamAccumulator {
   /// during streaming, prefer the flat getters (`content`, `toolCalls`, etc.)
   /// which delegate to choice 0 without allocation.
   List<AccumulatedChoice> get choices => [
-    for (var i = 0; i < _choices.length; i++)
-      AccumulatedChoice._(
-        index: i,
-        content: _choices[i].content.toString(),
-        refusal: _choices[i].refusal.toString(),
-        role: _choices[i].role,
-        finishReason: _choices[i].finishReason,
-        toolCalls: _buildToolCalls(_choices[i]),
-        reasoningContent: _choices[i].reasoningContent.toString(),
-        reasoning: _choices[i].reasoning.toString(),
-        reasoningDetails: List.unmodifiable(_choices[i].reasoningDetails),
-        logprobs: _buildLogprobs(_choices[i]),
-      ),
-  ];
+        for (var i = 0; i < _choices.length; i++)
+          AccumulatedChoice._(
+            index: i,
+            content: _choices[i].content.toString(),
+            refusal: _choices[i].refusal.toString(),
+            role: _choices[i].role,
+            finishReason: _choices[i].finishReason,
+            toolCalls: _buildToolCalls(_choices[i]),
+            reasoningContent: _choices[i].reasoningContent.toString(),
+            reasoning: _choices[i].reasoning.toString(),
+            reasoningDetails: List.unmodifiable(_choices[i].reasoningDetails),
+            logprobs: _buildLogprobs(_choices[i]),
+          ),
+      ];
 
   /// Builds a [ChatCompletion] from the accumulated stream data.
   ///
@@ -785,9 +786,8 @@ class ChatStreamAccumulator {
         content: contentStr.isNotEmpty ? contentStr : null,
         refusal: refusalStr.isNotEmpty ? refusalStr : null,
         toolCalls: tcs.isNotEmpty ? tcs : null,
-        reasoningContent: reasoningContentStr.isNotEmpty
-            ? reasoningContentStr
-            : null,
+        reasoningContent:
+            reasoningContentStr.isNotEmpty ? reasoningContentStr : null,
         reasoning: reasoningStr.isNotEmpty ? reasoningStr : null,
         reasoningDetails: rds.isNotEmpty ? List.unmodifiable(rds) : null,
       ),

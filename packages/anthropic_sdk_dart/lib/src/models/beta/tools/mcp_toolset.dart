@@ -52,14 +52,15 @@ class McpToolset extends BuiltInTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'mcp',
-    if (authorizationToken != null) 'authorization_token': authorizationToken,
-    'server_definition': serverDefinition.toJson(),
-    if (toolConfiguration != null)
-      'tool_configuration': toolConfiguration!.toJson(),
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': type,
+        'name': 'mcp',
+        if (authorizationToken != null)
+          'authorization_token': authorizationToken,
+        'server_definition': serverDefinition.toJson(),
+        if (toolConfiguration != null)
+          'tool_configuration': toolConfiguration!.toJson(),
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   McpToolset copyWith({
@@ -97,12 +98,12 @@ class McpToolset extends BuiltInTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    authorizationToken,
-    serverDefinition,
-    toolConfiguration,
-    cacheControl,
-  );
+        type,
+        authorizationToken,
+        serverDefinition,
+        toolConfiguration,
+        cacheControl,
+      );
 
   @override
   String toString() =>
@@ -163,9 +164,9 @@ class McpToolConfig {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (allowedTools != null) 'allowed_tools': allowedTools,
-    if (enabled != null) 'enabled': enabled,
-  };
+        if (allowedTools != null) 'allowed_tools': allowedTools,
+        if (enabled != null) 'enabled': enabled,
+      };
 
   /// Creates a copy with replaced values.
   McpToolConfig copyWith({

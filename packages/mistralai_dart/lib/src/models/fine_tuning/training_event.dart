@@ -17,19 +17,19 @@ class TrainingEvent {
 
   /// Creates a [TrainingEvent] from JSON.
   factory TrainingEvent.fromJson(Map<String, dynamic> json) => TrainingEvent(
-    name: json['name'] as String? ?? '',
-    data: json['data'] as String?,
-    createdAt: json['created_at'] != null
-        ? DateTime.tryParse(json['created_at'] as String)
-        : null,
-  );
+        name: json['name'] as String? ?? '',
+        data: json['data'] as String?,
+        createdAt: json['created_at'] != null
+            ? DateTime.tryParse(json['created_at'] as String)
+            : null,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    if (data != null) 'data': data,
-    if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
-  };
+        'name': name,
+        if (data != null) 'data': data,
+        if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
+      };
 
   @override
   bool operator ==(Object other) =>

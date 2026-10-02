@@ -42,12 +42,12 @@ class VectorStoresResource extends ResourceBase {
 
   /// Access to vector store file operations.
   VectorStoreFilesResource get files => _files ??= VectorStoreFilesResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Creates a new vector store.
   Future<VectorStore> create(CreateVectorStoreRequest request) async {

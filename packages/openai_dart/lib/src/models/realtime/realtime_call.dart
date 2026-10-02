@@ -51,9 +51,9 @@ class RealtimeCallCreateRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'sdp': sdp,
-    if (session != null) 'session': session!.toJson(),
-  };
+        'sdp': sdp,
+        if (session != null) 'session': session!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -154,8 +154,8 @@ class RealtimeCallRejectRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (statusCode != null) 'status_code': statusCode,
-  };
+        if (statusCode != null) 'status_code': statusCode,
+      };
 
   @override
   bool operator ==(Object other) =>

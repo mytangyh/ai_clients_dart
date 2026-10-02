@@ -39,25 +39,25 @@ class ShowResponse {
 
   /// Creates a [ShowResponse] from JSON.
   factory ShowResponse.fromJson(Map<String, dynamic> json) => ShowResponse(
-    parameters: json['parameters'] as String?,
-    license: json['license'] as String?,
-    modifiedAt: json['modified_at'] as String?,
-    details: json['details'] as Map<String, dynamic>?,
-    template: json['template'] as String?,
-    capabilities: (json['capabilities'] as List?)?.cast<String>(),
-    modelInfo: json['model_info'] as Map<String, dynamic>?,
-  );
+        parameters: json['parameters'] as String?,
+        license: json['license'] as String?,
+        modifiedAt: json['modified_at'] as String?,
+        details: json['details'] as Map<String, dynamic>?,
+        template: json['template'] as String?,
+        capabilities: (json['capabilities'] as List?)?.cast<String>(),
+        modelInfo: json['model_info'] as Map<String, dynamic>?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (parameters != null) 'parameters': parameters,
-    if (license != null) 'license': license,
-    if (modifiedAt != null) 'modified_at': modifiedAt,
-    if (details != null) 'details': details,
-    if (template != null) 'template': template,
-    if (capabilities != null) 'capabilities': capabilities,
-    if (modelInfo != null) 'model_info': modelInfo,
-  };
+        if (parameters != null) 'parameters': parameters,
+        if (license != null) 'license': license,
+        if (modifiedAt != null) 'modified_at': modifiedAt,
+        if (details != null) 'details': details,
+        if (template != null) 'template': template,
+        if (capabilities != null) 'capabilities': capabilities,
+        if (modelInfo != null) 'model_info': modelInfo,
+      };
 
   /// Creates a copy with replaced values.
   ShowResponse copyWith({
@@ -73,18 +73,16 @@ class ShowResponse {
       parameters: parameters == unsetCopyWithValue
           ? this.parameters
           : parameters as String?,
-      license: license == unsetCopyWithValue
-          ? this.license
-          : license as String?,
+      license:
+          license == unsetCopyWithValue ? this.license : license as String?,
       modifiedAt: modifiedAt == unsetCopyWithValue
           ? this.modifiedAt
           : modifiedAt as String?,
       details: details == unsetCopyWithValue
           ? this.details
           : details as Map<String, dynamic>?,
-      template: template == unsetCopyWithValue
-          ? this.template
-          : template as String?,
+      template:
+          template == unsetCopyWithValue ? this.template : template as String?,
       capabilities: capabilities == unsetCopyWithValue
           ? this.capabilities
           : capabilities as List<String>?,

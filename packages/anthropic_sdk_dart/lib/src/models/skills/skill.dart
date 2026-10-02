@@ -67,14 +67,14 @@ class Skill {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'display_title': displayTitle,
-    'created_at': createdAt.toUtc().toIso8601String(),
-    'updated_at': updatedAt.toUtc().toIso8601String(),
-    'latest_version': latestVersion,
-    'source': source.toJson(),
-    'type': type,
-  };
+        'id': id,
+        'display_title': displayTitle,
+        'created_at': createdAt.toUtc().toIso8601String(),
+        'updated_at': updatedAt.toUtc().toIso8601String(),
+        'latest_version': latestVersion,
+        'source': source.toJson(),
+        'type': type,
+      };
 
   /// Creates a copy with replaced values.
   ///
@@ -120,18 +120,17 @@ class Skill {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    displayTitle,
-    createdAt,
-    updatedAt,
-    latestVersion,
-    source,
-    type,
-  );
+        id,
+        displayTitle,
+        createdAt,
+        updatedAt,
+        latestVersion,
+        source,
+        type,
+      );
 
   @override
-  String toString() =>
-      'Skill('
+  String toString() => 'Skill('
       'id: $id, '
       'displayTitle: $displayTitle, '
       'createdAt: $createdAt, '

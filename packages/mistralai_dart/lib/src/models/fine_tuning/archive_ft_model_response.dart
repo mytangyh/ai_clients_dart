@@ -29,10 +29,10 @@ class ArchiveFTModelResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'archived': archived,
-  };
+        'id': id,
+        'object': object,
+        'archived': archived,
+      };
 
   @override
   bool operator ==(Object other) =>

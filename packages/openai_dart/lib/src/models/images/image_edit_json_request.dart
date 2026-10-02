@@ -11,10 +11,10 @@ class ImageReference {
 
   /// Creates an [ImageReference].
   const ImageReference({this.imageUrl, this.fileId})
-    : assert(
-        (imageUrl == null) != (fileId == null),
-        'Provide exactly one of imageUrl or fileId',
-      );
+      : assert(
+          (imageUrl == null) != (fileId == null),
+          'Provide exactly one of imageUrl or fileId',
+        );
 
   /// Creates a URL-based image reference.
   const ImageReference.url(String url) : this(imageUrl: url);
@@ -36,9 +36,9 @@ class ImageReference {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (imageUrl != null) 'image_url': imageUrl,
-    if (fileId != null) 'file_id': fileId,
-  };
+        if (imageUrl != null) 'image_url': imageUrl,
+        if (fileId != null) 'file_id': fileId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -163,22 +163,22 @@ class ImageEditJsonRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'images': images.map((e) => e.toJson()).toList(),
-    'prompt': prompt,
-    if (mask != null) 'mask': mask!.toJson(),
-    if (model != null) 'model': model,
-    if (n != null) 'n': n,
-    if (quality != null) 'quality': quality!.toJson(),
-    if (inputFidelity != null) 'input_fidelity': inputFidelity!.toJson(),
-    if (size != null) 'size': size!.toJson(),
-    if (user != null) 'user': user,
-    if (outputFormat != null) 'output_format': outputFormat!.toJson(),
-    if (outputCompression != null) 'output_compression': outputCompression,
-    if (moderation != null) 'moderation': moderation!.toJson(),
-    if (background != null) 'background': background!.toJson(),
-    if (stream != null) 'stream': stream,
-    if (partialImages != null) 'partial_images': partialImages,
-  };
+        'images': images.map((e) => e.toJson()).toList(),
+        'prompt': prompt,
+        if (mask != null) 'mask': mask!.toJson(),
+        if (model != null) 'model': model,
+        if (n != null) 'n': n,
+        if (quality != null) 'quality': quality!.toJson(),
+        if (inputFidelity != null) 'input_fidelity': inputFidelity!.toJson(),
+        if (size != null) 'size': size!.toJson(),
+        if (user != null) 'user': user,
+        if (outputFormat != null) 'output_format': outputFormat!.toJson(),
+        if (outputCompression != null) 'output_compression': outputCompression,
+        if (moderation != null) 'moderation': moderation!.toJson(),
+        if (background != null) 'background': background!.toJson(),
+        if (stream != null) 'stream': stream,
+        if (partialImages != null) 'partial_images': partialImages,
+      };
 }
 
 /// JSON image edit quality options.
@@ -199,9 +199,9 @@ enum ImageEditJsonQuality {
   final String _value;
 
   factory ImageEditJsonQuality.fromJson(String json) => values.firstWhere(
-    (e) => e._value == json,
-    orElse: () => throw FormatException('Unknown quality: $json'),
-  );
+        (e) => e._value == json,
+        orElse: () => throw FormatException('Unknown quality: $json'),
+      );
 
   /// Converts to JSON string.
   String toJson() => _value;
@@ -219,9 +219,9 @@ enum ImageInputFidelity {
   final String _value;
 
   factory ImageInputFidelity.fromJson(String json) => values.firstWhere(
-    (e) => e._value == json,
-    orElse: () => throw FormatException('Unknown input_fidelity: $json'),
-  );
+        (e) => e._value == json,
+        orElse: () => throw FormatException('Unknown input_fidelity: $json'),
+      );
 
   /// Converts to JSON string.
   String toJson() => _value;
@@ -245,9 +245,9 @@ enum ImageEditJsonSize {
   final String _value;
 
   factory ImageEditJsonSize.fromJson(String json) => values.firstWhere(
-    (e) => e._value == json,
-    orElse: () => throw FormatException('Unknown size: $json'),
-  );
+        (e) => e._value == json,
+        orElse: () => throw FormatException('Unknown size: $json'),
+      );
 
   /// Converts to JSON string.
   String toJson() => _value;
@@ -268,9 +268,9 @@ enum ImageOutputFormat {
   final String _value;
 
   factory ImageOutputFormat.fromJson(String json) => values.firstWhere(
-    (e) => e._value == json,
-    orElse: () => throw FormatException('Unknown output format: $json'),
-  );
+        (e) => e._value == json,
+        orElse: () => throw FormatException('Unknown output format: $json'),
+      );
 
   /// Converts to JSON string.
   String toJson() => _value;
@@ -288,9 +288,9 @@ enum ImageModerationLevel {
   final String _value;
 
   factory ImageModerationLevel.fromJson(String json) => values.firstWhere(
-    (e) => e._value == json,
-    orElse: () => throw FormatException('Unknown moderation: $json'),
-  );
+        (e) => e._value == json,
+        orElse: () => throw FormatException('Unknown moderation: $json'),
+      );
 
   /// Converts to JSON string.
   String toJson() => _value;
@@ -311,9 +311,9 @@ enum ImageBackground {
   final String _value;
 
   factory ImageBackground.fromJson(String json) => values.firstWhere(
-    (e) => e._value == json,
-    orElse: () => throw FormatException('Unknown background: $json'),
-  );
+        (e) => e._value == json,
+        orElse: () => throw FormatException('Unknown background: $json'),
+      );
 
   /// Converts to JSON string.
   String toJson() => _value;

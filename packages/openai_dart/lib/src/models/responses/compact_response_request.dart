@@ -34,9 +34,8 @@ class CompactResponseRequest {
   factory CompactResponseRequest.fromJson(Map<String, dynamic> json) {
     return CompactResponseRequest(
       model: json['model'] as String,
-      input: json['input'] != null
-          ? ResponseInput.fromJson(json['input'])
-          : null,
+      input:
+          json['input'] != null ? ResponseInput.fromJson(json['input']) : null,
       previousResponseId: json['previous_response_id'] as String?,
       instructions: json['instructions'] as String?,
       promptCacheKey: json['prompt_cache_key'] as String?,
@@ -45,12 +44,13 @@ class CompactResponseRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    if (input != null) 'input': input!.toJson(),
-    if (previousResponseId != null) 'previous_response_id': previousResponseId,
-    if (instructions != null) 'instructions': instructions,
-    if (promptCacheKey != null) 'prompt_cache_key': promptCacheKey,
-  };
+        'model': model,
+        if (input != null) 'input': input!.toJson(),
+        if (previousResponseId != null)
+          'previous_response_id': previousResponseId,
+        if (instructions != null) 'instructions': instructions,
+        if (promptCacheKey != null) 'prompt_cache_key': promptCacheKey,
+      };
 
   /// Creates a copy with replaced values.
   ///
@@ -90,12 +90,12 @@ class CompactResponseRequest {
 
   @override
   int get hashCode => Object.hash(
-    model,
-    input,
-    previousResponseId,
-    instructions,
-    promptCacheKey,
-  );
+        model,
+        input,
+        previousResponseId,
+        instructions,
+        promptCacheKey,
+      );
 
   @override
   String toString() =>

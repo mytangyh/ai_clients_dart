@@ -14,7 +14,7 @@ class ContextManagement {
 
   /// Creates a compaction configuration entry.
   const ContextManagement.compaction({this.compactThreshold})
-    : type = 'compaction';
+      : type = 'compaction';
 
   /// Creates a [ContextManagement] from JSON.
   factory ContextManagement.fromJson(Map<String, dynamic> json) {
@@ -26,9 +26,9 @@ class ContextManagement {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (compactThreshold != null) 'compact_threshold': compactThreshold,
-  };
+        'type': type,
+        if (compactThreshold != null) 'compact_threshold': compactThreshold,
+      };
 
   @override
   bool operator ==(Object other) =>

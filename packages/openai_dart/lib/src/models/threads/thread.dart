@@ -41,7 +41,7 @@ class Thread {
           : null,
       metadata:
           (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>() ??
-          {},
+              {},
     );
   }
 
@@ -66,12 +66,12 @@ class Thread {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    if (toolResources != null) 'tool_resources': toolResources!.toJson(),
-    'metadata': metadata,
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        if (toolResources != null) 'tool_resources': toolResources!.toJson(),
+        'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -102,8 +102,8 @@ class CreateThreadRequest {
               json['tool_resources'] as Map<String, dynamic>,
             )
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -118,10 +118,11 @@ class CreateThreadRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (messages != null) 'messages': messages!.map((m) => m.toJson()).toList(),
-    if (toolResources != null) 'tool_resources': toolResources!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        if (messages != null)
+          'messages': messages!.map((m) => m.toJson()).toList(),
+        if (toolResources != null) 'tool_resources': toolResources!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -149,8 +150,8 @@ class ModifyThreadRequest {
               json['tool_resources'] as Map<String, dynamic>,
             )
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -162,9 +163,9 @@ class ModifyThreadRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (toolResources != null) 'tool_resources': toolResources!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        if (toolResources != null) 'tool_resources': toolResources!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -208,10 +209,10 @@ class DeleteThreadResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -246,8 +247,8 @@ class ThreadMessage {
       attachments: (json['attachments'] as List<dynamic>?)
           ?.map((e) => MessageAttachment.fromJson(e as Map<String, dynamic>))
           .toList(),
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -295,12 +296,12 @@ class ThreadMessage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'role': role,
-    'content': content,
-    if (attachments != null)
-      'attachments': attachments!.map((a) => a.toJson()).toList(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        'role': role,
+        'content': content,
+        if (attachments != null)
+          'attachments': attachments!.map((a) => a.toJson()).toList(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -340,9 +341,9 @@ class MessageAttachment {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'file_id': fileId,
-    if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
-  };
+        'file_id': fileId,
+        if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -135,25 +135,25 @@ class CompletionRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    if (prompt != null) 'prompt': prompt!.toJson(),
-    if (bestOf != null) 'best_of': bestOf,
-    if (echo != null) 'echo': echo,
-    if (frequencyPenalty != null) 'frequency_penalty': frequencyPenalty,
-    if (logitBias != null) 'logit_bias': logitBias,
-    if (logprobs != null) 'logprobs': logprobs,
-    if (maxTokens != null) 'max_tokens': maxTokens,
-    if (n != null) 'n': n,
-    if (presencePenalty != null) 'presence_penalty': presencePenalty,
-    if (seed != null) 'seed': seed,
-    if (stop != null) 'stop': stop!.toJson(),
-    if (stream != null) 'stream': stream,
-    if (streamOptions != null) 'stream_options': streamOptions!.toJson(),
-    if (suffix != null) 'suffix': suffix,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (user != null) 'user': user,
-  };
+        'model': model,
+        if (prompt != null) 'prompt': prompt!.toJson(),
+        if (bestOf != null) 'best_of': bestOf,
+        if (echo != null) 'echo': echo,
+        if (frequencyPenalty != null) 'frequency_penalty': frequencyPenalty,
+        if (logitBias != null) 'logit_bias': logitBias,
+        if (logprobs != null) 'logprobs': logprobs,
+        if (maxTokens != null) 'max_tokens': maxTokens,
+        if (n != null) 'n': n,
+        if (presencePenalty != null) 'presence_penalty': presencePenalty,
+        if (seed != null) 'seed': seed,
+        if (stop != null) 'stop': stop!.toJson(),
+        if (stream != null) 'stream': stream,
+        if (streamOptions != null) 'stream_options': streamOptions!.toJson(),
+        if (suffix != null) 'suffix': suffix,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (user != null) 'user': user,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -231,14 +231,14 @@ class Completion {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    if (created != null) 'created': created,
-    'model': model,
-    'choices': choices.map((c) => c.toJson()).toList(),
-    if (usage != null) 'usage': usage!.toJson(),
-    if (systemFingerprint != null) 'system_fingerprint': systemFingerprint,
-  };
+        'id': id,
+        'object': object,
+        if (created != null) 'created': created,
+        'model': model,
+        'choices': choices.map((c) => c.toJson()).toList(),
+        if (usage != null) 'usage': usage!.toJson(),
+        if (systemFingerprint != null) 'system_fingerprint': systemFingerprint,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -291,11 +291,11 @@ class CompletionChoice {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'index': index,
-    'text': text,
-    if (logprobs != null) 'logprobs': logprobs!.toJson(),
-    if (finishReason != null) 'finish_reason': finishReason!.toJson(),
-  };
+        'index': index,
+        'text': text,
+        if (logprobs != null) 'logprobs': logprobs!.toJson(),
+        if (finishReason != null) 'finish_reason': finishReason!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

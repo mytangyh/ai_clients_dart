@@ -20,8 +20,7 @@ class ClassificationResult {
   /// Creates a [ClassificationResult] from JSON.
   factory ClassificationResult.fromJson(Map<String, dynamic> json) =>
       ClassificationResult(
-        categories:
-            (json['categories'] as Map<String, dynamic>?)?.map(
+        categories: (json['categories'] as Map<String, dynamic>?)?.map(
               (k, v) => MapEntry(k, v as bool),
             ) ??
             {},
@@ -32,9 +31,9 @@ class ClassificationResult {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'categories': categories,
-    'category_scores': categoryScores.toJson(),
-  };
+        'categories': categories,
+        'category_scores': categoryScores.toJson(),
+      };
 
   /// Returns true if any category was flagged.
   bool get flagged => categories.values.any((v) => v);

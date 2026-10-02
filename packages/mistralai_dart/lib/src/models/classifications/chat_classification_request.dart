@@ -21,8 +21,7 @@ class ChatClassificationRequest {
   factory ChatClassificationRequest.fromJson(Map<String, dynamic> json) =>
       ChatClassificationRequest(
         model: json['model'] as String? ?? 'mistral-moderation-latest',
-        input:
-            (json['input'] as List?)
+        input: (json['input'] as List?)
                 ?.map((e) => ChatMessage.fromJson(e as Map<String, dynamic>))
                 .toList() ??
             [],
@@ -30,9 +29,9 @@ class ChatClassificationRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'input': input.map((e) => e.toJson()).toList(),
-  };
+        'model': model,
+        'input': input.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>

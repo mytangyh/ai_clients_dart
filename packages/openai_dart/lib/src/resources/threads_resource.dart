@@ -47,22 +47,22 @@ class ThreadsResource extends ResourceBase {
 
   /// Access to thread messages.
   MessagesResource get messages => _messages ??= MessagesResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Access to thread runs.
   RunsResource get runs => _runs ??= RunsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-    streamClientFactory: streamClientFactory,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+        streamClientFactory: streamClientFactory,
+      );
 
   /// Creates a new thread.
   ///

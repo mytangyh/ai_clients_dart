@@ -66,12 +66,12 @@ class SpeechRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'input': input,
-    'voice': voice.toJson(),
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-    if (speed != null) 'speed': speed,
-  };
+        'model': model,
+        'input': input,
+        'voice': voice.toJson(),
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+        if (speed != null) 'speed': speed,
+      };
 
   /// Creates a copy with the given fields replaced.
   ///

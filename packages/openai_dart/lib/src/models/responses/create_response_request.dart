@@ -253,9 +253,8 @@ class CreateResponseRequest {
       if (text != null) 'text': text!.toJson(),
       if (truncation != null) 'truncation': truncation!.toJson(),
       if (contextManagement != null)
-        'context_management': contextManagement!
-            .map((e) => e.toJson())
-            .toList(),
+        'context_management':
+            contextManagement!.map((e) => e.toJson()).toList(),
       if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
       if (serviceTier != null) 'service_tier': serviceTier!.toJson(),
       if (metadata case final metadata?
@@ -417,34 +416,37 @@ class CreateResponseRequest {
 
   @override
   int get hashCode => Object.hashAll([
-    model,
-    input,
-    instructions,
-    if (tools != null) Object.hashAll(tools!) else null,
-    toolChoice,
-    previousResponseId,
-    maxOutputTokens,
-    temperature,
-    topP,
-    presencePenalty,
-    frequencyPenalty,
-    stream,
-    streamOptions,
-    reasoning,
-    text,
-    truncation,
-    if (contextManagement != null) Object.hashAll(contextManagement!) else null,
-    parallelToolCalls,
-    serviceTier,
-    mapHash(metadata),
-    if (include != null) Object.hashAll(include!) else null,
-    store,
-    background,
-    maxToolCalls,
-    safetyIdentifier,
-    promptCacheKey,
-    topLogprobs,
-  ]);
+        model,
+        input,
+        instructions,
+        if (tools != null) Object.hashAll(tools!) else null,
+        toolChoice,
+        previousResponseId,
+        maxOutputTokens,
+        temperature,
+        topP,
+        presencePenalty,
+        frequencyPenalty,
+        stream,
+        streamOptions,
+        reasoning,
+        text,
+        truncation,
+        if (contextManagement != null)
+          Object.hashAll(contextManagement!)
+        else
+          null,
+        parallelToolCalls,
+        serviceTier,
+        mapHash(metadata),
+        if (include != null) Object.hashAll(include!) else null,
+        store,
+        background,
+        maxToolCalls,
+        safetyIdentifier,
+        promptCacheKey,
+        topLogprobs,
+      ]);
 
   @override
   String toString() => 'CreateResponseRequest(model: $model, input: $input)';

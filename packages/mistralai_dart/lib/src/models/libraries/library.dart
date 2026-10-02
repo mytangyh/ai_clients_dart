@@ -100,21 +100,17 @@ class Library {
       description: description == unsetCopyWithValue
           ? this.description
           : description as String?,
-      createdAt: createdAt == unsetCopyWithValue
-          ? this.createdAt
-          : createdAt as int?,
-      updatedAt: updatedAt == unsetCopyWithValue
-          ? this.updatedAt
-          : updatedAt as int?,
-      ownerId: ownerId == unsetCopyWithValue
-          ? this.ownerId
-          : ownerId as String?,
+      createdAt:
+          createdAt == unsetCopyWithValue ? this.createdAt : createdAt as int?,
+      updatedAt:
+          updatedAt == unsetCopyWithValue ? this.updatedAt : updatedAt as int?,
+      ownerId:
+          ownerId == unsetCopyWithValue ? this.ownerId : ownerId as String?,
       ownerType: ownerType == unsetCopyWithValue
           ? this.ownerType
           : ownerType as String?,
-      totalSize: totalSize == unsetCopyWithValue
-          ? this.totalSize
-          : totalSize as int?,
+      totalSize:
+          totalSize == unsetCopyWithValue ? this.totalSize : totalSize as int?,
       nbDocuments: nbDocuments == unsetCopyWithValue
           ? this.nbDocuments
           : nbDocuments as int?,
@@ -167,8 +163,7 @@ class LibraryList {
   factory LibraryList.fromJson(Map<String, dynamic> json) {
     return LibraryList(
       object: json['object'] as String? ?? 'list',
-      data:
-          (json['data'] as List<dynamic>?)
+      data: (json['data'] as List<dynamic>?)
               ?.map((e) => Library.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],

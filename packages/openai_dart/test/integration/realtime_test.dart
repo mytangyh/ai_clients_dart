@@ -493,9 +493,9 @@ void main() {
           // Wait for final response
           final finalEvents =
               await collectEventsUntil<realtime.ResponseDoneEvent>(
-                connection,
-                timeout: const Duration(minutes: 1),
-              );
+            connection,
+            timeout: const Duration(minutes: 1),
+          );
 
           final textBuffer = StringBuffer();
           for (final event in finalEvents) {
@@ -647,8 +647,8 @@ void main() {
           // Wait for item creation
           final itemCreated =
               await waitForEvent<realtime.ConversationItemCreatedEvent>(
-                connection,
-              );
+            connection,
+          );
 
           final itemId = itemCreated.item['id'] as String;
           expect(itemId, isNotEmpty);
@@ -659,8 +659,8 @@ void main() {
           // Wait for deletion confirmation
           final itemDeleted =
               await waitForEvent<realtime.ConversationItemDeletedEvent>(
-                connection,
-              );
+            connection,
+          );
 
           expect(itemDeleted.itemId, itemId);
           print('Deleted item: $itemId');
@@ -838,8 +838,8 @@ void main() {
           // Should receive cleared event
           final cleared =
               await waitForEvent<realtime.InputAudioBufferClearedEvent>(
-                connection,
-              );
+            connection,
+          );
 
           expect(cleared.type, 'input_audio_buffer.cleared');
           print('Audio buffer cleared');

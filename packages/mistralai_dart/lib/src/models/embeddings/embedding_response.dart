@@ -37,8 +37,7 @@ class EmbeddingResponse {
         id: json['id'] as String? ?? '',
         object: json['object'] as String? ?? 'list',
         model: json['model'] as String? ?? '',
-        data:
-            (json['data'] as List?)
+        data: (json['data'] as List?)
                 ?.map((e) => EmbeddingData.fromJson(e as Map<String, dynamic>))
                 .toList() ??
             [],
@@ -49,12 +48,12 @@ class EmbeddingResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'model': model,
-    'data': data.map((e) => e.toJson()).toList(),
-    if (usage != null) 'usage': usage!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'model': model,
+        'data': data.map((e) => e.toJson()).toList(),
+        if (usage != null) 'usage': usage!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

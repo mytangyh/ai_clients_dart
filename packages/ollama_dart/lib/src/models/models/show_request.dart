@@ -16,15 +16,15 @@ class ShowRequest {
 
   /// Creates a [ShowRequest] from JSON.
   factory ShowRequest.fromJson(Map<String, dynamic> json) => ShowRequest(
-    model: json['model'] as String,
-    verbose: json['verbose'] as bool?,
-  );
+        model: json['model'] as String,
+        verbose: json['verbose'] as bool?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    if (verbose != null) 'verbose': verbose,
-  };
+        'model': model,
+        if (verbose != null) 'verbose': verbose,
+      };
 
   /// Creates a copy with replaced values.
   ShowRequest copyWith({String? model, Object? verbose = unsetCopyWithValue}) {

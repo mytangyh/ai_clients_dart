@@ -51,7 +51,7 @@ class RunStep {
       completedAt: json['completed_at'] as int?,
       metadata:
           (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>() ??
-          {},
+              {},
       usage: json['usage'] != null
           ? Usage.fromJson(json['usage'] as Map<String, dynamic>)
           : null,
@@ -114,23 +114,23 @@ class RunStep {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    'run_id': runId,
-    'assistant_id': assistantId,
-    'thread_id': threadId,
-    'type': type.toJson(),
-    'status': status.toJson(),
-    'step_details': stepDetails.toJson(),
-    if (lastError != null) 'last_error': lastError!.toJson(),
-    if (expiredAt != null) 'expired_at': expiredAt,
-    if (cancelledAt != null) 'cancelled_at': cancelledAt,
-    if (failedAt != null) 'failed_at': failedAt,
-    if (completedAt != null) 'completed_at': completedAt,
-    'metadata': metadata,
-    if (usage != null) 'usage': usage!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        'run_id': runId,
+        'assistant_id': assistantId,
+        'thread_id': threadId,
+        'type': type.toJson(),
+        'status': status.toJson(),
+        'step_details': stepDetails.toJson(),
+        if (lastError != null) 'last_error': lastError!.toJson(),
+        if (expiredAt != null) 'expired_at': expiredAt,
+        if (cancelledAt != null) 'cancelled_at': cancelledAt,
+        if (failedAt != null) 'failed_at': failedAt,
+        if (completedAt != null) 'completed_at': completedAt,
+        'metadata': metadata,
+        if (usage != null) 'usage': usage!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -186,12 +186,12 @@ class RunStepList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((s) => s.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((s) => s.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -303,9 +303,9 @@ class MessageCreationDetails implements StepDetails {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'message_creation',
-    'message_creation': {'message_id': messageId},
-  };
+        'type': 'message_creation',
+        'message_creation': {'message_id': messageId},
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -341,9 +341,9 @@ class ToolCallsDetails implements StepDetails {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_calls',
-    'tool_calls': toolCalls.map((tc) => tc.toJson()).toList(),
-  };
+        'type': 'tool_calls',
+        'tool_calls': toolCalls.map((tc) => tc.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -407,13 +407,13 @@ class CodeInterpreterStepCall implements StepToolCall {
 
   @override
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': 'code_interpreter',
-    'code_interpreter': {
-      'input': input,
-      'outputs': outputs.map((o) => o.toJson()).toList(),
-    },
-  };
+        'id': id,
+        'type': 'code_interpreter',
+        'code_interpreter': {
+          'input': input,
+          'outputs': outputs.map((o) => o.toJson()).toList(),
+        },
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -491,9 +491,9 @@ class ImageOutput implements CodeInterpreterOutput {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'image',
-    'image': {'file_id': fileId},
-  };
+        'type': 'image',
+        'image': {'file_id': fileId},
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -531,10 +531,10 @@ class FileSearchStepCall implements StepToolCall {
 
   @override
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': 'file_search',
-    if (fileSearch != null) 'file_search': fileSearch,
-  };
+        'id': id,
+        'type': 'file_search',
+        if (fileSearch != null) 'file_search': fileSearch,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -586,14 +586,14 @@ class FunctionStepCall implements StepToolCall {
 
   @override
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': 'function',
-    'function': {
-      'name': name,
-      'arguments': arguments,
-      if (output != null) 'output': output,
-    },
-  };
+        'id': id,
+        'type': 'function',
+        'function': {
+          'name': name,
+          'arguments': arguments,
+          if (output != null) 'output': output,
+        },
+      };
 
   @override
   bool operator ==(Object other) =>

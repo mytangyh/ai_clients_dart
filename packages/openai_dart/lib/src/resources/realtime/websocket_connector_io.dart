@@ -55,8 +55,8 @@ class _IOWebSocketWrapper implements WebSocket {
         if (_events.isClosed) return;
         final wse = switch (e) {
           io.WebSocketException(message: final message) => WebSocketException(
-            message,
-          ),
+              message,
+            ),
           _ => WebSocketException(e.toString()),
         };
         _events.addError(wse, st);

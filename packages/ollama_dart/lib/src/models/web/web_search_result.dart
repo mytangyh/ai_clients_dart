@@ -27,10 +27,10 @@ class WebSearchResult {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (title != null) 'title': title,
-    if (url != null) 'url': url,
-    if (content != null) 'content': content,
-  };
+        if (title != null) 'title': title,
+        if (url != null) 'url': url,
+        if (content != null) 'content': content,
+      };
 
   /// Creates a copy with replaced values.
   WebSearchResult copyWith({
@@ -41,9 +41,8 @@ class WebSearchResult {
     return WebSearchResult(
       title: title == unsetCopyWithValue ? this.title : title as String?,
       url: url == unsetCopyWithValue ? this.url : url as String?,
-      content: content == unsetCopyWithValue
-          ? this.content
-          : content as String?,
+      content:
+          content == unsetCopyWithValue ? this.content : content as String?,
     );
   }
 

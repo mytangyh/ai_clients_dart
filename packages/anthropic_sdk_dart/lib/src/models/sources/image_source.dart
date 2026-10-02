@@ -21,12 +21,12 @@ enum ImageMediaType {
 
   /// Converts a string to [ImageMediaType].
   static ImageMediaType fromJson(String value) => switch (value) {
-    'image/jpeg' => ImageMediaType.jpeg,
-    'image/png' => ImageMediaType.png,
-    'image/gif' => ImageMediaType.gif,
-    'image/webp' => ImageMediaType.webp,
-    _ => throw FormatException('Unknown ImageMediaType: $value'),
-  };
+        'image/jpeg' => ImageMediaType.jpeg,
+        'image/png' => ImageMediaType.png,
+        'image/gif' => ImageMediaType.gif,
+        'image/webp' => ImageMediaType.webp,
+        _ => throw FormatException('Unknown ImageMediaType: $value'),
+      };
 
   /// Creates an [ImageMediaType] from a MIME type string.
   ///
@@ -94,10 +94,10 @@ class Base64ImageSource extends ImageSource {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'data': data,
-    'media_type': mediaType.toJson(),
-  };
+        'type': type,
+        'data': data,
+        'media_type': mediaType.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   Base64ImageSource copyWith({String? data, ImageMediaType? mediaType}) {

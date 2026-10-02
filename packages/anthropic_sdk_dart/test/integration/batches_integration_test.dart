@@ -154,8 +154,7 @@ void main() {
 
         expect(batch.id, isNotEmpty);
         // Total requests should be 3
-        final total =
-            batch.requestCounts.processing +
+        final total = batch.requestCounts.processing +
             batch.requestCounts.succeeded +
             batch.requestCounts.errored +
             batch.requestCounts.canceled +

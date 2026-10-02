@@ -230,7 +230,9 @@ class FilesResource extends ResourceBase {
       additionalHeaders: {'Content-Type': 'application/json'},
     );
 
-    final body = <String, dynamic>{'expiry': ?expiresIn};
+    final body = <String, dynamic>{
+      if (expiresIn case final value?) 'expiry': value
+    };
 
     final httpRequest = http.Request('POST', url)
       ..headers.addAll(headers)

@@ -76,16 +76,16 @@ class Message {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type,
-    'role': role.toJson(),
-    'content': content.map((e) => e.toJson()).toList(),
-    'model': model,
-    if (stopReason != null) 'stop_reason': stopReason!.toJson(),
-    if (stopSequence != null) 'stop_sequence': stopSequence,
-    'usage': usage.toJson(),
-    if (container != null) 'container': container!.toJson(),
-  };
+        'id': id,
+        'type': type,
+        'role': role.toJson(),
+        'content': content.map((e) => e.toJson()).toList(),
+        'model': model,
+        if (stopReason != null) 'stop_reason': stopReason!.toJson(),
+        if (stopSequence != null) 'stop_sequence': stopSequence,
+        'usage': usage.toJson(),
+        if (container != null) 'container': container!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   Message copyWith({
@@ -135,20 +135,19 @@ class Message {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    type,
-    role,
-    listHash(content),
-    model,
-    stopReason,
-    stopSequence,
-    usage,
-    container,
-  );
+        id,
+        type,
+        role,
+        listHash(content),
+        model,
+        stopReason,
+        stopSequence,
+        usage,
+        container,
+      );
 
   @override
-  String toString() =>
-      'Message(id: $id, type: $type, role: $role, '
+  String toString() => 'Message(id: $id, type: $type, role: $role, '
       'content: $content, model: $model, stopReason: $stopReason, '
       'stopSequence: $stopSequence, usage: $usage, container: $container)';
 }

@@ -31,10 +31,10 @@ class FunctionDefinition {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    if (description != null) 'description': description,
-    if (parameters != null) 'parameters': parameters,
-  };
+        'name': name,
+        if (description != null) 'description': description,
+        if (parameters != null) 'parameters': parameters,
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -19,17 +19,17 @@ class TokenLogprob {
 
   /// Creates a [TokenLogprob] from JSON.
   factory TokenLogprob.fromJson(Map<String, dynamic> json) => TokenLogprob(
-    token: json['token'] as String?,
-    logprob: (json['logprob'] as num?)?.toDouble(),
-    bytes: (json['bytes'] as List?)?.cast<int>(),
-  );
+        token: json['token'] as String?,
+        logprob: (json['logprob'] as num?)?.toDouble(),
+        bytes: (json['bytes'] as List?)?.cast<int>(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (token != null) 'token': token,
-    if (logprob != null) 'logprob': logprob,
-    if (bytes != null) 'bytes': bytes,
-  };
+        if (token != null) 'token': token,
+        if (logprob != null) 'logprob': logprob,
+        if (bytes != null) 'bytes': bytes,
+      };
 
   /// Creates a copy with replaced values.
   TokenLogprob copyWith({
@@ -39,9 +39,8 @@ class TokenLogprob {
   }) {
     return TokenLogprob(
       token: token == unsetCopyWithValue ? this.token : token as String?,
-      logprob: logprob == unsetCopyWithValue
-          ? this.logprob
-          : logprob as double?,
+      logprob:
+          logprob == unsetCopyWithValue ? this.logprob : logprob as double?,
       bytes: bytes == unsetCopyWithValue ? this.bytes : bytes as List<int>?,
     );
   }
@@ -58,8 +57,7 @@ class TokenLogprob {
   int get hashCode => Object.hash(token, logprob);
 
   @override
-  String toString() =>
-      'TokenLogprob('
+  String toString() => 'TokenLogprob('
       'token: $token, '
       'logprob: $logprob, '
       'bytes: $bytes)';
@@ -85,22 +83,22 @@ class Logprob {
 
   /// Creates a [Logprob] from JSON.
   factory Logprob.fromJson(Map<String, dynamic> json) => Logprob(
-    token: json['token'] as String?,
-    logprob: (json['logprob'] as num?)?.toDouble(),
-    bytes: (json['bytes'] as List?)?.cast<int>(),
-    topLogprobs: (json['top_logprobs'] as List?)
-        ?.map((e) => TokenLogprob.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
+        token: json['token'] as String?,
+        logprob: (json['logprob'] as num?)?.toDouble(),
+        bytes: (json['bytes'] as List?)?.cast<int>(),
+        topLogprobs: (json['top_logprobs'] as List?)
+            ?.map((e) => TokenLogprob.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (token != null) 'token': token,
-    if (logprob != null) 'logprob': logprob,
-    if (bytes != null) 'bytes': bytes,
-    if (topLogprobs != null)
-      'top_logprobs': topLogprobs!.map((e) => e.toJson()).toList(),
-  };
+        if (token != null) 'token': token,
+        if (logprob != null) 'logprob': logprob,
+        if (bytes != null) 'bytes': bytes,
+        if (topLogprobs != null)
+          'top_logprobs': topLogprobs!.map((e) => e.toJson()).toList(),
+      };
 
   /// Creates a copy with replaced values.
   Logprob copyWith({
@@ -111,9 +109,8 @@ class Logprob {
   }) {
     return Logprob(
       token: token == unsetCopyWithValue ? this.token : token as String?,
-      logprob: logprob == unsetCopyWithValue
-          ? this.logprob
-          : logprob as double?,
+      logprob:
+          logprob == unsetCopyWithValue ? this.logprob : logprob as double?,
       bytes: bytes == unsetCopyWithValue ? this.bytes : bytes as List<int>?,
       topLogprobs: topLogprobs == unsetCopyWithValue
           ? this.topLogprobs
@@ -133,8 +130,7 @@ class Logprob {
   int get hashCode => Object.hash(token, logprob);
 
   @override
-  String toString() =>
-      'Logprob('
+  String toString() => 'Logprob('
       'token: $token, '
       'logprob: $logprob, '
       'bytes: $bytes, '

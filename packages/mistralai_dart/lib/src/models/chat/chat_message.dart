@@ -50,7 +50,8 @@ sealed class ChatMessage {
     required String toolCallId,
     required String content,
     String? name,
-  }) => ToolMessage(toolCallId: toolCallId, content: content, name: name);
+  }) =>
+      ToolMessage(toolCallId: toolCallId, content: content, name: name);
 }
 
 /// System message for setting the behavior of the assistant.
@@ -128,11 +129,11 @@ class UserMessage extends ChatMessage {
 
   @override
   Map<String, dynamic> toJson() => {
-    'role': role,
-    'content': content is String
-        ? content
-        : (content as List<ContentPart>).map((e) => e.toJson()).toList(),
-  };
+        'role': role,
+        'content': content is String
+            ? content
+            : (content as List<ContentPart>).map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -194,12 +195,12 @@ class AssistantMessage extends ChatMessage {
 
   @override
   Map<String, dynamic> toJson() => {
-    'role': role,
-    if (content != null) 'content': content,
-    if (toolCalls != null)
-      'tool_calls': toolCalls!.map((e) => e.toJson()).toList(),
-    if (prefix != null) 'prefix': prefix,
-  };
+        'role': role,
+        if (content != null) 'content': content,
+        if (toolCalls != null)
+          'tool_calls': toolCalls!.map((e) => e.toJson()).toList(),
+        if (prefix != null) 'prefix': prefix,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -253,18 +254,18 @@ class ToolMessage extends ChatMessage {
 
   /// Creates a [ToolMessage] from JSON.
   factory ToolMessage.fromJson(Map<String, dynamic> json) => ToolMessage(
-    toolCallId: json['tool_call_id'] as String? ?? '',
-    name: json['name'] as String?,
-    content: json['content'] as String? ?? '',
-  );
+        toolCallId: json['tool_call_id'] as String? ?? '',
+        name: json['name'] as String?,
+        content: json['content'] as String? ?? '',
+      );
 
   @override
   Map<String, dynamic> toJson() => {
-    'role': role,
-    'tool_call_id': toolCallId,
-    if (name != null) 'name': name,
-    'content': content,
-  };
+        'role': role,
+        'tool_call_id': toolCallId,
+        if (name != null) 'name': name,
+        'content': content,
+      };
 
   @override
   bool operator ==(Object other) =>

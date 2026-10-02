@@ -27,8 +27,7 @@ class ModerationResponse {
       ModerationResponse(
         id: json['id'] as String? ?? '',
         model: json['model'] as String? ?? '',
-        results:
-            (json['results'] as List?)
+        results: (json['results'] as List?)
                 ?.map(
                   (e) => ModerationResult.fromJson(e as Map<String, dynamic>),
                 )
@@ -38,10 +37,10 @@ class ModerationResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'model': model,
-    'results': results.map((e) => e.toJson()).toList(),
-  };
+        'id': id,
+        'model': model,
+        'results': results.map((e) => e.toJson()).toList(),
+      };
 
   /// Returns the first result, if any.
   ModerationResult? get firstResult =>

@@ -83,9 +83,9 @@ class AnthropicClient {
   /// cases. If not provided, a new client is created and will be closed when
   /// [close] is called. If provided, you are responsible for closing it.
   AnthropicClient({AnthropicConfig? config, http.Client? httpClient})
-    : config = config ?? const AnthropicConfig(),
-      _httpClient = httpClient ?? http.Client(),
-      _ownsHttpClient = httpClient == null {
+      : config = config ?? const AnthropicConfig(),
+        _httpClient = httpClient ?? http.Client(),
+        _ownsHttpClient = httpClient == null {
     _initialize();
   }
 
@@ -140,9 +140,8 @@ class AnthropicClient {
     ];
 
     // Build retry wrapper if retries are enabled
-    final retryWrapper = config.retryPolicy.maxRetries > 0
-        ? RetryWrapper(config: config)
-        : null;
+    final retryWrapper =
+        config.retryPolicy.maxRetries > 0 ? RetryWrapper(config: config) : null;
 
     // Build interceptor chain
     _interceptorChain = InterceptorChain(

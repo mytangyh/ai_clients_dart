@@ -103,7 +103,7 @@ class Run {
           .toList(),
       metadata:
           (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>() ??
-          {},
+              {},
       usage: json['usage'] != null
           ? Usage.fromJson(json['usage'] as Map<String, dynamic>)
           : null,
@@ -222,37 +222,37 @@ class Run {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    'thread_id': threadId,
-    'assistant_id': assistantId,
-    'status': status.toJson(),
-    if (requiredAction != null) 'required_action': requiredAction!.toJson(),
-    if (lastError != null) 'last_error': lastError!.toJson(),
-    if (expiresAt != null) 'expires_at': expiresAt,
-    if (startedAt != null) 'started_at': startedAt,
-    if (cancelledAt != null) 'cancelled_at': cancelledAt,
-    if (failedAt != null) 'failed_at': failedAt,
-    if (completedAt != null) 'completed_at': completedAt,
-    if (incompleteDetails != null)
-      'incomplete_details': incompleteDetails!.toJson(),
-    'model': model,
-    if (instructions != null) 'instructions': instructions,
-    'tools': tools.map((t) => t.toJson()).toList(),
-    'metadata': metadata,
-    if (usage != null) 'usage': usage!.toJson(),
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (maxPromptTokens != null) 'max_prompt_tokens': maxPromptTokens,
-    if (maxCompletionTokens != null)
-      'max_completion_tokens': maxCompletionTokens,
-    if (truncationStrategy != null)
-      'truncation_strategy': truncationStrategy!.toJson(),
-    if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
-    if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        'thread_id': threadId,
+        'assistant_id': assistantId,
+        'status': status.toJson(),
+        if (requiredAction != null) 'required_action': requiredAction!.toJson(),
+        if (lastError != null) 'last_error': lastError!.toJson(),
+        if (expiresAt != null) 'expires_at': expiresAt,
+        if (startedAt != null) 'started_at': startedAt,
+        if (cancelledAt != null) 'cancelled_at': cancelledAt,
+        if (failedAt != null) 'failed_at': failedAt,
+        if (completedAt != null) 'completed_at': completedAt,
+        if (incompleteDetails != null)
+          'incomplete_details': incompleteDetails!.toJson(),
+        'model': model,
+        if (instructions != null) 'instructions': instructions,
+        'tools': tools.map((t) => t.toJson()).toList(),
+        'metadata': metadata,
+        if (usage != null) 'usage': usage!.toJson(),
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (maxPromptTokens != null) 'max_prompt_tokens': maxPromptTokens,
+        if (maxCompletionTokens != null)
+          'max_completion_tokens': maxCompletionTokens,
+        if (truncationStrategy != null)
+          'truncation_strategy': truncationStrategy!.toJson(),
+        if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
+        if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -308,12 +308,12 @@ class RunList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((r) => r.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((r) => r.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -365,8 +365,8 @@ class CreateRunRequest {
       tools: (json['tools'] as List<dynamic>?)
           ?.map((e) => AssistantTool.fromJson(e as Map<String, dynamic>))
           .toList(),
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
       temperature: (json['temperature'] as num?)?.toDouble(),
       topP: (json['top_p'] as num?)?.toDouble(),
       stream: json['stream'] as bool?,
@@ -435,26 +435,27 @@ class CreateRunRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'assistant_id': assistantId,
-    if (model != null) 'model': model,
-    if (instructions != null) 'instructions': instructions,
-    if (additionalInstructions != null)
-      'additional_instructions': additionalInstructions,
-    if (additionalMessages != null) 'additional_messages': additionalMessages,
-    if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
-    if (metadata != null) 'metadata': metadata,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (stream != null) 'stream': stream,
-    if (maxPromptTokens != null) 'max_prompt_tokens': maxPromptTokens,
-    if (maxCompletionTokens != null)
-      'max_completion_tokens': maxCompletionTokens,
-    if (truncationStrategy != null)
-      'truncation_strategy': truncationStrategy!.toJson(),
-    if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
-    if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-  };
+        'assistant_id': assistantId,
+        if (model != null) 'model': model,
+        if (instructions != null) 'instructions': instructions,
+        if (additionalInstructions != null)
+          'additional_instructions': additionalInstructions,
+        if (additionalMessages != null)
+          'additional_messages': additionalMessages,
+        if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
+        if (metadata != null) 'metadata': metadata,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (stream != null) 'stream': stream,
+        if (maxPromptTokens != null) 'max_prompt_tokens': maxPromptTokens,
+        if (maxCompletionTokens != null)
+          'max_completion_tokens': maxCompletionTokens,
+        if (truncationStrategy != null)
+          'truncation_strategy': truncationStrategy!.toJson(),
+        if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
+        if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -542,9 +543,9 @@ class RequiredAction {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'submit_tool_outputs': submitToolOutputs.toJson(),
-  };
+        'type': type,
+        'submit_tool_outputs': submitToolOutputs.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -578,8 +579,8 @@ class SubmitToolOutputs {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'tool_calls': toolCalls.map((tc) => tc.toJson()).toList(),
-  };
+        'tool_calls': toolCalls.map((tc) => tc.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -625,10 +626,10 @@ class RunToolCall {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type,
-    'function': function.toJson(),
-  };
+        'id': id,
+        'type': type,
+        'function': function.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -771,9 +772,9 @@ class TruncationStrategy {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (lastMessages != null) 'last_messages': lastMessages,
-  };
+        'type': type,
+        if (lastMessages != null) 'last_messages': lastMessages,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -811,9 +812,9 @@ class ToolOutput {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'tool_call_id': toolCallId,
-    'output': output,
-  };
+        'tool_call_id': toolCallId,
+        'output': output,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -853,9 +854,9 @@ class SubmitToolOutputsRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'tool_outputs': toolOutputs.map((o) => o.toJson()).toList(),
-    if (stream != null) 'stream': stream,
-  };
+        'tool_outputs': toolOutputs.map((o) => o.toJson()).toList(),
+        if (stream != null) 'stream': stream,
+      };
 
   @override
   bool operator ==(Object other) =>

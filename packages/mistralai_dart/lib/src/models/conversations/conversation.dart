@@ -152,8 +152,7 @@ class ConversationList {
   factory ConversationList.fromJson(Map<String, dynamic> json) {
     return ConversationList(
       object: json['object'] as String? ?? 'list',
-      data:
-          (json['data'] as List<dynamic>?)
+      data: (json['data'] as List<dynamic>?)
               ?.map((e) => Conversation.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],

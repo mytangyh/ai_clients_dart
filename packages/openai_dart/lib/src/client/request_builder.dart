@@ -116,9 +116,8 @@ class RequestBuilder {
       host: baseUri.host,
       port: baseUri.hasPort ? baseUri.port : null,
       path: combinedPath,
-      queryParameters: mergedQueryParamsAll.isEmpty
-          ? null
-          : mergedQueryParamsAll,
+      queryParameters:
+          mergedQueryParamsAll.isEmpty ? null : mergedQueryParamsAll,
       fragment: baseUri.fragment.isEmpty ? null : baseUri.fragment,
     );
   }

@@ -100,17 +100,17 @@ class ChatSession {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'expires_at': expiresAt,
-    'client_secret': clientSecret,
-    'workflow': workflow.toJson(),
-    'user': user,
-    'rate_limits': rateLimits.toJson(),
-    'max_requests_per_1_minute': maxRequestsPer1Minute,
-    'status': status.toJson(),
-    'chatkit_configuration': chatkitConfiguration.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'expires_at': expiresAt,
+        'client_secret': clientSecret,
+        'workflow': workflow.toJson(),
+        'user': user,
+        'rate_limits': rateLimits.toJson(),
+        'max_requests_per_1_minute': maxRequestsPer1Minute,
+        'status': status.toJson(),
+        'chatkit_configuration': chatkitConfiguration.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -165,11 +165,11 @@ class ChatkitWorkflow {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'version': version,
-    'state_variables': stateVariables,
-    if (tracing != null) 'tracing': tracing!.toJson(),
-  };
+        'id': id,
+        'version': version,
+        'state_variables': stateVariables,
+        if (tracing != null) 'tracing': tracing!.toJson(),
+      };
 
   @override
   String toString() => 'ChatkitWorkflow(id: $id)';
@@ -214,8 +214,8 @@ class ChatSessionRateLimits {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'max_requests_per_1_minute': maxRequestsPer1Minute,
-  };
+        'max_requests_per_1_minute': maxRequestsPer1Minute,
+      };
 
   @override
   String toString() =>
@@ -258,10 +258,10 @@ class ChatSessionChatkitConfiguration {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'automatic_thread_titling': automaticThreadTitling.toJson(),
-    'file_upload': fileUpload.toJson(),
-    'history': history.toJson(),
-  };
+        'automatic_thread_titling': automaticThreadTitling.toJson(),
+        'file_upload': fileUpload.toJson(),
+        'history': history.toJson(),
+      };
 
   @override
   String toString() => 'ChatSessionChatkitConfiguration(...)';
@@ -320,10 +320,10 @@ class ChatSessionFileUpload {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    'max_file_size': maxFileSize,
-    'max_files': maxFiles,
-  };
+        'enabled': enabled,
+        'max_file_size': maxFileSize,
+        'max_files': maxFiles,
+      };
 
   @override
   String toString() => 'ChatSessionFileUpload(enabled: $enabled)';
@@ -351,9 +351,9 @@ class ChatSessionHistory {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    'recent_threads': recentThreads,
-  };
+        'enabled': enabled,
+        'recent_threads': recentThreads,
+      };
 
   @override
   String toString() => 'ChatSessionHistory(enabled: $enabled)';

@@ -90,17 +90,17 @@ class FimCompletionRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'prompt': prompt,
-    if (suffix != null) 'suffix': suffix,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (maxTokens != null) 'max_tokens': maxTokens,
-    if (minTokens != null) 'min_tokens': minTokens,
-    if (stream != null) 'stream': stream,
-    if (stop != null) 'stop': stop!.toJson(),
-    if (randomSeed != null) 'random_seed': randomSeed,
-  };
+        'model': model,
+        'prompt': prompt,
+        if (suffix != null) 'suffix': suffix,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (maxTokens != null) 'max_tokens': maxTokens,
+        if (minTokens != null) 'min_tokens': minTokens,
+        if (stream != null) 'stream': stream,
+        if (stop != null) 'stop': stop!.toJson(),
+        if (randomSeed != null) 'random_seed': randomSeed,
+      };
 
   /// Creates a copy with replaced values.
   FimCompletionRequest copyWith({
@@ -123,12 +123,10 @@ class FimCompletionRequest {
           ? this.temperature
           : temperature as double?,
       topP: topP == unsetCopyWithValue ? this.topP : topP as double?,
-      maxTokens: maxTokens == unsetCopyWithValue
-          ? this.maxTokens
-          : maxTokens as int?,
-      minTokens: minTokens == unsetCopyWithValue
-          ? this.minTokens
-          : minTokens as int?,
+      maxTokens:
+          maxTokens == unsetCopyWithValue ? this.maxTokens : maxTokens as int?,
+      minTokens:
+          minTokens == unsetCopyWithValue ? this.minTokens : minTokens as int?,
       stream: stream == unsetCopyWithValue ? this.stream : stream as bool?,
       stop: stop == unsetCopyWithValue ? this.stop : stop as StopSequence?,
       randomSeed: randomSeed == unsetCopyWithValue

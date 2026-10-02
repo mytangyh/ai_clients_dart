@@ -41,7 +41,8 @@ sealed class ResponseTool {
       'function' => FunctionTool.fromJson(json),
       'web_search_preview' ||
       'web_search' ||
-      'web_search_preview_2025_03_11' => WebSearchTool.fromJson(json),
+      'web_search_preview_2025_03_11' =>
+        WebSearchTool.fromJson(json),
       'file_search' => FileSearchTool.fromJson(json),
       'code_interpreter' => CodeInterpreterTool.fromJson(json),
       'computer_use_preview' => ComputerUseTool.fromJson(json),
@@ -64,24 +65,26 @@ sealed class ResponseTool {
     Map<String, dynamic>? parameters,
     bool? strict,
     bool? deferLoading,
-  }) => FunctionTool(
-    name: name,
-    description: description,
-    parameters: parameters,
-    strict: strict,
-    deferLoading: deferLoading,
-  );
+  }) =>
+      FunctionTool(
+        name: name,
+        description: description,
+        parameters: parameters,
+        strict: strict,
+        deferLoading: deferLoading,
+      );
 
   /// Creates a web search tool.
   static WebSearchTool webSearch({
     String? searchContextSize,
     ApproximateLocation? userLocation,
     List<SearchContentType>? searchContentTypes,
-  }) => WebSearchTool(
-    searchContextSize: searchContextSize,
-    userLocation: userLocation,
-    searchContentTypes: searchContentTypes,
-  );
+  }) =>
+      WebSearchTool(
+        searchContextSize: searchContextSize,
+        userLocation: userLocation,
+        searchContentTypes: searchContentTypes,
+      );
 
   /// Creates a file search tool.
   static FileSearchTool fileSearch({
@@ -89,28 +92,31 @@ sealed class ResponseTool {
     int? maxNumResults,
     FileSearchRankingOptions? rankingOptions,
     FileSearchFilter? filters,
-  }) => FileSearchTool(
-    vectorStoreIds: vectorStoreIds,
-    maxNumResults: maxNumResults,
-    rankingOptions: rankingOptions,
-    filters: filters,
-  );
+  }) =>
+      FileSearchTool(
+        vectorStoreIds: vectorStoreIds,
+        maxNumResults: maxNumResults,
+        rankingOptions: rankingOptions,
+        filters: filters,
+      );
 
   /// Creates a code interpreter tool.
   static CodeInterpreterTool codeInterpreter({
     required CodeInterpreterContainer container,
-  }) => CodeInterpreterTool(container: container);
+  }) =>
+      CodeInterpreterTool(container: container);
 
   /// Creates a computer use tool.
   static ComputerUseTool computerUse({
     required String environment,
     required int displayWidth,
     required int displayHeight,
-  }) => ComputerUseTool(
-    environment: environment,
-    displayWidth: displayWidth,
-    displayHeight: displayHeight,
-  );
+  }) =>
+      ComputerUseTool(
+        environment: environment,
+        displayWidth: displayWidth,
+        displayHeight: displayHeight,
+      );
 
   /// Creates an image generation tool.
   static ImageGenerationTool imageGeneration({
@@ -123,17 +129,18 @@ sealed class ResponseTool {
     int? partialImages,
     String? quality,
     String? size,
-  }) => ImageGenerationTool(
-    background: background,
-    inputImageMask: inputImageMask,
-    model: model,
-    moderation: moderation,
-    outputCompression: outputCompression,
-    outputFormat: outputFormat,
-    partialImages: partialImages,
-    quality: quality,
-    size: size,
-  );
+  }) =>
+      ImageGenerationTool(
+        background: background,
+        inputImageMask: inputImageMask,
+        model: model,
+        moderation: moderation,
+        outputCompression: outputCompression,
+        outputFormat: outputFormat,
+        partialImages: partialImages,
+        quality: quality,
+        size: size,
+      );
 
   /// Creates a computer tool (GA).
   static ComputerTool computer() => const ComputerTool();
@@ -143,18 +150,20 @@ sealed class ResponseTool {
     required String name,
     required String description,
     required List<NamespaceAllowedTool> tools,
-  }) => NamespaceTool(name: name, description: description, tools: tools);
+  }) =>
+      NamespaceTool(name: name, description: description, tools: tools);
 
   /// Creates a tool search tool.
   static ToolSearchTool toolSearch({
     ToolSearchExecutionType? execution,
     String? description,
     Map<String, dynamic>? parameters,
-  }) => ToolSearchTool(
-    execution: execution,
-    description: description,
-    parameters: parameters,
-  );
+  }) =>
+      ToolSearchTool(
+        execution: execution,
+        description: description,
+        parameters: parameters,
+      );
 
   /// Creates an MCP tool.
   static McpTool mcp({
@@ -163,13 +172,14 @@ sealed class ResponseTool {
     List<String>? allowedTools,
     String? requireApproval,
     bool? deferLoading,
-  }) => McpTool(
-    serverLabel: serverLabel,
-    serverUrl: serverUrl,
-    allowedTools: allowedTools,
-    requireApproval: requireApproval,
-    deferLoading: deferLoading,
-  );
+  }) =>
+      McpTool(
+        serverLabel: serverLabel,
+        serverUrl: serverUrl,
+        allowedTools: allowedTools,
+        requireApproval: requireApproval,
+        deferLoading: deferLoading,
+      );
 
   /// Creates a hosted shell tool.
   static ShellTool shell() => const ShellTool();
@@ -221,13 +231,13 @@ class FunctionTool extends ResponseTool implements NamespaceAllowedTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'function',
-    'name': name,
-    if (description != null) 'description': description,
-    if (parameters != null) 'parameters': parameters,
-    if (strict != null) 'strict': strict,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-  };
+        'type': 'function',
+        'name': name,
+        if (description != null) 'description': description,
+        if (parameters != null) 'parameters': parameters,
+        if (strict != null) 'strict': strict,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -284,12 +294,12 @@ class ApproximateLocation {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': 'approximate',
-    if (country != null) 'country': country,
-    if (region != null) 'region': region,
-    if (city != null) 'city': city,
-    if (timezone != null) 'timezone': timezone,
-  };
+        'type': 'approximate',
+        if (country != null) 'country': country,
+        if (region != null) 'region': region,
+        if (city != null) 'city': city,
+        if (timezone != null) 'timezone': timezone,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -352,14 +362,13 @@ class WebSearchTool extends ResponseTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (searchContextSize != null) 'search_context_size': searchContextSize,
-    if (userLocation != null) 'user_location': userLocation!.toJson(),
-    if (searchContentTypes != null)
-      'search_content_types': searchContentTypes!
-          .map((e) => e.toJson())
-          .toList(),
-  };
+        'type': type,
+        if (searchContextSize != null) 'search_context_size': searchContextSize,
+        if (userLocation != null) 'user_location': userLocation!.toJson(),
+        if (searchContentTypes != null)
+          'search_content_types':
+              searchContentTypes!.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -373,11 +382,11 @@ class WebSearchTool extends ResponseTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    searchContextSize,
-    userLocation,
-    searchContentTypes != null ? Object.hashAll(searchContentTypes!) : null,
-  );
+        type,
+        searchContextSize,
+        userLocation,
+        searchContentTypes != null ? Object.hashAll(searchContentTypes!) : null,
+      );
 
   @override
   String toString() =>
@@ -402,7 +411,8 @@ sealed class FileSearchFilter {
       'lt' ||
       'lte' ||
       'in' ||
-      'nin' => ComparisonFilter.fromJson(json),
+      'nin' =>
+        ComparisonFilter.fromJson(json),
       'and' || 'or' => CompoundFilter.fromJson(json),
       _ => throw FormatException('Unknown FileSearchFilter type: $type'),
     };
@@ -457,10 +467,10 @@ class ComparisonFilter extends FileSearchFilter {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    key,
-    value is List ? Object.hashAll(value as List) : value,
-  );
+        type,
+        key,
+        value is List ? Object.hashAll(value as List) : value,
+      );
 
   static bool _valuesEqual(Object a, Object b) =>
       (a is List && b is List) ? listsEqual(a, b) : a == b;
@@ -494,9 +504,9 @@ class CompoundFilter extends FileSearchFilter {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'filters': filters.map((f) => f.toJson()).toList(),
-  };
+        'type': type,
+        'filters': filters.map((f) => f.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -554,12 +564,12 @@ class FileSearchTool extends ResponseTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'file_search',
-    if (vectorStoreIds != null) 'vector_store_ids': vectorStoreIds,
-    if (maxNumResults != null) 'max_num_results': maxNumResults,
-    if (rankingOptions != null) 'ranking_options': rankingOptions!.toJson(),
-    if (filters != null) 'filters': filters!.toJson(),
-  };
+        'type': 'file_search',
+        if (vectorStoreIds != null) 'vector_store_ids': vectorStoreIds,
+        if (maxNumResults != null) 'max_num_results': maxNumResults,
+        if (rankingOptions != null) 'ranking_options': rankingOptions!.toJson(),
+        if (filters != null) 'filters': filters!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -573,11 +583,11 @@ class FileSearchTool extends ResponseTool {
 
   @override
   int get hashCode => Object.hash(
-    vectorStoreIds != null ? Object.hashAll(vectorStoreIds!) : null,
-    maxNumResults,
-    rankingOptions,
-    filters,
-  );
+        vectorStoreIds != null ? Object.hashAll(vectorStoreIds!) : null,
+        maxNumResults,
+        rankingOptions,
+        filters,
+      );
 
   @override
   String toString() =>
@@ -606,9 +616,9 @@ class FileSearchRankingOptions {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (ranker != null) 'ranker': ranker,
-    if (scoreThreshold != null) 'score_threshold': scoreThreshold,
-  };
+        if (ranker != null) 'ranker': ranker,
+        if (scoreThreshold != null) 'score_threshold': scoreThreshold,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -644,9 +654,9 @@ class CodeInterpreterTool extends ResponseTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'code_interpreter',
-    'container': container.toJson(),
-  };
+        'type': 'code_interpreter',
+        'container': container.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -694,11 +704,11 @@ class ComputerUseTool extends ResponseTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'computer_use_preview',
-    'environment': environment,
-    'display_width': displayWidth,
-    'display_height': displayHeight,
-  };
+        'type': 'computer_use_preview',
+        'environment': environment,
+        'display_width': displayWidth,
+        'display_height': displayHeight,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -777,17 +787,17 @@ class ImageGenerationTool extends ResponseTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'image_generation',
-    if (background != null) 'background': background,
-    if (inputImageMask != null) 'input_image_mask': inputImageMask,
-    if (model != null) 'model': model,
-    if (moderation != null) 'moderation': moderation,
-    if (outputCompression != null) 'output_compression': outputCompression,
-    if (outputFormat != null) 'output_format': outputFormat,
-    if (partialImages != null) 'partial_images': partialImages,
-    if (quality != null) 'quality': quality,
-    if (size != null) 'size': size,
-  };
+        'type': 'image_generation',
+        if (background != null) 'background': background,
+        if (inputImageMask != null) 'input_image_mask': inputImageMask,
+        if (model != null) 'model': model,
+        if (moderation != null) 'moderation': moderation,
+        if (outputCompression != null) 'output_compression': outputCompression,
+        if (outputFormat != null) 'output_format': outputFormat,
+        if (partialImages != null) 'partial_images': partialImages,
+        if (quality != null) 'quality': quality,
+        if (size != null) 'size': size,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -806,16 +816,16 @@ class ImageGenerationTool extends ResponseTool {
 
   @override
   int get hashCode => Object.hash(
-    background,
-    inputImageMask,
-    model,
-    moderation,
-    outputCompression,
-    outputFormat,
-    partialImages,
-    quality,
-    size,
-  );
+        background,
+        inputImageMask,
+        model,
+        moderation,
+        outputCompression,
+        outputFormat,
+        partialImages,
+        quality,
+        size,
+      );
 
   @override
   String toString() =>
@@ -862,13 +872,13 @@ class McpTool extends ResponseTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'mcp',
-    'server_label': serverLabel,
-    'server_url': serverUrl,
-    if (allowedTools != null) 'allowed_tools': allowedTools,
-    if (requireApproval != null) 'require_approval': requireApproval,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-  };
+        'type': 'mcp',
+        'server_label': serverLabel,
+        'server_url': serverUrl,
+        if (allowedTools != null) 'allowed_tools': allowedTools,
+        if (requireApproval != null) 'require_approval': requireApproval,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -883,12 +893,12 @@ class McpTool extends ResponseTool {
 
   @override
   int get hashCode => Object.hash(
-    serverLabel,
-    serverUrl,
-    allowedTools != null ? Object.hashAll(allowedTools!) : null,
-    requireApproval,
-    deferLoading,
-  );
+        serverLabel,
+        serverUrl,
+        allowedTools != null ? Object.hashAll(allowedTools!) : null,
+        requireApproval,
+        deferLoading,
+      );
 
   @override
   String toString() =>
@@ -990,11 +1000,11 @@ class NamespaceTool extends ResponseTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'namespace',
-    'name': name,
-    'description': description,
-    'tools': tools.map((e) => e.toJson()).toList(),
-  };
+        'type': 'namespace',
+        'name': name,
+        'description': description,
+        'tools': tools.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1041,11 +1051,11 @@ class ToolSearchTool extends ResponseTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_search',
-    if (execution != null) 'execution': execution!.toJson(),
-    if (description != null) 'description': description,
-    if (parameters != null) 'parameters': parameters,
-  };
+        'type': 'tool_search',
+        if (execution != null) 'execution': execution!.toJson(),
+        if (description != null) 'description': description,
+        if (parameters != null) 'parameters': parameters,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1131,12 +1141,12 @@ class CustomTool extends ResponseTool implements NamespaceAllowedTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'custom',
-    'name': name,
-    if (description != null) 'description': description,
-    if (format != null) 'format': format,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-  };
+        'type': 'custom',
+        'name': name,
+        if (description != null) 'description': description,
+        if (format != null) 'format': format,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+      };
 
   @override
   bool operator ==(Object other) =>

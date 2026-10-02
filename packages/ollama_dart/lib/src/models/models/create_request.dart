@@ -50,31 +50,32 @@ class CreateRequest {
 
   /// Creates a [CreateRequest] from JSON.
   factory CreateRequest.fromJson(Map<String, dynamic> json) => CreateRequest(
-    model: json['model'] as String,
-    from: json['from'] as String?,
-    template: json['template'] as String?,
-    license: json['license'],
-    system: json['system'] as String?,
-    parameters: json['parameters'] as Map<String, dynamic>?,
-    messages: (json['messages'] as List?)
-        ?.map((e) => ChatMessage.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    quantize: json['quantize'] as String?,
-    stream: json['stream'] as bool?,
-  );
+        model: json['model'] as String,
+        from: json['from'] as String?,
+        template: json['template'] as String?,
+        license: json['license'],
+        system: json['system'] as String?,
+        parameters: json['parameters'] as Map<String, dynamic>?,
+        messages: (json['messages'] as List?)
+            ?.map((e) => ChatMessage.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        quantize: json['quantize'] as String?,
+        stream: json['stream'] as bool?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    if (from != null) 'from': from,
-    if (template != null) 'template': template,
-    if (license != null) 'license': license,
-    if (system != null) 'system': system,
-    if (parameters != null) 'parameters': parameters,
-    if (messages != null) 'messages': messages!.map((e) => e.toJson()).toList(),
-    if (quantize != null) 'quantize': quantize,
-    if (stream != null) 'stream': stream,
-  };
+        'model': model,
+        if (from != null) 'from': from,
+        if (template != null) 'template': template,
+        if (license != null) 'license': license,
+        if (system != null) 'system': system,
+        if (parameters != null) 'parameters': parameters,
+        if (messages != null)
+          'messages': messages!.map((e) => e.toJson()).toList(),
+        if (quantize != null) 'quantize': quantize,
+        if (stream != null) 'stream': stream,
+      };
 
   /// Creates a copy with replaced values.
   CreateRequest copyWith({
@@ -91,9 +92,8 @@ class CreateRequest {
     return CreateRequest(
       model: model ?? this.model,
       from: from == unsetCopyWithValue ? this.from : from as String?,
-      template: template == unsetCopyWithValue
-          ? this.template
-          : template as String?,
+      template:
+          template == unsetCopyWithValue ? this.template : template as String?,
       license: license == unsetCopyWithValue ? this.license : license,
       system: system == unsetCopyWithValue ? this.system : system as String?,
       parameters: parameters == unsetCopyWithValue
@@ -102,9 +102,8 @@ class CreateRequest {
       messages: messages == unsetCopyWithValue
           ? this.messages
           : messages as List<ChatMessage>?,
-      quantize: quantize == unsetCopyWithValue
-          ? this.quantize
-          : quantize as String?,
+      quantize:
+          quantize == unsetCopyWithValue ? this.quantize : quantize as String?,
       stream: stream == unsetCopyWithValue ? this.stream : stream as bool?,
     );
   }

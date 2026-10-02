@@ -249,10 +249,10 @@ class ResponseToolChoiceAllowedTools extends ResponseToolChoice {
 
   @override
   Object toJson() => {
-    'type': 'allowed_tools',
-    'tools': tools.map((e) => e.toJson()).toList(),
-    if (mode != null) 'mode': mode!.toJson(),
-  };
+        'type': 'allowed_tools',
+        'tools': tools.map((e) => e.toJson()).toList(),
+        if (mode != null) 'mode': mode!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

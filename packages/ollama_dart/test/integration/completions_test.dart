@@ -97,8 +97,7 @@ void main() {
       final response = await client.completions.generate(
         request: GenerateRequest(
           model: model,
-          prompt:
-              'List the numbers from 1 to 9 in order. '
+          prompt: 'List the numbers from 1 to 9 in order. '
               'Output ONLY the numbers in one line without any spaces or commas. '
               'NUMBERS:',
           raw: true,
@@ -114,8 +113,7 @@ void main() {
       final response = await client.completions.generate(
         request: GenerateRequest(
           model: model,
-          prompt:
-              'List the numbers from 1 to 9 in order. '
+          prompt: 'List the numbers from 1 to 9 in order. '
               'Output ONLY the numbers in one line without any spaces or commas. '
               'NUMBERS:',
           options: const ModelOptions(stop: ['4']),

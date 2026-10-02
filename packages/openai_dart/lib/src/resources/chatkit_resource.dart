@@ -46,23 +46,23 @@ class ChatkitResource extends ResourceBase {
 
   /// ChatKit sessions sub-resource.
   ChatkitSessionsResource get sessions => _sessions ??= ChatkitSessionsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   ChatkitThreadsResource? _threads;
 
   /// ChatKit threads sub-resource.
   ChatkitThreadsResource get threads => _threads ??= ChatkitThreadsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 }
 
 /// Resource for ChatKit session operations.
@@ -169,12 +169,12 @@ class ChatkitThreadsResource extends ResourceBase {
 
   /// Thread items sub-resource.
   ChatkitThreadItemsResource get items => _items ??= ChatkitThreadItemsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Lists ChatKit threads.
   ///

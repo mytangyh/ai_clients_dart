@@ -122,10 +122,10 @@ class SystemTextBlock {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': 'text',
-    'text': text,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-  };
+        'type': 'text',
+        'text': text,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -236,9 +236,8 @@ class MessageCreateRequest {
           .map((e) => InputMessage.fromJson(e as Map<String, dynamic>))
           .toList(),
       maxTokens: json['max_tokens'] as int,
-      system: json['system'] != null
-          ? SystemPrompt.fromJson(json['system'])
-          : null,
+      system:
+          json['system'] != null ? SystemPrompt.fromJson(json['system']) : null,
       metadata: json['metadata'] != null
           ? Metadata.fromJson(json['metadata'] as Map<String, dynamic>)
           : null,
@@ -272,25 +271,25 @@ class MessageCreateRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'messages': messages.map((e) => e.toJson()).toList(),
-    'max_tokens': maxTokens,
-    if (system != null) 'system': system!.toJson(),
-    if (metadata != null) 'metadata': metadata!.toJson(),
-    if (serviceTier != null) 'service_tier': serviceTier!.toJson(),
-    if (stopSequences != null) 'stop_sequences': stopSequences,
-    if (stream != null) 'stream': stream,
-    if (temperature != null) 'temperature': temperature,
-    if (thinking != null) 'thinking': thinking!.toJson(),
-    if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
-    if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
-    if (topP != null) 'top_p': topP,
-    if (topK != null) 'top_k': topK,
-    if (inferenceGeo != null) 'inference_geo': inferenceGeo,
-    if (outputConfig != null) 'output_config': outputConfig!.toJson(),
-    if (container != null) 'container': container,
-    if (speed != null) 'speed': speed!.toJson(),
-  };
+        'model': model,
+        'messages': messages.map((e) => e.toJson()).toList(),
+        'max_tokens': maxTokens,
+        if (system != null) 'system': system!.toJson(),
+        if (metadata != null) 'metadata': metadata!.toJson(),
+        if (serviceTier != null) 'service_tier': serviceTier!.toJson(),
+        if (stopSequences != null) 'stop_sequences': stopSequences,
+        if (stream != null) 'stream': stream,
+        if (temperature != null) 'temperature': temperature,
+        if (thinking != null) 'thinking': thinking!.toJson(),
+        if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
+        if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
+        if (topP != null) 'top_p': topP,
+        if (topK != null) 'top_k': topK,
+        if (inferenceGeo != null) 'inference_geo': inferenceGeo,
+        if (outputConfig != null) 'output_config': outputConfig!.toJson(),
+        if (container != null) 'container': container,
+        if (speed != null) 'speed': speed!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   MessageCreateRequest copyWith({
@@ -317,9 +316,8 @@ class MessageCreateRequest {
       model: model ?? this.model,
       messages: messages ?? this.messages,
       maxTokens: maxTokens ?? this.maxTokens,
-      system: system == unsetCopyWithValue
-          ? this.system
-          : system as SystemPrompt?,
+      system:
+          system == unsetCopyWithValue ? this.system : system as SystemPrompt?,
       metadata: metadata == unsetCopyWithValue
           ? this.metadata
           : metadata as Metadata?,
@@ -383,25 +381,25 @@ class MessageCreateRequest {
 
   @override
   int get hashCode => Object.hash(
-    model,
-    listHash(messages),
-    maxTokens,
-    system,
-    metadata,
-    serviceTier,
-    listHash(stopSequences),
-    stream,
-    temperature,
-    thinking,
-    toolChoice,
-    listHash(tools),
-    topP,
-    topK,
-    inferenceGeo,
-    outputConfig,
-    container,
-    speed,
-  );
+        model,
+        listHash(messages),
+        maxTokens,
+        system,
+        metadata,
+        serviceTier,
+        listHash(stopSequences),
+        stream,
+        temperature,
+        thinking,
+        toolChoice,
+        listHash(tools),
+        topP,
+        topK,
+        inferenceGeo,
+        outputConfig,
+        container,
+        speed,
+      );
 
   @override
   String toString() =>

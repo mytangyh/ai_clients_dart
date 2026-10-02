@@ -20,21 +20,20 @@ class BatchJobList {
 
   /// Creates a [BatchJobList] from JSON.
   factory BatchJobList.fromJson(Map<String, dynamic> json) => BatchJobList(
-    object: json['object'] as String? ?? 'list',
-    data:
-        (json['data'] as List?)
-            ?.map((e) => BatchJob.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-    total: json['total'] as int?,
-  );
+        object: json['object'] as String? ?? 'list',
+        data: (json['data'] as List?)
+                ?.map((e) => BatchJob.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+        total: json['total'] as int?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-    if (total != null) 'total': total,
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+        if (total != null) 'total': total,
+      };
 
   @override
   bool operator ==(Object other) =>

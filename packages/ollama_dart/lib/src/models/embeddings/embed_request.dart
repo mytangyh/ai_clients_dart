@@ -38,25 +38,25 @@ class EmbedRequest {
 
   /// Creates an [EmbedRequest] from JSON.
   factory EmbedRequest.fromJson(Map<String, dynamic> json) => EmbedRequest(
-    model: json['model'] as String,
-    input: json['input'] as Object,
-    truncate: json['truncate'] as bool?,
-    dimensions: json['dimensions'] as int?,
-    keepAlive: json['keep_alive'] as String?,
-    options: json['options'] != null
-        ? ModelOptions.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
-  );
+        model: json['model'] as String,
+        input: json['input'] as Object,
+        truncate: json['truncate'] as bool?,
+        dimensions: json['dimensions'] as int?,
+        keepAlive: json['keep_alive'] as String?,
+        options: json['options'] != null
+            ? ModelOptions.fromJson(json['options'] as Map<String, dynamic>)
+            : null,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'input': input,
-    if (truncate != null) 'truncate': truncate,
-    if (dimensions != null) 'dimensions': dimensions,
-    if (keepAlive != null) 'keep_alive': keepAlive,
-    if (options != null) 'options': options!.toJson(),
-  };
+        'model': model,
+        'input': input,
+        if (truncate != null) 'truncate': truncate,
+        if (dimensions != null) 'dimensions': dimensions,
+        if (keepAlive != null) 'keep_alive': keepAlive,
+        if (options != null) 'options': options!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   EmbedRequest copyWith({
@@ -70,9 +70,8 @@ class EmbedRequest {
     return EmbedRequest(
       model: model ?? this.model,
       input: input ?? this.input,
-      truncate: truncate == unsetCopyWithValue
-          ? this.truncate
-          : truncate as bool?,
+      truncate:
+          truncate == unsetCopyWithValue ? this.truncate : truncate as bool?,
       dimensions: dimensions == unsetCopyWithValue
           ? this.dimensions
           : dimensions as int?,

@@ -22,19 +22,19 @@ class StatusEvent {
 
   /// Creates a [StatusEvent] from JSON.
   factory StatusEvent.fromJson(Map<String, dynamic> json) => StatusEvent(
-    status: json['status'] as String?,
-    digest: json['digest'] as String?,
-    total: json['total'] as int?,
-    completed: json['completed'] as int?,
-  );
+        status: json['status'] as String?,
+        digest: json['digest'] as String?,
+        total: json['total'] as int?,
+        completed: json['completed'] as int?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (status != null) 'status': status,
-    if (digest != null) 'digest': digest,
-    if (total != null) 'total': total,
-    if (completed != null) 'completed': completed,
-  };
+        if (status != null) 'status': status,
+        if (digest != null) 'digest': digest,
+        if (total != null) 'total': total,
+        if (completed != null) 'completed': completed,
+      };
 
   /// Creates a copy with replaced values.
   StatusEvent copyWith({
@@ -47,9 +47,8 @@ class StatusEvent {
       status: status == unsetCopyWithValue ? this.status : status as String?,
       digest: digest == unsetCopyWithValue ? this.digest : digest as String?,
       total: total == unsetCopyWithValue ? this.total : total as int?,
-      completed: completed == unsetCopyWithValue
-          ? this.completed
-          : completed as int?,
+      completed:
+          completed == unsetCopyWithValue ? this.completed : completed as int?,
     );
   }
 
@@ -71,7 +70,6 @@ class StatusEvent {
   int get hashCode => Object.hash(status, digest);
 
   @override
-  String toString() =>
-      'StatusEvent(status: $status, '
+  String toString() => 'StatusEvent(status: $status, '
       'progress: ${progress != null ? '${(progress! * 100).toStringAsFixed(1)}%' : 'N/A'})';
 }

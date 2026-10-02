@@ -56,11 +56,11 @@ class CreateUploadRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'filename': filename,
-    'purpose': purpose.toJson(),
-    'bytes': bytes,
-    'mime_type': mimeType,
-  };
+        'filename': filename,
+        'purpose': purpose.toJson(),
+        'bytes': bytes,
+        'mime_type': mimeType,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -153,16 +153,16 @@ class Upload {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'bytes': bytes,
-    'created_at': createdAt,
-    'filename': filename,
-    'purpose': purpose.toJson(),
-    'status': status.toJson(),
-    if (expiresAt != null) 'expires_at': expiresAt,
-    if (file != null) 'file': file!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'bytes': bytes,
+        'created_at': createdAt,
+        'filename': filename,
+        'purpose': purpose.toJson(),
+        'status': status.toJson(),
+        if (expiresAt != null) 'expires_at': expiresAt,
+        if (file != null) 'file': file!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -236,11 +236,11 @@ class UploadPart {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    'upload_id': uploadId,
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        'upload_id': uploadId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -276,9 +276,9 @@ class CompleteUploadRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'part_ids': partIds,
-    if (md5 != null) 'md5': md5,
-  };
+        'part_ids': partIds,
+        if (md5 != null) 'md5': md5,
+      };
 
   @override
   bool operator ==(Object other) =>

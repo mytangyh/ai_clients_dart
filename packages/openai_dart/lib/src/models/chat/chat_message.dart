@@ -62,10 +62,10 @@ sealed class ChatMessage {
       final List<ContentPart> parts => UserMessageContent.parts(parts),
       final UserMessageContent c => c,
       _ => throw ArgumentError.value(
-        content,
-        'content',
-        'Must be String, List<ContentPart>, or UserMessageContent',
-      ),
+          content,
+          'content',
+          'Must be String, List<ContentPart>, or UserMessageContent',
+        ),
     };
     return UserMessage(content: messageContent, name: name);
   }
@@ -76,18 +76,20 @@ sealed class ChatMessage {
     String? name,
     String? refusal,
     List<ToolCall>? toolCalls,
-  }) => AssistantMessage(
-    content: content,
-    name: name,
-    refusal: refusal,
-    toolCalls: toolCalls,
-  );
+  }) =>
+      AssistantMessage(
+        content: content,
+        name: name,
+        refusal: refusal,
+        toolCalls: toolCalls,
+      );
 
   /// Creates a tool message with the result of a tool call.
   static ChatMessage tool({
     required String toolCallId,
     required String content,
-  }) => ToolMessage(toolCallId: toolCallId, content: content);
+  }) =>
+      ToolMessage(toolCallId: toolCallId, content: content);
 
   /// The role of the message author.
   String get role;
@@ -132,10 +134,10 @@ class SystemMessage extends ChatMessage {
 
   @override
   Map<String, dynamic> toJson() => {
-    'role': role,
-    'content': content,
-    if (name != null) 'name': name,
-  };
+        'role': role,
+        'content': content,
+        if (name != null) 'name': name,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -180,10 +182,10 @@ class DeveloperMessage extends ChatMessage {
 
   @override
   Map<String, dynamic> toJson() => {
-    'role': role,
-    'content': content,
-    if (name != null) 'name': name,
-  };
+        'role': role,
+        'content': content,
+        if (name != null) 'name': name,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -239,25 +241,25 @@ class UserMessage extends ChatMessage {
 
   /// Gets the text content if this is a simple text message.
   String? get text => switch (content) {
-    UserTextContent(:final text) => text,
-    UserPartsContent() => null,
-  };
+        UserTextContent(:final text) => text,
+        UserPartsContent() => null,
+      };
 
   /// Gets the content parts if this is a multimodal message.
   List<ContentPart>? get parts => switch (content) {
-    UserTextContent() => null,
-    UserPartsContent(:final parts) => parts,
-  };
+        UserTextContent() => null,
+        UserPartsContent(:final parts) => parts,
+      };
 
   @override
   String get role => 'user';
 
   @override
   Map<String, dynamic> toJson() => {
-    'role': role,
-    'content': content.toJson(),
-    if (name != null) 'name': name,
-  };
+        'role': role,
+        'content': content.toJson(),
+        if (name != null) 'name': name,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -272,10 +274,10 @@ class UserMessage extends ChatMessage {
 
   @override
   String toString() => switch (content) {
-    UserTextContent(:final text) => 'ChatMessage.user($text)',
-    UserPartsContent(:final parts) =>
-      'ChatMessage.user([${parts.length} parts])',
-  };
+        UserTextContent(:final text) => 'ChatMessage.user($text)',
+        UserPartsContent(:final parts) =>
+          'ChatMessage.user([${parts.length} parts])',
+      };
 }
 
 /// An assistant message containing a response or tool calls.
@@ -371,18 +373,19 @@ class AssistantMessage extends ChatMessage {
 
   @override
   Map<String, dynamic> toJson() => {
-    'role': role,
-    if (content != null) 'content': content,
-    if (name != null) 'name': name,
-    if (refusal != null) 'refusal': refusal,
-    if (toolCalls != null)
-      'tool_calls': toolCalls!.map((tc) => tc.toJson()).toList(),
-    // Include reasoning fields in toJson for serialization/debugging
-    if (reasoningContent != null) 'reasoning_content': reasoningContent,
-    if (reasoning != null) 'reasoning': reasoning,
-    if (reasoningDetails != null)
-      'reasoning_details': reasoningDetails!.map((rd) => rd.toJson()).toList(),
-  };
+        'role': role,
+        if (content != null) 'content': content,
+        if (name != null) 'name': name,
+        if (refusal != null) 'refusal': refusal,
+        if (toolCalls != null)
+          'tool_calls': toolCalls!.map((tc) => tc.toJson()).toList(),
+        // Include reasoning fields in toJson for serialization/debugging
+        if (reasoningContent != null) 'reasoning_content': reasoningContent,
+        if (reasoning != null) 'reasoning': reasoning,
+        if (reasoningDetails != null)
+          'reasoning_details':
+              reasoningDetails!.map((rd) => rd.toJson()).toList(),
+      };
 
   /// Converts to JSON for sending back to the API.
   ///
@@ -390,14 +393,14 @@ class AssistantMessage extends ChatMessage {
   /// 400 errors when sent back to some providers. Use this instead of
   /// [toJson] when sending messages back to the API.
   Map<String, dynamic> toApiJson() => {
-    'role': role,
-    if (content != null) 'content': content,
-    if (name != null) 'name': name,
-    if (refusal != null) 'refusal': refusal,
-    if (toolCalls != null)
-      'tool_calls': toolCalls!.map((tc) => tc.toJson()).toList(),
-    // NOTE: reasoning fields intentionally excluded for API compatibility
-  };
+        'role': role,
+        if (content != null) 'content': content,
+        if (name != null) 'name': name,
+        if (refusal != null) 'refusal': refusal,
+        if (toolCalls != null)
+          'tool_calls': toolCalls!.map((tc) => tc.toJson()).toList(),
+        // NOTE: reasoning fields intentionally excluded for API compatibility
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -424,14 +427,14 @@ class AssistantMessage extends ChatMessage {
 
   @override
   int get hashCode => Object.hash(
-    content,
-    name,
-    refusal,
-    toolCalls != null ? Object.hashAll(toolCalls!) : null,
-    reasoningContent,
-    reasoning,
-    reasoningDetails != null ? Object.hashAll(reasoningDetails!) : null,
-  );
+        content,
+        name,
+        refusal,
+        toolCalls != null ? Object.hashAll(toolCalls!) : null,
+        reasoningContent,
+        reasoning,
+        reasoningDetails != null ? Object.hashAll(reasoningDetails!) : null,
+      );
 
   @override
   String toString() {
@@ -482,10 +485,10 @@ class ToolMessage extends ChatMessage {
 
   @override
   Map<String, dynamic> toJson() => {
-    'role': role,
-    'tool_call_id': toolCallId,
-    'content': content,
-  };
+        'role': role,
+        'tool_call_id': toolCallId,
+        'content': content,
+      };
 
   @override
   bool operator ==(Object other) =>

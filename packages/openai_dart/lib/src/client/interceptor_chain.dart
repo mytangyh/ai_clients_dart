@@ -103,12 +103,12 @@ class InterceptorChain {
     final rawHeaderCorrelationId = context.request.headers['X-Request-ID'];
     final metadataCorrelationId =
         (rawMetadataCorrelationId?.trim().isNotEmpty ?? false)
-        ? rawMetadataCorrelationId!.trim()
-        : null;
+            ? rawMetadataCorrelationId!.trim()
+            : null;
     final headerCorrelationId =
         (rawHeaderCorrelationId?.trim().isNotEmpty ?? false)
-        ? rawHeaderCorrelationId!.trim()
-        : null;
+            ? rawHeaderCorrelationId!.trim()
+            : null;
     final correlationId =
         metadataCorrelationId ?? headerCorrelationId ?? generateRequestId();
     // Add/overwrite header if it was missing or blank
@@ -221,7 +221,7 @@ class InterceptorChain {
 class _AbortableRequestWrapper extends http.BaseRequest
     implements http.Abortable {
   _AbortableRequestWrapper(this._inner, this.abortTrigger)
-    : super(_inner.method, _inner.url) {
+      : super(_inner.method, _inner.url) {
     headers.addAll(_inner.headers);
     followRedirects = _inner.followRedirects;
     maxRedirects = _inner.maxRedirects;

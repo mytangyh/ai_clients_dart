@@ -89,9 +89,9 @@ class ImageUrlContentPart extends ContentPart {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'image_url': {'url': url},
-  };
+        'type': type,
+        'image_url': {'url': url},
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -29,9 +29,9 @@ class CacheCreation {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'ephemeral_1h_input_tokens': ephemeral1hInputTokens,
-    'ephemeral_5m_input_tokens': ephemeral5mInputTokens,
-  };
+        'ephemeral_1h_input_tokens': ephemeral1hInputTokens,
+        'ephemeral_5m_input_tokens': ephemeral5mInputTokens,
+      };
 
   /// Creates a copy with replaced values.
   CacheCreation copyWith({
@@ -89,9 +89,9 @@ class CacheRead {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'ephemeral_1h_input_tokens': ephemeral1hInputTokens,
-    'ephemeral_5m_input_tokens': ephemeral5mInputTokens,
-  };
+        'ephemeral_1h_input_tokens': ephemeral1hInputTokens,
+        'ephemeral_5m_input_tokens': ephemeral5mInputTokens,
+      };
 
   /// Creates a copy with replaced values.
   CacheRead copyWith({
@@ -149,9 +149,9 @@ class ServerToolUsage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'web_search_requests': webSearchRequests,
-    'web_fetch_requests': webFetchRequests,
-  };
+        'web_search_requests': webSearchRequests,
+        'web_fetch_requests': webFetchRequests,
+      };
 
   /// Creates a copy with replaced values.
   ServerToolUsage copyWith({int? webSearchRequests, int? webFetchRequests}) {
@@ -173,8 +173,7 @@ class ServerToolUsage {
   int get hashCode => Object.hash(webSearchRequests, webFetchRequests);
 
   @override
-  String toString() =>
-      'ServerToolUsage(webSearchRequests: $webSearchRequests, '
+  String toString() => 'ServerToolUsage(webSearchRequests: $webSearchRequests, '
       'webFetchRequests: $webFetchRequests)';
 }
 
@@ -228,13 +227,13 @@ class IterationUsage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'input_tokens': inputTokens,
-    'output_tokens': outputTokens,
-    'cache_creation_input_tokens': cacheCreationInputTokens,
-    'cache_read_input_tokens': cacheReadInputTokens,
-    if (cacheCreation != null) 'cache_creation': cacheCreation!.toJson(),
-  };
+        'type': type,
+        'input_tokens': inputTokens,
+        'output_tokens': outputTokens,
+        'cache_creation_input_tokens': cacheCreationInputTokens,
+        'cache_read_input_tokens': cacheReadInputTokens,
+        if (cacheCreation != null) 'cache_creation': cacheCreation!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   IterationUsage copyWith({
@@ -272,17 +271,16 @@ class IterationUsage {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    inputTokens,
-    outputTokens,
-    cacheCreationInputTokens,
-    cacheReadInputTokens,
-    cacheCreation,
-  );
+        type,
+        inputTokens,
+        outputTokens,
+        cacheCreationInputTokens,
+        cacheReadInputTokens,
+        cacheCreation,
+      );
 
   @override
-  String toString() =>
-      'IterationUsage(type: $type, inputTokens: $inputTokens, '
+  String toString() => 'IterationUsage(type: $type, inputTokens: $inputTokens, '
       'outputTokens: $outputTokens, '
       'cacheCreationInputTokens: $cacheCreationInputTokens, '
       'cacheReadInputTokens: $cacheReadInputTokens, '
@@ -302,11 +300,11 @@ enum ServiceTier {
 
   /// Creates a [ServiceTier] from JSON.
   factory ServiceTier.fromJson(String value) => switch (value) {
-    'standard' => standard,
-    'priority' => priority,
-    'batch' => batch,
-    _ => throw FormatException('Unknown ServiceTier: $value'),
-  };
+        'standard' => standard,
+        'priority' => priority,
+        'batch' => batch,
+        _ => throw FormatException('Unknown ServiceTier: $value'),
+      };
 
   /// Converts to JSON.
   String toJson() => name;
@@ -398,21 +396,21 @@ class Usage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'input_tokens': inputTokens,
-    'output_tokens': outputTokens,
-    if (cacheCreation != null) 'cache_creation': cacheCreation!.toJson(),
-    if (cacheCreationInputTokens != null)
-      'cache_creation_input_tokens': cacheCreationInputTokens,
-    if (cacheRead != null) 'cache_read': cacheRead!.toJson(),
-    if (cacheReadInputTokens != null)
-      'cache_read_input_tokens': cacheReadInputTokens,
-    if (serverToolUse != null) 'server_tool_use': serverToolUse!.toJson(),
-    if (serviceTier != null) 'service_tier': serviceTier!.toJson(),
-    if (inferenceGeo != null) 'inference_geo': inferenceGeo,
-    if (iterations != null)
-      'iterations': iterations!.map((e) => e.toJson()).toList(),
-    if (speed != null) 'speed': speed!.toJson(),
-  };
+        'input_tokens': inputTokens,
+        'output_tokens': outputTokens,
+        if (cacheCreation != null) 'cache_creation': cacheCreation!.toJson(),
+        if (cacheCreationInputTokens != null)
+          'cache_creation_input_tokens': cacheCreationInputTokens,
+        if (cacheRead != null) 'cache_read': cacheRead!.toJson(),
+        if (cacheReadInputTokens != null)
+          'cache_read_input_tokens': cacheReadInputTokens,
+        if (serverToolUse != null) 'server_tool_use': serverToolUse!.toJson(),
+        if (serviceTier != null) 'service_tier': serviceTier!.toJson(),
+        if (inferenceGeo != null) 'inference_geo': inferenceGeo,
+        if (iterations != null)
+          'iterations': iterations!.map((e) => e.toJson()).toList(),
+        if (speed != null) 'speed': speed!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   Usage copyWith({
@@ -478,18 +476,18 @@ class Usage {
 
   @override
   int get hashCode => Object.hash(
-    inputTokens,
-    outputTokens,
-    cacheCreation,
-    cacheCreationInputTokens,
-    cacheRead,
-    cacheReadInputTokens,
-    serverToolUse,
-    serviceTier,
-    inferenceGeo,
-    listHash(iterations),
-    speed,
-  );
+        inputTokens,
+        outputTokens,
+        cacheCreation,
+        cacheCreationInputTokens,
+        cacheRead,
+        cacheReadInputTokens,
+        serverToolUse,
+        serviceTier,
+        inferenceGeo,
+        listHash(iterations),
+        speed,
+      );
 
   @override
   String toString() =>

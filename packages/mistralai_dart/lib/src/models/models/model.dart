@@ -53,39 +53,39 @@ class Model {
 
   /// Creates a [Model] from JSON.
   factory Model.fromJson(Map<String, dynamic> json) => Model(
-    id: json['id'] as String? ?? '',
-    object: json['object'] as String? ?? 'model',
-    created: json['created'] as int?,
-    ownedBy: json['owned_by'] as String?,
-    name: json['name'] as String?,
-    description: json['description'] as String?,
-    maxContextLength: json['max_context_length'] as int?,
-    aliases: (json['aliases'] as List?)?.cast<String>(),
-    defaultModelTemperature: (json['default_model_temperature'] as num?)
-        ?.toDouble(),
-    type: json['type'] as String?,
-    capabilities: json['capabilities'] != null
-        ? ModelCapabilities.fromJson(
-            json['capabilities'] as Map<String, dynamic>,
-          )
-        : null,
-  );
+        id: json['id'] as String? ?? '',
+        object: json['object'] as String? ?? 'model',
+        created: json['created'] as int?,
+        ownedBy: json['owned_by'] as String?,
+        name: json['name'] as String?,
+        description: json['description'] as String?,
+        maxContextLength: json['max_context_length'] as int?,
+        aliases: (json['aliases'] as List?)?.cast<String>(),
+        defaultModelTemperature:
+            (json['default_model_temperature'] as num?)?.toDouble(),
+        type: json['type'] as String?,
+        capabilities: json['capabilities'] != null
+            ? ModelCapabilities.fromJson(
+                json['capabilities'] as Map<String, dynamic>,
+              )
+            : null,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    if (created != null) 'created': created,
-    if (ownedBy != null) 'owned_by': ownedBy,
-    if (name != null) 'name': name,
-    if (description != null) 'description': description,
-    if (maxContextLength != null) 'max_context_length': maxContextLength,
-    if (aliases != null) 'aliases': aliases,
-    if (defaultModelTemperature != null)
-      'default_model_temperature': defaultModelTemperature,
-    if (type != null) 'type': type,
-    if (capabilities != null) 'capabilities': capabilities!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        if (created != null) 'created': created,
+        if (ownedBy != null) 'owned_by': ownedBy,
+        if (name != null) 'name': name,
+        if (description != null) 'description': description,
+        if (maxContextLength != null) 'max_context_length': maxContextLength,
+        if (aliases != null) 'aliases': aliases,
+        if (defaultModelTemperature != null)
+          'default_model_temperature': defaultModelTemperature,
+        if (type != null) 'type': type,
+        if (capabilities != null) 'capabilities': capabilities!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -143,13 +143,13 @@ class ModelCapabilities {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (completionChat != null) 'completion_chat': completionChat,
-    if (completionFim != null) 'completion_fim': completionFim,
-    if (functionCalling != null) 'function_calling': functionCalling,
-    if (fineTuning != null) 'fine_tuning': fineTuning,
-    if (vision != null) 'vision': vision,
-    if (classification != null) 'classification': classification,
-  };
+        if (completionChat != null) 'completion_chat': completionChat,
+        if (completionFim != null) 'completion_fim': completionFim,
+        if (functionCalling != null) 'function_calling': functionCalling,
+        if (fineTuning != null) 'fine_tuning': fineTuning,
+        if (vision != null) 'vision': vision,
+        if (classification != null) 'classification': classification,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -165,17 +165,16 @@ class ModelCapabilities {
 
   @override
   int get hashCode => Object.hash(
-    completionChat,
-    completionFim,
-    functionCalling,
-    fineTuning,
-    vision,
-    classification,
-  );
+        completionChat,
+        completionFim,
+        functionCalling,
+        fineTuning,
+        vision,
+        classification,
+      );
 
   @override
-  String toString() =>
-      'ModelCapabilities('
+  String toString() => 'ModelCapabilities('
       'chat: $completionChat, '
       'fim: $completionFim, '
       'functions: $functionCalling, '

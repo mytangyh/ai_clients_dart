@@ -28,19 +28,20 @@ class SharingRequest {
 
   /// Creates from JSON.
   factory SharingRequest.fromJson(Map<String, dynamic> json) => SharingRequest(
-    orgId: json['org_id'] as String?,
-    level: ShareLevel.fromString(json['level'] as String?),
-    shareWithUuid: json['share_with_uuid'] as String,
-    shareWithType: EntityType.fromString(json['share_with_type'] as String?),
-  );
+        orgId: json['org_id'] as String?,
+        level: ShareLevel.fromString(json['level'] as String?),
+        shareWithUuid: json['share_with_uuid'] as String,
+        shareWithType:
+            EntityType.fromString(json['share_with_type'] as String?),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (orgId != null) 'org_id': orgId,
-    'level': level.value,
-    'share_with_uuid': shareWithUuid,
-    'share_with_type': shareWithType.value,
-  };
+        if (orgId != null) 'org_id': orgId,
+        'level': level.value,
+        'share_with_uuid': shareWithUuid,
+        'share_with_type': shareWithType.value,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -56,8 +57,7 @@ class SharingRequest {
   int get hashCode => Object.hash(orgId, level, shareWithUuid, shareWithType);
 
   @override
-  String toString() =>
-      'SharingRequest('
+  String toString() => 'SharingRequest('
       'orgId: $orgId, level: $level, '
       'shareWithUuid: $shareWithUuid, shareWithType: $shareWithType)';
 }

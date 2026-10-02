@@ -11,9 +11,9 @@ void main() {
     const interceptor = ErrorInterceptor();
 
     http.Request createRequest() => http.Request(
-      'POST',
-      Uri.parse('https://api.anthropic.com/v1/messages'),
-    );
+          'POST',
+          Uri.parse('https://api.anthropic.com/v1/messages'),
+        );
 
     test('passes through successful responses', () async {
       final context = RequestContext(request: createRequest());

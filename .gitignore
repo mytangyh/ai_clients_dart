@@ -29,3 +29,9 @@ doc/api/
 # Python
 __pycache__/
 *.pyc
+
+.fvm/
+.compat-local/
+
+# Keep the compatibility workspace resolution.
+!/pubspec.lock

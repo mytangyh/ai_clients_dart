@@ -25,21 +25,20 @@ class EmbeddingData {
 
   /// Creates an [EmbeddingData] from JSON.
   factory EmbeddingData.fromJson(Map<String, dynamic> json) => EmbeddingData(
-    object: json['object'] as String? ?? 'embedding',
-    index: json['index'] as int? ?? 0,
-    embedding:
-        (json['embedding'] as List?)
-            ?.map((e) => (e as num).toDouble())
-            .toList() ??
-        [],
-  );
+        object: json['object'] as String? ?? 'embedding',
+        index: json['index'] as int? ?? 0,
+        embedding: (json['embedding'] as List?)
+                ?.map((e) => (e as num).toDouble())
+                .toList() ??
+            [],
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'index': index,
-    'embedding': embedding,
-  };
+        'object': object,
+        'index': index,
+        'embedding': embedding,
+      };
 
   @override
   bool operator ==(Object other) =>

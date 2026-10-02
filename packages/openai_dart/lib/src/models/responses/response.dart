@@ -143,29 +143,30 @@ class Response {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    'status': status.toJson(),
-    'output': output.map((e) => e.toJson()).toList(),
-    if (usage != null) 'usage': usage!.toJson(),
-    if (error != null) 'error': error!.toJson(),
-    if (incompleteDetails != null)
-      'incomplete_details': incompleteDetails!.toJson(),
-    if (model != null) 'model': model,
-    if (instructions != null) 'instructions': instructions,
-    if (previousResponseId != null) 'previous_response_id': previousResponseId,
-    if (serviceTier != null) 'service_tier': serviceTier!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-    if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (background != null) 'background': background,
-    if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
-    if (promptCacheKey != null) 'prompt_cache_key': promptCacheKey,
-    if (promptCacheRetention != null)
-      'prompt_cache_retention': promptCacheRetention!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        'status': status.toJson(),
+        'output': output.map((e) => e.toJson()).toList(),
+        if (usage != null) 'usage': usage!.toJson(),
+        if (error != null) 'error': error!.toJson(),
+        if (incompleteDetails != null)
+          'incomplete_details': incompleteDetails!.toJson(),
+        if (model != null) 'model': model,
+        if (instructions != null) 'instructions': instructions,
+        if (previousResponseId != null)
+          'previous_response_id': previousResponseId,
+        if (serviceTier != null) 'service_tier': serviceTier!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+        if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (background != null) 'background': background,
+        if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
+        if (promptCacheKey != null) 'prompt_cache_key': promptCacheKey,
+        if (promptCacheRetention != null)
+          'prompt_cache_retention': promptCacheRetention!.toJson(),
+      };
 
   // ============================================================
   // Convenience Getters
@@ -303,27 +304,27 @@ class Response {
 
   @override
   int get hashCode => Object.hashAll([
-    id,
-    object,
-    createdAt,
-    status,
-    Object.hashAll(output),
-    usage,
-    error,
-    incompleteDetails,
-    model,
-    instructions,
-    previousResponseId,
-    serviceTier,
-    mapHash(metadata),
-    maxOutputTokens,
-    temperature,
-    topP,
-    background,
-    parallelToolCalls,
-    promptCacheKey,
-    promptCacheRetention,
-  ]);
+        id,
+        object,
+        createdAt,
+        status,
+        Object.hashAll(output),
+        usage,
+        error,
+        incompleteDetails,
+        model,
+        instructions,
+        previousResponseId,
+        serviceTier,
+        mapHash(metadata),
+        maxOutputTokens,
+        temperature,
+        topP,
+        background,
+        parallelToolCalls,
+        promptCacheKey,
+        promptCacheRetention,
+      ]);
 
   @override
   String toString() => 'Response(id: $id, status: $status, output: $output)';
@@ -371,12 +372,12 @@ class ResponseList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data': data.map((e) => e.toJson()).toList(),
-    'object': object,
-    'has_more': hasMore,
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-  };
+        'data': data.map((e) => e.toJson()).toList(),
+        'object': object,
+        'has_more': hasMore,
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -428,10 +429,10 @@ class DeleteResponseResult {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>

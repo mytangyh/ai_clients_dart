@@ -44,13 +44,13 @@ class SharingResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'library_id': libraryId,
-    if (userId != null) 'user_id': userId,
-    'org_id': orgId,
-    'role': role,
-    'share_with_type': shareWithType,
-    if (shareWithUuid != null) 'share_with_uuid': shareWithUuid,
-  };
+        'library_id': libraryId,
+        if (userId != null) 'user_id': userId,
+        'org_id': orgId,
+        'role': role,
+        'share_with_type': shareWithType,
+        if (shareWithUuid != null) 'share_with_uuid': shareWithUuid,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -65,8 +65,7 @@ class SharingResponse {
   int get hashCode => Object.hash(libraryId, orgId, role);
 
   @override
-  String toString() =>
-      'SharingResponse('
+  String toString() => 'SharingResponse('
       'libraryId: $libraryId, userId: $userId, orgId: $orgId, '
       'role: $role, shareWithType: $shareWithType, '
       'shareWithUuid: $shareWithUuid)';

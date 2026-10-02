@@ -64,11 +64,11 @@ class Conversation {
 
   /// Converts this conversation to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    if (metadata != null) 'metadata': metadata,
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>

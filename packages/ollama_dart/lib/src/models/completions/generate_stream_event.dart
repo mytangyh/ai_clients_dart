@@ -86,21 +86,22 @@ class GenerateStreamEvent {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (model != null) 'model': model,
-    if (remoteModel != null) 'remote_model': remoteModel,
-    if (remoteHost != null) 'remote_host': remoteHost,
-    if (createdAt != null) 'created_at': createdAt,
-    if (response != null) 'response': response,
-    if (thinking != null) 'thinking': thinking,
-    if (done != null) 'done': done,
-    if (doneReason != null) 'done_reason': doneReasonToString(doneReason!),
-    if (totalDuration != null) 'total_duration': totalDuration,
-    if (loadDuration != null) 'load_duration': loadDuration,
-    if (promptEvalCount != null) 'prompt_eval_count': promptEvalCount,
-    if (promptEvalDuration != null) 'prompt_eval_duration': promptEvalDuration,
-    if (evalCount != null) 'eval_count': evalCount,
-    if (evalDuration != null) 'eval_duration': evalDuration,
-  };
+        if (model != null) 'model': model,
+        if (remoteModel != null) 'remote_model': remoteModel,
+        if (remoteHost != null) 'remote_host': remoteHost,
+        if (createdAt != null) 'created_at': createdAt,
+        if (response != null) 'response': response,
+        if (thinking != null) 'thinking': thinking,
+        if (done != null) 'done': done,
+        if (doneReason != null) 'done_reason': doneReasonToString(doneReason!),
+        if (totalDuration != null) 'total_duration': totalDuration,
+        if (loadDuration != null) 'load_duration': loadDuration,
+        if (promptEvalCount != null) 'prompt_eval_count': promptEvalCount,
+        if (promptEvalDuration != null)
+          'prompt_eval_duration': promptEvalDuration,
+        if (evalCount != null) 'eval_count': evalCount,
+        if (evalDuration != null) 'eval_duration': evalDuration,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -115,8 +116,7 @@ class GenerateStreamEvent {
   int get hashCode => Object.hash(model, response, done);
 
   @override
-  String toString() =>
-      'GenerateStreamEvent('
+  String toString() => 'GenerateStreamEvent('
       'model: $model, '
       'response: $response, '
       'done: $done)';

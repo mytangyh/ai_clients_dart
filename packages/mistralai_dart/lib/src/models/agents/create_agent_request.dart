@@ -48,13 +48,13 @@ class CreateAgentRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    if (description != null) 'description': description,
-    'model': model,
-    if (instructions != null) 'instructions': instructions,
-    if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        'name': name,
+        if (description != null) 'description': description,
+        'model': model,
+        if (instructions != null) 'instructions': instructions,
+        if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   /// Creates a copy with the specified fields replaced.
   CreateAgentRequest copyWith({
@@ -64,14 +64,15 @@ class CreateAgentRequest {
     String? instructions,
     List<Tool>? tools,
     Map<String, dynamic>? metadata,
-  }) => CreateAgentRequest(
-    name: name ?? this.name,
-    description: description ?? this.description,
-    model: model ?? this.model,
-    instructions: instructions ?? this.instructions,
-    tools: tools ?? this.tools,
-    metadata: metadata ?? this.metadata,
-  );
+  }) =>
+      CreateAgentRequest(
+        name: name ?? this.name,
+        description: description ?? this.description,
+        model: model ?? this.model,
+        instructions: instructions ?? this.instructions,
+        tools: tools ?? this.tools,
+        metadata: metadata ?? this.metadata,
+      );
 
   @override
   bool operator ==(Object other) =>

@@ -14,15 +14,15 @@ class SignedUrl {
 
   /// Creates a [SignedUrl] from JSON.
   factory SignedUrl.fromJson(Map<String, dynamic> json) => SignedUrl(
-    url: json['url'] as String? ?? '',
-    expiresAt: json['expires_at'] as int?,
-  );
+        url: json['url'] as String? ?? '',
+        expiresAt: json['expires_at'] as int?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'url': url,
-    if (expiresAt != null) 'expires_at': expiresAt,
-  };
+        'url': url,
+        if (expiresAt != null) 'expires_at': expiresAt,
+      };
 
   @override
   bool operator ==(Object other) =>

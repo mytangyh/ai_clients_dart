@@ -53,9 +53,8 @@ void main() {
         expect(response.id, isNotEmpty);
 
         // Find web search result blocks
-        final webSearchResults = response.content
-            .whereType<WebSearchToolResultBlock>()
-            .toList();
+        final webSearchResults =
+            response.content.whereType<WebSearchToolResultBlock>().toList();
         expect(webSearchResults, isNotEmpty);
 
         final result = webSearchResults.first;

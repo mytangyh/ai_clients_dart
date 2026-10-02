@@ -54,9 +54,9 @@ class ConversationCreateRequest {
 
   /// Converts this request to JSON.
   Map<String, dynamic> toJson() => {
-    if (items != null) 'items': items!.map((e) => e.toJson()).toList(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        if (items != null) 'items': items!.map((e) => e.toJson()).toList(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -68,9 +68,9 @@ class ConversationCreateRequest {
 
   @override
   int get hashCode => Object.hash(
-    items != null ? Object.hashAll(items!) : null,
-    mapHash(metadata),
-  );
+        items != null ? Object.hashAll(items!) : null,
+        mapHash(metadata),
+      );
 
   @override
   String toString() =>

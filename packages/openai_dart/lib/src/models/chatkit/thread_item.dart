@@ -121,12 +121,12 @@ class ThreadItemList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((i) => i.toJson()).toList(),
-    'first_id': firstId,
-    'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((i) => i.toJson()).toList(),
+        'first_id': firstId,
+        'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>

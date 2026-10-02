@@ -422,59 +422,62 @@ class ChatCompletionCreateRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'messages': messages.map((m) => m.toJson()).toList(),
-    if (frequencyPenalty != null) 'frequency_penalty': frequencyPenalty,
-    if (logitBias != null) 'logit_bias': logitBias,
-    if (logprobs != null) 'logprobs': logprobs,
-    if (topLogprobs != null) 'top_logprobs': topLogprobs,
-    if (maxTokens != null) 'max_tokens': maxTokens,
-    if (maxCompletionTokens != null)
-      'max_completion_tokens': maxCompletionTokens,
-    if (n != null) 'n': n,
-    if (presencePenalty != null) 'presence_penalty': presencePenalty,
-    if (responseFormat != null) 'response_format': responseFormat!.toJson(),
-    if (seed != null) 'seed': seed,
-    if (serviceTier != null) 'service_tier': serviceTier,
-    if (stop != null) 'stop': stop,
-    if (temperature != null) 'temperature': temperature,
-    if (topP != null) 'top_p': topP,
-    if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
-    if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
-    if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
-    if (user != null) 'user': user,
-    if (metadata case final metadata?
-        when metadata.values.any((v) => v != null))
-      'metadata': {
-        for (final MapEntry(:key, :value) in metadata.entries)
-          if (value != null) key: value.toString(),
-      },
-    if (store != null) 'store': store,
-    if (streamOptions != null) 'stream_options': streamOptions!.toJson(),
-    if (reasoningEffort != null) 'reasoning_effort': reasoningEffort!.toJson(),
-    if (verbosity != null) 'verbosity': verbosity!.toJson(),
-    if (prediction != null) 'prediction': prediction!.toJson(),
-    if (modalities != null)
-      'modalities': modalities!.map((m) => m.toJson()).toList(),
-    if (audio != null) 'audio': audio!.toJson(),
-    if (webSearchOptions != null)
-      'web_search_options': webSearchOptions!.toJson(),
-    if (promptCacheKey != null) 'prompt_cache_key': promptCacheKey,
-    if (promptCacheRetention != null)
-      'prompt_cache_retention': promptCacheRetention!.toJson(),
-    if (safetyIdentifier != null) 'safety_identifier': safetyIdentifier,
-    // OpenRouter-specific parameters
-    if (topK != null) 'top_k': topK,
-    if (minP != null) 'min_p': minP,
-    if (topA != null) 'top_a': topA,
-    if (repetitionPenalty != null) 'repetition_penalty': repetitionPenalty,
-    if (openRouterProvider != null) 'provider': openRouterProvider!.toJson(),
-    if (models != null) 'models': models,
-    if (route != null) 'route': route,
-    if (transforms != null) 'transforms': transforms,
-    if (openRouterUsage != null) 'usage': openRouterUsage!.toJson(),
-    if (openRouterReasoning != null) 'reasoning': openRouterReasoning!.toJson(),
-  };
+        'model': model,
+        'messages': messages.map((m) => m.toJson()).toList(),
+        if (frequencyPenalty != null) 'frequency_penalty': frequencyPenalty,
+        if (logitBias != null) 'logit_bias': logitBias,
+        if (logprobs != null) 'logprobs': logprobs,
+        if (topLogprobs != null) 'top_logprobs': topLogprobs,
+        if (maxTokens != null) 'max_tokens': maxTokens,
+        if (maxCompletionTokens != null)
+          'max_completion_tokens': maxCompletionTokens,
+        if (n != null) 'n': n,
+        if (presencePenalty != null) 'presence_penalty': presencePenalty,
+        if (responseFormat != null) 'response_format': responseFormat!.toJson(),
+        if (seed != null) 'seed': seed,
+        if (serviceTier != null) 'service_tier': serviceTier,
+        if (stop != null) 'stop': stop,
+        if (temperature != null) 'temperature': temperature,
+        if (topP != null) 'top_p': topP,
+        if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
+        if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
+        if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls,
+        if (user != null) 'user': user,
+        if (metadata case final metadata?
+            when metadata.values.any((v) => v != null))
+          'metadata': {
+            for (final MapEntry(:key, :value) in metadata.entries)
+              if (value != null) key: value.toString(),
+          },
+        if (store != null) 'store': store,
+        if (streamOptions != null) 'stream_options': streamOptions!.toJson(),
+        if (reasoningEffort != null)
+          'reasoning_effort': reasoningEffort!.toJson(),
+        if (verbosity != null) 'verbosity': verbosity!.toJson(),
+        if (prediction != null) 'prediction': prediction!.toJson(),
+        if (modalities != null)
+          'modalities': modalities!.map((m) => m.toJson()).toList(),
+        if (audio != null) 'audio': audio!.toJson(),
+        if (webSearchOptions != null)
+          'web_search_options': webSearchOptions!.toJson(),
+        if (promptCacheKey != null) 'prompt_cache_key': promptCacheKey,
+        if (promptCacheRetention != null)
+          'prompt_cache_retention': promptCacheRetention!.toJson(),
+        if (safetyIdentifier != null) 'safety_identifier': safetyIdentifier,
+        // OpenRouter-specific parameters
+        if (topK != null) 'top_k': topK,
+        if (minP != null) 'min_p': minP,
+        if (topA != null) 'top_a': topA,
+        if (repetitionPenalty != null) 'repetition_penalty': repetitionPenalty,
+        if (openRouterProvider != null)
+          'provider': openRouterProvider!.toJson(),
+        if (models != null) 'models': models,
+        if (route != null) 'route': route,
+        if (transforms != null) 'transforms': transforms,
+        if (openRouterUsage != null) 'usage': openRouterUsage!.toJson(),
+        if (openRouterReasoning != null)
+          'reasoning': openRouterReasoning!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ChatCompletionCreateRequest copyWith({
@@ -531,15 +534,13 @@ class ChatCompletionCreateRequest {
       logitBias: logitBias == unsetCopyWithValue
           ? this.logitBias
           : logitBias as Map<String, int>?,
-      logprobs: logprobs == unsetCopyWithValue
-          ? this.logprobs
-          : logprobs as bool?,
+      logprobs:
+          logprobs == unsetCopyWithValue ? this.logprobs : logprobs as bool?,
       topLogprobs: topLogprobs == unsetCopyWithValue
           ? this.topLogprobs
           : topLogprobs as int?,
-      maxTokens: maxTokens == unsetCopyWithValue
-          ? this.maxTokens
-          : maxTokens as int?,
+      maxTokens:
+          maxTokens == unsetCopyWithValue ? this.maxTokens : maxTokens as int?,
       maxCompletionTokens: maxCompletionTokens == unsetCopyWithValue
           ? this.maxCompletionTokens
           : maxCompletionTokens as int?,
@@ -586,9 +587,8 @@ class ChatCompletionCreateRequest {
       modalities: modalities == unsetCopyWithValue
           ? this.modalities
           : modalities as List<ChatModality>?,
-      audio: audio == unsetCopyWithValue
-          ? this.audio
-          : audio as ChatAudioConfig?,
+      audio:
+          audio == unsetCopyWithValue ? this.audio : audio as ChatAudioConfig?,
       webSearchOptions: webSearchOptions == unsetCopyWithValue
           ? this.webSearchOptions
           : webSearchOptions as WebSearchOptions?,
@@ -611,9 +611,8 @@ class ChatCompletionCreateRequest {
       openRouterProvider: openRouterProvider == unsetCopyWithValue
           ? this.openRouterProvider
           : openRouterProvider as OpenRouterProviderPreferences?,
-      models: models == unsetCopyWithValue
-          ? this.models
-          : models as List<String>?,
+      models:
+          models == unsetCopyWithValue ? this.models : models as List<String>?,
       route: route == unsetCopyWithValue ? this.route : route as String?,
       transforms: transforms == unsetCopyWithValue
           ? this.transforms
@@ -669,8 +668,8 @@ class StreamOptions {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (includeUsage != null) 'include_usage': includeUsage,
-  };
+        if (includeUsage != null) 'include_usage': includeUsage,
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -14,15 +14,15 @@ class TrainingFile {
 
   /// Creates a [TrainingFile] from JSON.
   factory TrainingFile.fromJson(Map<String, dynamic> json) => TrainingFile(
-    fileId: json['file_id'] as String? ?? '',
-    weight: (json['weight'] as num?)?.toDouble(),
-  );
+        fileId: json['file_id'] as String? ?? '',
+        weight: (json['weight'] as num?)?.toDouble(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'file_id': fileId,
-    if (weight != null) 'weight': weight,
-  };
+        'file_id': fileId,
+        if (weight != null) 'weight': weight,
+      };
 
   @override
   bool operator ==(Object other) =>

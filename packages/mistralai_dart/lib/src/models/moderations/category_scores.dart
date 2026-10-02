@@ -60,37 +60,37 @@ class CategoryScores {
 
   /// Creates [CategoryScores] from JSON.
   factory CategoryScores.fromJson(Map<String, dynamic> json) => CategoryScores(
-    sexual: (json['sexual'] as num?)?.toDouble() ?? 0.0,
-    hate: (json['hate'] as num?)?.toDouble() ?? 0.0,
-    violence: (json['violence'] as num?)?.toDouble() ?? 0.0,
-    selfHarm: (json['self-harm'] as num?)?.toDouble() ?? 0.0,
-    sexualMinors: (json['sexual/minors'] as num?)?.toDouble() ?? 0.0,
-    hateThreatening: (json['hate/threatening'] as num?)?.toDouble() ?? 0.0,
-    violenceGraphic: (json['violence/graphic'] as num?)?.toDouble() ?? 0.0,
-    selfHarmIntent: (json['self-harm/intent'] as num?)?.toDouble() ?? 0.0,
-    selfHarmInstructions:
-        (json['self-harm/instructions'] as num?)?.toDouble() ?? 0.0,
-    harassment: (json['harassment'] as num?)?.toDouble() ?? 0.0,
-    harassmentThreatening:
-        (json['harassment/threatening'] as num?)?.toDouble() ?? 0.0,
-    pii: (json['pii'] as num?)?.toDouble(),
-  );
+        sexual: (json['sexual'] as num?)?.toDouble() ?? 0.0,
+        hate: (json['hate'] as num?)?.toDouble() ?? 0.0,
+        violence: (json['violence'] as num?)?.toDouble() ?? 0.0,
+        selfHarm: (json['self-harm'] as num?)?.toDouble() ?? 0.0,
+        sexualMinors: (json['sexual/minors'] as num?)?.toDouble() ?? 0.0,
+        hateThreatening: (json['hate/threatening'] as num?)?.toDouble() ?? 0.0,
+        violenceGraphic: (json['violence/graphic'] as num?)?.toDouble() ?? 0.0,
+        selfHarmIntent: (json['self-harm/intent'] as num?)?.toDouble() ?? 0.0,
+        selfHarmInstructions:
+            (json['self-harm/instructions'] as num?)?.toDouble() ?? 0.0,
+        harassment: (json['harassment'] as num?)?.toDouble() ?? 0.0,
+        harassmentThreatening:
+            (json['harassment/threatening'] as num?)?.toDouble() ?? 0.0,
+        pii: (json['pii'] as num?)?.toDouble(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'sexual': sexual,
-    'hate': hate,
-    'violence': violence,
-    'self-harm': selfHarm,
-    'sexual/minors': sexualMinors,
-    'hate/threatening': hateThreatening,
-    'violence/graphic': violenceGraphic,
-    'self-harm/intent': selfHarmIntent,
-    'self-harm/instructions': selfHarmInstructions,
-    'harassment': harassment,
-    'harassment/threatening': harassmentThreatening,
-    if (pii != null) 'pii': pii,
-  };
+        'sexual': sexual,
+        'hate': hate,
+        'violence': violence,
+        'self-harm': selfHarm,
+        'sexual/minors': sexualMinors,
+        'hate/threatening': hateThreatening,
+        'violence/graphic': violenceGraphic,
+        'self-harm/intent': selfHarmIntent,
+        'self-harm/instructions': selfHarmInstructions,
+        'harassment': harassment,
+        'harassment/threatening': harassmentThreatening,
+        if (pii != null) 'pii': pii,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -104,21 +104,20 @@ class CategoryScores {
 
   @override
   int get hashCode => Object.hash(
-    sexual,
-    hate,
-    violence,
-    selfHarm,
-    sexualMinors,
-    hateThreatening,
-    violenceGraphic,
-    selfHarmIntent,
-    selfHarmInstructions,
-    harassment,
-    harassmentThreatening,
-  );
+        sexual,
+        hate,
+        violence,
+        selfHarm,
+        sexualMinors,
+        hateThreatening,
+        violenceGraphic,
+        selfHarmIntent,
+        selfHarmInstructions,
+        harassment,
+        harassmentThreatening,
+      );
 
   @override
-  String toString() =>
-      'CategoryScores(sexual: $sexual, hate: $hate, '
+  String toString() => 'CategoryScores(sexual: $sexual, hate: $hate, '
       'violence: $violence, harassment: $harassment)';
 }

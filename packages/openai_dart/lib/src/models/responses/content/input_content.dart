@@ -161,20 +161,20 @@ class InputImageContent extends InputContent {
 
   /// Creates an [InputImageContent] with URL or file ID.
   const InputImageContent({this.imageUrl, this.fileId, this.detail})
-    : assert(
-        imageUrl != null || fileId != null,
-        'Either imageUrl or fileId must be provided',
-      );
+      : assert(
+          imageUrl != null || fileId != null,
+          'Either imageUrl or fileId must be provided',
+        );
 
   /// Creates an [InputImageContent] from a URL.
   const InputImageContent.url(String url, {this.detail})
-    : imageUrl = url,
-      fileId = null;
+      : imageUrl = url,
+        fileId = null;
 
   /// Creates an [InputImageContent] from a file ID.
   const InputImageContent.file(String id, {this.detail})
-    : imageUrl = null,
-      fileId = id;
+      : imageUrl = null,
+        fileId = id;
 
   /// Creates an [InputImageContent] from JSON.
   factory InputImageContent.fromJson(Map<String, dynamic> json) {
@@ -189,11 +189,11 @@ class InputImageContent extends InputContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'input_image',
-    if (imageUrl != null) 'image_url': imageUrl,
-    if (fileId != null) 'file_id': fileId,
-    if (detail != null) 'detail': detail!.toJson(),
-  };
+        'type': 'input_image',
+        if (imageUrl != null) 'image_url': imageUrl,
+        if (fileId != null) 'file_id': fileId,
+        if (detail != null) 'detail': detail!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -241,21 +241,21 @@ class InputFileContent extends InputContent {
 
   /// Creates an [InputFileContent] from a URL.
   const InputFileContent.url(String url, {this.filename, this.detail})
-    : fileUrl = url,
-      fileId = null,
-      fileData = null;
+      : fileUrl = url,
+        fileId = null,
+        fileData = null;
 
   /// Creates an [InputFileContent] from a file ID.
   const InputFileContent.file(String id, {this.filename, this.detail})
-    : fileUrl = null,
-      fileId = id,
-      fileData = null;
+      : fileUrl = null,
+        fileId = id,
+        fileData = null;
 
   /// Creates an [InputFileContent] from base64-encoded data.
   const InputFileContent.data(String data, {this.filename, this.detail})
-    : fileUrl = null,
-      fileId = null,
-      fileData = data;
+      : fileUrl = null,
+        fileId = null,
+        fileData = data;
 
   /// Creates an [InputFileContent] from JSON.
   factory InputFileContent.fromJson(Map<String, dynamic> json) {
@@ -272,13 +272,13 @@ class InputFileContent extends InputContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'input_file',
-    if (fileUrl != null) 'file_url': fileUrl,
-    if (fileId != null) 'file_id': fileId,
-    if (fileData != null) 'file_data': fileData,
-    if (filename != null) 'filename': filename,
-    if (detail != null) 'detail': detail!.toJson(),
-  };
+        'type': 'input_file',
+        if (fileUrl != null) 'file_url': fileUrl,
+        if (fileId != null) 'file_id': fileId,
+        if (fileData != null) 'file_data': fileData,
+        if (filename != null) 'filename': filename,
+        if (detail != null) 'detail': detail!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -315,9 +315,9 @@ class InputVideoContent extends InputContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'input_video',
-    'video_url': videoUrl,
-  };
+        'type': 'input_video',
+        'video_url': videoUrl,
+      };
 
   @override
   bool operator ==(Object other) =>

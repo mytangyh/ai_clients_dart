@@ -41,8 +41,8 @@ class RetryPolicy {
     this.initialDelay = const Duration(seconds: 1),
     this.maxDelay = const Duration(seconds: 60),
     this.jitter = 0.1,
-  }) : assert(maxRetries >= 0, 'maxRetries must be >= 0'),
-       assert(jitter >= 0.0 && jitter <= 1.0, 'jitter must be 0.0 - 1.0');
+  })  : assert(maxRetries >= 0, 'maxRetries must be >= 0'),
+        assert(jitter >= 0.0 && jitter <= 1.0, 'jitter must be 0.0 - 1.0');
 
   /// Default retry policy (3 retries, 1s initial delay, 60s max delay).
   static const defaultPolicy = RetryPolicy();
@@ -281,20 +281,20 @@ class OpenAIConfig {
 
   @override
   int get hashCode => Object.hash(
-    authProvider,
-    baseUrl,
-    timeout,
-    connectTimeout,
-    retryPolicy,
-    logLevel,
-    // Use order-insensitive hash to match order-insensitive equality
-    Object.hashAllUnordered(
-      defaultHeaders.entries.map((e) => Object.hash(e.key, e.value)),
-    ),
-    apiVersion,
-    organization,
-    project,
-  );
+        authProvider,
+        baseUrl,
+        timeout,
+        connectTimeout,
+        retryPolicy,
+        logLevel,
+        // Use order-insensitive hash to match order-insensitive equality
+        Object.hashAllUnordered(
+          defaultHeaders.entries.map((e) => Object.hash(e.key, e.value)),
+        ),
+        apiVersion,
+        organization,
+        project,
+      );
 
   bool _mapEquals(Map<String, String> a, Map<String, String> b) {
     if (a.length != b.length) return false;

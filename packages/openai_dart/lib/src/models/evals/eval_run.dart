@@ -126,25 +126,24 @@ class EvalRun {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'eval_id': evalId,
-    'created_at': createdAt,
-    'name': name,
-    'status': status.toJson(),
-    'model': model,
-    'object': object,
-    'data_source': dataSource.toJson(),
-    if (error != null) 'error': error!.toJson(),
-    if (resultCounts != null) 'result_counts': resultCounts!.toJson(),
-    if (perModelUsage != null)
-      'per_model_usage': perModelUsage!.map((u) => u.toJson()).toList(),
-    if (perTestingCriteriaResults != null)
-      'per_testing_criteria_results': perTestingCriteriaResults!
-          .map((r) => r.toJson())
-          .toList(),
-    if (reportUrl != null) 'report_url': reportUrl,
-    if (metadata != null) 'metadata': metadata,
-  };
+        'id': id,
+        'eval_id': evalId,
+        'created_at': createdAt,
+        'name': name,
+        'status': status.toJson(),
+        'model': model,
+        'object': object,
+        'data_source': dataSource.toJson(),
+        if (error != null) 'error': error!.toJson(),
+        if (resultCounts != null) 'result_counts': resultCounts!.toJson(),
+        if (perModelUsage != null)
+          'per_model_usage': perModelUsage!.map((u) => u.toJson()).toList(),
+        if (perTestingCriteriaResults != null)
+          'per_testing_criteria_results':
+              perTestingCriteriaResults!.map((r) => r.toJson()).toList(),
+        if (reportUrl != null) 'report_url': reportUrl,
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -200,12 +199,12 @@ class EvalRunList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((r) => r.toJson()).toList(),
-    'has_more': hasMore,
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-  };
+        'object': object,
+        'data': data.map((r) => r.toJson()).toList(),
+        'has_more': hasMore,
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -253,10 +252,10 @@ class CreateEvalRunRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'data_source': dataSource.toJson(),
-    if (name != null) 'name': name,
-    if (metadata != null) 'metadata': metadata,
-  };
+        'data_source': dataSource.toJson(),
+        if (name != null) 'name': name,
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -300,10 +299,10 @@ class DeleteEvalRunResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'run_id': runId,
-    if (object != null) 'object': object,
-    'deleted': deleted,
-  };
+        'run_id': runId,
+        if (object != null) 'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -391,11 +390,11 @@ class EvalRunResultCounts {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'total': total,
-    'passed': passed,
-    'failed': failed,
-    'errored': errored,
-  };
+        'total': total,
+        'passed': passed,
+        'failed': failed,
+        'errored': errored,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -457,13 +456,13 @@ class EvalRunPerModelUsage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model_name': modelName,
-    'prompt_tokens': promptTokens,
-    'completion_tokens': completionTokens,
-    'total_tokens': totalTokens,
-    if (cachedTokens != null) 'cached_tokens': cachedTokens,
-    if (invocationCount != null) 'invocation_count': invocationCount,
-  };
+        'model_name': modelName,
+        'prompt_tokens': promptTokens,
+        'completion_tokens': completionTokens,
+        'total_tokens': totalTokens,
+        if (cachedTokens != null) 'cached_tokens': cachedTokens,
+        if (invocationCount != null) 'invocation_count': invocationCount,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -516,10 +515,10 @@ class EvalRunPerTestingCriteriaResult {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'testing_criteria': testingCriteria,
-    'passed': passed,
-    'failed': failed,
-  };
+        'testing_criteria': testingCriteria,
+        'passed': passed,
+        'failed': failed,
+      };
 
   @override
   bool operator ==(Object other) =>

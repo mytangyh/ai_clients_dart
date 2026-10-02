@@ -61,37 +61,37 @@ class ChatRequest {
 
   /// Creates a [ChatRequest] from JSON.
   factory ChatRequest.fromJson(Map<String, dynamic> json) => ChatRequest(
-    model: json['model'] as String,
-    messages: (json['messages'] as List)
-        .map((e) => ChatMessage.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    tools: (json['tools'] as List?)
-        ?.map((e) => ToolDefinition.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    format: ResponseFormat.fromJson(json['format']),
-    options: json['options'] != null
-        ? ModelOptions.fromJson(json['options'] as Map<String, dynamic>)
-        : null,
-    stream: json['stream'] as bool?,
-    think: ThinkValue.fromJson(json['think']),
-    keepAlive: json['keep_alive'],
-    logprobs: json['logprobs'] as bool?,
-    topLogprobs: json['top_logprobs'] as int?,
-  );
+        model: json['model'] as String,
+        messages: (json['messages'] as List)
+            .map((e) => ChatMessage.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        tools: (json['tools'] as List?)
+            ?.map((e) => ToolDefinition.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        format: ResponseFormat.fromJson(json['format']),
+        options: json['options'] != null
+            ? ModelOptions.fromJson(json['options'] as Map<String, dynamic>)
+            : null,
+        stream: json['stream'] as bool?,
+        think: ThinkValue.fromJson(json['think']),
+        keepAlive: json['keep_alive'],
+        logprobs: json['logprobs'] as bool?,
+        topLogprobs: json['top_logprobs'] as int?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'messages': messages.map((e) => e.toJson()).toList(),
-    if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
-    if (format != null) 'format': format!.toJson(),
-    if (options != null) 'options': options!.toJson(),
-    if (stream != null) 'stream': stream,
-    if (think != null) 'think': think!.toJson(),
-    if (keepAlive != null) 'keep_alive': keepAlive,
-    if (logprobs != null) 'logprobs': logprobs,
-    if (topLogprobs != null) 'top_logprobs': topLogprobs,
-  };
+        'model': model,
+        'messages': messages.map((e) => e.toJson()).toList(),
+        if (tools != null) 'tools': tools!.map((e) => e.toJson()).toList(),
+        if (format != null) 'format': format!.toJson(),
+        if (options != null) 'options': options!.toJson(),
+        if (stream != null) 'stream': stream,
+        if (think != null) 'think': think!.toJson(),
+        if (keepAlive != null) 'keep_alive': keepAlive,
+        if (logprobs != null) 'logprobs': logprobs,
+        if (topLogprobs != null) 'top_logprobs': topLogprobs,
+      };
 
   /// Creates a copy with replaced values.
   ChatRequest copyWith({
@@ -121,9 +121,8 @@ class ChatRequest {
       stream: stream == unsetCopyWithValue ? this.stream : stream as bool?,
       think: think == unsetCopyWithValue ? this.think : think as ThinkValue?,
       keepAlive: keepAlive == unsetCopyWithValue ? this.keepAlive : keepAlive,
-      logprobs: logprobs == unsetCopyWithValue
-          ? this.logprobs
-          : logprobs as bool?,
+      logprobs:
+          logprobs == unsetCopyWithValue ? this.logprobs : logprobs as bool?,
       topLogprobs: topLogprobs == unsetCopyWithValue
           ? this.topLogprobs
           : topLogprobs as int?,

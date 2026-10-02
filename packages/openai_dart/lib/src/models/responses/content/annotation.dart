@@ -59,12 +59,12 @@ class UrlCitation extends Annotation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'url_citation',
-    'start_index': startIndex,
-    'end_index': endIndex,
-    'url': url,
-    'title': title,
-  };
+        'type': 'url_citation',
+        'start_index': startIndex,
+        'end_index': endIndex,
+        'url': url,
+        'title': title,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -114,11 +114,11 @@ class FileCitation extends Annotation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'file_citation',
-    'index': index,
-    'file_id': fileId,
-    'filename': filename,
-  };
+        'type': 'file_citation',
+        'index': index,
+        'file_id': fileId,
+        'filename': filename,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -177,13 +177,13 @@ class ContainerFileCitation extends Annotation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'container_file_citation',
-    'container_id': containerId,
-    'file_id': fileId,
-    'start_index': startIndex,
-    'end_index': endIndex,
-    'filename': filename,
-  };
+        'type': 'container_file_citation',
+        'container_id': containerId,
+        'file_id': fileId,
+        'start_index': startIndex,
+        'end_index': endIndex,
+        'filename': filename,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -235,11 +235,11 @@ class FilePathAnnotation extends Annotation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'file_path',
-    'start_index': startIndex,
-    'end_index': endIndex,
-    'file_path': filePath,
-  };
+        'type': 'file_path',
+        'start_index': startIndex,
+        'end_index': endIndex,
+        'file_path': filePath,
+      };
 
   @override
   bool operator ==(Object other) =>

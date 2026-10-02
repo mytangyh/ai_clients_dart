@@ -63,11 +63,11 @@ class EmbeddingResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-    'model': model,
-    if (usage != null) 'usage': usage!.toJson(),
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+        'model': model,
+        if (usage != null) 'usage': usage!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -125,10 +125,10 @@ class Embedding {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'embedding': embedding,
-    'index': index,
-  };
+        'object': object,
+        'embedding': embedding,
+        'index': index,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -167,9 +167,9 @@ class EmbeddingUsage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'prompt_tokens': promptTokens,
-    'total_tokens': totalTokens,
-  };
+        'prompt_tokens': promptTokens,
+        'total_tokens': totalTokens,
+      };
 
   @override
   bool operator ==(Object other) =>

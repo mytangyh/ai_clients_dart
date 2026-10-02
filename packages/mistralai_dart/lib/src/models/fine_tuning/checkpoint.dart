@@ -33,25 +33,25 @@ class Checkpoint {
 
   /// Creates a [Checkpoint] from JSON.
   factory Checkpoint.fromJson(Map<String, dynamic> json) => Checkpoint(
-    name: json['name'] as String? ?? '',
-    stepNumber: json['step_number'] as int? ?? 0,
-    trainingLoss: (json['training_loss'] as num?)?.toDouble(),
-    validationLoss: (json['validation_loss'] as num?)?.toDouble(),
-    metrics: (json['metrics'] as num?)?.toDouble(),
-    createdAt: json['created_at'] != null
-        ? DateTime.tryParse(json['created_at'] as String)
-        : null,
-  );
+        name: json['name'] as String? ?? '',
+        stepNumber: json['step_number'] as int? ?? 0,
+        trainingLoss: (json['training_loss'] as num?)?.toDouble(),
+        validationLoss: (json['validation_loss'] as num?)?.toDouble(),
+        metrics: (json['metrics'] as num?)?.toDouble(),
+        createdAt: json['created_at'] != null
+            ? DateTime.tryParse(json['created_at'] as String)
+            : null,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'step_number': stepNumber,
-    if (trainingLoss != null) 'training_loss': trainingLoss,
-    if (validationLoss != null) 'validation_loss': validationLoss,
-    if (metrics != null) 'metrics': metrics,
-    if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
-  };
+        'name': name,
+        'step_number': stepNumber,
+        if (trainingLoss != null) 'training_loss': trainingLoss,
+        if (validationLoss != null) 'validation_loss': validationLoss,
+        if (metrics != null) 'metrics': metrics,
+        if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
+      };
 
   @override
   bool operator ==(Object other) =>

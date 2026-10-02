@@ -210,9 +210,8 @@ class MessageBatchesResource extends ResourceBase {
     }
 
     // Parse JSONL stream
-    final lineStream = response.stream
-        .transform(utf8.decoder)
-        .transform(const LineSplitter());
+    final lineStream =
+        response.stream.transform(utf8.decoder).transform(const LineSplitter());
 
     await for (final line in lineStream) {
       if (line.trim().isEmpty) continue;

@@ -23,8 +23,8 @@ sealed class ContentBlock {
       'web_search_tool_result' => WebSearchToolResultBlock.fromJson(json),
       'web_fetch_tool_result' => WebFetchToolResultBlock.fromJson(json),
       'code_execution_tool_result' => CodeExecutionToolResultBlock.fromJson(
-        json,
-      ),
+          json,
+        ),
       'bash_code_execution_tool_result' =>
         BashCodeExecutionToolResultBlock.fromJson(json),
       'text_editor_code_execution_tool_result' =>
@@ -64,11 +64,11 @@ class TextBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'text',
-    'text': text,
-    if (citations != null)
-      'citations': citations!.map((e) => e.toJson()).toList(),
-  };
+        'type': 'text',
+        'text': text,
+        if (citations != null)
+          'citations': citations!.map((e) => e.toJson()).toList(),
+      };
 
   /// Creates a copy with replaced values.
   TextBlock copyWith({String? text, Object? citations = unsetCopyWithValue}) {
@@ -118,10 +118,10 @@ class ThinkingBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'thinking',
-    'thinking': thinking,
-    'signature': signature,
-  };
+        'type': 'thinking',
+        'thinking': thinking,
+        'signature': signature,
+      };
 
   /// Creates a copy with replaced values.
   ThinkingBlock copyWith({String? thinking, String? signature}) {
@@ -143,8 +143,7 @@ class ThinkingBlock extends ContentBlock {
   int get hashCode => Object.hash(thinking, signature);
 
   @override
-  String toString() =>
-      'ThinkingBlock(thinking: [${thinking.length} chars], '
+  String toString() => 'ThinkingBlock(thinking: [${thinking.length} chars], '
       'signature: [${signature.length} chars])';
 }
 
@@ -221,12 +220,12 @@ class ToolUseBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_use',
-    'id': id,
-    'name': name,
-    'input': input,
-    if (caller != null) 'caller': caller!.toJson(),
-  };
+        'type': 'tool_use',
+        'id': id,
+        'name': name,
+        'input': input,
+        if (caller != null) 'caller': caller!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ToolUseBlock copyWith({
@@ -239,9 +238,8 @@ class ToolUseBlock extends ContentBlock {
       id: id ?? this.id,
       name: name ?? this.name,
       input: input ?? this.input,
-      caller: caller == unsetCopyWithValue
-          ? this.caller
-          : caller as ToolCaller?,
+      caller:
+          caller == unsetCopyWithValue ? this.caller : caller as ToolCaller?,
     );
   }
 
@@ -300,12 +298,12 @@ class ServerToolUseBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'server_tool_use',
-    'id': id,
-    'name': name,
-    'input': input,
-    if (caller != null) 'caller': caller!.toJson(),
-  };
+        'type': 'server_tool_use',
+        'id': id,
+        'name': name,
+        'input': input,
+        if (caller != null) 'caller': caller!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ServerToolUseBlock copyWith({
@@ -318,9 +316,8 @@ class ServerToolUseBlock extends ContentBlock {
       id: id ?? this.id,
       name: name ?? this.name,
       input: input ?? this.input,
-      caller: caller == unsetCopyWithValue
-          ? this.caller
-          : caller as ToolCaller?,
+      caller:
+          caller == unsetCopyWithValue ? this.caller : caller as ToolCaller?,
     );
   }
 
@@ -375,11 +372,11 @@ class WebSearchToolResultBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'web_search_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content.toJson(),
-    if (caller != null) 'caller': caller!.toJson(),
-  };
+        'type': 'web_search_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content.toJson(),
+        if (caller != null) 'caller': caller!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   WebSearchToolResultBlock copyWith({
@@ -390,9 +387,8 @@ class WebSearchToolResultBlock extends ContentBlock {
     return WebSearchToolResultBlock(
       toolUseId: toolUseId ?? this.toolUseId,
       content: content ?? this.content,
-      caller: caller == unsetCopyWithValue
-          ? this.caller
-          : caller as ToolCaller?,
+      caller:
+          caller == unsetCopyWithValue ? this.caller : caller as ToolCaller?,
     );
   }
 
@@ -446,11 +442,11 @@ class WebFetchToolResultBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'web_fetch_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-    if (caller != null) 'caller': caller!.toJson(),
-  };
+        'type': 'web_fetch_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+        if (caller != null) 'caller': caller!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   WebFetchToolResultBlock copyWith({
@@ -461,9 +457,8 @@ class WebFetchToolResultBlock extends ContentBlock {
     return WebFetchToolResultBlock(
       toolUseId: toolUseId ?? this.toolUseId,
       content: content ?? this.content,
-      caller: caller == unsetCopyWithValue
-          ? this.caller
-          : caller as ToolCaller?,
+      caller:
+          caller == unsetCopyWithValue ? this.caller : caller as ToolCaller?,
     );
   }
 
@@ -510,10 +505,10 @@ class CodeExecutionToolResultBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'code_execution_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-  };
+        'type': 'code_execution_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+      };
 
   /// Creates a copy with replaced values.
   CodeExecutionToolResultBlock copyWith({
@@ -567,10 +562,10 @@ class BashCodeExecutionToolResultBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'bash_code_execution_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-  };
+        'type': 'bash_code_execution_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+      };
 
   /// Creates a copy with replaced values.
   BashCodeExecutionToolResultBlock copyWith({
@@ -627,10 +622,10 @@ class TextEditorCodeExecutionToolResultBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'text_editor_code_execution_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-  };
+        'type': 'text_editor_code_execution_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+      };
 
   /// Creates a copy with replaced values.
   TextEditorCodeExecutionToolResultBlock copyWith({
@@ -685,10 +680,10 @@ class ToolSearchToolResultBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool_search_tool_result',
-    'tool_use_id': toolUseId,
-    'content': content,
-  };
+        'type': 'tool_search_tool_result',
+        'tool_use_id': toolUseId,
+        'content': content,
+      };
 
   /// Creates a copy with replaced values.
   ToolSearchToolResultBlock copyWith({
@@ -733,9 +728,9 @@ class ContainerUploadBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'container_upload',
-    'file_id': fileId,
-  };
+        'type': 'container_upload',
+        'file_id': fileId,
+      };
 
   /// Creates a copy with replaced values.
   ContainerUploadBlock copyWith({String? fileId}) {
@@ -781,9 +776,8 @@ class CompactionBlock extends ContentBlock {
   /// Creates a copy with replaced values.
   CompactionBlock copyWith({Object? content = unsetCopyWithValue}) {
     return CompactionBlock(
-      content: content == unsetCopyWithValue
-          ? this.content
-          : content as String?,
+      content:
+          content == unsetCopyWithValue ? this.content : content as String?,
     );
   }
 
@@ -907,12 +901,12 @@ class WebSearchResultItem {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': 'web_search_result',
-    'url': url,
-    'title': title,
-    if (encryptedContent != null) 'encrypted_content': encryptedContent,
-    if (pageAge != null) 'page_age': pageAge,
-  };
+        'type': 'web_search_result',
+        'url': url,
+        'title': title,
+        if (encryptedContent != null) 'encrypted_content': encryptedContent,
+        if (pageAge != null) 'page_age': pageAge,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -928,8 +922,7 @@ class WebSearchResultItem {
   int get hashCode => Object.hash(url, title, encryptedContent, pageAge);
 
   @override
-  String toString() =>
-      'WebSearchResultItem(url: $url, title: $title, '
+  String toString() => 'WebSearchResultItem(url: $url, title: $title, '
       'encryptedContent: $encryptedContent, pageAge: $pageAge)';
 }
 
@@ -949,9 +942,9 @@ class WebSearchResultError extends WebSearchResult {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'web_search_tool_result_error',
-    'error_code': errorCode,
-  };
+        'type': 'web_search_tool_result_error',
+        'error_code': errorCode,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -979,8 +972,8 @@ sealed class Citation {
       'page_location' => PageLocationCitation.fromJson(json),
       'content_block_location' => ContentBlockLocationCitation.fromJson(json),
       'web_search_result_location' => WebSearchResultLocationCitation.fromJson(
-        json,
-      ),
+          json,
+        ),
       _ => throw FormatException('Unknown Citation type: $type'),
     };
   }
@@ -1029,13 +1022,13 @@ class CharLocationCitation extends Citation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'char_location',
-    'cited_text': citedText,
-    'document_index': documentIndex,
-    if (documentTitle != null) 'document_title': documentTitle,
-    'start_char_index': startCharIndex,
-    'end_char_index': endCharIndex,
-  };
+        'type': 'char_location',
+        'cited_text': citedText,
+        'document_index': documentIndex,
+        if (documentTitle != null) 'document_title': documentTitle,
+        'start_char_index': startCharIndex,
+        'end_char_index': endCharIndex,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1050,12 +1043,12 @@ class CharLocationCitation extends Citation {
 
   @override
   int get hashCode => Object.hash(
-    citedText,
-    documentIndex,
-    documentTitle,
-    startCharIndex,
-    endCharIndex,
-  );
+        citedText,
+        documentIndex,
+        documentTitle,
+        startCharIndex,
+        endCharIndex,
+      );
 
   @override
   String toString() =>
@@ -1104,13 +1097,13 @@ class PageLocationCitation extends Citation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'page_location',
-    'cited_text': citedText,
-    'document_index': documentIndex,
-    if (documentTitle != null) 'document_title': documentTitle,
-    'start_page_number': startPageNumber,
-    'end_page_number': endPageNumber,
-  };
+        'type': 'page_location',
+        'cited_text': citedText,
+        'document_index': documentIndex,
+        if (documentTitle != null) 'document_title': documentTitle,
+        'start_page_number': startPageNumber,
+        'end_page_number': endPageNumber,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1125,12 +1118,12 @@ class PageLocationCitation extends Citation {
 
   @override
   int get hashCode => Object.hash(
-    citedText,
-    documentIndex,
-    documentTitle,
-    startPageNumber,
-    endPageNumber,
-  );
+        citedText,
+        documentIndex,
+        documentTitle,
+        startPageNumber,
+        endPageNumber,
+      );
 
   @override
   String toString() =>
@@ -1179,13 +1172,13 @@ class ContentBlockLocationCitation extends Citation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'content_block_location',
-    'cited_text': citedText,
-    'document_index': documentIndex,
-    if (documentTitle != null) 'document_title': documentTitle,
-    'start_block_index': startBlockIndex,
-    'end_block_index': endBlockIndex,
-  };
+        'type': 'content_block_location',
+        'cited_text': citedText,
+        'document_index': documentIndex,
+        if (documentTitle != null) 'document_title': documentTitle,
+        'start_block_index': startBlockIndex,
+        'end_block_index': endBlockIndex,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1200,12 +1193,12 @@ class ContentBlockLocationCitation extends Citation {
 
   @override
   int get hashCode => Object.hash(
-    citedText,
-    documentIndex,
-    documentTitle,
-    startBlockIndex,
-    endBlockIndex,
-  );
+        citedText,
+        documentIndex,
+        documentTitle,
+        startBlockIndex,
+        endBlockIndex,
+      );
 
   @override
   String toString() =>
@@ -1249,12 +1242,12 @@ class WebSearchResultLocationCitation extends Citation {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'web_search_result_location',
-    'cited_text': citedText,
-    'encrypted_index': encryptedIndex,
-    if (title != null) 'title': title,
-    if (url != null) 'url': url,
-  };
+        'type': 'web_search_result_location',
+        'cited_text': citedText,
+        'encrypted_index': encryptedIndex,
+        if (title != null) 'title': title,
+        if (url != null) 'url': url,
+      };
 
   @override
   bool operator ==(Object other) =>

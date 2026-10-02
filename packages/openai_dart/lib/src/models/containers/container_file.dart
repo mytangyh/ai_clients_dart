@@ -66,14 +66,14 @@ class ContainerFile {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'container_id': containerId,
-    'created_at': createdAt,
-    if (bytes != null) 'bytes': bytes,
-    'path': path,
-    if (source != null) 'source': source,
-  };
+        'id': id,
+        'object': object,
+        'container_id': containerId,
+        'created_at': createdAt,
+        if (bytes != null) 'bytes': bytes,
+        'path': path,
+        if (source != null) 'source': source,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -140,12 +140,12 @@ class ContainerFileList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((f) => f.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((f) => f.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -192,10 +192,10 @@ class DeleteContainerFileResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -39,8 +39,7 @@ class CreateBatchJobRequest {
   /// Creates a [CreateBatchJobRequest] from JSON.
   factory CreateBatchJobRequest.fromJson(Map<String, dynamic> json) =>
       CreateBatchJobRequest(
-        inputFileId:
-            json['input_files'] as String? ??
+        inputFileId: json['input_files'] as String? ??
             json['input_file_id'] as String? ??
             '',
         endpoint: json['endpoint'] as String? ?? '',
@@ -51,12 +50,12 @@ class CreateBatchJobRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'input_files': inputFileId,
-    'endpoint': endpoint,
-    'model': model,
-    if (metadata != null) 'metadata': metadata,
-    if (timeoutHours != null) 'timeout_hours': timeoutHours,
-  };
+        'input_files': inputFileId,
+        'endpoint': endpoint,
+        'model': model,
+        if (metadata != null) 'metadata': metadata,
+        if (timeoutHours != null) 'timeout_hours': timeoutHours,
+      };
 
   /// Creates a copy with the specified fields replaced.
   CreateBatchJobRequest copyWith({
@@ -65,13 +64,14 @@ class CreateBatchJobRequest {
     String? model,
     Map<String, dynamic>? metadata,
     int? timeoutHours,
-  }) => CreateBatchJobRequest(
-    inputFileId: inputFileId ?? this.inputFileId,
-    endpoint: endpoint ?? this.endpoint,
-    model: model ?? this.model,
-    metadata: metadata ?? this.metadata,
-    timeoutHours: timeoutHours ?? this.timeoutHours,
-  );
+  }) =>
+      CreateBatchJobRequest(
+        inputFileId: inputFileId ?? this.inputFileId,
+        endpoint: endpoint ?? this.endpoint,
+        model: model ?? this.model,
+        metadata: metadata ?? this.metadata,
+        timeoutHours: timeoutHours ?? this.timeoutHours,
+      );
 
   @override
   bool operator ==(Object other) =>

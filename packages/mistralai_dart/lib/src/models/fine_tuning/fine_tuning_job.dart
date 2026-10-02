@@ -88,89 +88,86 @@ class FineTuningJob {
 
   /// Creates a [FineTuningJob] from JSON.
   factory FineTuningJob.fromJson(Map<String, dynamic> json) => FineTuningJob(
-    id: json['id'] as String? ?? '',
-    object: json['object'] as String? ?? 'fine_tuning.job',
-    model: json['model'] as String? ?? '',
-    fineTunedModel: json['fine_tuned_model'] as String?,
-    status: FineTuningJobStatus.fromString(
-      json['status'] as String? ?? 'QUEUED',
-    ),
-    hyperparameters: json['hyperparameters'] != null
-        ? Hyperparameters.fromJson(
-            json['hyperparameters'] as Map<String, dynamic>,
-          )
-        : null,
-    trainingFiles:
-        (json['training_files'] as List?)
-            ?.map((e) => TrainingFile.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-    validationFiles:
-        (json['validation_files'] as List?)
-            ?.map((e) => TrainingFile.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-    integrations:
-        (json['integrations'] as List?)
-            ?.map(
-              (e) => FineTuningIntegration.fromJson(e as Map<String, dynamic>),
-            )
-            .toList() ??
-        [],
-    events:
-        (json['events'] as List?)
-            ?.map((e) => TrainingEvent.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-    checkpoints:
-        (json['checkpoints'] as List?)
-            ?.map((e) => Checkpoint.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-    suffix: json['suffix'] as String?,
-    metadata: json['metadata'] as Map<String, dynamic>?,
-    createdAt: json['created_at'] != null
-        ? DateTime.tryParse(json['created_at'].toString()) ??
-              (json['created_at'] is int
-                  ? DateTime.fromMillisecondsSinceEpoch(
-                      (json['created_at'] as int) * 1000,
-                    )
-                  : null)
-        : null,
-    modifiedAt: json['modified_at'] != null
-        ? DateTime.tryParse(json['modified_at'].toString()) ??
-              (json['modified_at'] is int
-                  ? DateTime.fromMillisecondsSinceEpoch(
-                      (json['modified_at'] as int) * 1000,
-                    )
-                  : null)
-        : null,
-    autoStart: json['auto_start'] as bool?,
-    trainedTokens: json['trained_tokens'] as int?,
-    totalTokens: json['total_tokens'] as int?,
-  );
+        id: json['id'] as String? ?? '',
+        object: json['object'] as String? ?? 'fine_tuning.job',
+        model: json['model'] as String? ?? '',
+        fineTunedModel: json['fine_tuned_model'] as String?,
+        status: FineTuningJobStatus.fromString(
+          json['status'] as String? ?? 'QUEUED',
+        ),
+        hyperparameters: json['hyperparameters'] != null
+            ? Hyperparameters.fromJson(
+                json['hyperparameters'] as Map<String, dynamic>,
+              )
+            : null,
+        trainingFiles: (json['training_files'] as List?)
+                ?.map((e) => TrainingFile.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+        validationFiles: (json['validation_files'] as List?)
+                ?.map((e) => TrainingFile.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+        integrations: (json['integrations'] as List?)
+                ?.map(
+                  (e) =>
+                      FineTuningIntegration.fromJson(e as Map<String, dynamic>),
+                )
+                .toList() ??
+            [],
+        events: (json['events'] as List?)
+                ?.map((e) => TrainingEvent.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+        checkpoints: (json['checkpoints'] as List?)
+                ?.map((e) => Checkpoint.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+        suffix: json['suffix'] as String?,
+        metadata: json['metadata'] as Map<String, dynamic>?,
+        createdAt: json['created_at'] != null
+            ? DateTime.tryParse(json['created_at'].toString()) ??
+                (json['created_at'] is int
+                    ? DateTime.fromMillisecondsSinceEpoch(
+                        (json['created_at'] as int) * 1000,
+                      )
+                    : null)
+            : null,
+        modifiedAt: json['modified_at'] != null
+            ? DateTime.tryParse(json['modified_at'].toString()) ??
+                (json['modified_at'] is int
+                    ? DateTime.fromMillisecondsSinceEpoch(
+                        (json['modified_at'] as int) * 1000,
+                      )
+                    : null)
+            : null,
+        autoStart: json['auto_start'] as bool?,
+        trainedTokens: json['trained_tokens'] as int?,
+        totalTokens: json['total_tokens'] as int?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'model': model,
-    if (fineTunedModel != null) 'fine_tuned_model': fineTunedModel,
-    'status': status.value,
-    if (hyperparameters != null) 'hyperparameters': hyperparameters!.toJson(),
-    'training_files': trainingFiles.map((e) => e.toJson()).toList(),
-    'validation_files': validationFiles.map((e) => e.toJson()).toList(),
-    'integrations': integrations.map((e) => e.toJson()).toList(),
-    'events': events.map((e) => e.toJson()).toList(),
-    'checkpoints': checkpoints.map((e) => e.toJson()).toList(),
-    if (suffix != null) 'suffix': suffix,
-    if (metadata != null) 'metadata': metadata,
-    if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
-    if (modifiedAt != null) 'modified_at': modifiedAt!.toIso8601String(),
-    if (autoStart != null) 'auto_start': autoStart,
-    if (trainedTokens != null) 'trained_tokens': trainedTokens,
-    if (totalTokens != null) 'total_tokens': totalTokens,
-  };
+        'id': id,
+        'object': object,
+        'model': model,
+        if (fineTunedModel != null) 'fine_tuned_model': fineTunedModel,
+        'status': status.value,
+        if (hyperparameters != null)
+          'hyperparameters': hyperparameters!.toJson(),
+        'training_files': trainingFiles.map((e) => e.toJson()).toList(),
+        'validation_files': validationFiles.map((e) => e.toJson()).toList(),
+        'integrations': integrations.map((e) => e.toJson()).toList(),
+        'events': events.map((e) => e.toJson()).toList(),
+        'checkpoints': checkpoints.map((e) => e.toJson()).toList(),
+        if (suffix != null) 'suffix': suffix,
+        if (metadata != null) 'metadata': metadata,
+        if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
+        if (modifiedAt != null) 'modified_at': modifiedAt!.toIso8601String(),
+        if (autoStart != null) 'auto_start': autoStart,
+        if (trainedTokens != null) 'trained_tokens': trainedTokens,
+        if (totalTokens != null) 'total_tokens': totalTokens,
+      };
 
   /// Whether the job is still running.
   bool get isRunning =>

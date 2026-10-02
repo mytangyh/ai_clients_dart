@@ -161,79 +161,79 @@ class ModelOptions {
 
   /// Creates a [ModelOptions] from JSON.
   factory ModelOptions.fromJson(Map<String, dynamic> json) => ModelOptions(
-    // Sampling
-    seed: json['seed'] as int?,
-    temperature: (json['temperature'] as num?)?.toDouble(),
-    topK: json['top_k'] as int?,
-    topP: (json['top_p'] as num?)?.toDouble(),
-    minP: (json['min_p'] as num?)?.toDouble(),
-    tfsZ: (json['tfs_z'] as num?)?.toDouble(),
-    typicalP: (json['typical_p'] as num?)?.toDouble(),
-    repeatLastN: json['repeat_last_n'] as int?,
-    repeatPenalty: (json['repeat_penalty'] as num?)?.toDouble(),
-    presencePenalty: (json['presence_penalty'] as num?)?.toDouble(),
-    frequencyPenalty: (json['frequency_penalty'] as num?)?.toDouble(),
-    mirostat: json['mirostat'] as int?,
-    mirostatTau: (json['mirostat_tau'] as num?)?.toDouble(),
-    mirostatEta: (json['mirostat_eta'] as num?)?.toDouble(),
-    penalizeNewline: json['penalize_newline'] as bool?,
-    stop: json['stop'],
-    // Context and output
-    numCtx: json['num_ctx'] as int?,
-    numPredict: json['num_predict'] as int?,
-    numKeep: json['num_keep'] as int?,
-    // Runtime and GPU
-    numa: json['numa'] as bool?,
-    numBatch: json['num_batch'] as int?,
-    numGpu: json['num_gpu'] as int?,
-    mainGpu: json['main_gpu'] as int?,
-    lowVram: json['low_vram'] as bool?,
-    numThread: json['num_thread'] as int?,
-    // Memory and loading
-    f16Kv: json['f16_kv'] as bool?,
-    logitsAll: json['logits_all'] as bool?,
-    vocabOnly: json['vocab_only'] as bool?,
-    useMmap: json['use_mmap'] as bool?,
-    useMlock: json['use_mlock'] as bool?,
-  );
+        // Sampling
+        seed: json['seed'] as int?,
+        temperature: (json['temperature'] as num?)?.toDouble(),
+        topK: json['top_k'] as int?,
+        topP: (json['top_p'] as num?)?.toDouble(),
+        minP: (json['min_p'] as num?)?.toDouble(),
+        tfsZ: (json['tfs_z'] as num?)?.toDouble(),
+        typicalP: (json['typical_p'] as num?)?.toDouble(),
+        repeatLastN: json['repeat_last_n'] as int?,
+        repeatPenalty: (json['repeat_penalty'] as num?)?.toDouble(),
+        presencePenalty: (json['presence_penalty'] as num?)?.toDouble(),
+        frequencyPenalty: (json['frequency_penalty'] as num?)?.toDouble(),
+        mirostat: json['mirostat'] as int?,
+        mirostatTau: (json['mirostat_tau'] as num?)?.toDouble(),
+        mirostatEta: (json['mirostat_eta'] as num?)?.toDouble(),
+        penalizeNewline: json['penalize_newline'] as bool?,
+        stop: json['stop'],
+        // Context and output
+        numCtx: json['num_ctx'] as int?,
+        numPredict: json['num_predict'] as int?,
+        numKeep: json['num_keep'] as int?,
+        // Runtime and GPU
+        numa: json['numa'] as bool?,
+        numBatch: json['num_batch'] as int?,
+        numGpu: json['num_gpu'] as int?,
+        mainGpu: json['main_gpu'] as int?,
+        lowVram: json['low_vram'] as bool?,
+        numThread: json['num_thread'] as int?,
+        // Memory and loading
+        f16Kv: json['f16_kv'] as bool?,
+        logitsAll: json['logits_all'] as bool?,
+        vocabOnly: json['vocab_only'] as bool?,
+        useMmap: json['use_mmap'] as bool?,
+        useMlock: json['use_mlock'] as bool?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    // Sampling
-    if (seed != null) 'seed': seed,
-    if (temperature != null) 'temperature': temperature,
-    if (topK != null) 'top_k': topK,
-    if (topP != null) 'top_p': topP,
-    if (minP != null) 'min_p': minP,
-    if (tfsZ != null) 'tfs_z': tfsZ,
-    if (typicalP != null) 'typical_p': typicalP,
-    if (repeatLastN != null) 'repeat_last_n': repeatLastN,
-    if (repeatPenalty != null) 'repeat_penalty': repeatPenalty,
-    if (presencePenalty != null) 'presence_penalty': presencePenalty,
-    if (frequencyPenalty != null) 'frequency_penalty': frequencyPenalty,
-    if (mirostat != null) 'mirostat': mirostat,
-    if (mirostatTau != null) 'mirostat_tau': mirostatTau,
-    if (mirostatEta != null) 'mirostat_eta': mirostatEta,
-    if (penalizeNewline != null) 'penalize_newline': penalizeNewline,
-    if (stop != null) 'stop': stop,
-    // Context and output
-    if (numCtx != null) 'num_ctx': numCtx,
-    if (numPredict != null) 'num_predict': numPredict,
-    if (numKeep != null) 'num_keep': numKeep,
-    // Runtime and GPU
-    if (numa != null) 'numa': numa,
-    if (numBatch != null) 'num_batch': numBatch,
-    if (numGpu != null) 'num_gpu': numGpu,
-    if (mainGpu != null) 'main_gpu': mainGpu,
-    if (lowVram != null) 'low_vram': lowVram,
-    if (numThread != null) 'num_thread': numThread,
-    // Memory and loading
-    if (f16Kv != null) 'f16_kv': f16Kv,
-    if (logitsAll != null) 'logits_all': logitsAll,
-    if (vocabOnly != null) 'vocab_only': vocabOnly,
-    if (useMmap != null) 'use_mmap': useMmap,
-    if (useMlock != null) 'use_mlock': useMlock,
-  };
+        // Sampling
+        if (seed != null) 'seed': seed,
+        if (temperature != null) 'temperature': temperature,
+        if (topK != null) 'top_k': topK,
+        if (topP != null) 'top_p': topP,
+        if (minP != null) 'min_p': minP,
+        if (tfsZ != null) 'tfs_z': tfsZ,
+        if (typicalP != null) 'typical_p': typicalP,
+        if (repeatLastN != null) 'repeat_last_n': repeatLastN,
+        if (repeatPenalty != null) 'repeat_penalty': repeatPenalty,
+        if (presencePenalty != null) 'presence_penalty': presencePenalty,
+        if (frequencyPenalty != null) 'frequency_penalty': frequencyPenalty,
+        if (mirostat != null) 'mirostat': mirostat,
+        if (mirostatTau != null) 'mirostat_tau': mirostatTau,
+        if (mirostatEta != null) 'mirostat_eta': mirostatEta,
+        if (penalizeNewline != null) 'penalize_newline': penalizeNewline,
+        if (stop != null) 'stop': stop,
+        // Context and output
+        if (numCtx != null) 'num_ctx': numCtx,
+        if (numPredict != null) 'num_predict': numPredict,
+        if (numKeep != null) 'num_keep': numKeep,
+        // Runtime and GPU
+        if (numa != null) 'numa': numa,
+        if (numBatch != null) 'num_batch': numBatch,
+        if (numGpu != null) 'num_gpu': numGpu,
+        if (mainGpu != null) 'main_gpu': mainGpu,
+        if (lowVram != null) 'low_vram': lowVram,
+        if (numThread != null) 'num_thread': numThread,
+        // Memory and loading
+        if (f16Kv != null) 'f16_kv': f16Kv,
+        if (logitsAll != null) 'logits_all': logitsAll,
+        if (vocabOnly != null) 'vocab_only': vocabOnly,
+        if (useMmap != null) 'use_mmap': useMmap,
+        if (useMlock != null) 'use_mlock': useMlock,
+      };
 
   /// Creates a copy with replaced values.
   ModelOptions copyWith({
@@ -282,9 +282,8 @@ class ModelOptions {
       topP: topP == unsetCopyWithValue ? this.topP : topP as double?,
       minP: minP == unsetCopyWithValue ? this.minP : minP as double?,
       tfsZ: tfsZ == unsetCopyWithValue ? this.tfsZ : tfsZ as double?,
-      typicalP: typicalP == unsetCopyWithValue
-          ? this.typicalP
-          : typicalP as double?,
+      typicalP:
+          typicalP == unsetCopyWithValue ? this.typicalP : typicalP as double?,
       repeatLastN: repeatLastN == unsetCopyWithValue
           ? this.repeatLastN
           : repeatLastN as int?,
@@ -297,9 +296,8 @@ class ModelOptions {
       frequencyPenalty: frequencyPenalty == unsetCopyWithValue
           ? this.frequencyPenalty
           : frequencyPenalty as double?,
-      mirostat: mirostat == unsetCopyWithValue
-          ? this.mirostat
-          : mirostat as int?,
+      mirostat:
+          mirostat == unsetCopyWithValue ? this.mirostat : mirostat as int?,
       mirostatTau: mirostatTau == unsetCopyWithValue
           ? this.mirostatTau
           : mirostatTau as double?,
@@ -318,27 +316,22 @@ class ModelOptions {
       numKeep: numKeep == unsetCopyWithValue ? this.numKeep : numKeep as int?,
       // Runtime and GPU
       numa: numa == unsetCopyWithValue ? this.numa : numa as bool?,
-      numBatch: numBatch == unsetCopyWithValue
-          ? this.numBatch
-          : numBatch as int?,
+      numBatch:
+          numBatch == unsetCopyWithValue ? this.numBatch : numBatch as int?,
       numGpu: numGpu == unsetCopyWithValue ? this.numGpu : numGpu as int?,
       mainGpu: mainGpu == unsetCopyWithValue ? this.mainGpu : mainGpu as int?,
       lowVram: lowVram == unsetCopyWithValue ? this.lowVram : lowVram as bool?,
-      numThread: numThread == unsetCopyWithValue
-          ? this.numThread
-          : numThread as int?,
+      numThread:
+          numThread == unsetCopyWithValue ? this.numThread : numThread as int?,
       // Memory and loading
       f16Kv: f16Kv == unsetCopyWithValue ? this.f16Kv : f16Kv as bool?,
-      logitsAll: logitsAll == unsetCopyWithValue
-          ? this.logitsAll
-          : logitsAll as bool?,
-      vocabOnly: vocabOnly == unsetCopyWithValue
-          ? this.vocabOnly
-          : vocabOnly as bool?,
+      logitsAll:
+          logitsAll == unsetCopyWithValue ? this.logitsAll : logitsAll as bool?,
+      vocabOnly:
+          vocabOnly == unsetCopyWithValue ? this.vocabOnly : vocabOnly as bool?,
       useMmap: useMmap == unsetCopyWithValue ? this.useMmap : useMmap as bool?,
-      useMlock: useMlock == unsetCopyWithValue
-          ? this.useMlock
-          : useMlock as bool?,
+      useMlock:
+          useMlock == unsetCopyWithValue ? this.useMlock : useMlock as bool?,
     );
   }
 
@@ -380,41 +373,40 @@ class ModelOptions {
 
   @override
   int get hashCode => Object.hashAll([
-    seed,
-    temperature,
-    topK,
-    topP,
-    minP,
-    tfsZ,
-    typicalP,
-    repeatLastN,
-    repeatPenalty,
-    presencePenalty,
-    frequencyPenalty,
-    mirostat,
-    mirostatTau,
-    mirostatEta,
-    penalizeNewline,
-    stop,
-    numCtx,
-    numPredict,
-    numKeep,
-    numa,
-    numBatch,
-    numGpu,
-    mainGpu,
-    lowVram,
-    numThread,
-    f16Kv,
-    logitsAll,
-    vocabOnly,
-    useMmap,
-    useMlock,
-  ]);
+        seed,
+        temperature,
+        topK,
+        topP,
+        minP,
+        tfsZ,
+        typicalP,
+        repeatLastN,
+        repeatPenalty,
+        presencePenalty,
+        frequencyPenalty,
+        mirostat,
+        mirostatTau,
+        mirostatEta,
+        penalizeNewline,
+        stop,
+        numCtx,
+        numPredict,
+        numKeep,
+        numa,
+        numBatch,
+        numGpu,
+        mainGpu,
+        lowVram,
+        numThread,
+        f16Kv,
+        logitsAll,
+        vocabOnly,
+        useMmap,
+        useMlock,
+      ]);
 
   @override
-  String toString() =>
-      'ModelOptions('
+  String toString() => 'ModelOptions('
       'seed: $seed, '
       'temperature: $temperature, '
       'topK: $topK, '

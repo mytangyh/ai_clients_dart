@@ -64,7 +64,7 @@ class SchemaFormat extends ResponseFormat {
   ///
   /// The schema map is deeply copied and stored as unmodifiable.
   SchemaFormat(Map<String, dynamic> schema)
-    : schema = _deepUnmodifiable(schema);
+      : schema = _deepUnmodifiable(schema);
 
   @override
   Object toJson() => schema;

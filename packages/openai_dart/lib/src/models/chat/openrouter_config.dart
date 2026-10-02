@@ -93,15 +93,15 @@ class OpenRouterProviderPreferences {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (order != null) 'order': order,
-    if (allowFallbacks != null) 'allow_fallbacks': allowFallbacks,
-    if (requireParameters != null) 'require_parameters': requireParameters,
-    if (dataCollection != null) 'data_collection': dataCollection,
-    if (zdr != null) 'zdr': zdr,
-    if (ignore != null) 'ignore': ignore,
-    if (quantizations != null) 'quantizations': quantizations,
-    if (sort != null) 'sort': sort,
-  };
+        if (order != null) 'order': order,
+        if (allowFallbacks != null) 'allow_fallbacks': allowFallbacks,
+        if (requireParameters != null) 'require_parameters': requireParameters,
+        if (dataCollection != null) 'data_collection': dataCollection,
+        if (zdr != null) 'zdr': zdr,
+        if (ignore != null) 'ignore': ignore,
+        if (quantizations != null) 'quantizations': quantizations,
+        if (sort != null) 'sort': sort,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -129,15 +129,15 @@ class OpenRouterProviderPreferences {
 
   @override
   int get hashCode => Object.hash(
-    order != null ? Object.hashAll(order!) : null,
-    allowFallbacks,
-    requireParameters,
-    dataCollection,
-    zdr,
-    ignore != null ? Object.hashAll(ignore!) : null,
-    quantizations != null ? Object.hashAll(quantizations!) : null,
-    sort,
-  );
+        order != null ? Object.hashAll(order!) : null,
+        allowFallbacks,
+        requireParameters,
+        dataCollection,
+        zdr,
+        ignore != null ? Object.hashAll(ignore!) : null,
+        quantizations != null ? Object.hashAll(quantizations!) : null,
+        sort,
+      );
 
   @override
   String toString() => 'OpenRouterProviderPreferences(order: $order)';
@@ -224,11 +224,11 @@ class OpenRouterReasoning {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (effort != null) 'effort': effort,
-    if (maxTokens != null) 'max_tokens': maxTokens,
-    if (exclude != null) 'exclude': exclude,
-    if (enabled != null) 'enabled': enabled,
-  };
+        if (effort != null) 'effort': effort,
+        if (maxTokens != null) 'max_tokens': maxTokens,
+        if (exclude != null) 'exclude': exclude,
+        if (enabled != null) 'enabled': enabled,
+      };
 
   @override
   bool operator ==(Object other) =>

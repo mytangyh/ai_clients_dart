@@ -32,9 +32,9 @@ class WebSearchOptions {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (searchContextSize != null) 'search_context_size': searchContextSize,
-    if (userLocation != null) 'user_location': userLocation!.toJson(),
-  };
+        if (searchContextSize != null) 'search_context_size': searchContextSize,
+        if (userLocation != null) 'user_location': userLocation!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -76,9 +76,9 @@ class WebSearchUserLocation {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': 'approximate',
-    'approximate': approximate.toJson(),
-  };
+        'type': 'approximate',
+        'approximate': approximate.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -129,11 +129,11 @@ class WebSearchLocation {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (country != null) 'country': country,
-    if (region != null) 'region': region,
-    if (city != null) 'city': city,
-    if (timezone != null) 'timezone': timezone,
-  };
+        if (country != null) 'country': country,
+        if (region != null) 'region': region,
+        if (city != null) 'city': city,
+        if (timezone != null) 'timezone': timezone,
+      };
 
   @override
   bool operator ==(Object other) =>

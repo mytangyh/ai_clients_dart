@@ -27,10 +27,10 @@ class WebFetchResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (title != null) 'title': title,
-    if (content != null) 'content': content,
-    if (links != null) 'links': links,
-  };
+        if (title != null) 'title': title,
+        if (content != null) 'content': content,
+        if (links != null) 'links': links,
+      };
 
   /// Creates a copy with replaced values.
   WebFetchResponse copyWith({
@@ -40,9 +40,8 @@ class WebFetchResponse {
   }) {
     return WebFetchResponse(
       title: title == unsetCopyWithValue ? this.title : title as String?,
-      content: content == unsetCopyWithValue
-          ? this.content
-          : content as String?,
+      content:
+          content == unsetCopyWithValue ? this.content : content as String?,
       links: links == unsetCopyWithValue ? this.links : links as List<String>?,
     );
   }

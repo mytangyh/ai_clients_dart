@@ -52,14 +52,14 @@ class Skill {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'name': name,
-    'description': description,
-    'created_at': createdAt,
-    'default_version': defaultVersion,
-    'latest_version': latestVersion,
-  };
+        'id': id,
+        'object': object,
+        'name': name,
+        'description': description,
+        'created_at': createdAt,
+        'default_version': defaultVersion,
+        'latest_version': latestVersion,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -76,14 +76,14 @@ class Skill {
 
   @override
   int get hashCode => Object.hash(
-    id,
-    object,
-    name,
-    description,
-    createdAt,
-    defaultVersion,
-    latestVersion,
-  );
+        id,
+        object,
+        name,
+        description,
+        createdAt,
+        defaultVersion,
+        latestVersion,
+      );
 }
 
 /// A skill version resource.
@@ -136,14 +136,14 @@ class SkillVersion {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'id': id,
-    'skill_id': skillId,
-    'version': version,
-    'created_at': createdAt,
-    'name': name,
-    'description': description,
-  };
+        'object': object,
+        'id': id,
+        'skill_id': skillId,
+        'version': version,
+        'created_at': createdAt,
+        'name': name,
+        'description': description,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -205,12 +205,12 @@ class SkillList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-    'first_id': firstId,
-    'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+        'first_id': firstId,
+        'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -270,12 +270,12 @@ class SkillVersionList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-    'first_id': firstId,
-    'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+        'first_id': firstId,
+        'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -323,10 +323,10 @@ class DeletedSkill {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'deleted': deleted,
-    'id': id,
-  };
+        'object': object,
+        'deleted': deleted,
+        'id': id,
+      };
 }
 
 /// Delete response for a skill version.
@@ -364,11 +364,11 @@ class DeletedSkillVersion {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'deleted': deleted,
-    'id': id,
-    'version': version,
-  };
+        'object': object,
+        'deleted': deleted,
+        'id': id,
+        'version': version,
+      };
 }
 
 /// Request to update the default skill version.

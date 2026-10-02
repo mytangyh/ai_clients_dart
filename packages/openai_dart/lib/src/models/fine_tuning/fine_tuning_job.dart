@@ -62,8 +62,8 @@ class FineTuningJob {
       method: json['method'] != null
           ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>)
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -138,27 +138,27 @@ class FineTuningJob {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    if (error != null) 'error': error!.toJson(),
-    if (fineTunedModel != null) 'fine_tuned_model': fineTunedModel,
-    if (finishedAt != null) 'finished_at': finishedAt,
-    'hyperparameters': hyperparameters.toJson(),
-    'model': model,
-    'organization_id': organizationId,
-    'result_files': resultFiles,
-    'status': status.toJson(),
-    if (trainedTokens != null) 'trained_tokens': trainedTokens,
-    'training_file': trainingFile,
-    if (validationFile != null) 'validation_file': validationFile,
-    if (integrations != null)
-      'integrations': integrations!.map((i) => i.toJson()).toList(),
-    'seed': seed,
-    if (estimatedFinish != null) 'estimated_finish': estimatedFinish,
-    if (method != null) 'method': method!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        if (error != null) 'error': error!.toJson(),
+        if (fineTunedModel != null) 'fine_tuned_model': fineTunedModel,
+        if (finishedAt != null) 'finished_at': finishedAt,
+        'hyperparameters': hyperparameters.toJson(),
+        'model': model,
+        'organization_id': organizationId,
+        'result_files': resultFiles,
+        'status': status.toJson(),
+        if (trainedTokens != null) 'trained_tokens': trainedTokens,
+        'training_file': trainingFile,
+        if (validationFile != null) 'validation_file': validationFile,
+        if (integrations != null)
+          'integrations': integrations!.map((i) => i.toJson()).toList(),
+        'seed': seed,
+        if (estimatedFinish != null) 'estimated_finish': estimatedFinish,
+        if (method != null) 'method': method!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -206,10 +206,10 @@ class FineTuningJobList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((j) => j.toJson()).toList(),
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((j) => j.toJson()).toList(),
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -263,8 +263,8 @@ class CreateFineTuningJobRequest {
       method: json['method'] != null
           ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>)
           : null,
-      metadata: (json['metadata'] as Map<String, dynamic>?)
-          ?.cast<String, String>(),
+      metadata:
+          (json['metadata'] as Map<String, dynamic>?)?.cast<String, String>(),
     );
   }
 
@@ -297,17 +297,18 @@ class CreateFineTuningJobRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'training_file': trainingFile,
-    if (hyperparameters != null) 'hyperparameters': hyperparameters!.toJson(),
-    if (suffix != null) 'suffix': suffix,
-    if (validationFile != null) 'validation_file': validationFile,
-    if (integrations != null)
-      'integrations': integrations!.map((i) => i.toJson()).toList(),
-    if (seed != null) 'seed': seed,
-    if (method != null) 'method': method!.toJson(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        'model': model,
+        'training_file': trainingFile,
+        if (hyperparameters != null)
+          'hyperparameters': hyperparameters!.toJson(),
+        if (suffix != null) 'suffix': suffix,
+        if (validationFile != null) 'validation_file': validationFile,
+        if (integrations != null)
+          'integrations': integrations!.map((i) => i.toJson()).toList(),
+        if (seed != null) 'seed': seed,
+        if (method != null) 'method': method!.toJson(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -400,11 +401,11 @@ class Hyperparameters {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (nEpochs != null) 'n_epochs': nEpochs!.toJson(),
-    if (batchSize != null) 'batch_size': batchSize!.toJson(),
-    if (learningRateMultiplier != null)
-      'learning_rate_multiplier': learningRateMultiplier!.toJson(),
-  };
+        if (nEpochs != null) 'n_epochs': nEpochs!.toJson(),
+        if (batchSize != null) 'batch_size': batchSize!.toJson(),
+        if (learningRateMultiplier != null)
+          'learning_rate_multiplier': learningRateMultiplier!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -458,11 +459,11 @@ class HyperparametersRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (nEpochs != null) 'n_epochs': nEpochs!.toJson(),
-    if (batchSize != null) 'batch_size': batchSize!.toJson(),
-    if (learningRateMultiplier != null)
-      'learning_rate_multiplier': learningRateMultiplier!.toJson(),
-  };
+        if (nEpochs != null) 'n_epochs': nEpochs!.toJson(),
+        if (batchSize != null) 'batch_size': batchSize!.toJson(),
+        if (learningRateMultiplier != null)
+          'learning_rate_multiplier': learningRateMultiplier!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -506,10 +507,10 @@ class FineTuningError {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (code != null) 'code': code,
-    if (message != null) 'message': message,
-    if (param != null) 'param': param,
-  };
+        if (code != null) 'code': code,
+        if (message != null) 'message': message,
+        if (param != null) 'param': param,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -597,11 +598,11 @@ class WandbIntegration {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'project': project,
-    if (name != null) 'name': name,
-    if (entity != null) 'entity': entity,
-    if (tags != null) 'tags': tags,
-  };
+        'project': project,
+        if (name != null) 'name': name,
+        if (entity != null) 'entity': entity,
+        if (tags != null) 'tags': tags,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -692,11 +693,11 @@ class CreateWandbIntegration {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'project': project,
-    if (name != null) 'name': name,
-    if (entity != null) 'entity': entity,
-    if (tags != null) 'tags': tags,
-  };
+        'project': project,
+        if (name != null) 'name': name,
+        if (entity != null) 'entity': entity,
+        if (tags != null) 'tags': tags,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -752,12 +753,12 @@ class FineTuningEvent {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    'level': level,
-    'message': message,
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        'level': level,
+        'message': message,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -805,10 +806,10 @@ class FineTuningEventList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -876,14 +877,14 @@ class FineTuningCheckpoint {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created_at': createdAt,
-    'fine_tuned_model_checkpoint': fineTunedModelCheckpoint,
-    'step_number': stepNumber,
-    'metrics': metrics.toJson(),
-    'fine_tuning_job_id': fineTuningJobId,
-  };
+        'id': id,
+        'object': object,
+        'created_at': createdAt,
+        'fine_tuned_model_checkpoint': fineTunedModelCheckpoint,
+        'step_number': stepNumber,
+        'metrics': metrics.toJson(),
+        'fine_tuning_job_id': fineTuningJobId,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -918,11 +919,11 @@ class CheckpointMetrics {
     return CheckpointMetrics(
       step: json['step'] as int?,
       trainLoss: (json['train_loss'] as num?)?.toDouble(),
-      trainMeanTokenAccuracy: (json['train_mean_token_accuracy'] as num?)
-          ?.toDouble(),
+      trainMeanTokenAccuracy:
+          (json['train_mean_token_accuracy'] as num?)?.toDouble(),
       validLoss: (json['valid_loss'] as num?)?.toDouble(),
-      validMeanTokenAccuracy: (json['valid_mean_token_accuracy'] as num?)
-          ?.toDouble(),
+      validMeanTokenAccuracy:
+          (json['valid_mean_token_accuracy'] as num?)?.toDouble(),
       fullValidLoss: (json['full_valid_loss'] as num?)?.toDouble(),
       fullValidMeanTokenAccuracy:
           (json['full_valid_mean_token_accuracy'] as num?)?.toDouble(),
@@ -952,17 +953,17 @@ class CheckpointMetrics {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (step != null) 'step': step,
-    if (trainLoss != null) 'train_loss': trainLoss,
-    if (trainMeanTokenAccuracy != null)
-      'train_mean_token_accuracy': trainMeanTokenAccuracy,
-    if (validLoss != null) 'valid_loss': validLoss,
-    if (validMeanTokenAccuracy != null)
-      'valid_mean_token_accuracy': validMeanTokenAccuracy,
-    if (fullValidLoss != null) 'full_valid_loss': fullValidLoss,
-    if (fullValidMeanTokenAccuracy != null)
-      'full_valid_mean_token_accuracy': fullValidMeanTokenAccuracy,
-  };
+        if (step != null) 'step': step,
+        if (trainLoss != null) 'train_loss': trainLoss,
+        if (trainMeanTokenAccuracy != null)
+          'train_mean_token_accuracy': trainMeanTokenAccuracy,
+        if (validLoss != null) 'valid_loss': validLoss,
+        if (validMeanTokenAccuracy != null)
+          'valid_mean_token_accuracy': validMeanTokenAccuracy,
+        if (fullValidLoss != null) 'full_valid_loss': fullValidLoss,
+        if (fullValidMeanTokenAccuracy != null)
+          'full_valid_mean_token_accuracy': fullValidMeanTokenAccuracy,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -979,14 +980,14 @@ class CheckpointMetrics {
 
   @override
   int get hashCode => Object.hash(
-    step,
-    trainLoss,
-    trainMeanTokenAccuracy,
-    validLoss,
-    validMeanTokenAccuracy,
-    fullValidLoss,
-    fullValidMeanTokenAccuracy,
-  );
+        step,
+        trainLoss,
+        trainMeanTokenAccuracy,
+        validLoss,
+        validMeanTokenAccuracy,
+        fullValidLoss,
+        fullValidMeanTokenAccuracy,
+      );
 
   @override
   String toString() => 'CheckpointMetrics(step: $step)';
@@ -1034,12 +1035,12 @@ class FineTuningCheckpointList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((c) => c.toJson()).toList(),
-    if (firstId != null) 'first_id': firstId,
-    if (lastId != null) 'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((c) => c.toJson()).toList(),
+        if (firstId != null) 'first_id': firstId,
+        if (lastId != null) 'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1100,7 +1101,8 @@ class FineTuneMethod {
   /// Creates a reinforcement fine-tune method.
   factory FineTuneMethod.reinforcement({
     required FineTuneReinforcementMethod config,
-  }) => FineTuneMethod(type: 'reinforcement', reinforcement: config);
+  }) =>
+      FineTuneMethod(type: 'reinforcement', reinforcement: config);
 
   /// The type of method: `supervised`, `dpo`, or `reinforcement`.
   final String type;
@@ -1116,11 +1118,11 @@ class FineTuneMethod {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (supervised != null) 'supervised': supervised!.toJson(),
-    if (dpo != null) 'dpo': dpo!.toJson(),
-    if (reinforcement != null) 'reinforcement': reinforcement!.toJson(),
-  };
+        'type': type,
+        if (supervised != null) 'supervised': supervised!.toJson(),
+        if (dpo != null) 'dpo': dpo!.toJson(),
+        if (reinforcement != null) 'reinforcement': reinforcement!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1161,8 +1163,9 @@ class FineTuneSupervisedMethod {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (hyperparameters != null) 'hyperparameters': hyperparameters!.toJson(),
-  };
+        if (hyperparameters != null)
+          'hyperparameters': hyperparameters!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1200,8 +1203,9 @@ class FineTuneDPOMethod {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (hyperparameters != null) 'hyperparameters': hyperparameters!.toJson(),
-  };
+        if (hyperparameters != null)
+          'hyperparameters': hyperparameters!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1260,12 +1264,12 @@ class FineTuneDPOHyperparameters {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (beta != null) 'beta': beta!.toJson(),
-    if (batchSize != null) 'batch_size': batchSize!.toJson(),
-    if (learningRateMultiplier != null)
-      'learning_rate_multiplier': learningRateMultiplier!.toJson(),
-    if (nEpochs != null) 'n_epochs': nEpochs!.toJson(),
-  };
+        if (beta != null) 'beta': beta!.toJson(),
+        if (batchSize != null) 'batch_size': batchSize!.toJson(),
+        if (learningRateMultiplier != null)
+          'learning_rate_multiplier': learningRateMultiplier!.toJson(),
+        if (nEpochs != null) 'n_epochs': nEpochs!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1317,9 +1321,10 @@ class FineTuneReinforcementMethod {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'grader': grader,
-    if (hyperparameters != null) 'hyperparameters': hyperparameters!.toJson(),
-  };
+        'grader': grader,
+        if (hyperparameters != null)
+          'hyperparameters': hyperparameters!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1400,16 +1405,16 @@ class FineTuneReinforcementHyperparameters {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (batchSize != null) 'batch_size': batchSize!.toJson(),
-    if (learningRateMultiplier != null)
-      'learning_rate_multiplier': learningRateMultiplier!.toJson(),
-    if (nEpochs != null) 'n_epochs': nEpochs!.toJson(),
-    if (reasoningEffort != null) 'reasoning_effort': reasoningEffort,
-    if (computeMultiplier != null)
-      'compute_multiplier': computeMultiplier!.toJson(),
-    if (evalInterval != null) 'eval_interval': evalInterval!.toJson(),
-    if (evalSamples != null) 'eval_samples': evalSamples!.toJson(),
-  };
+        if (batchSize != null) 'batch_size': batchSize!.toJson(),
+        if (learningRateMultiplier != null)
+          'learning_rate_multiplier': learningRateMultiplier!.toJson(),
+        if (nEpochs != null) 'n_epochs': nEpochs!.toJson(),
+        if (reasoningEffort != null) 'reasoning_effort': reasoningEffort,
+        if (computeMultiplier != null)
+          'compute_multiplier': computeMultiplier!.toJson(),
+        if (evalInterval != null) 'eval_interval': evalInterval!.toJson(),
+        if (evalSamples != null) 'eval_samples': evalSamples!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1426,14 +1431,14 @@ class FineTuneReinforcementHyperparameters {
 
   @override
   int get hashCode => Object.hash(
-    batchSize,
-    learningRateMultiplier,
-    nEpochs,
-    reasoningEffort,
-    computeMultiplier,
-    evalInterval,
-    evalSamples,
-  );
+        batchSize,
+        learningRateMultiplier,
+        nEpochs,
+        reasoningEffort,
+        computeMultiplier,
+        evalInterval,
+        evalSamples,
+      );
 
   @override
   String toString() => 'FineTuneReinforcementHyperparameters(...)';

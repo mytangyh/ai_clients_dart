@@ -32,10 +32,10 @@ class ToolCallFunction {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'name': name,
-    if (description != null) 'description': description,
-    if (arguments != null) 'arguments': arguments,
-  };
+        'name': name,
+        if (description != null) 'description': description,
+        if (arguments != null) 'arguments': arguments,
+      };
 
   /// Creates a copy with replaced values.
   ToolCallFunction copyWith({
@@ -67,8 +67,7 @@ class ToolCallFunction {
   int get hashCode => Object.hash(name, description, mapHash(arguments));
 
   @override
-  String toString() =>
-      'ToolCallFunction('
+  String toString() => 'ToolCallFunction('
       'name: $name, '
       'description: $description, '
       'arguments: $arguments)';
@@ -85,15 +84,16 @@ class ToolCall {
 
   /// Creates a [ToolCall] from JSON.
   factory ToolCall.fromJson(Map<String, dynamic> json) => ToolCall(
-    function: json['function'] != null
-        ? ToolCallFunction.fromJson(json['function'] as Map<String, dynamic>)
-        : null,
-  );
+        function: json['function'] != null
+            ? ToolCallFunction.fromJson(
+                json['function'] as Map<String, dynamic>)
+            : null,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (function != null) 'function': function!.toJson(),
-  };
+        if (function != null) 'function': function!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ToolCall copyWith({Object? function = unsetCopyWithValue}) {

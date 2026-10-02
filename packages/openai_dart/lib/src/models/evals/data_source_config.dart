@@ -79,11 +79,11 @@ class CustomDataSourceConfig extends EvalDataSourceConfig {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (itemSchema != null) 'item_schema': itemSchema,
-    if (includeSampleSchema != null)
-      'include_sample_schema': includeSampleSchema,
-  };
+        'type': type,
+        if (itemSchema != null) 'item_schema': itemSchema,
+        if (includeSampleSchema != null)
+          'include_sample_schema': includeSampleSchema,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -129,10 +129,10 @@ class LogsDataSourceConfig extends EvalDataSourceConfig {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (schema != null) 'schema': schema,
-    if (metadata != null) 'metadata': metadata,
-  };
+        'type': type,
+        if (schema != null) 'schema': schema,
+        if (metadata != null) 'metadata': metadata,
+      };
 
   @override
   bool operator ==(Object other) =>

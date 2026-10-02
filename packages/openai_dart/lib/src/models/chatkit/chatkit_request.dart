@@ -45,13 +45,13 @@ class CreateChatSessionRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'workflow': workflow.toJson(),
-    'user': user,
-    if (expiresAfter != null) 'expires_after': expiresAfter,
-    if (rateLimits != null) 'rate_limits': rateLimits!.toJson(),
-    if (chatkitConfiguration != null)
-      'chatkit_configuration': chatkitConfiguration!.toJson(),
-  };
+        'workflow': workflow.toJson(),
+        'user': user,
+        if (expiresAfter != null) 'expires_after': expiresAfter,
+        if (rateLimits != null) 'rate_limits': rateLimits!.toJson(),
+        if (chatkitConfiguration != null)
+          'chatkit_configuration': chatkitConfiguration!.toJson(),
+      };
 
   @override
   String toString() => 'CreateChatSessionRequest(user: $user)';
@@ -82,11 +82,11 @@ class WorkflowParam {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    if (version != null) 'version': version,
-    if (stateVariables != null) 'state_variables': stateVariables,
-    if (tracing != null) 'tracing': tracing!.toJson(),
-  };
+        'id': id,
+        if (version != null) 'version': version,
+        if (stateVariables != null) 'state_variables': stateVariables,
+        if (tracing != null) 'tracing': tracing!.toJson(),
+      };
 
   @override
   String toString() => 'WorkflowParam(id: $id)';
@@ -119,8 +119,8 @@ class RateLimitsParam {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'max_requests_per_1_minute': maxRequestsPer1Minute,
-  };
+        'max_requests_per_1_minute': maxRequestsPer1Minute,
+      };
 
   @override
   String toString() =>
@@ -148,11 +148,11 @@ class ChatkitConfigurationParam {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (automaticThreadTitling != null)
-      'automatic_thread_titling': automaticThreadTitling!.toJson(),
-    if (fileUpload != null) 'file_upload': fileUpload!.toJson(),
-    if (history != null) 'history': history!.toJson(),
-  };
+        if (automaticThreadTitling != null)
+          'automatic_thread_titling': automaticThreadTitling!.toJson(),
+        if (fileUpload != null) 'file_upload': fileUpload!.toJson(),
+        if (history != null) 'history': history!.toJson(),
+      };
 
   @override
   String toString() => 'ChatkitConfigurationParam(...)';
@@ -195,10 +195,10 @@ class FileUploadParam {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    if (maxFileSize != null) 'max_file_size': maxFileSize,
-    if (maxFiles != null) 'max_files': maxFiles,
-  };
+        'enabled': enabled,
+        if (maxFileSize != null) 'max_file_size': maxFileSize,
+        if (maxFiles != null) 'max_files': maxFiles,
+      };
 
   @override
   String toString() => 'FileUploadParam(enabled: $enabled)';
@@ -218,9 +218,9 @@ class HistoryParam {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    if (recentThreads != null) 'recent_threads': recentThreads,
-  };
+        'enabled': enabled,
+        if (recentThreads != null) 'recent_threads': recentThreads,
+      };
 
   @override
   String toString() => 'HistoryParam(enabled: $enabled)';

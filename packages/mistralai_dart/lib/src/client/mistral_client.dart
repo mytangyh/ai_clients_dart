@@ -175,9 +175,9 @@ class MistralClient {
   ///
   /// Optionally accepts a custom [httpClient] for testing or advanced use cases.
   MistralClient({MistralConfig? config, http.Client? httpClient})
-    : config = config ?? const MistralConfig(),
-      _httpClient = httpClient ?? http.Client(),
-      _ownsHttpClient = httpClient == null {
+      : config = config ?? const MistralConfig(),
+        _httpClient = httpClient ?? http.Client(),
+        _ownsHttpClient = httpClient == null {
     _requestBuilder = RequestBuilder(config: this.config);
 
     // Build interceptor list based on configuration

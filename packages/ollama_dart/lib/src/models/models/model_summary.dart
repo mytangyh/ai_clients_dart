@@ -44,29 +44,29 @@ class ModelSummary {
 
   /// Creates a [ModelSummary] from JSON.
   factory ModelSummary.fromJson(Map<String, dynamic> json) => ModelSummary(
-    name: json['name'] as String?,
-    model: json['model'] as String?,
-    remoteModel: json['remote_model'] as String?,
-    remoteHost: json['remote_host'] as String?,
-    modifiedAt: json['modified_at'] as String?,
-    size: json['size'] as int?,
-    digest: json['digest'] as String?,
-    details: json['details'] != null
-        ? ModelDetails.fromJson(json['details'] as Map<String, dynamic>)
-        : null,
-  );
+        name: json['name'] as String?,
+        model: json['model'] as String?,
+        remoteModel: json['remote_model'] as String?,
+        remoteHost: json['remote_host'] as String?,
+        modifiedAt: json['modified_at'] as String?,
+        size: json['size'] as int?,
+        digest: json['digest'] as String?,
+        details: json['details'] != null
+            ? ModelDetails.fromJson(json['details'] as Map<String, dynamic>)
+            : null,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (name != null) 'name': name,
-    if (model != null) 'model': model,
-    if (remoteModel != null) 'remote_model': remoteModel,
-    if (remoteHost != null) 'remote_host': remoteHost,
-    if (modifiedAt != null) 'modified_at': modifiedAt,
-    if (size != null) 'size': size,
-    if (digest != null) 'digest': digest,
-    if (details != null) 'details': details!.toJson(),
-  };
+        if (name != null) 'name': name,
+        if (model != null) 'model': model,
+        if (remoteModel != null) 'remote_model': remoteModel,
+        if (remoteHost != null) 'remote_host': remoteHost,
+        if (modifiedAt != null) 'modified_at': modifiedAt,
+        if (size != null) 'size': size,
+        if (digest != null) 'digest': digest,
+        if (details != null) 'details': details!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   ModelSummary copyWith({

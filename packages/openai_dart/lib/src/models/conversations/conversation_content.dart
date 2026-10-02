@@ -94,11 +94,11 @@ class ConversationInputImageContent extends ConversationContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'input_image',
-    if (imageUrl != null) 'image_url': imageUrl,
-    if (fileId != null) 'file_id': fileId,
-    if (detail != null) 'detail': detail,
-  };
+        'type': 'input_image',
+        if (imageUrl != null) 'image_url': imageUrl,
+        if (fileId != null) 'file_id': fileId,
+        if (detail != null) 'detail': detail,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -147,11 +147,11 @@ class ConversationInputFileContent extends ConversationContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'input_file',
-    if (fileId != null) 'file_id': fileId,
-    if (filename != null) 'filename': filename,
-    if (fileData != null) 'file_data': fileData,
-  };
+        'type': 'input_file',
+        if (fileId != null) 'file_id': fileId,
+        if (filename != null) 'filename': filename,
+        if (fileData != null) 'file_data': fileData,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -194,11 +194,11 @@ class ConversationOutputTextContent extends ConversationContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'output_text',
-    'text': text,
-    if (annotations != null)
-      'annotations': annotations!.map((e) => e.toJson()).toList(),
-  };
+        'type': 'output_text',
+        'text': text,
+        if (annotations != null)
+          'annotations': annotations!.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -362,10 +362,10 @@ class ConversationImageUrlContent extends ConversationContent {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'image_url',
-    'url': url,
-    if (detail != null) 'detail': detail,
-  };
+        'type': 'image_url',
+        'url': url,
+        if (detail != null) 'detail': detail,
+      };
 
   @override
   bool operator ==(Object other) =>

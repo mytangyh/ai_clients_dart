@@ -23,18 +23,18 @@ class FimChoice {
 
   /// Creates a [FimChoice] from JSON.
   factory FimChoice.fromJson(Map<String, dynamic> json) => FimChoice(
-    index: json['index'] as int? ?? 0,
-    message: json['message'] as String? ?? '',
-    finishReason: finishReasonFromString(json['finish_reason'] as String?),
-  );
+        index: json['index'] as int? ?? 0,
+        message: json['message'] as String? ?? '',
+        finishReason: finishReasonFromString(json['finish_reason'] as String?),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'index': index,
-    'message': message,
-    if (finishReason != null)
-      'finish_reason': finishReasonToString(finishReason!),
-  };
+        'index': index,
+        'message': message,
+        if (finishReason != null)
+          'finish_reason': finishReasonToString(finishReason!),
+      };
 
   @override
   bool operator ==(Object other) =>

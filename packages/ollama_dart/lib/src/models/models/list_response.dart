@@ -14,15 +14,15 @@ class ListResponse {
 
   /// Creates a [ListResponse] from JSON.
   factory ListResponse.fromJson(Map<String, dynamic> json) => ListResponse(
-    models: (json['models'] as List?)
-        ?.map((e) => ModelSummary.fromJson(e as Map<String, dynamic>))
-        .toList(),
-  );
+        models: (json['models'] as List?)
+            ?.map((e) => ModelSummary.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (models != null) 'models': models!.map((e) => e.toJson()).toList(),
-  };
+        if (models != null) 'models': models!.map((e) => e.toJson()).toList(),
+      };
 
   /// Creates a copy with replaced values.
   ListResponse copyWith({Object? models = unsetCopyWithValue}) {

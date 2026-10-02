@@ -51,31 +51,31 @@ class FileObject {
 
   /// Creates a [FileObject] from JSON.
   factory FileObject.fromJson(Map<String, dynamic> json) => FileObject(
-    id: json['id'] as String? ?? '',
-    object: json['object'] as String? ?? 'file',
-    bytes: json['bytes'] as int? ?? 0,
-    createdAt: json['created_at'] as int? ?? 0,
-    filename: json['filename'] as String? ?? '',
-    purpose: filePurposeFromString(json['purpose'] as String?),
-    sampleType: json['sample_type'] as String?,
-    numLines: json['num_lines'] as int?,
-    source: json['source'] as String?,
-    deleted: json['deleted'] as bool?,
-  );
+        id: json['id'] as String? ?? '',
+        object: json['object'] as String? ?? 'file',
+        bytes: json['bytes'] as int? ?? 0,
+        createdAt: json['created_at'] as int? ?? 0,
+        filename: json['filename'] as String? ?? '',
+        purpose: filePurposeFromString(json['purpose'] as String?),
+        sampleType: json['sample_type'] as String?,
+        numLines: json['num_lines'] as int?,
+        source: json['source'] as String?,
+        deleted: json['deleted'] as bool?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'bytes': bytes,
-    'created_at': createdAt,
-    'filename': filename,
-    'purpose': filePurposeToString(purpose),
-    if (sampleType != null) 'sample_type': sampleType,
-    if (numLines != null) 'num_lines': numLines,
-    if (source != null) 'source': source,
-    if (deleted != null) 'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'bytes': bytes,
+        'created_at': createdAt,
+        'filename': filename,
+        'purpose': filePurposeToString(purpose),
+        if (sampleType != null) 'sample_type': sampleType,
+        if (numLines != null) 'num_lines': numLines,
+        if (source != null) 'source': source,
+        if (deleted != null) 'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -94,7 +94,6 @@ class FileObject {
       Object.hash(id, object, bytes, createdAt, filename, purpose);
 
   @override
-  String toString() =>
-      'FileObject(id: $id, filename: $filename, '
+  String toString() => 'FileObject(id: $id, filename: $filename, '
       'purpose: $purpose, bytes: $bytes)';
 }

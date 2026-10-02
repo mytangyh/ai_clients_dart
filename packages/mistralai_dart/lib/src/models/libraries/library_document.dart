@@ -112,23 +112,19 @@ class LibraryDocument {
       id: id ?? this.id,
       name: name ?? this.name,
       status: status ?? this.status,
-      mimeType: mimeType == unsetCopyWithValue
-          ? this.mimeType
-          : mimeType as String?,
+      mimeType:
+          mimeType == unsetCopyWithValue ? this.mimeType : mimeType as String?,
       size: size == unsetCopyWithValue ? this.size : size as int?,
       hash: hash == unsetCopyWithValue ? this.hash : hash as String?,
-      createdAt: createdAt == unsetCopyWithValue
-          ? this.createdAt
-          : createdAt as int?,
-      updatedAt: updatedAt == unsetCopyWithValue
-          ? this.updatedAt
-          : updatedAt as int?,
+      createdAt:
+          createdAt == unsetCopyWithValue ? this.createdAt : createdAt as int?,
+      updatedAt:
+          updatedAt == unsetCopyWithValue ? this.updatedAt : updatedAt as int?,
       numberOfPages: numberOfPages == unsetCopyWithValue
           ? this.numberOfPages
           : numberOfPages as int?,
-      summary: summary == unsetCopyWithValue
-          ? this.summary
-          : summary as String?,
+      summary:
+          summary == unsetCopyWithValue ? this.summary : summary as String?,
       tokensProcessingTotal: tokensProcessingTotal == unsetCopyWithValue
           ? this.tokensProcessingTotal
           : tokensProcessingTotal as int?,
@@ -210,8 +206,7 @@ class LibraryDocumentList {
   factory LibraryDocumentList.fromJson(Map<String, dynamic> json) {
     return LibraryDocumentList(
       object: json['object'] as String? ?? 'list',
-      data:
-          (json['data'] as List<dynamic>?)
+      data: (json['data'] as List<dynamic>?)
               ?.map((e) => LibraryDocument.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],

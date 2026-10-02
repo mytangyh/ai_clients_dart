@@ -42,8 +42,7 @@ class ChatCompletionResponse {
         object: json['object'] as String? ?? 'chat.completion',
         created: json['created'] as int? ?? 0,
         model: json['model'] as String? ?? '',
-        choices:
-            (json['choices'] as List?)
+        choices: (json['choices'] as List?)
                 ?.map((e) => ChatChoice.fromJson(e as Map<String, dynamic>))
                 .toList() ??
             [],
@@ -54,13 +53,13 @@ class ChatCompletionResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created': created,
-    'model': model,
-    'choices': choices.map((e) => e.toJson()).toList(),
-    if (usage != null) 'usage': usage!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'created': created,
+        'model': model,
+        'choices': choices.map((e) => e.toJson()).toList(),
+        if (usage != null) 'usage': usage!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -79,7 +78,6 @@ class ChatCompletionResponse {
       Object.hash(id, object, created, model, Object.hashAll(choices), usage);
 
   @override
-  String toString() =>
-      'ChatCompletionResponse(id: $id, model: $model, '
+  String toString() => 'ChatCompletionResponse(id: $id, model: $model, '
       'choices: ${choices.length})';
 }

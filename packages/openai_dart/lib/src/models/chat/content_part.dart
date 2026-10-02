@@ -45,13 +45,15 @@ sealed class ContentPart {
     required String data,
     required String mediaType,
     ImageDetail? detail,
-  }) => ImageContentPart(url: 'data:$mediaType;base64,$data', detail: detail);
+  }) =>
+      ImageContentPart(url: 'data:$mediaType;base64,$data', detail: detail);
 
   /// Creates an audio content part.
   static ContentPart inputAudio({
     required String data,
     required AudioFormat format,
-  }) => AudioContentPart(data: data, format: format);
+  }) =>
+      AudioContentPart(data: data, format: format);
 
   /// The type of this content part.
   String get type;
@@ -132,9 +134,12 @@ class ImageContentPart extends ContentPart {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'image_url': {'url': url, if (detail != null) 'detail': detail!.toJson()},
-  };
+        'type': type,
+        'image_url': {
+          'url': url,
+          if (detail != null) 'detail': detail!.toJson()
+        },
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -177,9 +182,9 @@ class AudioContentPart extends ContentPart {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'input_audio': {'data': data, 'format': format.toJson()},
-  };
+        'type': type,
+        'input_audio': {'data': data, 'format': format.toJson()},
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -217,12 +222,12 @@ enum ImageDetail {
 
   /// Creates an [ImageDetail] from JSON.
   static ImageDetail fromJson(String value) => switch (value) {
-    'auto' => ImageDetail.auto,
-    'low' => ImageDetail.low,
-    'high' => ImageDetail.high,
-    'original' => ImageDetail.original,
-    _ => throw FormatException('Unknown ImageDetail: $value'),
-  };
+        'auto' => ImageDetail.auto,
+        'low' => ImageDetail.low,
+        'high' => ImageDetail.high,
+        'original' => ImageDetail.original,
+        _ => throw FormatException('Unknown ImageDetail: $value'),
+      };
 
   /// Converts to JSON.
   String toJson() => value;
@@ -252,13 +257,13 @@ enum AudioFormat {
 
   /// Creates an [AudioFormat] from JSON.
   static AudioFormat fromJson(String value) => switch (value) {
-    'wav' => AudioFormat.wav,
-    'mp3' => AudioFormat.mp3,
-    'flac' => AudioFormat.flac,
-    'opus' => AudioFormat.opus,
-    'pcm16' => AudioFormat.pcm16,
-    _ => throw FormatException('Unknown AudioFormat: $value'),
-  };
+        'wav' => AudioFormat.wav,
+        'mp3' => AudioFormat.mp3,
+        'flac' => AudioFormat.flac,
+        'opus' => AudioFormat.opus,
+        'pcm16' => AudioFormat.pcm16,
+        _ => throw FormatException('Unknown AudioFormat: $value'),
+      };
 
   /// Converts to JSON.
   String toJson() => value;

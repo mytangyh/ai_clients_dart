@@ -222,26 +222,26 @@ class RealtimeSessionCreateRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (type != null) 'type': type,
-    'model': model,
-    if (modalities != null) 'modalities': modalities,
-    if (instructions != null) 'instructions': instructions,
-    if (voice != null) 'voice': voice!.toJson(),
-    if (inputAudioFormat != null)
-      'input_audio_format': inputAudioFormat!.toJson(),
-    if (outputAudioFormat != null)
-      'output_audio_format': outputAudioFormat!.toJson(),
-    if (inputAudioTranscription != null)
-      'input_audio_transcription': inputAudioTranscription!.toJson(),
-    if (turnDetection != null) 'turn_detection': turnDetection!.toJson(),
-    if (inputAudioNoiseReduction != null)
-      'input_audio_noise_reduction': inputAudioNoiseReduction!.toJson(),
-    if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
-    if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
-    if (temperature != null) 'temperature': temperature,
-    if (maxResponseOutputTokens != null)
-      'max_response_output_tokens': maxResponseOutputTokens!.toJson(),
-  };
+        if (type != null) 'type': type,
+        'model': model,
+        if (modalities != null) 'modalities': modalities,
+        if (instructions != null) 'instructions': instructions,
+        if (voice != null) 'voice': voice!.toJson(),
+        if (inputAudioFormat != null)
+          'input_audio_format': inputAudioFormat!.toJson(),
+        if (outputAudioFormat != null)
+          'output_audio_format': outputAudioFormat!.toJson(),
+        if (inputAudioTranscription != null)
+          'input_audio_transcription': inputAudioTranscription!.toJson(),
+        if (turnDetection != null) 'turn_detection': turnDetection!.toJson(),
+        if (inputAudioNoiseReduction != null)
+          'input_audio_noise_reduction': inputAudioNoiseReduction!.toJson(),
+        if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
+        if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
+        if (temperature != null) 'temperature': temperature,
+        if (maxResponseOutputTokens != null)
+          'max_response_output_tokens': maxResponseOutputTokens!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -388,28 +388,28 @@ class RealtimeSessionCreateResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'model': model,
-    if (clientSecret != null) 'client_secret': clientSecret!.toJson(),
-    if (modalities != null) 'modalities': modalities,
-    if (instructions != null) 'instructions': instructions,
-    if (voice != null) 'voice': voice!.toJson(),
-    if (inputAudioFormat != null)
-      'input_audio_format': inputAudioFormat!.toJson(),
-    if (outputAudioFormat != null)
-      'output_audio_format': outputAudioFormat!.toJson(),
-    if (inputAudioTranscription != null)
-      'input_audio_transcription': inputAudioTranscription!.toJson(),
-    if (turnDetection != null) 'turn_detection': turnDetection!.toJson(),
-    if (inputAudioNoiseReduction != null)
-      'input_audio_noise_reduction': inputAudioNoiseReduction!.toJson(),
-    if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
-    if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
-    if (temperature != null) 'temperature': temperature,
-    if (maxResponseOutputTokens != null)
-      'max_response_output_tokens': maxResponseOutputTokens!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'model': model,
+        if (clientSecret != null) 'client_secret': clientSecret!.toJson(),
+        if (modalities != null) 'modalities': modalities,
+        if (instructions != null) 'instructions': instructions,
+        if (voice != null) 'voice': voice!.toJson(),
+        if (inputAudioFormat != null)
+          'input_audio_format': inputAudioFormat!.toJson(),
+        if (outputAudioFormat != null)
+          'output_audio_format': outputAudioFormat!.toJson(),
+        if (inputAudioTranscription != null)
+          'input_audio_transcription': inputAudioTranscription!.toJson(),
+        if (turnDetection != null) 'turn_detection': turnDetection!.toJson(),
+        if (inputAudioNoiseReduction != null)
+          'input_audio_noise_reduction': inputAudioNoiseReduction!.toJson(),
+        if (tools != null) 'tools': tools!.map((t) => t.toJson()).toList(),
+        if (toolChoice != null) 'tool_choice': toolChoice!.toJson(),
+        if (temperature != null) 'temperature': temperature,
+        if (maxResponseOutputTokens != null)
+          'max_response_output_tokens': maxResponseOutputTokens!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

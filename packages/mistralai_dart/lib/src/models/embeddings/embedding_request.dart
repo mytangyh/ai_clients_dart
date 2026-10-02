@@ -53,13 +53,14 @@ class EmbeddingRequest {
     String? encodingFormat,
     int? outputDimension,
     EmbeddingDtype? outputDtype,
-  }) => EmbeddingRequest(
-    model: model,
-    input: input,
-    encodingFormat: encodingFormat,
-    outputDimension: outputDimension,
-    outputDtype: outputDtype,
-  );
+  }) =>
+      EmbeddingRequest(
+        model: model,
+        input: input,
+        encodingFormat: encodingFormat,
+        outputDimension: outputDimension,
+        outputDtype: outputDtype,
+      );
 
   /// Creates an [EmbeddingRequest] for multiple inputs.
   factory EmbeddingRequest.batch({
@@ -68,13 +69,14 @@ class EmbeddingRequest {
     String? encodingFormat,
     int? outputDimension,
     EmbeddingDtype? outputDtype,
-  }) => EmbeddingRequest(
-    model: model,
-    input: input,
-    encodingFormat: encodingFormat,
-    outputDimension: outputDimension,
-    outputDtype: outputDtype,
-  );
+  }) =>
+      EmbeddingRequest(
+        model: model,
+        input: input,
+        encodingFormat: encodingFormat,
+        outputDimension: outputDimension,
+        outputDtype: outputDtype,
+      );
 
   /// Creates an [EmbeddingRequest] from JSON.
   factory EmbeddingRequest.fromJson(Map<String, dynamic> json) =>
@@ -90,12 +92,12 @@ class EmbeddingRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    'input': input,
-    if (encodingFormat != null) 'encoding_format': encodingFormat,
-    if (outputDimension != null) 'output_dimension': outputDimension,
-    if (outputDtype != null) 'output_dtype': outputDtype!.value,
-  };
+        'model': model,
+        'input': input,
+        if (encodingFormat != null) 'encoding_format': encodingFormat,
+        if (outputDimension != null) 'output_dimension': outputDimension,
+        if (outputDtype != null) 'output_dtype': outputDtype!.value,
+      };
 
   /// Creates a copy with replaced values.
   EmbeddingRequest copyWith({
@@ -141,16 +143,15 @@ class EmbeddingRequest {
 
   @override
   int get hashCode => Object.hash(
-    model,
-    input is List ? listHash(input as List) : input,
-    encodingFormat,
-    outputDimension,
-    outputDtype,
-  );
+        model,
+        input is List ? listHash(input as List) : input,
+        encodingFormat,
+        outputDimension,
+        outputDtype,
+      );
 
   @override
-  String toString() =>
-      'EmbeddingRequest(model: $model, input: $input, '
+  String toString() => 'EmbeddingRequest(model: $model, input: $input, '
       'encodingFormat: $encodingFormat, outputDimension: $outputDimension, '
       'outputDtype: $outputDtype)';
 }

@@ -30,9 +30,9 @@ class BatchRequestItem {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'custom_id': customId,
-    'params': params.toJson(),
-  };
+        'custom_id': customId,
+        'params': params.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -69,8 +69,8 @@ class MessageBatchCreateRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'requests': requests.map((e) => e.toJson()).toList(),
-  };
+        'requests': requests.map((e) => e.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>

@@ -93,54 +93,53 @@ class BatchJob {
 
   /// Creates a [BatchJob] from JSON.
   factory BatchJob.fromJson(Map<String, dynamic> json) => BatchJob(
-    id: json['id'] as String? ?? '',
-    object: json['object'] as String? ?? 'batch',
-    inputFileId:
-        json['input_file_id'] as String? ??
-        json['input_files'] as String? ??
-        '',
-    endpoint: json['endpoint'] as String? ?? '',
-    model: json['model'] as String? ?? '',
-    outputFileId:
-        json['output_file_id'] as String? ?? json['output_file'] as String?,
-    errorFileId:
-        json['error_file_id'] as String? ?? json['error_file'] as String?,
-    status: BatchJobStatus.fromString(json['status'] as String? ?? 'QUEUED'),
-    totalRequests: json['total_requests'] as int?,
-    completedRequests: json['completed_requests'] as int?,
-    succeededRequests: json['succeeded_requests'] as int?,
-    failedRequests: json['failed_requests'] as int?,
-    startedAt: _parseDateTime(json['started_at']),
-    completedAt: _parseDateTime(json['completed_at']),
-    createdAt: _parseDateTime(json['created_at']),
-    errors:
-        (json['errors'] as List?)
-            ?.map((e) => BatchError.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-    metadata: json['metadata'] as Map<String, dynamic>?,
-  );
+        id: json['id'] as String? ?? '',
+        object: json['object'] as String? ?? 'batch',
+        inputFileId: json['input_file_id'] as String? ??
+            json['input_files'] as String? ??
+            '',
+        endpoint: json['endpoint'] as String? ?? '',
+        model: json['model'] as String? ?? '',
+        outputFileId:
+            json['output_file_id'] as String? ?? json['output_file'] as String?,
+        errorFileId:
+            json['error_file_id'] as String? ?? json['error_file'] as String?,
+        status:
+            BatchJobStatus.fromString(json['status'] as String? ?? 'QUEUED'),
+        totalRequests: json['total_requests'] as int?,
+        completedRequests: json['completed_requests'] as int?,
+        succeededRequests: json['succeeded_requests'] as int?,
+        failedRequests: json['failed_requests'] as int?,
+        startedAt: _parseDateTime(json['started_at']),
+        completedAt: _parseDateTime(json['completed_at']),
+        createdAt: _parseDateTime(json['created_at']),
+        errors: (json['errors'] as List?)
+                ?.map((e) => BatchError.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+        metadata: json['metadata'] as Map<String, dynamic>?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'input_file_id': inputFileId,
-    'endpoint': endpoint,
-    'model': model,
-    if (outputFileId != null) 'output_file_id': outputFileId,
-    if (errorFileId != null) 'error_file_id': errorFileId,
-    'status': status.value,
-    if (totalRequests != null) 'total_requests': totalRequests,
-    if (completedRequests != null) 'completed_requests': completedRequests,
-    if (succeededRequests != null) 'succeeded_requests': succeededRequests,
-    if (failedRequests != null) 'failed_requests': failedRequests,
-    if (startedAt != null) 'started_at': startedAt!.toIso8601String(),
-    if (completedAt != null) 'completed_at': completedAt!.toIso8601String(),
-    if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
-    if (errors.isNotEmpty) 'errors': errors.map((e) => e.toJson()).toList(),
-    if (metadata != null) 'metadata': metadata,
-  };
+        'id': id,
+        'object': object,
+        'input_file_id': inputFileId,
+        'endpoint': endpoint,
+        'model': model,
+        if (outputFileId != null) 'output_file_id': outputFileId,
+        if (errorFileId != null) 'error_file_id': errorFileId,
+        'status': status.value,
+        if (totalRequests != null) 'total_requests': totalRequests,
+        if (completedRequests != null) 'completed_requests': completedRequests,
+        if (succeededRequests != null) 'succeeded_requests': succeededRequests,
+        if (failedRequests != null) 'failed_requests': failedRequests,
+        if (startedAt != null) 'started_at': startedAt!.toIso8601String(),
+        if (completedAt != null) 'completed_at': completedAt!.toIso8601String(),
+        if (createdAt != null) 'created_at': createdAt!.toIso8601String(),
+        if (errors.isNotEmpty) 'errors': errors.map((e) => e.toJson()).toList(),
+        if (metadata != null) 'metadata': metadata,
+      };
 
   /// Whether the job is still running.
   bool get isRunning =>

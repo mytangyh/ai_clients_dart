@@ -67,11 +67,11 @@ class ClickAction extends ComputerAction {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'click',
-    'button': button.toJson(),
-    'x': x,
-    'y': y,
-  };
+        'type': 'click',
+        'button': button.toJson(),
+        'x': x,
+        'y': y,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -136,9 +136,8 @@ class DragAction extends ComputerAction {
   /// Creates a [DragAction] from JSON.
   factory DragAction.fromJson(Map<String, dynamic> json) {
     return DragAction(
-      path: (json['path'] as List)
-          .map((e) => e as Map<String, dynamic>)
-          .toList(),
+      path:
+          (json['path'] as List).map((e) => e as Map<String, dynamic>).toList(),
     );
   }
 
@@ -280,12 +279,12 @@ class ScrollAction extends ComputerAction {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'scroll',
-    'x': x,
-    'y': y,
-    'scroll_x': scrollX,
-    'scroll_y': scrollY,
-  };
+        'type': 'scroll',
+        'x': x,
+        'y': y,
+        'scroll_x': scrollX,
+        'scroll_y': scrollY,
+      };
 
   @override
   bool operator ==(Object other) =>

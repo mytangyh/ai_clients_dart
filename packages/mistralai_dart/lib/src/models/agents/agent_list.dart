@@ -28,23 +28,22 @@ class AgentList {
 
   /// Creates an [AgentList] from JSON.
   factory AgentList.fromJson(Map<String, dynamic> json) => AgentList(
-    object: json['object'] as String? ?? 'list',
-    data:
-        (json['data'] as List?)
-            ?.map((e) => Agent.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-    total: json['total'] as int?,
-    hasMore: json['has_more'] as bool?,
-  );
+        object: json['object'] as String? ?? 'list',
+        data: (json['data'] as List?)
+                ?.map((e) => Agent.fromJson(e as Map<String, dynamic>))
+                .toList() ??
+            [],
+        total: json['total'] as int?,
+        hasMore: json['has_more'] as bool?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((e) => e.toJson()).toList(),
-    if (total != null) 'total': total,
-    if (hasMore != null) 'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((e) => e.toJson()).toList(),
+        if (total != null) 'total': total,
+        if (hasMore != null) 'has_more': hasMore,
+      };
 
   /// Returns true if the list is empty.
   bool get isEmpty => data.isEmpty;

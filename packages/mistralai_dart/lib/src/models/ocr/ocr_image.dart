@@ -25,19 +25,19 @@ class OcrImage {
 
   /// Creates an [OcrImage] from JSON.
   factory OcrImage.fromJson(Map<String, dynamic> json) => OcrImage(
-    id: json['id'] as String? ?? '',
-    boundingBox: (json['bounding_box'] as List?)?.cast<double>(),
-    imageBase64: json['image_base64'] as String?,
-    format: json['format'] as String?,
-  );
+        id: json['id'] as String? ?? '',
+        boundingBox: (json['bounding_box'] as List?)?.cast<double>(),
+        imageBase64: json['image_base64'] as String?,
+        format: json['format'] as String?,
+      );
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    if (boundingBox != null) 'bounding_box': boundingBox,
-    if (imageBase64 != null) 'image_base64': imageBase64,
-    if (format != null) 'format': format,
-  };
+        'id': id,
+        if (boundingBox != null) 'bounding_box': boundingBox,
+        if (imageBase64 != null) 'image_base64': imageBase64,
+        if (format != null) 'format': format,
+      };
 
   @override
   bool operator ==(Object other) =>

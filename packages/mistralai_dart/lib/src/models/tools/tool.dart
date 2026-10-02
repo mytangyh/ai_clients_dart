@@ -19,13 +19,14 @@ sealed class Tool {
     required String name,
     String? description,
     Map<String, dynamic>? parameters,
-  }) => FunctionTool(
-    function: FunctionDefinition(
-      name: name,
-      description: description,
-      parameters: parameters,
-    ),
-  );
+  }) =>
+      FunctionTool(
+        function: FunctionDefinition(
+          name: name,
+          description: description,
+          parameters: parameters,
+        ),
+      );
 
   /// Creates a web search tool.
   ///
@@ -95,16 +96,16 @@ class FunctionTool extends Tool {
 
   /// Creates a [FunctionTool] from JSON.
   factory FunctionTool.fromJson(Map<String, dynamic> json) => FunctionTool(
-    function: FunctionDefinition.fromJson(
-      json['function'] as Map<String, dynamic>? ?? {},
-    ),
-  );
+        function: FunctionDefinition.fromJson(
+          json['function'] as Map<String, dynamic>? ?? {},
+        ),
+      );
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'function',
-    'function': function.toJson(),
-  };
+        'type': 'function',
+        'function': function.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -232,9 +233,9 @@ class DocumentLibraryTool extends Tool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'document_library',
-    if (libraryIds != null) 'library_ids': libraryIds,
-  };
+        'type': 'document_library',
+        if (libraryIds != null) 'library_ids': libraryIds,
+      };
 
   @override
   bool operator ==(Object other) =>

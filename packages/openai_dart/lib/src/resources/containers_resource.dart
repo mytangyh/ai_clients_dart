@@ -46,12 +46,12 @@ class ContainersResource extends ResourceBase {
 
   /// Container files sub-resource.
   ContainerFilesResource get files => _files ??= ContainerFilesResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Lists all containers.
   ///

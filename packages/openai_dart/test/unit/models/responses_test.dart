@@ -2304,9 +2304,8 @@ void main() {
 
       final restored = ResponseTool.fromJson(json);
       expect(restored, isA<CodeInterpreterTool>());
-      final auto =
-          (restored as CodeInterpreterTool).container
-              as CodeInterpreterContainerAuto;
+      final auto = (restored as CodeInterpreterTool).container
+          as CodeInterpreterContainerAuto;
       expect(auto.fileIds, equals(['f1']));
     });
   });

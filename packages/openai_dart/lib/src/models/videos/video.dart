@@ -115,20 +115,20 @@ class Video {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'model': model,
-    'status': status.toJson(),
-    'progress': progress,
-    'created_at': createdAt,
-    'completed_at': completedAt,
-    'expires_at': expiresAt,
-    'prompt': prompt,
-    'size': size.toJson(),
-    'seconds': seconds.toJson(),
-    'remixed_from_video_id': remixedFromVideoId,
-    if (error != null) 'error': error!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'model': model,
+        'status': status.toJson(),
+        'progress': progress,
+        'created_at': createdAt,
+        'completed_at': completedAt,
+        'expires_at': expiresAt,
+        'prompt': prompt,
+        'size': size.toJson(),
+        'seconds': seconds.toJson(),
+        'remixed_from_video_id': remixedFromVideoId,
+        if (error != null) 'error': error!.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -193,12 +193,12 @@ class VideoList {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'object': object,
-    'data': data.map((v) => v.toJson()).toList(),
-    'first_id': firstId,
-    'last_id': lastId,
-    'has_more': hasMore,
-  };
+        'object': object,
+        'data': data.map((v) => v.toJson()).toList(),
+        'first_id': firstId,
+        'last_id': lastId,
+        'has_more': hasMore,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -245,10 +245,10 @@ class DeleteVideoResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'deleted': deleted,
-  };
+        'id': id,
+        'object': object,
+        'deleted': deleted,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -291,10 +291,10 @@ class VideoError {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (message != null) 'message': message,
-    if (type != null) 'type': type,
-    if (code != null) 'code': code,
-  };
+        if (message != null) 'message': message,
+        if (type != null) 'type': type,
+        if (code != null) 'code': code,
+      };
 
   @override
   String toString() => 'VideoError(message: $message)';

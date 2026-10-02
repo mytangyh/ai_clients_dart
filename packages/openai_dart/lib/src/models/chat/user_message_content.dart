@@ -32,10 +32,8 @@ sealed class UserMessageContent {
       return UserTextContent(json);
     }
     if (json is List) {
-      final parts = json
-          .cast<Map<String, dynamic>>()
-          .map(ContentPart.fromJson)
-          .toList();
+      final parts =
+          json.cast<Map<String, dynamic>>().map(ContentPart.fromJson).toList();
       return UserPartsContent(parts);
     }
     throw FormatException('Invalid user message content: $json');

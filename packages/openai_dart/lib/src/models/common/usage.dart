@@ -67,14 +67,14 @@ class Usage {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'prompt_tokens': promptTokens,
-    if (completionTokens != null) 'completion_tokens': completionTokens,
-    'total_tokens': totalTokens,
-    if (promptTokensDetails != null)
-      'prompt_tokens_details': promptTokensDetails!.toJson(),
-    if (completionTokensDetails != null)
-      'completion_tokens_details': completionTokensDetails!.toJson(),
-  };
+        'prompt_tokens': promptTokens,
+        if (completionTokens != null) 'completion_tokens': completionTokens,
+        'total_tokens': totalTokens,
+        if (promptTokensDetails != null)
+          'prompt_tokens_details': promptTokensDetails!.toJson(),
+        if (completionTokensDetails != null)
+          'completion_tokens_details': completionTokensDetails!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   Usage copyWith({
@@ -112,12 +112,12 @@ class Usage {
 
   @override
   int get hashCode => Object.hash(
-    promptTokens,
-    completionTokens,
-    totalTokens,
-    promptTokensDetails,
-    completionTokensDetails,
-  );
+        promptTokens,
+        completionTokens,
+        totalTokens,
+        promptTokensDetails,
+        completionTokensDetails,
+      );
 
   @override
   String toString() =>
@@ -147,9 +147,9 @@ class PromptTokensDetails {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (audioTokens != null) 'audio_tokens': audioTokens,
-    if (cachedTokens != null) 'cached_tokens': cachedTokens,
-  };
+        if (audioTokens != null) 'audio_tokens': audioTokens,
+        if (cachedTokens != null) 'cached_tokens': cachedTokens,
+      };
 
   /// Creates a copy with replaced values.
   PromptTokensDetails copyWith({
@@ -217,13 +217,13 @@ class CompletionTokensDetails {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    if (audioTokens != null) 'audio_tokens': audioTokens,
-    if (reasoningTokens != null) 'reasoning_tokens': reasoningTokens,
-    if (acceptedPredictionTokens != null)
-      'accepted_prediction_tokens': acceptedPredictionTokens,
-    if (rejectedPredictionTokens != null)
-      'rejected_prediction_tokens': rejectedPredictionTokens,
-  };
+        if (audioTokens != null) 'audio_tokens': audioTokens,
+        if (reasoningTokens != null) 'reasoning_tokens': reasoningTokens,
+        if (acceptedPredictionTokens != null)
+          'accepted_prediction_tokens': acceptedPredictionTokens,
+        if (rejectedPredictionTokens != null)
+          'rejected_prediction_tokens': rejectedPredictionTokens,
+      };
 
   /// Creates a copy with replaced values.
   CompletionTokensDetails copyWith({
@@ -260,15 +260,14 @@ class CompletionTokensDetails {
 
   @override
   int get hashCode => Object.hash(
-    audioTokens,
-    reasoningTokens,
-    acceptedPredictionTokens,
-    rejectedPredictionTokens,
-  );
+        audioTokens,
+        reasoningTokens,
+        acceptedPredictionTokens,
+        rejectedPredictionTokens,
+      );
 
   @override
-  String toString() =>
-      'CompletionTokensDetails(audioTokens: $audioTokens, '
+  String toString() => 'CompletionTokensDetails(audioTokens: $audioTokens, '
       'reasoningTokens: $reasoningTokens, '
       'acceptedPredictionTokens: $acceptedPredictionTokens, '
       'rejectedPredictionTokens: $rejectedPredictionTokens)';

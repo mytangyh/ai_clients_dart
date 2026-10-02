@@ -107,22 +107,22 @@ class GenerateRequest {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'model': model,
-    if (prompt != null) 'prompt': prompt,
-    if (suffix != null) 'suffix': suffix,
-    if (images != null) 'images': images,
-    if (format != null) 'format': format!.toJson(),
-    if (system != null) 'system': system,
-    if (template != null) 'template': template,
-    if (context != null) 'context': context,
-    if (stream != null) 'stream': stream,
-    if (think != null) 'think': think!.toJson(),
-    if (raw != null) 'raw': raw,
-    if (keepAlive != null) 'keep_alive': keepAlive,
-    if (options != null) 'options': options!.toJson(),
-    if (logprobs != null) 'logprobs': logprobs,
-    if (topLogprobs != null) 'top_logprobs': topLogprobs,
-  };
+        'model': model,
+        if (prompt != null) 'prompt': prompt,
+        if (suffix != null) 'suffix': suffix,
+        if (images != null) 'images': images,
+        if (format != null) 'format': format!.toJson(),
+        if (system != null) 'system': system,
+        if (template != null) 'template': template,
+        if (context != null) 'context': context,
+        if (stream != null) 'stream': stream,
+        if (think != null) 'think': think!.toJson(),
+        if (raw != null) 'raw': raw,
+        if (keepAlive != null) 'keep_alive': keepAlive,
+        if (options != null) 'options': options!.toJson(),
+        if (logprobs != null) 'logprobs': logprobs,
+        if (topLogprobs != null) 'top_logprobs': topLogprobs,
+      };
 
   /// Creates a copy with replaced values.
   GenerateRequest copyWith({
@@ -146,19 +146,16 @@ class GenerateRequest {
       model: model ?? this.model,
       prompt: prompt == unsetCopyWithValue ? this.prompt : prompt as String?,
       suffix: suffix == unsetCopyWithValue ? this.suffix : suffix as String?,
-      images: images == unsetCopyWithValue
-          ? this.images
-          : images as List<String>?,
+      images:
+          images == unsetCopyWithValue ? this.images : images as List<String>?,
       format: format == unsetCopyWithValue
           ? this.format
           : format as ResponseFormat?,
       system: system == unsetCopyWithValue ? this.system : system as String?,
-      template: template == unsetCopyWithValue
-          ? this.template
-          : template as String?,
-      context: context == unsetCopyWithValue
-          ? this.context
-          : context as List<int>?,
+      template:
+          template == unsetCopyWithValue ? this.template : template as String?,
+      context:
+          context == unsetCopyWithValue ? this.context : context as List<int>?,
       stream: stream == unsetCopyWithValue ? this.stream : stream as bool?,
       think: think == unsetCopyWithValue ? this.think : think as ThinkValue?,
       raw: raw == unsetCopyWithValue ? this.raw : raw as bool?,
@@ -166,9 +163,8 @@ class GenerateRequest {
       options: options == unsetCopyWithValue
           ? this.options
           : options as ModelOptions?,
-      logprobs: logprobs == unsetCopyWithValue
-          ? this.logprobs
-          : logprobs as bool?,
+      logprobs:
+          logprobs == unsetCopyWithValue ? this.logprobs : logprobs as bool?,
       topLogprobs: topLogprobs == unsetCopyWithValue
           ? this.topLogprobs
           : topLogprobs as int?,

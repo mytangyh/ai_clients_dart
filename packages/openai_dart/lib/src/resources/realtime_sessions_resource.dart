@@ -47,12 +47,12 @@ class RealtimeSessionsResource extends ResourceBase {
 
   /// Access to WebRTC call operations.
   RealtimeCallsResource get calls => _calls ??= RealtimeCallsResource(
-    config: config,
-    httpClient: httpClient,
-    interceptorChain: interceptorChain,
-    requestBuilder: requestBuilder,
-    ensureNotClosed: ensureNotClosed,
-  );
+        config: config,
+        httpClient: httpClient,
+        interceptorChain: interceptorChain,
+        requestBuilder: requestBuilder,
+        ensureNotClosed: ensureNotClosed,
+      );
 
   /// Creates a realtime session with an ephemeral API key.
   ///

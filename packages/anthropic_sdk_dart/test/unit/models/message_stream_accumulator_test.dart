@@ -36,17 +36,19 @@ Map<String, dynamic> _messageStartJson({
 Map<String, dynamic> _contentBlockStartJson(
   int index,
   Map<String, dynamic> block,
-) => {'type': 'content_block_start', 'index': index, 'content_block': block};
+) =>
+    {'type': 'content_block_start', 'index': index, 'content_block': block};
 
 Map<String, dynamic> _contentBlockDeltaJson(
   int index,
   Map<String, dynamic> delta,
-) => {'type': 'content_block_delta', 'index': index, 'delta': delta};
+) =>
+    {'type': 'content_block_delta', 'index': index, 'delta': delta};
 
 Map<String, dynamic> _contentBlockStopJson(int index) => {
-  'type': 'content_block_stop',
-  'index': index,
-};
+      'type': 'content_block_stop',
+      'index': index,
+    };
 
 Map<String, dynamic> _messageDeltaJson({
   String? stopReason,
@@ -56,9 +58,9 @@ Map<String, dynamic> _messageDeltaJson({
   Map<String, dynamic>? usageExtra,
 }) {
   final delta = <String, dynamic>{
-    'stop_reason': ?stopReason,
-    'stop_sequence': ?stopSequence,
-    'container': ?container,
+    if (stopReason case final value?) 'stop_reason': value,
+    if (stopSequence case final value?) 'stop_sequence': value,
+    if (container case final value?) 'container': value,
   };
   final usage = <String, dynamic>{
     'output_tokens': outputTokens,
@@ -71,104 +73,109 @@ const _messageStopJson = {'type': 'message_stop'};
 const _pingJson = {'type': 'ping'};
 
 Map<String, dynamic> _textBlockJson({String text = ''}) => {
-  'type': 'text',
-  'text': text,
-};
+      'type': 'text',
+      'text': text,
+    };
 
 Map<String, dynamic> _thinkingBlockJson({
   String thinking = '',
   String signature = '',
-}) => {'type': 'thinking', 'thinking': thinking, 'signature': signature};
+}) =>
+    {'type': 'thinking', 'thinking': thinking, 'signature': signature};
 
 Map<String, dynamic> _toolUseBlockJson({
   String id = 'toolu_123',
   String name = 'get_weather',
   Map<String, dynamic> input = const {},
   Map<String, dynamic>? caller,
-}) => {
-  'type': 'tool_use',
-  'id': id,
-  'name': name,
-  'input': input,
-  'caller': ?caller,
-};
+}) =>
+    {
+      'type': 'tool_use',
+      'id': id,
+      'name': name,
+      'input': input,
+      if (caller case final value?) 'caller': value,
+    };
 
 Map<String, dynamic> _serverToolUseBlockJson({
   String id = 'srvtoolu_123',
   String name = 'web_search',
   Map<String, dynamic> input = const {'query': 'dart'},
-}) => {'type': 'server_tool_use', 'id': id, 'name': name, 'input': input};
+}) =>
+    {'type': 'server_tool_use', 'id': id, 'name': name, 'input': input};
 
 Map<String, dynamic> _compactionBlockJson({String? content}) => {
-  'type': 'compaction',
-  'content': content,
-};
+      'type': 'compaction',
+      'content': content,
+    };
 
 Map<String, dynamic> _redactedThinkingBlockJson({String data = 'abc123'}) => {
-  'type': 'redacted_thinking',
-  'data': data,
-};
+      'type': 'redacted_thinking',
+      'data': data,
+    };
 
 Map<String, dynamic> _containerUploadBlockJson({String fileId = 'file_1'}) => {
-  'type': 'container_upload',
-  'file_id': fileId,
-};
+      'type': 'container_upload',
+      'file_id': fileId,
+    };
 
 Map<String, dynamic> _textDeltaJson(String text) => {
-  'type': 'text_delta',
-  'text': text,
-};
+      'type': 'text_delta',
+      'text': text,
+    };
 
 Map<String, dynamic> _thinkingDeltaJson(String thinking) => {
-  'type': 'thinking_delta',
-  'thinking': thinking,
-};
+      'type': 'thinking_delta',
+      'thinking': thinking,
+    };
 
 Map<String, dynamic> _inputJsonDeltaJson(String partialJson) => {
-  'type': 'input_json_delta',
-  'partial_json': partialJson,
-};
+      'type': 'input_json_delta',
+      'partial_json': partialJson,
+    };
 
 Map<String, dynamic> _signatureDeltaJson(String signature) => {
-  'type': 'signature_delta',
-  'signature': signature,
-};
+      'type': 'signature_delta',
+      'signature': signature,
+    };
 
 Map<String, dynamic> _citationsDeltaJson(Map<String, dynamic> citation) => {
-  'type': 'citations_delta',
-  'citation': citation,
-};
+      'type': 'citations_delta',
+      'citation': citation,
+    };
 
 Map<String, dynamic> _compactionDeltaJson(String? content) => {
-  'type': 'compaction_delta',
-  'content': content,
-};
+      'type': 'compaction_delta',
+      'content': content,
+    };
 
 Map<String, dynamic> _charLocationCitationJson({
   String citedText = 'cited',
   int documentIndex = 0,
   int startCharIndex = 0,
   int endCharIndex = 5,
-}) => {
-  'type': 'char_location',
-  'cited_text': citedText,
-  'document_index': documentIndex,
-  'start_char_index': startCharIndex,
-  'end_char_index': endCharIndex,
-};
+}) =>
+    {
+      'type': 'char_location',
+      'cited_text': citedText,
+      'document_index': documentIndex,
+      'start_char_index': startCharIndex,
+      'end_char_index': endCharIndex,
+    };
 
 Map<String, dynamic> _webSearchCitationJson({
   String citedText = 'web cited',
   String encryptedIndex = 'enc_idx',
   String? title,
   String? url,
-}) => {
-  'type': 'web_search_result_location',
-  'cited_text': citedText,
-  'encrypted_index': encryptedIndex,
-  'title': ?title,
-  'url': ?url,
-};
+}) =>
+    {
+      'type': 'web_search_result_location',
+      'cited_text': citedText,
+      'encrypted_index': encryptedIndex,
+      if (title case final value?) 'title': value,
+      if (url case final value?) 'url': value,
+    };
 
 // ---------------------------------------------------------------------------
 // Helper to feed a sequence of JSON events into an accumulator.

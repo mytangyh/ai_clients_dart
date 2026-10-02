@@ -234,13 +234,14 @@ class TranscriptionVerboseResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'task': task,
-    'language': language,
-    'duration': duration,
-    'text': text,
-    if (segments != null) 'segments': segments!.map((s) => s.toJson()).toList(),
-    if (words != null) 'words': words!.map((w) => w.toJson()).toList(),
-  };
+        'task': task,
+        'language': language,
+        'duration': duration,
+        'text': text,
+        if (segments != null)
+          'segments': segments!.map((s) => s.toJson()).toList(),
+        if (words != null) 'words': words!.map((w) => w.toJson()).toList(),
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -324,17 +325,17 @@ class TranscriptionSegment {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'seek': seek,
-    'start': start,
-    'end': end,
-    'text': text,
-    'tokens': tokens,
-    'temperature': temperature,
-    'avg_logprob': avgLogprob,
-    'compression_ratio': compressionRatio,
-    'no_speech_prob': noSpeechProb,
-  };
+        'id': id,
+        'seek': seek,
+        'start': start,
+        'end': end,
+        'text': text,
+        'tokens': tokens,
+        'temperature': temperature,
+        'avg_logprob': avgLogprob,
+        'compression_ratio': compressionRatio,
+        'no_speech_prob': noSpeechProb,
+      };
 
   @override
   bool operator ==(Object other) =>

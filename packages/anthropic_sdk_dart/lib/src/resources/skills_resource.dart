@@ -105,9 +105,9 @@ class SkillsResource extends ResourceBase {
   }) async {
     ensureNotClosed?.call();
     final queryParams = <String, dynamic>{
-      'limit': ?limit?.toString(),
-      'page': ?page,
-      'source': ?source?.toJson(),
+      if (limit?.toString() case final value?) 'limit': value,
+      if (page case final value?) 'page': value,
+      if (source?.toJson() case final value?) 'source': value,
     };
 
     final url = requestBuilder.buildUrl(
@@ -245,8 +245,8 @@ class SkillsResource extends ResourceBase {
   }) async {
     ensureNotClosed?.call();
     final queryParams = <String, dynamic>{
-      'limit': ?limit?.toString(),
-      'page': ?page,
+      if (limit?.toString() case final value?) 'limit': value,
+      if (page case final value?) 'page': value,
     };
 
     final url = requestBuilder.buildUrl(

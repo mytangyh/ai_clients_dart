@@ -89,9 +89,9 @@ class InputJsonDelta extends ContentBlockDelta {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'input_json_delta',
-    'partial_json': partialJson,
-  };
+        'type': 'input_json_delta',
+        'partial_json': partialJson,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -124,9 +124,9 @@ class ThinkingDelta extends ContentBlockDelta {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'thinking_delta',
-    'thinking': thinking,
-  };
+        'type': 'thinking_delta',
+        'thinking': thinking,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -158,9 +158,9 @@ class CompactionDelta extends ContentBlockDelta {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'compaction_delta',
-    'content': content,
-  };
+        'type': 'compaction_delta',
+        'content': content,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -192,9 +192,9 @@ class SignatureDelta extends ContentBlockDelta {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'signature_delta',
-    'signature': signature,
-  };
+        'type': 'signature_delta',
+        'signature': signature,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -228,9 +228,9 @@ class CitationsDelta extends ContentBlockDelta {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'citations_delta',
-    'citation': citation.toJson(),
-  };
+        'type': 'citations_delta',
+        'citation': citation.toJson(),
+      };
 
   @override
   bool operator ==(Object other) =>

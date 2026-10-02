@@ -55,10 +55,10 @@ class ToolChoiceAuto extends ToolChoice {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'auto',
-    if (disableParallelToolUse != null)
-      'disable_parallel_tool_use': disableParallelToolUse,
-  };
+        'type': 'auto',
+        if (disableParallelToolUse != null)
+          'disable_parallel_tool_use': disableParallelToolUse,
+      };
 
   /// Creates a copy with replaced values.
   ToolChoiceAuto copyWith({
@@ -106,10 +106,10 @@ class ToolChoiceAny extends ToolChoice {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'any',
-    if (disableParallelToolUse != null)
-      'disable_parallel_tool_use': disableParallelToolUse,
-  };
+        'type': 'any',
+        if (disableParallelToolUse != null)
+          'disable_parallel_tool_use': disableParallelToolUse,
+      };
 
   /// Creates a copy with replaced values.
   ToolChoiceAny copyWith({
@@ -161,11 +161,11 @@ class ToolChoiceTool extends ToolChoice {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'tool',
-    'name': name,
-    if (disableParallelToolUse != null)
-      'disable_parallel_tool_use': disableParallelToolUse,
-  };
+        'type': 'tool',
+        'name': name,
+        if (disableParallelToolUse != null)
+          'disable_parallel_tool_use': disableParallelToolUse,
+      };
 
   /// Creates a copy with replaced values.
   ToolChoiceTool copyWith({
@@ -192,8 +192,7 @@ class ToolChoiceTool extends ToolChoice {
   int get hashCode => Object.hash(name, disableParallelToolUse);
 
   @override
-  String toString() =>
-      'ToolChoiceTool(name: $name, '
+  String toString() => 'ToolChoiceTool(name: $name, '
       'disableParallelToolUse: $disableParallelToolUse)';
 }
 

@@ -31,16 +31,17 @@ enum StopReason {
 
   /// Converts a string to [StopReason].
   static StopReason fromJson(String value) => switch (value) {
-    'end_turn' => StopReason.endTurn,
-    'max_tokens' => StopReason.maxTokens,
-    'stop_sequence' => StopReason.stopSequence,
-    'tool_use' => StopReason.toolUse,
-    'pause_turn' => StopReason.pauseTurn,
-    'compaction' => StopReason.compaction,
-    'model_context_window_exceeded' => StopReason.modelContextWindowExceeded,
-    'refusal' => StopReason.refusal,
-    _ => throw FormatException('Unknown StopReason: $value'),
-  };
+        'end_turn' => StopReason.endTurn,
+        'max_tokens' => StopReason.maxTokens,
+        'stop_sequence' => StopReason.stopSequence,
+        'tool_use' => StopReason.toolUse,
+        'pause_turn' => StopReason.pauseTurn,
+        'compaction' => StopReason.compaction,
+        'model_context_window_exceeded' =>
+          StopReason.modelContextWindowExceeded,
+        'refusal' => StopReason.refusal,
+        _ => throw FormatException('Unknown StopReason: $value'),
+      };
 
   /// Converts to JSON string.
   String toJson() => value;

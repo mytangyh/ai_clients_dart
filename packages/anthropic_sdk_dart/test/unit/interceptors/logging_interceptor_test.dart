@@ -7,9 +7,9 @@ import 'package:test/test.dart';
 void main() {
   group('LoggingInterceptor', () {
     http.Request createRequest() => http.Request(
-      'POST',
-      Uri.parse('https://api.anthropic.com/v1/messages'),
-    );
+          'POST',
+          Uri.parse('https://api.anthropic.com/v1/messages'),
+        );
 
     test('adds X-Request-ID header if not present', () async {
       final interceptor = LoggingInterceptor(

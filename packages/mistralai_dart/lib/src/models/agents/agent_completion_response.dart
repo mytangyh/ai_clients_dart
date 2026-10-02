@@ -43,8 +43,7 @@ class AgentCompletionResponse {
         object: json['object'] as String? ?? 'chat.completion',
         created: json['created'] as int? ?? 0,
         model: json['model'] as String? ?? '',
-        choices:
-            (json['choices'] as List?)
+        choices: (json['choices'] as List?)
                 ?.map((e) => ChatChoice.fromJson(e as Map<String, dynamic>))
                 .toList() ??
             [],
@@ -55,13 +54,13 @@ class AgentCompletionResponse {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'object': object,
-    'created': created,
-    'model': model,
-    'choices': choices.map((e) => e.toJson()).toList(),
-    if (usage != null) 'usage': usage!.toJson(),
-  };
+        'id': id,
+        'object': object,
+        'created': created,
+        'model': model,
+        'choices': choices.map((e) => e.toJson()).toList(),
+        if (usage != null) 'usage': usage!.toJson(),
+      };
 
   /// The first choice, if any.
   ChatChoice? get firstChoice => choices.isNotEmpty ? choices.first : null;

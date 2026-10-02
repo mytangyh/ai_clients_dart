@@ -42,12 +42,12 @@ class UserLocation {
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': 'approximate',
-    if (city != null) 'city': city,
-    if (country != null) 'country': country,
-    if (region != null) 'region': region,
-    if (timezone != null) 'timezone': timezone,
-  };
+        'type': 'approximate',
+        if (city != null) 'city': city,
+        if (country != null) 'country': country,
+        if (region != null) 'region': region,
+        if (timezone != null) 'timezone': timezone,
+      };
 
   /// Creates a copy with replaced values.
   UserLocation copyWith({
@@ -58,13 +58,11 @@ class UserLocation {
   }) {
     return UserLocation(
       city: city == unsetCopyWithValue ? this.city : city as String?,
-      country: country == unsetCopyWithValue
-          ? this.country
-          : country as String?,
+      country:
+          country == unsetCopyWithValue ? this.country : country as String?,
       region: region == unsetCopyWithValue ? this.region : region as String?,
-      timezone: timezone == unsetCopyWithValue
-          ? this.timezone
-          : timezone as String?,
+      timezone:
+          timezone == unsetCopyWithValue ? this.timezone : timezone as String?,
     );
   }
 
@@ -219,8 +217,8 @@ sealed class BuiltInTool {
       'code_execution_20260120' => CodeExecutionBuiltInTool.fromJson(json),
       // Beta tools
       final String t when t.startsWith('computer_') => ComputerUseTool.fromJson(
-        json,
-      ),
+          json,
+        ),
       final String t when t.startsWith('mcp_') => McpToolset.fromJson(json),
       _ => throw FormatException('Unknown BuiltInTool type: $type'),
     };
@@ -287,14 +285,14 @@ class BashTool extends BuiltInTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'bash',
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-    if (inputExamples != null) 'input_examples': inputExamples,
-  };
+        'type': type,
+        'name': 'bash',
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+        if (inputExamples != null) 'input_examples': inputExamples,
+      };
 
   /// Creates a copy with replaced values.
   BashTool copyWith({
@@ -337,17 +335,16 @@ class BashTool extends BuiltInTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    cacheControl,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-    listOfMapsHash(inputExamples),
-  );
+        type,
+        cacheControl,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+        listOfMapsHash(inputExamples),
+      );
 
   @override
-  String toString() =>
-      'BashTool(type: $type, cacheControl: $cacheControl, '
+  String toString() => 'BashTool(type: $type, cacheControl: $cacheControl, '
       'allowedCallers: $allowedCallers, deferLoading: $deferLoading, '
       'strict: $strict, inputExamples: $inputExamples)';
 }
@@ -414,14 +411,14 @@ class TextEditorTool20250124 extends TextEditorToolBase {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'str_replace_editor',
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-    if (inputExamples != null) 'input_examples': inputExamples,
-  };
+        'type': type,
+        'name': 'str_replace_editor',
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+        if (inputExamples != null) 'input_examples': inputExamples,
+      };
 
   /// Creates a copy with replaced values.
   TextEditorTool20250124 copyWith({
@@ -464,13 +461,13 @@ class TextEditorTool20250124 extends TextEditorToolBase {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    cacheControl,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-    listOfMapsHash(inputExamples),
-  );
+        type,
+        cacheControl,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+        listOfMapsHash(inputExamples),
+      );
 
   @override
   String toString() =>
@@ -530,14 +527,14 @@ class TextEditorTool20250429 extends TextEditorToolBase {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'str_replace_based_edit_tool',
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-    if (inputExamples != null) 'input_examples': inputExamples,
-  };
+        'type': type,
+        'name': 'str_replace_based_edit_tool',
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+        if (inputExamples != null) 'input_examples': inputExamples,
+      };
 
   /// Creates a copy with replaced values.
   TextEditorTool20250429 copyWith({
@@ -580,13 +577,13 @@ class TextEditorTool20250429 extends TextEditorToolBase {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    cacheControl,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-    listOfMapsHash(inputExamples),
-  );
+        type,
+        cacheControl,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+        listOfMapsHash(inputExamples),
+      );
 
   @override
   String toString() =>
@@ -655,15 +652,15 @@ class TextEditorTool extends TextEditorToolBase {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'str_replace_based_edit_tool',
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (maxCharacters != null) 'max_characters': maxCharacters,
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-    if (inputExamples != null) 'input_examples': inputExamples,
-  };
+        'type': type,
+        'name': 'str_replace_based_edit_tool',
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (maxCharacters != null) 'max_characters': maxCharacters,
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+        if (inputExamples != null) 'input_examples': inputExamples,
+      };
 
   /// Creates a copy with replaced values.
   TextEditorTool copyWith({
@@ -711,14 +708,14 @@ class TextEditorTool extends TextEditorToolBase {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    cacheControl,
-    maxCharacters,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-    listOfMapsHash(inputExamples),
-  );
+        type,
+        cacheControl,
+        maxCharacters,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+        listOfMapsHash(inputExamples),
+      );
 
   @override
   String toString() =>
@@ -804,17 +801,17 @@ class WebSearchTool extends BuiltInTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'web_search',
-    if (allowedDomains != null) 'allowed_domains': allowedDomains,
-    if (blockedDomains != null) 'blocked_domains': blockedDomains,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (maxUses != null) 'max_uses': maxUses,
-    if (userLocation != null) 'user_location': userLocation!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-  };
+        'type': type,
+        'name': 'web_search',
+        if (allowedDomains != null) 'allowed_domains': allowedDomains,
+        if (blockedDomains != null) 'blocked_domains': blockedDomains,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (maxUses != null) 'max_uses': maxUses,
+        if (userLocation != null) 'user_location': userLocation!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+      };
 
   /// Creates a copy with replaced values.
   WebSearchTool copyWith({
@@ -870,16 +867,16 @@ class WebSearchTool extends BuiltInTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    listHash(allowedDomains),
-    listHash(blockedDomains),
-    cacheControl,
-    maxUses,
-    userLocation,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-  );
+        type,
+        listHash(allowedDomains),
+        listHash(blockedDomains),
+        cacheControl,
+        maxUses,
+        userLocation,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+      );
 
   @override
   String toString() =>
@@ -994,18 +991,18 @@ class WebFetchTool extends BuiltInTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'web_fetch',
-    if (allowedDomains != null) 'allowed_domains': allowedDomains,
-    if (blockedDomains != null) 'blocked_domains': blockedDomains,
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (maxUses != null) 'max_uses': maxUses,
-    if (maxContentTokens != null) 'max_content_tokens': maxContentTokens,
-    if (citations != null) 'citations': citations!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-  };
+        'type': type,
+        'name': 'web_fetch',
+        if (allowedDomains != null) 'allowed_domains': allowedDomains,
+        if (blockedDomains != null) 'blocked_domains': blockedDomains,
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (maxUses != null) 'max_uses': maxUses,
+        if (maxContentTokens != null) 'max_content_tokens': maxContentTokens,
+        if (citations != null) 'citations': citations!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1066,17 +1063,17 @@ class WebFetchTool extends BuiltInTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    listHash(allowedDomains),
-    listHash(blockedDomains),
-    cacheControl,
-    maxUses,
-    maxContentTokens,
-    citations,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-  );
+        type,
+        listHash(allowedDomains),
+        listHash(blockedDomains),
+        cacheControl,
+        maxUses,
+        maxContentTokens,
+        citations,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+      );
 
   @override
   String toString() =>
@@ -1138,14 +1135,14 @@ class MemoryTool extends BuiltInTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'memory',
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-    if (inputExamples != null) 'input_examples': inputExamples,
-  };
+        'type': type,
+        'name': 'memory',
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+        if (inputExamples != null) 'input_examples': inputExamples,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1188,17 +1185,16 @@ class MemoryTool extends BuiltInTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    cacheControl,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-    listOfMapsHash(inputExamples),
-  );
+        type,
+        cacheControl,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+        listOfMapsHash(inputExamples),
+      );
 
   @override
-  String toString() =>
-      'MemoryTool(type: $type, cacheControl: $cacheControl, '
+  String toString() => 'MemoryTool(type: $type, cacheControl: $cacheControl, '
       'allowedCallers: $allowedCallers, deferLoading: $deferLoading, '
       'strict: $strict, inputExamples: $inputExamples)';
 }
@@ -1252,13 +1248,13 @@ class ToolSearchToolBm25 extends ToolSearchTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'tool_search_tool_bm25',
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-  };
+        'type': type,
+        'name': 'tool_search_tool_bm25',
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1296,12 +1292,12 @@ class ToolSearchToolBm25 extends ToolSearchTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    cacheControl,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-  );
+        type,
+        cacheControl,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+      );
 
   @override
   String toString() =>
@@ -1354,13 +1350,13 @@ class ToolSearchToolRegex extends ToolSearchTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'tool_search_tool_regex',
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-  };
+        'type': type,
+        'name': 'tool_search_tool_regex',
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1398,12 +1394,12 @@ class ToolSearchToolRegex extends ToolSearchTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    cacheControl,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-  );
+        type,
+        cacheControl,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+      );
 
   @override
   String toString() =>
@@ -1456,13 +1452,13 @@ class CodeExecutionBuiltInTool extends BuiltInTool {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type,
-    'name': 'code_execution',
-    if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
-    if (allowedCallers != null) 'allowed_callers': allowedCallers,
-    if (deferLoading != null) 'defer_loading': deferLoading,
-    if (strict != null) 'strict': strict,
-  };
+        'type': type,
+        'name': 'code_execution',
+        if (cacheControl != null) 'cache_control': cacheControl!.toJson(),
+        if (allowedCallers != null) 'allowed_callers': allowedCallers,
+        if (deferLoading != null) 'defer_loading': deferLoading,
+        if (strict != null) 'strict': strict,
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -1500,12 +1496,12 @@ class CodeExecutionBuiltInTool extends BuiltInTool {
 
   @override
   int get hashCode => Object.hash(
-    type,
-    cacheControl,
-    listHash(allowedCallers),
-    deferLoading,
-    strict,
-  );
+        type,
+        cacheControl,
+        listHash(allowedCallers),
+        deferLoading,
+        strict,
+      );
 
   @override
   String toString() =>

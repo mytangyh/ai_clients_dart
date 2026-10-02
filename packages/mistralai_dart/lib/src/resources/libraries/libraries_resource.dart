@@ -48,12 +48,12 @@ class LibrariesResource extends ResourceBase {
     required super.requestBuilder,
     super.ensureNotClosed,
   }) : documents = LibraryDocumentsResource(
-         config: config,
-         httpClient: httpClient,
-         interceptorChain: interceptorChain,
-         requestBuilder: requestBuilder,
-         ensureNotClosed: ensureNotClosed,
-       );
+          config: config,
+          httpClient: httpClient,
+          interceptorChain: interceptorChain,
+          requestBuilder: requestBuilder,
+          ensureNotClosed: ensureNotClosed,
+        );
 
   /// Sub-resource for managing documents within libraries.
   final LibraryDocumentsResource documents;
@@ -68,7 +68,10 @@ class LibrariesResource extends ResourceBase {
       additionalHeaders: {'Content-Type': 'application/json'},
     );
 
-    final body = <String, dynamic>{'name': name, 'description': ?description};
+    final body = <String, dynamic>{
+      'name': name,
+      if (description case final value?) 'description': value
+    };
 
     final httpRequest = http.Request('POST', url)
       ..headers.addAll(headers)
@@ -131,7 +134,10 @@ class LibrariesResource extends ResourceBase {
       additionalHeaders: {'Content-Type': 'application/json'},
     );
 
-    final body = <String, dynamic>{'name': ?name, 'description': ?description};
+    final body = <String, dynamic>{
+      if (name case final value?) 'name': value,
+      if (description case final value?) 'description': value
+    };
 
     final httpRequest = http.Request('PUT', url)
       ..headers.addAll(headers)
@@ -217,7 +223,7 @@ class LibrariesResource extends ResourceBase {
     final body = <String, dynamic>{
       'share_with_uuid': shareWithUuid,
       'share_with_type': shareWithType.value,
-      'org_id': ?orgId,
+      if (orgId case final value?) 'org_id': value,
     };
 
     final httpRequest = http.Request('DELETE', url)
@@ -258,7 +264,7 @@ class LibraryDocumentsResource extends ResourceBase {
 
     final body = <String, dynamic>{
       'file_id': fileId,
-      'document_name': ?documentName,
+      if (documentName case final value?) 'document_name': value,
     };
 
     final httpRequest = http.Request('POST', url)
@@ -335,7 +341,9 @@ class LibraryDocumentsResource extends ResourceBase {
       additionalHeaders: {'Content-Type': 'application/json'},
     );
 
-    final body = <String, dynamic>{'document_name': ?documentName};
+    final body = <String, dynamic>{
+      if (documentName case final value?) 'document_name': value
+    };
 
     final httpRequest = http.Request('PUT', url)
       ..headers.addAll(headers)

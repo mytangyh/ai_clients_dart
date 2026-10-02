@@ -15,10 +15,10 @@ enum CacheTtl {
 
   /// Converts a string to [CacheTtl].
   static CacheTtl fromJson(String value) => switch (value) {
-    '5m' => CacheTtl.ttl5m,
-    '1h' => CacheTtl.ttl1h,
-    _ => throw FormatException('Unknown CacheTtl: $value'),
-  };
+        '5m' => CacheTtl.ttl5m,
+        '1h' => CacheTtl.ttl1h,
+        _ => throw FormatException('Unknown CacheTtl: $value'),
+      };
 
   /// Converts to JSON string.
   String toJson() => value;
@@ -43,17 +43,16 @@ class CacheControlEphemeral {
   /// Creates a [CacheControlEphemeral] from JSON.
   factory CacheControlEphemeral.fromJson(Map<String, dynamic> json) {
     return CacheControlEphemeral(
-      ttl: json['ttl'] != null
-          ? CacheTtl.fromJson(json['ttl'] as String)
-          : null,
+      ttl:
+          json['ttl'] != null ? CacheTtl.fromJson(json['ttl'] as String) : null,
     );
   }
 
   /// Converts to JSON.
   Map<String, dynamic> toJson() => {
-    'type': type,
-    if (ttl != null) 'ttl': ttl!.toJson(),
-  };
+        'type': type,
+        if (ttl != null) 'ttl': ttl!.toJson(),
+      };
 
   /// Creates a copy with replaced values.
   CacheControlEphemeral copyWith({CacheTtl? ttl}) {
